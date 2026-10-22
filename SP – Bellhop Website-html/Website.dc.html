@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Bellhop Website – Thiết kế website khách sạn, homestay, villa</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./assets/81e26d43a82c22dd79010c853e0d4ffa.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:inherit}a:hover{color:#1f7a84}
+.stackm{position:relative;height:460px}
+.sm{position:absolute;width:72%;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 40px 70px -36px rgba(11,26,48,.55),0 0 0 1px rgba(18,39,69,.08)}
+.sm .bar{height:26px;background:#f1f4f8;display:flex;gap:5px;align-items:center;padding:0 10px}
+.sm .bar i{width:7px;height:7px;border-radius:50%;background:#d4dce6}
+.sm-hero{height:150px;position:relative;display:flex;align-items:flex-end;padding:14px;color:#fff;font-weight:700}
+.sm-body{padding:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.sm-body div{height:54px;border-radius:6px;background:#eef2f6}
+.fade1{animation:bhFade 12s infinite}
+.fade2{animation:bhFade 12s infinite 4s}
+.fade3{animation:bhFade 12s infinite 8s}
+@keyframes bhFade{0%,100%{z-index:1;opacity:.92}10%,33%{z-index:3;opacity:1;transform:translateY(-6px)}43%{z-index:1}}
+.tpl{background:#fff;border:1px solid #dde4ec;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .2s}
+.tpl:hover{border-color:#5fb9c2;box-shadow:0 24px 50px -30px rgba(18,39,69,.45)}
+.tpl-view{height:300px;overflow:hidden;position:relative;background:#f4f7fa}
+.tpl-in{transition:transform 3s ease;display:flex;flex-direction:column;gap:8px;padding:10px}
+.tpl:hover .tpl-in{transform:translateY(-52%)}
+.tpl-in .b{border-radius:8px;background:#e5ebf2}
+.tree{display:flex;flex-direction:column;gap:18px}
+.tree-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.node{min-height:44px;padding:0 16px;border-radius:12px;border:1px solid #dde4ec;background:#fff;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;color:#122745}
+.node.root{background:#122745;color:#fff;border-color:#122745}
+.node.chain{border:1.5px dashed #376587;color:#376587}
+.ft{display:flex;gap:14px;align-items:flex-start;padding:22px;border-radius:16px;background:#fff;border:1px solid #dde4ec}
+.ft p{font-size:14px;color:#566579}
+.ft.hl{grid-column:span 2;background:#122745;border-color:#122745;color:#c9d6e6}
+.ft.hl h3{color:#fff}.ft.hl p{color:#b6c5d8}
+@media (max-width:980px){.ft.hl{grid-column:auto}.stackm{height:340px}}
+</style>
+</helmet>
+<div class="bh {{markCls}}">
+<dc-import name="Header" active="website" start-open="{{ false }}" hint-size="100%,72px"></dc-import>
+<div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="Main.dc.html">Trang chủ</a>›<span>Sản phẩm</span>›<span>Bán phòng &amp; Doanh thu</span>›<b>Bellhop Website</b></nav></div>
+
+<section class="hero-bg" style="padding: 32px 0 96px">
+<div class="wrap split">
+  <div class="stack" style="gap: 22px">
+    <span class="eyebrow">Bellhop Website · Website cho cơ sở lưu trú</span>
+    <h1 class="h1" style="font-size: 44px">Website chuyên nghiệp cho khách sạn, homestay và villa, <em>tích hợp sẵn đặt phòng trực tiếp</em></h1>
+    <p class="lead">Bellhop Website cung cấp mẫu website thiết kế riêng cho từng loại hình lưu trú, kết nối sẵn với Bellhop Booking Engine và Bellhop PMS để khách tìm hiểu và đặt phòng ngay trên website của cơ sở.</p>
+    <div class="btns"><a class="btn btn-primary btn-lg" href="#mau">Xem mẫu website <span class="arr">→</span></a><a class="btn btn-outline btn-lg" href="#form">Đặt lịch tư vấn</a></div>
+  </div>
+  <div class="stackm">
+    <div class="sm fade1" style="left: 0; top: 40px"><div class="bar"><i></i><i></i><i></i></div><div class="sm-hero" style="background: linear-gradient(160deg,#376587,#122745)">Khách sạn · Mẫu A</div><div class="sm-body"><div></div><div></div><div></div></div><div style="margin: 0 12px 12px; height: 34px; border-radius: 8px; border: 2px solid #5fb9c2; display: flex; align-items: center; justify-content: flex-end; padding: 0 6px"><span class="btn btn-primary btn-sm" style="min-height: 24px; font-size: 11px">Đặt phòng</span></div></div>
+    <div class="sm fade2" style="left: 14%; top: 100px"><div class="bar"><i></i><i></i><i></i></div><div class="sm-hero" style="background: linear-gradient(160deg,#5fb9c2,#2f8f99)">Homestay &amp; Villa · Mẫu B</div><div class="sm-body"><div></div><div></div><div></div></div><div style="margin: 0 12px 12px; height: 34px; border-radius: 8px; border: 2px solid #122745; display: flex; align-items: center; justify-content: flex-end; padding: 0 6px"><span class="btn btn-teal btn-sm" style="min-height: 24px; font-size: 11px">Đặt nguyên căn</span></div></div>
+    <div class="sm fade3" style="left: 28%; top: 160px"><div class="bar"><i></i><i></i><i></i></div><div class="sm-hero" style="background: linear-gradient(160deg,#122745,#0b1a30)">Chuỗi · Mẫu C</div><div class="sm-body"><div></div><div></div><div></div></div><div style="margin: 0 12px 12px; height: 34px; border-radius: 8px; background: #f4f7fa; display: flex; align-items: center; padding: 0 10px; font-size: 11px; color: #566579">Tìm theo điểm đến…</div></div>
+  </div>
+</div>
+</section>
+
+<div class="subnav"><div class="wrap"><a class="it on" href="#mau">Mẫu website</a><a class="it" href="#tinh-nang">Tính năng</a><a class="it" href="#quy-trinh">Quy trình</a><a class="it" href="#ket-noi">Kết nối</a><a class="it" href="#gia">Bảng giá</a><a class="it" href="#faq">FAQ</a><a class="btn btn-primary btn-sm" href="#form" style="margin-left: auto">Đặt lịch tư vấn</a></div></div>
+
+<section class="sec-sm" style="padding-bottom: 0"><div class="wrap"><div class="proof">
+  <div><b>3</b><span>Loại hình: Khách sạn · Homestay &amp; Villa · Chuỗi</span></div>
+  <div><b><span class="ph">[5]</span></b><span>Mẫu giao diện cho mỗi loại hình</span></div>
+  <div><b style="font-size: 28px">Tích hợp</b><span>Booking Engine nhận đặt phòng trực tiếp</span></div>
+  <div><b style="font-size: 28px">Chuẩn mobile <i class="tbc">✓</i></b><span>Hiển thị tốt trên điện thoại</span></div>
+</div></div></section>
+
+<section class="sec">
+<div class="wrap">
+  <div class="head"><span class="eyebrow">Vấn đề</span><h2 class="h2">Những hạn chế thường gặp ở website cơ sở lưu trú</h2></div>
+  <div class="grid-auto" style="grid-template-columns: repeat(auto-fit,minmax(min(440px,100%),1fr))">
+    <a class="card card-hover" href="#mau" style="flex-direction: row; gap: 20px"><span class="ic ic-tile i-domain"></span><div class="stack" style="gap: 8px"><h3 class="h4">Chưa có website riêng</h3><p>Thông tin cơ sở chỉ có trên OTA và mạng xã hội, khách khó tìm hiểu và đặt phòng trực tiếp.</p><span class="chip" style="align-self: flex-start">Mẫu website ↓</span></div></a>
+    <a class="card card-hover" href="#tinh-nang" style="flex-direction: row; gap: 20px"><span class="ic ic-tile i-phone"></span><div class="stack" style="gap: 8px"><h3 class="h4">Chưa tối ưu cho điện thoại</h3><p>Tải chậm, bố cục khó xem, trong khi phần lớn khách tìm phòng trên điện thoại. <i class="tbc">Cần nguồn nếu ghi tỷ lệ</i></p><span class="chip" style="align-self: flex-start">Tính năng ↓</span></div></a>
+    <a class="card card-hover" href="#tinh-nang" style="flex-direction: row; gap: 20px"><span class="ic ic-tile i-booking"></span><div class="stack" style="gap: 8px"><h3 class="h4">Website chỉ để giới thiệu</h3><p>Không có chức năng đặt phòng, khách phải chuyển sang gọi điện hoặc nhắn tin.</p><span class="chip" style="align-self: flex-start">Tính năng ↓</span></div></a>
+    <a class="card card-hover" href="#tinh-nang" style="flex-direction: row; gap: 20px"><span class="ic ic-tile i-gear"></span><div class="stack" style="gap: 8px"><h3 class="h4">Khó tự cập nhật nội dung</h3><p>Thay đổi giá, ưu đãi, hình ảnh phải phụ thuộc vào đơn vị thiết kế.</p><span class="chip" style="align-self: flex-start">Tính năng ↓</span></div></a>
+  </div>
+</div>
+</section>
+
+<section class="sec bg-soft" id="mau">
+<div class="wrap">
+  <div class="row wrapx" style="justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 32px">
+    <div class="stack" style="gap: 16px; max-width: 640px"><span class="eyebrow">Mẫu website</span><h2 class="h2">Mẫu website theo từng loại hình lưu trú</h2><p class="lead">{{tpl.desc}}</p></div>
+    <div class="tabs" role="tablist" aria-label="Loại hình" style="min-width: min(520px,100%)">
+      <sc-for list="{{tabs}}" as="t" hint-placeholder-count="3"><button class="tab {{t.cls}}" role="tab" aria-selected="{{t.sel}}" onClick="{{t.pick}}"><span class="ic {{t.icon}}"></span>{{t.name}}</button></sc-for>
+    </div>
+  </div>
+  <div class="grid-auto">
+    <sc-for list="{{tpl.items}}" as="m" hint-placeholder-count="3">
+    <div class="tpl">
+      <div class="tpl-view">
+        <div class="tpl-in">
+          <div class="b" style="height: 150px; background: {{m.c1}}"></div>
+          <div class="row" style="gap: 8px"><div class="b" style="height: 70px; flex: 1"></div><div class="b" style="height: 70px; flex: 1"></div><div class="b" style="height: 70px; flex: 1"></div></div>
+          <div class="b" style="height: 14px; width: 60%"></div><div class="b" style="height: 10px; width: 80%"></div>
+          <div class="b" style="height: 120px; background: {{m.c2}}"></div>
+          <div class="row" style="gap: 8px"><div class="b" style="height: 90px; flex: 2"></div><div class="b" style="height: 90px; flex: 1"></div></div>
+          <div class="b" style="height: 80px"></div>
+          <div class="b" style="height: 60px; background: #122745"></div>
+        </div>
+        <span class="chip chip-line" style="position: absolute; left: 12px; bottom: 12px">Rê chuột để xem toàn trang</span>
+      </div>
+      <div class="stack" style="gap: 12px; padding: 20px">
+        <div class="row" style="justify-content: space-between"><b style="color: #122745">{{m.name}}</b><span class="xs muted">{{m.note}}</span></div>
+        <div class="row" style="gap: 8px"><a class="btn btn-outline btn-sm" href="#" style="flex: 1">Xem trước ↗</a><a class="btn btn-primary btn-sm" href="#form" style="flex: 1">Chọn mẫu này</a></div>
+      </div>
+    </div>
+    </sc-for>
+  </div>
+  <p class="small muted" style="margin-top: 20px">Thumbnail lấy từ mẫu thật; nội dung mẫu là cơ sở giả định. <i class="tbc">[5] mẫu mỗi loại hình</i></p>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap split">
+  <div class="stack" style="gap: 16px"><span class="eyebrow">Cấu trúc trang</span><h2 class="h2">Đầy đủ các trang cần thiết cho website lưu trú</h2><p class="lead">Danh sách đề xuất, xác nhận theo mẫu thực tế. <i class="tbc">✓</i></p></div>
+  <div class="tree">
+    <div class="tree-row"><span class="node root">Trang chủ</span></div>
+    <div class="tree-row"><span class="node">Phòng &amp; giá</span><span class="node">Tiện ích</span><span class="node">Ưu đãi</span><span class="node">Thư viện ảnh</span><span class="node">Vị trí &amp; chỉ đường</span><span class="node">Tin tức/Blog</span><span class="node">Liên hệ</span><span class="node">Chính sách</span></div>
+    <div class="stack" style="gap: 10px; padding: 18px; border-radius: 16px; background: #edf2f7"><span class="label" style="color: #376587">Riêng mẫu Chuỗi</span><div class="tree-row"><span class="node chain">Danh sách cơ sở</span><span class="node chain">Trang từng cơ sở</span><span class="node chain">Tìm theo điểm đến</span></div></div>
+  </div>
+</div>
+</section>
+
+<section class="sec bg-teal" id="tinh-nang">
+<div class="wrap">
+  <div class="head"><span class="eyebrow">Tính năng</span><h2 class="h2">Tính năng của Bellhop Website</h2><p class="lead">Danh sách đề xuất theo chuẩn thị trường; đội sản phẩm xác nhận trước khi đăng. <i class="tbc">✓</i></p></div>
+  <div class="grid-auto-sm" style="grid-template-columns: repeat(auto-fit,minmax(min(280px,100%),1fr))">
+    <div class="ft hl"><span class="ic ic-tile-sm i-booking" style="background-color: #fff"></span><div><h3 class="h4">Tích hợp sẵn Bellhop Booking Engine</h3><p>Khách đặt phòng ngay trên website – không chuyển sang OTA, không qua tin nhắn.</p></div></div>
+    <div class="ft"><span class="ic ic-tile-sm i-calprice"></span><div><h3 class="h4">Giá cập nhật tự động</h3><p>Giá và phòng trống theo Bellhop PMS/CMS.</p></div></div>
+    <div class="ft"><span class="ic ic-tile-sm i-phone"></span><div><h3 class="h4">Tối ưu điện thoại <i class="tbc">✓</i></h3><p>Bố cục tự co giãn, tải nhanh.</p></div></div>
+    <div class="ft"><span class="ic ic-tile-sm i-gear"></span><div><h3 class="h4">Tự quản trị nội dung <i class="tbc">✓</i></h3><p>Cập nhật hình ảnh, ưu đãi, bài viết.</p></div></div>
+    <div class="ft"><span class="ic ic-tile-sm i-seo"></span><div><h3 class="h4">SEO cơ bản <i class="tbc">✓</i></h3><p>Tiêu đề, mô tả, tốc độ tải.</p></div></div>
+    <div class="ft"><span class="ic ic-tile-sm i-globe"></span><div><h3 class="h4">Đa ngôn ngữ <i class="tbc">✓</i></h3><p>Phục vụ khách trong nước và quốc tế.</p></div></div>
+    <div class="ft"><span class="ic ic-tile-sm i-domain"></span><div><h3 class="h4">Tên miền riêng <i class="tbc">✓</i></h3><p>Dùng tên miền của chính cơ sở.</p></div></div>
+    <div class="ft"><span class="ic ic-tile-sm i-message"></span><div><h3 class="h4">Nút liên hệ Message <i class="tbc">✓</i></h3><p>Zalo, Messenger… về hộp thư chung.</p></div></div>
+    <div class="ft"><span class="ic ic-tile-sm i-chart"></span><div><h3 class="h4">Đo lường truy cập <i class="tbc">✓</i></h3><p>Gắn công cụ phân tích lưu lượng.</p></div></div>
+  </div>
+</div>
+</section>
+
+<section class="sec" id="quy-trinh">
+<div class="wrap">
+  <div class="head center"><span class="eyebrow">Triển khai</span><h2 class="h2">Quy trình triển khai website</h2></div>
+  <div class="steps">
+    <div class="step"><span class="num">01</span><h3 class="h4">Chọn mẫu</h3><p>Chọn loại hình và mẫu giao diện phù hợp.</p></div>
+    <div class="step"><span class="num">02</span><h3 class="h4">Cung cấp nội dung</h3><p>Hình ảnh, mô tả cơ sở, hạng phòng, giá, chính sách. <i class="tbc">Hỗ trợ viết/chụp?</i></p><a class="row" href="#" style="gap: 10px; padding: 12px; border-radius: 12px; background: #eef8f9"><span class="ic ic-sm i-checklist"></span><span class="small"><b style="color: #122745">Danh sách cần chuẩn bị</b><br><span class="muted">Tải checklist</span></span></a></div>
+    <div class="step"><span class="num">03</span><h3 class="h4">Cấu hình</h3><p>Tên miền, màu sắc, logo; kết nối Booking Engine và Bellhop PMS.</p></div>
+    <div class="step"><span class="num">04</span><h3 class="h4">Kiểm tra &amp; ra mắt</h3><p>Kiểm tra và đưa website vào hoạt động.</p></div>
+  </div>
+  <p class="center small muted" style="margin-top: 32px">Thời gian triển khai trung bình <span class="ph">[ ]</span></p>
+</div>
+</section>
+
+<section class="sec bg-steel" id="ket-noi">
+<div class="wrap">
+  <div class="head"><span class="eyebrow">Hệ sinh thái</span><h2 class="h2">Kết nối với các sản phẩm Bellhop</h2></div>
+  <div class="grid-auto-sm">
+    <a class="card card-hover" href="BookingEngine.dc.html"><span class="ic ic-tile-sm i-booking"></span><h3 class="h4">Booking Engine</h3><p>Chức năng đặt phòng có sẵn trên website.</p></a>
+    <a class="card card-hover" href="PMS.dc.html"><span class="ic ic-tile-sm i-pms"></span><h3 class="h4">Bellhop PMS</h3><p>Đặt phòng từ website được ghi nhận vào sơ đồ phòng.</p></a>
+    <a class="card card-hover" href="CMS.dc.html"><span class="ic ic-tile-sm i-cms"></span><h3 class="h4">Bellhop CMS</h3><p>Giá trên website thống nhất với quy tắc giá các kênh.</p></a>
+    <a class="card card-hover" href="Message.dc.html"><span class="ic ic-tile-sm i-message"></span><h3 class="h4">Bellhop Message</h3><p>Tin nhắn từ website được đưa về hộp thư chung. <i class="tbc">✓</i></p></a>
+  </div>
+</div>
+</section>
+
+<section class="sec" id="gia">
+<div class="wrap">
+  <div class="head center"><span class="eyebrow">Gói &amp; giá</span><h2 class="h2">Chi phí Bellhop Website</h2><p class="lead"><span class="ph">[Phí khởi tạo, phí duy trì (hosting, tên miền), gói kèm Booking Engine, giá theo loại hình]</span></p></div>
+  <div class="grid-auto">
+    <div class="card"><span class="ic ic-tile i-hotel"></span><h3 class="h3">Khách sạn</h3><b style="font-size: 26px; color: #122745"><span class="ph">[giá]</span></b><ul class="list-check"><li>Mẫu ưu tiên hạng phòng, tiện ích</li><li>Booking Engine tích hợp sẵn</li></ul><a class="btn btn-outline btn-block" href="#form" style="margin-top: auto">Đặt lịch tư vấn</a></div>
+    <div class="card card-hl"><span class="ic ic-tile i-house"></span><h3 class="h3">Homestay &amp; Villa</h3><b style="font-size: 26px; color: #122745"><span class="ph">[giá]</span></b><ul class="list-check"><li>Mẫu ưu tiên hình ảnh không gian</li><li>Đặt phòng hoặc nguyên căn <i class="tbc">✓</i></li></ul><a class="btn btn-primary btn-block" href="#form" style="margin-top: auto">Đặt lịch tư vấn</a></div>
+    <div class="card"><span class="ic ic-tile i-chain"></span><h3 class="h3">Chuỗi</h3><b style="font-size: 26px; color: #122745"><span class="ph">[giá]</span></b><ul class="list-check"><li>Danh sách cơ sở, tìm theo điểm đến</li><li>Đặt phòng tập trung</li></ul><a class="btn btn-outline btn-block" href="#form" style="margin-top: auto">Đặt lịch tư vấn</a></div>
+  </div>
+</div>
+</section>
+
+<sc-if value="{{marks}}" hint-placeholder-val="{{ true }}">
+<section class="sec-sm" style="padding-top: 0"><div class="wrap"><div class="tbc-block"><span class="ic ic-md i-website"></span><div class="stack" style="gap: 6px"><b>Website tiêu biểu – ẨN khi lên web</b><span class="small">Lưới 3 thẻ ảnh website khách hàng thật (ảnh chụp · tên cơ sở · loại hình · liên kết · trích dẫn ngắn) – chỉ hiện khi được đồng ý giới thiệu.</span></div></div></div></section>
+</sc-if>
+
+<section class="sec bg-soft" id="faq"><div class="wrap">
+  <dc-import name="Faq" title="Câu hỏi thường gặp về Bellhop Website" items="{{faq}}" marks="{{marks}}" hint-size="100%,640px"></dc-import>
+</div></section>
+
+<section class="sec" id="form"><div class="wrap">
+  <dc-import name="LeadForm" title="Đặt lịch tư vấn website cho cơ sở lưu trú" desc="Để lại thông tin, đội ngũ Bellhop sẽ liên hệ tư vấn mẫu website phù hợp với loại hình và kế hoạch bán phòng trực tiếp của cơ sở." cta="Đặt lịch tư vấn" product="website" source="/san-pham/website" extra="{{extra}}" marks="{{marks}}" hint-size="100%,820px"></dc-import>
+</div></section>
+
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"reviewMarks":{"editor":"boolean","default":true,"section":"Bản duyệt"},"$preview":{"width":1440,"height":8000}}'>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { t: 0 }; }
+  renderVals() {
+    const marks = this.props.reviewMarks ?? true;
+    const T = [
+      { name: 'Khách sạn', icon: 'i-hotel', desc: 'Ưu tiên thông tin hạng phòng, tiện ích, vị trí và dịch vụ đi kèm (nhà hàng, hội nghị).', items: [
+        { name: 'Mẫu Harbor', note: 'Khách sạn thành phố', c1: '#376587', c2: '#d6eff1' },
+        { name: 'Mẫu Lantern', note: 'Khách sạn phố cổ', c1: '#122745', c2: '#edf2f7' },
+        { name: 'Mẫu Breeze', note: 'Khách sạn biển', c1: '#5fb9c2', c2: '#dbe4ee' }] },
+      { name: 'Homestay & Villa', icon: 'i-house', desc: 'Ưu tiên hình ảnh không gian, trải nghiệm địa phương, đặt phòng hoặc nguyên căn.', items: [
+        { name: 'Mẫu Garden', note: 'Homestay vườn', c1: '#5fb9c2', c2: '#e6f5ec' },
+        { name: 'Mẫu Hillside', note: 'Villa nghỉ dưỡng', c1: '#2f8f99', c2: '#d6eff1' },
+        { name: 'Mẫu Atelier', note: 'Căn hộ dịch vụ', c1: '#376587', c2: '#f4f7fa' }] },
+      { name: 'Chuỗi', icon: 'i-chain', desc: 'Danh sách cơ sở, tìm theo điểm đến, thương hiệu thống nhất, đặt phòng tập trung.', items: [
+        { name: 'Mẫu Network', note: 'Chuỗi đa điểm đến', c1: '#122745', c2: '#d6eff1' },
+        { name: 'Mẫu Collection', note: 'Bộ sưu tập boutique', c1: '#376587', c2: '#edf2f7' },
+        { name: 'Mẫu Metro', note: 'Chuỗi khách sạn thành phố', c1: '#0b1a30', c2: '#dbe4ee' }] }
+    ];
+    const i = this.state.t;
+    return {
+      markCls: marks ? '' : 'no-marks', marks,
+      tabs: T.map((t, k) => ({ name: t.name, icon: t.icon, cls: k === i ? 'on' : '', sel: k === i ? 'true' : 'false', pick: () => this.setState({ t: k }) })),
+      tpl: T[i],
+      extra: { label: 'Website hiện tại (nếu có)', type: 'text', placeholder: 'https://' },
+      faq: [
+        { q: 'Có dùng tên miền riêng của khách sạn được không?', a: '[Xác nhận].', tbc: true },
+        { q: 'Khách sạn có tự chỉnh sửa nội dung website được không?', a: '[Phạm vi khách tự chỉnh sửa].', tbc: true },
+        { q: 'Quyền sở hữu website và tên miền thuộc về ai?', a: '[Quy định trong hợp đồng].', tbc: true },
+        { q: 'Đang có website, có chuyển sang Bellhop Website được không?', a: '[Hỗ trợ chuyển nội dung, giữ tên miền].', tbc: true },
+        { q: 'Chi phí duy trì hằng năm gồm những gì?', a: '[Hosting, tên miền, bảo trì]. Xem Bảng giá.', tbc: true },
+        { q: 'Website có hỗ trợ nhiều ngôn ngữ không?', a: '[Xác nhận].', tbc: true },
+        { q: 'Có thể chỉ gắn Booking Engine vào website hiện tại thay vì làm website mới không?', a: 'Có. Xem Bellhop Booking Engine.', tbc: false }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

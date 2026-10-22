@@ -1,0 +1,19 @@
+{
+  "name": "bellhop-react",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "prepare:design": "python scripts/merge_design.py",
+    "dev": "npm run prepare:design && vite",
+    "build": "npm run prepare:design && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}

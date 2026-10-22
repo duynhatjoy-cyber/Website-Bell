@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Bellhop AI Concierge – Trợ lý AI trả lời khách cho khách sạn</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./assets/81e26d43a82c22dd79010c853e0d4ffa.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:inherit}a:hover{color:#5fb9c2}
+.ai-hero{background:radial-gradient(800px 500px at 80% 20%,rgba(95,185,194,.16),transparent 60%),#0b1a30;color:#c9d6e6}
+.ai-hero .breadcrumb{color:#8fa3bb}.ai-hero .breadcrumb b{color:#fff}
+.demo{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 50px 100px -40px rgba(0,0,0,.7);display:flex;flex-direction:column;height:520px}
+.demo-h{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid #dde4ec}
+.demo-h img{width:40px;height:40px;border-radius:50%;background:#eef8f9;padding:5px;object-fit:contain}
+.demo-b{flex:1;padding:20px;display:flex;flex-direction:column;gap:10px;overflow-y:auto;background:#f7f9fc}
+.demo-f{padding:14px 16px;border-top:1px solid #dde4ec;display:flex;flex-wrap:wrap;gap:8px}
+.sug{min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid #5fb9c2;background:#fff;color:#122745;font-weight:600;font-size:14px}
+.sug:hover{background:#eef8f9}
+.sug:disabled{opacity:.45;cursor:default}
+.hand{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#8a4b08;background:#fdf0d9;border-radius:8px;padding:5px 10px}
+.typing{align-self:flex-start;background:#d6eff1;border-radius:16px;padding:14px 16px;display:flex;gap:5px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#1f7a84;animation:bhDot 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes bhDot{0%,100%{opacity:.3}50%{opacity:1}}
+.kbsec{background:linear-gradient(180deg,#0b1a30 0,#122745 30%,#f4f7fa 30%)}
+.conv{display:grid;grid-template-columns:1fr 200px 1fr;gap:32px;align-items:center;background:#fff;border-radius:28px;padding:48px;box-shadow:0 30px 60px -40px rgba(11,26,48,.45)}
+.docs{display:flex;flex-direction:column;gap:12px}
+.doc{display:flex;gap:12px;align-items:center;padding:14px 16px;border:1px solid #dde4ec;border-radius:14px;background:#fff;position:relative;font-size:14px;font-weight:600;color:#122745}
+.doc::after{content:"";position:absolute;right:-34px;top:50%;width:32px;height:2px;background:repeating-linear-gradient(90deg,#5fb9c2 0 6px,transparent 6px 10px)}
+.kb{width:200px;height:200px;border-radius:50%;background:#122745;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;box-shadow:0 0 0 14px #eef8f9,0 0 0 28px rgba(95,185,194,.12);position:relative}
+.kb::after{content:"";position:absolute;right:-60px;top:50%;width:46px;height:2px;background:#5fb9c2}
+.scope{display:grid;grid-template-columns:1fr 120px 1fr;gap:0;align-items:stretch}
+.scope-mid{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.scope-mid span{flex:1;width:2px;background:repeating-linear-gradient(180deg,#5fb9c2 0 8px,transparent 8px 14px)}
+.scope-mid b{writing-mode:vertical-rl;transform:rotate(180deg);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#1f7a84}
+.hs{display:flex;gap:24px;overflow-x:auto;padding:8px 24px 24px;scroll-snap-type:x mandatory;max-width:1248px;margin:0 auto}
+.hs-card{flex:0 0 min(460px,85%);scroll-snap-align:start;background:#fff;border:1px solid #dde4ec;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:14px}
+.stairs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:start}
+.stairs>div:nth-child(2){margin-top:60px}.stairs>div:nth-child(3){margin-top:120px}
+.qa2{display:grid;grid-template-columns:1fr 1fr;gap:40px 56px}
+.qa2 h3{font-size:20px;color:#122745;margin-bottom:10px;line-height:1.35}
+.qa2 p{font-size:17px;color:#566579}
+@media (max-width:980px){.conv{grid-template-columns:1fr;padding:24px}.doc::after,.kb::after{display:none}.kb{margin:0 auto}.scope{grid-template-columns:1fr}.scope-mid{flex-direction:row;padding:16px 0}.scope-mid span{height:2px;width:auto}.scope-mid b{writing-mode:horizontal-tb;transform:none}.stairs{grid-template-columns:1fr}.stairs>div{margin-top:0!important}.qa2{grid-template-columns:1fr}}
+</style>
+</helmet>
+<div class="bh {{markCls}}">
+<dc-import name="Header" active="ai" variant="dark" start-open="{{ false }}" hint-size="100%,72px"></dc-import>
+
+<section class="ai-hero" style="padding: 0 0 112px">
+<div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="Main.dc.html">Trang chủ</a>›<span>Sản phẩm</span>›<span>Chăm sóc khách hàng</span>›<b>Bellhop AI Concierge</b></nav></div>
+<div class="wrap split" style="margin-top: 32px">
+  <div class="stack" style="gap: 24px">
+    <span class="eyebrow" style="color: #5fb9c2">Bellhop AI Concierge</span>
+    <h1 class="h1" style="color: #fff">Trợ lý AI trả lời khách theo thông tin <em style="color: #5fb9c2">của chính khách sạn</em></h1>
+    <p class="lead" style="color: #b6c5d8">Bellhop AI Concierge giải đáp các câu hỏi thường gặp về phòng, tiện ích, chính sách và chỉ đường dựa trên cơ sở kiến thức do khách sạn thiết lập; những yêu cầu cần xử lý riêng được chuyển cho nhân viên.</p>
+    <div class="btns"><a class="btn btn-teal btn-lg" href="#form">Đặt lịch demo với dữ liệu của khách sạn <span class="arr">→</span></a></div>
+    <p class="small" style="color: #8fa3bb">Thử ngay: bấm một câu hỏi gợi ý trong khung trò chuyện.</p>
+  </div>
+  <div class="stack" style="gap: 12px">
+    <div class="demo">
+      <div class="demo-h"><img src="./assets/65b75c6994e7813eb4b9d85bb4e2eb6a.png" alt=""><div><b style="color: #122745">Trợ lý Khách sạn Mẫu</b><div class="xs" style="color: #1d6a40">● Đang hoạt động</div></div><button class="btn btn-outline btn-sm" style="margin-left: auto" onClick="{{reset}}">Làm mới</button></div>
+      <div class="demo-b" aria-live="polite">
+        <div class="bub bub-ai">Xin chào! Tôi có thể giúp gì cho anh/chị về Khách sạn Mẫu?</div>
+        <sc-for list="{{msgs}}" as="m" hint-placeholder-count="2">
+          <div class="bub {{m.cls}}">{{m.text}}</div>
+          <sc-if value="{{m.hand}}" hint-placeholder-val="{{ false }}"><span class="hand">↪ Đã chuyển cho nhân viên lễ tân</span></sc-if>
+        </sc-for>
+        <sc-if value="{{typing}}" hint-placeholder-val="{{ false }}"><div class="typing" aria-label="Đang trả lời"><i></i><i></i><i></i></div></sc-if>
+      </div>
+      <div class="demo-f">
+        <sc-for list="{{sugs}}" as="s" hint-placeholder-count="4"><button class="sug" disabled="{{s.dis}}" onClick="{{s.ask}}">{{s.q}}</button></sc-for>
+      </div>
+    </div>
+    <span class="xs" style="color: #8fa3bb; text-align: center">Minh họa với dữ liệu khách sạn mẫu · câu trả lời viết sẵn, không gọi AI thật</span>
+  </div>
+</div>
+</section>
+
+<section class="kbsec" style="padding: 0 0 104px">
+<div class="wrap">
+  <div class="head center" style="padding-top: 8px"><span class="eyebrow" style="color: #5fb9c2">AI học từ đâu</span><h2 class="h2" style="color: #fff">Câu trả lời dựa trên cơ sở kiến thức của khách sạn</h2><p class="lead" style="color: #b6c5d8">Khách sạn cung cấp và kiểm soát nội dung mà AI sử dụng. Khi thông tin thay đổi, chỉ cần cập nhật cơ sở kiến thức.</p></div>
+  <div class="conv">
+    <div class="docs">
+      <span class="label">Nguồn thông tin <i class="tbc">Cách nạp dữ liệu</i></span>
+      <div class="doc"><span class="ic ic-sm i-bed"></span>Hạng phòng, tiện nghi từ Bellhop PMS <i class="tbc">✓</i></div>
+      <div class="doc"><span class="ic ic-sm i-checklist"></span>Chính sách nhận/trả, hủy phòng, trẻ em, thú cưng</div>
+      <div class="doc"><span class="ic ic-sm i-clock"></span>Tiện ích, dịch vụ, giờ hoạt động</div>
+      <div class="doc"><span class="ic ic-sm i-map"></span>Vị trí, chỉ đường, điểm tham quan lân cận</div>
+      <div class="doc"><span class="ic ic-sm i-kb"></span>Bộ câu hỏi thường gặp do khách sạn soạn</div>
+    </div>
+    <div class="kb"><span class="ic ic-md i-kb" style="background-color: #fff; border-radius: 10px; background-size: 28px; width: 48px; height: 48px"></span><b>Cơ sở kiến thức</b><span class="xs" style="color: #b6c5d8">Khách sạn kiểm soát</span></div>
+    <div class="stack" style="gap: 10px; padding: 20px; border-radius: 20px; background: #f7f9fc; border: 1px solid #dde4ec">
+      <div class="bub bub-out" style="max-width: 90%">Có chỗ đậu ô tô không ạ?</div>
+      <div class="bub bub-ai" style="max-width: 90%">Khách sạn có bãi đỗ ô tô miễn phí ở tầng hầm, vui lòng báo lễ tân biển số xe khi nhận phòng ạ.</div>
+      <span class="xs muted">Nguồn: Tiện ích · cập nhật 12/10</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap">
+  <div class="head center"><span class="eyebrow">Minh bạch</span><h2 class="h2">Phạm vi hỗ trợ của AI Concierge</h2></div>
+  <div class="scope">
+    <div class="stack" style="gap: 16px; padding: 36px; border-radius: 24px; background: #eef8f9">
+      <div class="row" style="gap: 12px"><span class="ic ic-tile-sm ic-tile-w i-ai"></span><h3 class="h3">AI Concierge hỗ trợ</h3></div>
+      <ul class="list-check"><li>Trả lời câu hỏi thường gặp theo cơ sở kiến thức</li><li>Phản hồi ngoài giờ làm việc</li><li>Trả lời bằng nhiều ngôn ngữ <i class="tbc">✓</i></li><li>Gửi đường dẫn đặt phòng <i class="tbc">✓</i></li></ul>
+    </div>
+    <div class="scope-mid" aria-hidden="true"><span></span><b>Bàn giao cho nhân viên</b><span></span></div>
+    <div class="stack" style="gap: 16px; padding: 36px; border-radius: 24px; background: #edf2f7">
+      <div class="row" style="gap: 12px"><span class="ic ic-tile-sm ic-tile-w i-handoff"></span><h3 class="h3">Chuyển cho nhân viên</h3></div>
+      <ul class="list-check list-arrow"><li>Thay đổi, hủy đặt phòng <i class="tbc">✓</i></li><li>Khiếu nại, yêu cầu đặc biệt</li><li>Câu hỏi nằm ngoài cơ sở kiến thức</li><li>Khi khách yêu cầu gặp nhân viên <i class="tbc">✓</i></li></ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sec bg-soft" style="padding-left: 0; padding-right: 0">
+<div class="wrap"><div class="head"><span class="eyebrow">Theo hành trình</span><h2 class="h2">Hỗ trợ khách trong suốt thời gian lưu trú</h2><p class="lead">Kéo ngang để xem từng giai đoạn.</p></div></div>
+<div class="hs">
+  <div class="hs-card"><div class="row" style="gap: 12px"><span class="ic ic-tile-sm i-searchpin"></span><h3 class="h3">Trước khi đến</h3></div><p class="muted">Giờ nhận phòng, đường đi, phương tiện, giấy tờ cần mang theo.</p><div class="stack" style="gap: 8px"><div class="bub bub-out">Từ sân bay đi taxi mất bao lâu?</div><div class="bub bub-out">Cần mang giấy tờ gì khi nhận phòng?</div></div></div>
+  <div class="hs-card"><div class="row" style="gap: 12px"><span class="ic ic-tile-sm i-bed"></span><h3 class="h3">Trong lưu trú</h3></div><p class="muted">Giờ ăn sáng, mật khẩu Wi-Fi <i class="tbc">✓</i>, gợi ý địa điểm ăn uống, tham quan.</p><div class="stack" style="gap: 8px"><div class="bub bub-out">Bữa sáng phục vụ đến mấy giờ?</div><div class="bub bub-out">Gần đây có quán phở nào ngon?</div><div class="bub bub-out">What's the Wi-Fi password?</div></div></div>
+  <div class="hs-card"><div class="row" style="gap: 12px"><span class="ic ic-tile-sm i-logout"></span><h3 class="h3">Sau khi trả phòng</h3></div><p class="muted">Giữ hành lý, xuất hóa đơn <i class="tbc">✓</i>, đồ để quên.</p><div class="stack" style="gap: 8px"><div class="bub bub-out">Gửi hành lý đến chiều được không?</div><div class="bub bub-out">Mình để quên sạc ở phòng 203</div></div></div>
+</div>
+</section>
+
+<section class="sec-sm">
+<div class="wrap">
+  <div class="row wrapx" style="gap: 24px; justify-content: space-between; padding: 24px 28px; border-radius: 18px; border: 1px solid #dde4ec">
+    <div class="row wrapx" style="gap: 24px"><b style="color: #122745">AI Concierge hoạt động trên</b><span class="row" style="gap: 8px"><span class="ic ic-sm i-website"></span>Website</span><span class="row" style="gap: 8px"><span class="ic ic-sm i-message"></span>Các kênh kết nối qua Bellhop Message</span><i class="tbc">Chỉ ghi kênh có thật</i></div>
+    <a class="lnk" href="Message.dc.html">Bellhop Message <span class="arr">→</span></a>
+  </div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap">
+  <div class="head"><span class="eyebrow">Thiết lập</span><h2 class="h2">Thiết lập AI Concierge</h2><p class="lead"><i class="tbc">Thời gian thiết lập TB · Bellhop hỗ trợ soạn KB?</i></p></div>
+  <div class="stairs">
+    <div class="stack" style="gap: 14px"><div class="mock"><div class="mock-bar"><i></i><i></i><i></i></div><div class="stack" style="gap: 8px; padding: 16px; min-height: 180px"><b style="color: #122745; font-size: 13px">Cơ sở kiến thức</b><div class="prow">Giờ nhận/trả phòng<span class="chip chip-free" style="height: 22px">Đã nhập</span></div><div class="prow">Bãi đỗ xe<span class="chip chip-free" style="height: 22px">Đã nhập</span></div><div class="prow">Chính sách thú cưng<span class="chip" style="height: 22px">Thiếu</span></div></div></div><div class="row" style="gap: 12px"><span class="num" style="width: 44px; height: 44px; border-radius: 50%; background: #122745; color: #fff; display: grid; place-items: center; font-weight: 800">01</span><div><h3 class="h4">Nhập thông tin</h3><p class="small muted">Cập nhật cơ sở kiến thức từ dữ liệu có sẵn và bộ câu hỏi thường gặp.</p></div></div></div>
+    <div class="stack" style="gap: 14px"><div class="mock"><div class="mock-bar"><i></i><i></i><i></i></div><div class="stack" style="gap: 8px; padding: 16px; min-height: 180px; background: #f7f9fc"><b style="color: #122745; font-size: 13px">Chế độ thử</b><div class="bub bub-out" style="font-size: 12px">Có nhận thú cưng không?</div><div class="bub bub-ai" style="font-size: 12px">Câu hỏi này sẽ được chuyển cho lễ tân.</div><span class="chip chip-line" style="align-self: flex-start">Sửa câu trả lời</span></div></div><div class="row" style="gap: 12px"><span style="width: 44px; height: 44px; border-radius: 50%; background: #122745; color: #fff; display: grid; place-items: center; font-weight: 800; flex: none">02</span><div><h3 class="h4">Kiểm tra</h3><p class="small muted">Thử hỏi và điều chỉnh câu trả lời trước khi áp dụng.</p></div></div></div>
+    <div class="stack" style="gap: 14px"><div class="mock"><div class="mock-bar"><i></i><i></i><i></i></div><div class="stack" style="gap: 8px; padding: 16px; min-height: 180px"><b style="color: #122745; font-size: 13px">Kênh hoạt động</b><div class="prow">Website<span class="chip chip-live" style="height: 22px">Bật</span></div><div class="prow">Zalo OA<span class="chip chip-live" style="height: 22px">Bật</span></div><div class="prow">Messenger<span class="chip chip-line" style="height: 22px">Tắt</span></div></div></div><div class="row" style="gap: 12px"><span style="width: 44px; height: 44px; border-radius: 50%; background: #5fb9c2; color: #122745; display: grid; place-items: center; font-weight: 800; flex: none">03</span><div><h3 class="h4">Kích hoạt</h3><p class="small muted">Bật AI trên các kênh đã chọn và theo dõi hội thoại.</p></div></div></div>
+  </div>
+</div>
+</section>
+
+<section class="sec bg-teal">
+<div class="wrap split-eq">
+  <div class="stack" style="gap: 16px"><span class="eyebrow">Quyền kiểm soát</span><h2 class="h2">Khách sạn kiểm soát nội dung và dữ liệu</h2></div>
+  <div class="stack" style="gap: 12px">
+    <div class="row" style="gap: 16px; background: #fff; border-radius: 14px; padding: 16px 18px"><span class="ic ic-sm i-kb"></span><span>Khách sạn quyết định nội dung trong cơ sở kiến thức <i class="tbc">✓</i></span></div>
+    <div class="row" style="gap: 16px; background: #fff; border-radius: 14px; padding: 16px 18px"><span class="ic ic-sm i-history"></span><span>Có thể xem lại toàn bộ hội thoại của AI <i class="tbc">✓</i></span></div>
+    <div class="row" style="gap: 16px; background: #fff; border-radius: 14px; padding: 16px 18px"><span class="ic ic-sm i-gear"></span><span>Có thể tắt AI trên từng kênh bất cứ lúc nào <i class="tbc">✓</i></span></div>
+    <div class="row" style="gap: 16px; background: #fff; border-radius: 14px; padding: 16px 18px"><span class="ic ic-sm i-shield"></span><span>Dữ liệu khách được xử lý theo <a class="lnk" href="#">Chính sách xử lý dữ liệu cá nhân</a></span></div>
+  </div>
+</div>
+</section>
+
+<section class="sec-sm">
+<div class="wrap">
+  <div class="row wrapx" style="gap: 24px; justify-content: space-between; background: #122745; color: #fff; border-radius: 24px; padding: 36px 40px">
+    <div class="stack" style="gap: 6px; max-width: 640px"><h2 class="h3" style="color: #fff; font-size: 28px">AI Concierge trong gói AI &amp; Phân tích</h2><p style="color: #b6c5d8">AI Concierge thuộc gói AI &amp; Phân tích của Bellhop PMS, cùng các tính năng phân tích doanh thu và báo cáo. <i class="tbc">Cách đóng gói</i></p></div>
+    <div class="btns"><a class="btn btn-teal" href="Main.dc.html#bang-gia">Xem gói AI &amp; Phân tích</a><a class="btn btn-light" href="PMS.dc.html">Tìm hiểu Bellhop PMS</a></div>
+  </div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap">
+  <div class="head"><span class="eyebrow">FAQ</span><h2 class="h2">Câu hỏi thường gặp về AI Concierge</h2></div>
+  <div class="qa2">
+    <div><h3>AI có trả lời sai hoặc tự đưa ra thông tin không có thật không?</h3><p>AI được thiết lập để trả lời trong phạm vi cơ sở kiến thức; câu hỏi ngoài phạm vi được chuyển cho nhân viên. <i class="tbc">Cơ chế · cách diễn đạt</i></p></div>
+    <div><h3>AI hỗ trợ những ngôn ngữ nào?</h3><p><span class="ph">[Danh sách ngôn ngữ]</span> <i class="tbc">✓</i></p></div>
+    <div><h3>Có thể xem lại các cuộc trò chuyện của AI không?</h3><p><span class="ph">[Xác nhận]</span> <i class="tbc">✓</i></p></div>
+    <div><h3>AI có thể tự xác nhận hoặc hủy đặt phòng không?</h3><p><span class="ph">[Xác nhận]</span> <i class="tbc">✓</i></p></div>
+    <div><h3>Có cần dùng Bellhop Message không?</h3><p><span class="ph">[Xác nhận]</span> <i class="tbc">✓</i></p></div>
+  </div>
+</div>
+</section>
+
+<section class="sec-sm" id="form" style="padding-bottom: 104px"><div class="wrap">
+  <dc-import name="LeadForm" variant="deep" title="Xem AI Concierge trả lời với dữ liệu của khách sạn" desc="Đội ngũ Bellhop sẽ thiết lập bản demo với thông tin cơ sở của Quý khách." product="ai" source="/san-pham/ai-concierge" extra="{{extra}}" marks="{{marks}}" hint-size="100%,820px"></dc-import>
+</div></section>
+
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"reviewMarks":{"editor":"boolean","default":true,"section":"Bản duyệt"},"$preview":{"width":1440,"height":7200}}'>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { msgs: [], typing: false, asked: [] }; this._timers = []; }
+  componentWillUnmount() { this._clear(); }
+  _clear() { this._timers.forEach((t) => { clearTimeout(t); clearInterval(t); }); this._timers = []; }
+  renderVals() {
+    const marks = this.props.reviewMarks ?? true;
+    const Q = [
+      { q: 'Mấy giờ nhận phòng ạ?', a: 'Giờ nhận phòng từ 14:00, trả phòng trước 12:00. Nếu cần nhận phòng sớm, anh/chị vui lòng để lại thời gian dự kiến, lễ tân sẽ kiểm tra và phản hồi.' },
+      { q: 'Có chỗ đậu ô tô không?', a: 'Khách sạn có bãi đỗ ô tô miễn phí ở tầng hầm (8 chỗ). Anh/chị vui lòng báo biển số xe khi nhận phòng ạ.' },
+      { q: 'Từ sân bay đến khách sạn bao xa?', a: 'Khách sạn cách sân bay khoảng 7 km, đi taxi mất khoảng 20–25 phút tùy giờ. Khách sạn có dịch vụ đưa đón, anh/chị có muốn đặt không ạ?' },
+      { q: 'Tôi muốn đổi ngày đặt phòng', a: 'Yêu cầu này sẽ được chuyển cho lễ tân để hỗ trợ trực tiếp.', hand: true }
+    ];
+    const s = this.state;
+    const busy = s.typing || s.msgs.some((m) => m.partial);
+    const ask = (k) => () => {
+      if (busy) return;
+      const item = Q[k];
+      this.setState({ msgs: this.state.msgs.concat([{ cls: 'bub-out', text: item.q }]), typing: true, asked: this.state.asked.concat([k]) });
+      const t1 = setTimeout(() => {
+        const msgs = this.state.msgs.concat([{ cls: 'bub-ai', text: '', partial: true, hand: false }]);
+        this.setState({ msgs, typing: false });
+        let n = 0;
+        const iv = setInterval(() => {
+          n += 3;
+          const arr = this.state.msgs.slice();
+          const last = Object.assign({}, arr[arr.length - 1]);
+          last.text = item.a.slice(0, n);
+          if (n >= item.a.length) { last.partial = false; last.hand = !!item.hand; clearInterval(iv); }
+          arr[arr.length - 1] = last;
+          this.setState({ msgs: arr });
+        }, 24);
+        this._timers.push(iv);
+      }, 700);
+      this._timers.push(t1);
+    };
+    return {
+      markCls: marks ? '' : 'no-marks', marks,
+      msgs: s.msgs.map((m) => ({ cls: m.cls, text: m.text, hand: !!m.hand })),
+      typing: s.typing,
+      sugs: Q.map((x, k) => ({ q: x.q, dis: busy || s.asked.indexOf(k) >= 0, ask: ask(k) })),
+      reset: () => { this._clear(); this.setState({ msgs: [], typing: false, asked: [] }); },
+      extra: { label: 'Website hoặc fanpage của cơ sở (để chuẩn bị demo)', type: 'text', placeholder: 'https://' }
+    };
+  }
+}
+</script>
+</body>
+</html>

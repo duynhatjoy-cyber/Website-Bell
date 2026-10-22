@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Bellhop Payment – Thanh toán online cho khách sạn qua Kovena</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./assets/81e26d43a82c22dd79010c853e0d4ffa.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:inherit}a:hover{color:#1f7a84}
+.ln{position:relative;margin-left:12px;padding-left:64px;border-left:2px solid #d6eff1}
+.ln-sec{position:relative;padding:88px 0}
+.ln-dot{position:absolute;left:-74px;top:96px;width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid #5fb9c2;box-shadow:0 0 0 6px #fff}
+.ln-dot.f{background:#5fb9c2}
+.ln-k{font-size:12px;font-weight:700;letter-spacing:.14em;color:#1f7a84;text-transform:uppercase}
+.money{position:relative;height:120px;margin-top:56px}
+.money-line{position:absolute;left:0;right:0;top:58px;height:2px;background:linear-gradient(90deg,#d6eff1,#5fb9c2 50%,#122745)}
+.money-dot{position:absolute;top:51px;left:0;width:16px;height:16px;border-radius:50%;background:#5fb9c2;box-shadow:0 0 0 6px rgba(95,185,194,.25);animation:bhRun 8s linear infinite}
+@keyframes bhRun{from{left:0}to{left:calc(100% - 16px)}}
+.money-st{position:absolute;top:0;display:flex;flex-direction:column;align-items:center;gap:8px;transform:translateX(-50%);text-align:center;font-size:13px;color:#566579}
+.money-st b{color:#122745;font-size:14px}
+.money-st i{width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid #122745;display:block;margin-top:38px}
+.pt{display:grid;grid-template-columns:56px 1fr auto;gap:20px;align-items:center;padding:22px 0;border-bottom:1px solid #eef2f6}
+.st-live{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px;border-radius:999px;background:#122745;color:#fff;font-size:12px;font-weight:700}
+.st-road{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px;border-radius:999px;border:1.5px dashed #376587;color:#376587;font-size:12px;font-weight:700}
+.meth{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:12px}
+.meth div{height:72px;border-radius:12px;background:#f4f7fa;display:grid;place-items:center;font-weight:700;color:#566579;font-size:14px}
+.txn{width:100%;border-collapse:collapse;font-size:14px}
+.txn th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#566579;text-align:left;padding:14px 16px;border-bottom:1px solid #dde4ec;font-weight:700}
+.txn td{padding:16px;border-bottom:1px solid #eef2f6;font-variant-numeric:tabular-nums}
+.callout{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#2b3a4f}
+.callout b{flex:none;width:26px;height:26px;border-radius:50%;background:#5fb9c2;color:#122745;display:grid;place-items:center;font-size:13px}
+.fee{width:100%;border-collapse:collapse}
+.fee th{text-align:left;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#566579;padding:14px 0;border-bottom:1px solid #122745}
+.fee td{padding:22px 0;border-bottom:1px solid #dde4ec;font-size:16px}
+.fee td.n{font-size:28px;font-weight:300;color:#122745;font-variant-numeric:tabular-nums}
+.qrow{display:grid;grid-template-columns:5fr 7fr;gap:40px;padding:26px 0;border-bottom:1px solid #dde4ec}
+.qrow h3{font-size:17px;color:#122745;font-weight:700}
+.qrow p{color:#566579}
+@media (max-width:980px){.ln{padding-left:28px}.ln-dot{left:-38px}.qrow{grid-template-columns:1fr;gap:8px}.money-st span{display:none}}
+</style>
+</helmet>
+<div class="bh {{markCls}}">
+<dc-import name="Header" active="payment" start-open="{{ false }}" hint-size="100%,72px"></dc-import>
+<div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="Main.dc.html">Trang chủ</a>›<span>Sản phẩm</span>›<span>Thanh toán &amp; Kế toán</span>›<b>Bellhop Payment</b></nav></div>
+
+<section style="padding: 48px 0 40px">
+<div class="wrap">
+  <div class="stack" style="gap: 24px; max-width: 920px">
+    <span class="eyebrow">Bellhop Payment · Kết nối Kovena</span>
+    <h1 class="h1" style="font-size: 56px; font-weight: 600">Thanh toán online cho cơ sở lưu trú, <em>đối soát ngay trên Bellhop</em></h1>
+    <p class="lead" style="max-width: 760px">Bellhop Payment kết nối với Kovena, nền tảng thanh toán dành riêng cho ngành lưu trú, giúp khách sạn nhận thanh toán online và theo dõi giao dịch cùng dữ liệu đặt phòng trong hệ thống Bellhop.</p>
+    <div class="row wrapx" style="gap: 28px">
+      <div class="btns"><a class="btn btn-primary btn-lg" href="#form">Đặt lịch tư vấn <span class="arr">→</span></a><a class="btn btn-outline btn-lg" href="#phi">Xem phí giao dịch</a></div>
+      <span class="row" style="gap: 10px"><span class="small muted">Hợp tác cùng</span><span class="logo-ph">Kovena <i class="tbc">Logo</i></span></span>
+    </div>
+  </div>
+  <div class="money" aria-hidden="true">
+    <div class="money-line"></div><div class="money-dot"></div>
+    <div class="money-st" style="left: 6%"><b>Khách</b><span>Đặt cọc / thanh toán</span><i></i></div>
+    <div class="money-st" style="left: 36%"><b>Kovena</b><span>Xử lý giao dịch</span><i style="border-color: #5fb9c2"></i></div>
+    <div class="money-st" style="left: 66%"><b>Bellhop PMS</b><span>Gắn với đặt phòng</span><i></i></div>
+    <div class="money-st" style="left: 94%"><b>Finance · MISA</b><span>Vào sổ kế toán</span><i></i></div>
+  </div>
+</div>
+</section>
+
+<div class="wrap">
+<div class="ln">
+
+<section class="ln-sec">
+  <span class="ln-dot f"></span>
+  <div class="stack" style="gap: 12px; max-width: 760px; margin-bottom: 32px"><span class="ln-k">01 · Điểm thanh toán</span><h2 class="h2" style="font-weight: 600">Các thời điểm nhận thanh toán</h2><p class="muted">Mỗi mục gắn nhãn theo xác nhận của đội sản phẩm. <i class="tbc">Đang hoạt động / Lộ trình</i></p></div>
+  <div style="max-width: 920px">
+    <div class="pt"><span class="ic ic-tile-sm i-link"></span><div><h3 class="h4">Đặt cọc hoặc thanh toán trước</h3><p class="small muted">Qua đường dẫn thanh toán gửi cho khách. <i class="tbc">✓</i></p></div><span class="st-live">● Đang hoạt động</span></div>
+    <div class="pt"><span class="ic ic-tile-sm i-booking"></span><div><h3 class="h4">Thanh toán khi đặt phòng trên website</h3><p class="small muted">Booking Engine chưa có thanh toán ở giai đoạn này.</p></div><span class="st-road">Lộ trình</span></div>
+    <div class="pt"><span class="ic ic-tile-sm i-counter"></span><div><h3 class="h4">Thanh toán tại quầy</h3><p class="small muted">Ghi nhận cùng hóa đơn của khách. <i class="tbc">✓</i></p></div><span class="st-live">● Đang hoạt động</span></div>
+    <div class="pt"><span class="ic ic-tile-sm i-cancel"></span><div><h3 class="h4">Thu phí hủy phòng, no-show</h3><p class="small muted">Theo chính sách của cơ sở. <i class="tbc">✓</i></p></div><span class="st-road">Lộ trình</span></div>
+  </div>
+</section>
+
+<section class="ln-sec" style="padding-top: 0">
+  <span class="ln-dot" style="top: 8px"></span>
+  <div class="split-r" style="gap: 48px; align-items: start">
+    <div class="stack" style="gap: 20px"><span class="ln-k">02 · Phương thức</span><h2 class="h2" style="font-weight: 600">Phương thức thanh toán hỗ trợ</h2><p class="muted">Chỉ liệt kê phương thức Kovena hỗ trợ tại Việt Nam theo tài liệu chính thức. <i class="tbc">✓</i></p>
+      <div class="meth"><div>Visa</div><div>Mastercard</div><div>JCB</div><div>Amex</div><div>Thẻ nội địa</div><div>Ví điện tử</div><div>Chuyển khoản / QR</div></div>
+    </div>
+    <div class="stack" style="gap: 8px; padding: 36px; border: 1px solid #dde4ec; border-radius: 20px"><span class="small muted">Tiền tệ hỗ trợ</span><b style="font-size: 72px; font-weight: 300; color: #122745; line-height: 1"><span class="ph" style="font-weight: 300">[x]</span></b><span class="muted">VND, USD… <i class="tbc">✓</i></span></div>
+  </div>
+</section>
+
+<section class="ln-sec" style="padding-top: 0">
+  <span class="ln-dot" style="top: 8px"></span>
+  <div class="stack" style="gap: 12px; max-width: 760px; margin-bottom: 32px"><span class="ln-k">03 · Đối soát</span><h2 class="h2" style="font-weight: 600">Giao dịch gắn với đặt phòng và sổ sách</h2><p class="lead">Mỗi khoản thanh toán được ghi nhận cùng đặt phòng tương ứng trong Bellhop PMS <i class="tbc">✓</i>, giúp lễ tân và kế toán đối chiếu mà không cần tra cứu trên nhiều hệ thống.</p></div>
+  <div class="mock" style="box-shadow: 0 30px 60px -40px rgba(11,26,48,.4), 0 0 0 1px #dde4ec">
+    <div class="tbl-box" style="border: 0; border-radius: 0">
+      <table class="txn" style="min-width: 760px">
+        <thead><tr><th>Thời gian</th><th>Đặt phòng <span class="chip chip-teal" style="height: 20px; padding: 0 7px">1</span></th><th>Phương thức <span class="chip chip-teal" style="height: 20px; padding: 0 7px">2</span></th><th>Số tiền</th><th>Trạng thái <span class="chip chip-teal" style="height: 20px; padding: 0 7px">3</span></th><th>Sổ sách <span class="chip chip-teal" style="height: 20px; padding: 0 7px">4</span></th></tr></thead>
+        <tbody>
+          <tr><td>23/10 09:12</td><td><b style="color: #122745">#BK-2041</b> · Deluxe 101</td><td>Visa •••• 4242</td><td><b>890.000</b></td><td><span class="chip chip-free" style="height: 24px">Đã thanh toán</span></td><td><span class="chip chip-line" style="height: 24px">Đã đồng bộ MISA</span></td></tr>
+          <tr><td>23/10 08:47</td><td><b style="color: #122745">#BK-2039</b> · Family 201</td><td>Link thanh toán</td><td><b>1.300.000</b></td><td><span class="chip chip-teal" style="height: 24px">Đặt cọc 50%</span></td><td><span class="chip chip-line" style="height: 24px">Chờ đồng bộ</span></td></tr>
+          <tr><td>22/10 21:05</td><td><b style="color: #122745">#BK-2031</b> · Superior 204</td><td>Mastercard •••• 8812</td><td><b>-450.000</b></td><td><span class="chip" style="height: 24px; background: #fdf0d9; color: #8a4b08">Đã hoàn tiền</span></td><td><span class="chip chip-line" style="height: 24px">Đã đồng bộ MISA</span></td></tr>
+          <tr><td>22/10 14:30</td><td><b style="color: #122745">#BK-2027</b> · Standard 103</td><td>Tại quầy</td><td><b>650.000</b></td><td><span class="chip chip-free" style="height: 24px">Đã thanh toán</span></td><td><span class="chip chip-line" style="height: 24px">Đã đồng bộ MISA</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="padding: 12px 16px"><span class="illus">Dữ liệu minh họa</span></div>
+  </div>
+  <div class="grid-auto-sm" style="margin-top: 28px">
+    <div class="callout"><b>1</b><span>Trạng thái thanh toán hiển thị trên đặt phòng <i class="tbc">✓</i></span></div>
+    <div class="callout"><b>2</b><span>Danh sách giao dịch theo ngày, theo phương thức <i class="tbc">✓</i></span></div>
+    <div class="callout"><b>3</b><span>Hoàn tiền theo chính sách <i class="tbc">✓</i></span></div>
+    <div class="callout"><b>4</b><span>Dữ liệu đồng bộ sang <a class="lnk" href="Finance.dc.html">Bellhop Finance</a> và MISA <i class="tbc">✓</i></span></div>
+  </div>
+</section>
+
+</div>
+</div>
+
+<section class="bg-navy" style="padding: 96px 0">
+<div class="wrap">
+  <div class="stack" style="gap: 12px; max-width: 760px; margin-bottom: 48px"><span class="ln-k" style="color: #5fb9c2">04 · Bảo mật</span><h2 class="h2" style="font-weight: 600">Bảo mật theo tiêu chuẩn ngành thanh toán</h2><p class="lead">Chỉ nêu chứng nhận/tiêu chuẩn mà Kovena công bố chính thức. <i class="tbc">VD: PCI DSS</i></p></div>
+  <div class="grid-auto">
+    <div class="stack" style="gap: 14px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.18)"><span class="ic ic-tile-sm i-lock" style="background-color: #fff"></span><h3 class="h4">Thông tin thẻ do Kovena xử lý</h3><p style="color: #b6c5d8">Bellhop không lưu trữ số thẻ đầy đủ. <i class="tbc">✓</i></p></div>
+    <div class="stack" style="gap: 14px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.18)"><span class="ic ic-tile-sm i-shield" style="background-color: #fff"></span><h3 class="h4">Xác thực giao dịch</h3><p style="color: #b6c5d8"><span class="ph">[3-D Secure…]</span> <i class="tbc">✓</i></p></div>
+    <div class="stack" style="gap: 14px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.18)"><span class="ic ic-tile-sm i-users" style="background-color: #fff"></span><h3 class="h4">Phân quyền truy cập</h3><p style="color: #b6c5d8">Dữ liệu thanh toán trong Bellhop chỉ hiển thị với tài khoản được cấp. <i class="tbc">✓</i></p></div>
+  </div>
+  <div class="pill-strip" style="margin-top: 40px"><span class="logo-ph" style="background: transparent; color: #b6c5d8; border-color: rgba(255,255,255,.25)">Huy hiệu chứng nhận</span><span class="logo-ph" style="background: transparent; color: #b6c5d8; border-color: rgba(255,255,255,.25)">Huy hiệu chứng nhận</span></div>
+</div>
+</section>
+
+<div class="wrap">
+<div class="ln">
+
+<section class="ln-sec">
+  <span class="ln-dot"></span>
+  <div class="split" style="gap: 56px">
+    <div style="height: 200px; border: 1px solid #dde4ec; border-radius: 24px; display: grid; place-items: center"><span class="logo-ph" style="height: 72px; min-width: 220px; font-size: 22px">KOVENA <i class="tbc">Logo</i></span></div>
+    <div class="stack" style="gap: 14px"><span class="ln-k">05 · Đối tác</span><h2 class="h2" style="font-weight: 600">Đối tác thanh toán Kovena</h2><p class="lead">Kovena là nền tảng thanh toán dành riêng cho ngành lưu trú. <span class="ph">[Thông tin chính thức do Kovena cung cấp: thị trường hoạt động, quy mô, đối tác – có duyệt của Kovena]</span></p><a class="lnk" href="#">Website Kovena ↗</a></div>
+  </div>
+</section>
+
+<section class="ln-sec" id="phi" style="padding-top: 0">
+  <span class="ln-dot" style="top: 8px"></span>
+  <div class="stack" style="gap: 12px; margin-bottom: 24px"><span class="ln-k">06 · Phí</span><h2 class="h2" style="font-weight: 600">Phí giao dịch và thời gian nhận tiền</h2></div>
+  <div class="tbl-box" style="border: 0; border-radius: 0; background: transparent">
+    <table class="fee" style="min-width: 640px">
+      <thead><tr><th>Phương thức</th><th>Phí</th><th>Thời gian nhận tiền</th></tr></thead>
+      <tbody>
+        <tr><td>Thẻ quốc tế</td><td class="n"><span class="ph" style="font-weight: 300">[x]%</span></td><td class="n"><span class="ph" style="font-weight: 300">T+[x]</span></td></tr>
+        <tr><td>Thẻ nội địa</td><td class="n"><span class="ph" style="font-weight: 300">[x]%</span></td><td class="n"><span class="ph" style="font-weight: 300">T+[x]</span></td></tr>
+        <tr><td>Ví điện tử / QR</td><td class="n"><span class="ph" style="font-weight: 300">[x]%</span></td><td class="n"><span class="ph" style="font-weight: 300">T+[x]</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row wrapx" style="gap: 16px; justify-content: space-between; margin-top: 24px"><span class="muted small">Phí thiết lập <span class="ph">[ ]</span> · Đơn vị tiền nhận <span class="ph">[ ]</span> · Nếu chưa công bố: “Phí giao dịch được báo theo hợp đồng”</span><a class="lnk" href="Main.dc.html#bang-gia">Xem chi tiết tại Bảng giá <span class="arr">→</span></a></div>
+</section>
+
+<section class="ln-sec" style="padding-top: 0">
+  <span class="ln-dot" style="top: 8px"></span>
+  <div class="stack" style="gap: 12px; margin-bottom: 24px"><span class="ln-k">07 · Kích hoạt</span><h2 class="h2" style="font-weight: 600">Các bước kích hoạt</h2></div>
+  <div class="stack" style="max-width: 760px">
+    <div class="pt" style="grid-template-columns: 56px 1fr"><b style="font-size: 32px; font-weight: 300; color: #1f7a84">01</b><div><h3 class="h4">Đăng ký và cung cấp hồ sơ doanh nghiệp</h3><p class="small muted"><span class="ph">[Danh sách giấy tờ theo yêu cầu của Kovena]</span></p></div></div>
+    <div class="pt" style="grid-template-columns: 56px 1fr"><b style="font-size: 32px; font-weight: 300; color: #1f7a84">02</b><div><h3 class="h4">Thẩm định hồ sơ</h3><p class="small muted">Thời gian <span class="ph">[ ]</span></p></div></div>
+    <div class="pt" style="grid-template-columns: 56px 1fr"><b style="font-size: 32px; font-weight: 300; color: #1f7a84">03</b><div><h3 class="h4">Kết nối với tài khoản Bellhop</h3><p class="small muted">Cấu hình chính sách thu tiền.</p></div></div>
+    <div class="pt" style="grid-template-columns: 56px 1fr; border-bottom: 0"><b style="font-size: 32px; font-weight: 300; color: #1f7a84">04</b><div><h3 class="h4">Bắt đầu nhận thanh toán</h3></div></div>
+  </div>
+</section>
+
+<section class="ln-sec" style="padding-top: 0">
+  <span class="ln-dot" style="top: 8px"></span>
+  <div class="stack" style="gap: 12px; margin-bottom: 16px"><span class="ln-k">08 · Câu hỏi</span><h2 class="h2" style="font-weight: 600">Câu hỏi thường gặp về Bellhop Payment</h2></div>
+  <div>
+    <div class="qrow"><h3>Khách nước ngoài có thanh toán được không?</h3><p><span class="ph">[Xác nhận]</span> <i class="tbc">✓</i></p></div>
+    <div class="qrow"><h3>Tiền thanh toán về tài khoản nào, sau bao lâu?</h3><p><span class="ph">[Xác nhận]</span> <i class="tbc">✓</i></p></div>
+    <div class="qrow"><h3>Hoàn tiền cho khách được thực hiện như thế nào?</h3><p><span class="ph">[Xác nhận]</span> <i class="tbc">✓</i></p></div>
+    <div class="qrow"><h3>Có thể dùng Bellhop Payment mà không dùng Bellhop PMS không?</h3><p><span class="ph">[Xác nhận]</span> <i class="tbc">✓</i></p></div>
+    <div class="qrow"><h3>Khách có thanh toán được khi đặt phòng trên website không?</h3><p>Tính năng thanh toán trên Booking Engine nằm trong lộ trình phát triển. <i class="tbc">Cập nhật khi có</i></p></div>
+    <div class="qrow"><h3>Ai chịu trách nhiệm khi có tranh chấp giao dịch?</h3><p><span class="ph">[Quy định theo hợp đồng]</span> <i class="tbc">✓</i></p></div>
+  </div>
+</section>
+
+</div>
+</div>
+
+<section class="sec-sm" id="form" style="padding-bottom: 104px"><div class="wrap">
+  <dc-import name="LeadForm" variant="light" title="Tư vấn triển khai thanh toán online" desc="Đội ngũ Bellhop sẽ tư vấn phương thức thanh toán, chi phí và hồ sơ cần chuẩn bị." cta="Đặt lịch tư vấn" product="payment" source="/san-pham/payment" extra="{{extra}}" marks="{{marks}}" hint-size="100%,820px"></dc-import>
+</div></section>
+
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"reviewMarks":{"editor":"boolean","default":true,"section":"Bản duyệt"},"$preview":{"width":1440,"height":7000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const marks = this.props.reviewMarks ?? true;
+    return {
+      markCls: marks ? '' : 'no-marks', marks,
+      extra: { label: 'Tỷ lệ khách quốc tế ước tính', type: 'chips', options: ['Dưới 20%', '20–50%', 'Trên 50%'] }
+    };
+  }
+}
+</script>
+</body>
+</html>

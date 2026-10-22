@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Bellhop – Trang chủ</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./assets/81e26d43a82c22dd79010c853e0d4ffa.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:inherit}a:hover{color:#1f7a84}
+.jr{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;position:relative}
+.jr-st{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;position:relative}
+.jr-st::after{content:"";width:2px;height:40px;background:repeating-linear-gradient(180deg,#5fb9c2 0 6px,transparent 6px 11px);margin-top:auto}
+.jr-n{font-size:12px;font-weight:800;color:#1f7a84;letter-spacing:.1em}
+.jr-card{background:#fff;border:1px solid #dde4ec;border-radius:18px;padding:22px 16px;display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;transition:border-color .2s,transform .2s}
+.jr-card:hover{border-color:#5fb9c2;transform:translateY(-3px)}
+.jr-band{background:#122745;color:#fff;border-radius:18px;padding:22px 28px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+@media (max-width:980px){.jr{grid-template-columns:1fr}.jr-st{flex-direction:row;text-align:left}.jr-st::after{display:none}.jr-card{align-items:flex-start}}
+</style>
+</helmet>
+<div class="bh {{markCls}}">
+
+<dc-import name="Header" active="home" start-open="{{ false }}" hint-size="100%,72px"></dc-import>
+
+<!-- 1 HERO -->
+<section class="hero-bg" style="padding: 72px 0 96px; overflow: hidden">
+<div class="wrap split">
+  <div class="stack" style="gap: 24px">
+    <span class="eyebrow">Bellhop · Nền tảng quản lý khách sạn</span>
+    <h1 class="h1">Quản lý khách sạn trên một nền tảng. <em>Bắt đầu miễn phí.</em></h1>
+    <p class="lead">Bellhop kết nối lễ tân, buồng phòng, kênh OTA, website đặt phòng, tin nhắn khách và kế toán trong cùng một hệ thống. Dùng miễn phí phần mềm lễ tân và vận hành, thêm tính năng khi cơ sở của bạn cần.</p>
+    <div class="btns">
+      <a class="btn btn-primary btn-lg" href="#dang-ky">Dùng thử miễn phí <span class="arr">→</span></a>
+      <a class="btn btn-outline btn-lg" href="#form">Đặt lịch demo</a>
+    </div>
+    <div class="micro"><span>Lễ tân &amp; vận hành 0đ</span><span>Không cần thẻ thanh toán <i class="tbc">Xác nhận</i></span><span>Dùng trên web &amp; điện thoại <i class="tbc">Xác nhận</i></span></div>
+  </div>
+  <div style="position: relative; padding: 28px 56px 72px 0">
+    <div class="mock">
+      <div class="mock-bar"><i></i><i></i><i></i><div class="url">app.bellhop.vn/so-do-phong</div></div>
+      <div class="app">
+        <div class="app-side">
+          <img class="lg" src="./assets/f876bbabe18ddbe81b5f7624640b49ec.png" alt="Bellhop">
+          <span>Tổng quan</span><span class="on">Sơ đồ phòng</span><span>Timeline</span><span>Buồng phòng</span><span>Kho &amp; F&amp;B</span><span>Thu chi</span><span>Báo cáo</span>
+        </div>
+        <div class="app-main">
+          <div class="app-h"><b>Sơ đồ phòng · Hôm nay</b><span class="sm">12 / 18 phòng có khách</span></div>
+          <div class="legend"><span><i class="s-free"></i>Trống</span><span><i class="s-in"></i>Có khách</span><span><i class="s-bk"></i>Đặt trước</span><span><i class="s-dt"></i>Cần dọn</span></div>
+          <div class="rooms">
+            <div class="rm in"><b>101</b>Anh Minh</div><div class="rm in"><b>102</b>Chị Lan</div><div class="rm"><b>103</b>Trống</div><div class="rm bk"><b>104</b>14:00</div><div class="rm in"><b>105</b>Mr. Kim</div><div class="rm dt"><b>106</b>Cần dọn</div>
+            <div class="rm in"><b>201</b>Gia đình Hà</div><div class="rm in"><b>202</b>Anh Tú</div><div class="rm dt"><b>203</b>Đang dọn</div><div class="rm in"><b>204</b>Ms. Sato</div><div class="rm bk"><b>205</b>Agoda</div><div class="rm"><b>206</b>Trống</div>
+            <div class="rm in"><b>301</b>Anh Quân</div><div class="rm bk"><b>302</b>Website</div><div class="rm in"><b>303</b>Chị Mai</div><div class="rm in"><b>304</b>Anh Đức</div><div class="rm in"><b>305</b>Chị Hoa</div><div class="rm in"><b>306</b>Anh Bảo</div>
+          </div>
+          <span class="illus">Dữ liệu minh họa</span>
+        </div>
+      </div>
+    </div>
+    <div class="phone" style="position: absolute; right: 0; bottom: 0; width: 196px">
+      <div class="phone-s" style="min-height: 340px">
+        <div class="phone-h">Buồng phòng<small>Ca sáng · 4 việc</small></div>
+        <div class="phone-b">
+          <div class="prow"><b>203</b><span class="chip chip-teal" style="height: 22px">Đang dọn</span></div>
+          <div class="prow"><b>106</b><span class="chip" style="height: 22px">Cần dọn</span></div>
+          <div class="prow"><b>104</b><span class="chip chip-free" style="height: 22px">Sẵn sàng</span></div>
+          <div class="prow"><b>302</b><span class="chip chip-free" style="height: 22px">Sẵn sàng</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="toast" style="left: -36px; top: 92px; animation-delay: .2s"><span class="ic i-booking"></span><div><b>Booking mới từ website</b><span>Phòng Deluxe · 2 đêm</span></div></div>
+    <div class="toast" style="left: 40px; bottom: 28px; animation-delay: .7s"><span class="ic i-message"></span><div><b>Tin nhắn mới từ khách</b><span>“Còn phòng đôi tối thứ 7 không ạ?”</span></div></div>
+    <div class="toast" style="right: 150px; top: 0; animation-delay: 1.2s"><span class="ic i-broom"></span><div><b>Phòng 203 đã dọn xong</b><span>Sẵn sàng đón khách</span></div></div>
+  </div>
+</div>
+</section>
+
+<!-- 2 PROOF BAR -->
+<section style="margin-top: -48px; position: relative; z-index: 2">
+<div class="wrap">
+  <div class="proof">
+    <div><b>0đ</b><span>Phần mềm lễ tân &amp; vận hành</span></div>
+    <div><b>8</b><span>Sản phẩm trên cùng một nền tảng</span></div>
+    <div><span class="logo-ph" style="align-self: flex-start">MISA <i class="tbc">Logo</i></span><span>Đồng bộ dữ liệu kế toán</span></div>
+    <div><span class="logo-ph" style="align-self: flex-start">Kovena <i class="tbc">Logo</i></span><span>Thanh toán chuyên cho ngành lưu trú</span></div>
+  </div>
+</div>
+</section>
+
+<!-- 3 PAIN -->
+<section class="sec">
+<div class="wrap">
+  <div class="head">
+    <span class="eyebrow">Vấn đề thường gặp</span>
+    <h2 class="h2">Khách sạn của bạn đang mất thời gian và doanh thu ở đâu?</h2>
+    <p class="lead">Khó khăn thường không nằm ở việc thiếu khách, mà ở thông tin bị rải rác giữa sổ sách, Excel, OTA và điện thoại.</p>
+  </div>
+  <div class="grid-auto">
+    <a class="card card-hover" href="PMS.dc.html"><span class="ic ic-tile i-notebook"></span><h3 class="h4">Sơ đồ phòng nằm trong sổ tay, Excel</h3><p>Dễ nhầm phòng, trùng phòng; ca sau không nắm được ca trước đã làm gì.</p><div class="foot chips"><span class="chip">Bellhop PMS →</span></div></a>
+    <a class="card card-hover" href="CMS.dc.html"><span class="ic ic-tile i-tabs"></span><h3 class="h4">Cập nhật giá, phòng trống từng OTA bằng tay</h3><p>Mỗi lần đổi giá phải đăng nhập nhiều trang; chậm một nhịp là bán trùng phòng hoặc bán thấp giá.</p><div class="foot chips"><span class="chip">Bellhop CMS →</span></div></a>
+    <a class="card card-hover" href="BookingEngine.dc.html"><span class="ic ic-tile i-commission"></span><h3 class="h4">Phụ thuộc OTA, mất nhiều hoa hồng</h3><p>Mỗi đặt phòng qua OTA mất 15–25% hoa hồng <i class="tbc">Cần nguồn</i>; khách vào website nhưng không đặt được trực tiếp.</p><div class="foot chips"><span class="chip">Booking Engine</span><span class="chip">Website</span></div></a>
+    <a class="card card-hover" href="Message.dc.html"><span class="ic ic-tile i-inboxes"></span><h3 class="h4">Tin nhắn khách rải khắp nơi</h3><p>Mỗi kênh một hộp thư; trả lời chậm là mất khách.</p><div class="foot chips"><span class="chip">Bellhop Message →</span></div></a>
+    <a class="card card-hover" href="AIConcierge.dc.html"><span class="ic ic-tile i-clock"></span><h3 class="h4">Câu hỏi lặp lại, kể cả ngoài giờ</h3><p>Giờ nhận phòng, đường đi, chỗ đậu xe… lễ tân trả lời hàng chục lần mỗi ngày.</p><div class="foot chips"><span class="chip">AI Concierge →</span></div></a>
+    <a class="card card-hover" href="Finance.dc.html"><span class="ic ic-tile i-receipt"></span><h3 class="h4">Cuối tháng đối soát mệt mỏi</h3><p>Thu chi, hóa đơn, công nợ không khớp; kế toán phải nhập lại dữ liệu.</p><div class="foot chips"><span class="chip">Bellhop Finance</span><span class="chip">PMS Tài chính</span></div></a>
+  </div>
+  <div class="row wrapx" style="gap: 20px; justify-content: center; margin-top: 48px">
+    <p class="h4" style="font-weight: 500">Bellhop giải quyết từng việc trên trong cùng một hệ thống.</p>
+    <a class="lnk" href="#tong-quan">Xem tổng quan nền tảng <span class="arr">→</span></a>
+  </div>
+</div>
+</section>
+
+<!-- 4 JOURNEY -->
+<section class="sec bg-teal dots-bg" id="tong-quan">
+<div class="wrap">
+  <div class="head center">
+    <span class="eyebrow">Tổng quan nền tảng</span>
+    <h2 class="h2">Một nền tảng cho cả hành trình của khách</h2>
+    <p class="lead">Từ lúc khách tìm thấy khách sạn của bạn đến khi số liệu vào sổ kế toán, dữ liệu chạy liền mạch – không nhập lại, không lệch số.</p>
+  </div>
+  <div class="jr">
+    <div class="jr-st"><div class="jr-card"><span class="jr-n">CHẶNG 01</span><span class="ic ic-tile ic-tile-w i-searchpin" style="background-color: #eef8f9"></span><h3 class="h4">Tìm &amp; đặt phòng</h3><div class="chips" style="justify-content: center"><a class="chip" href="Website.dc.html">Website</a><a class="chip" href="BookingEngine.dc.html">Booking Engine</a><a class="chip" href="CMS.dc.html">OTA qua CMS</a></div></div></div>
+    <div class="jr-st"><div class="jr-card"><span class="jr-n">CHẶNG 02</span><span class="ic ic-tile i-message"></span><h3 class="h4">Trao đổi trước khi đến</h3><div class="chips" style="justify-content: center"><a class="chip" href="Message.dc.html">Message</a><a class="chip" href="AIConcierge.dc.html">AI Concierge</a></div></div></div>
+    <div class="jr-st"><div class="jr-card"><span class="jr-n">CHẶNG 03</span><span class="ic ic-tile i-payment"></span><h3 class="h4">Thanh toán</h3><div class="chips" style="justify-content: center"><a class="chip" href="Payment.dc.html">Payment (Kovena)</a></div></div></div>
+    <div class="jr-st"><div class="jr-card"><span class="jr-n">CHẶNG 04</span><span class="ic ic-tile i-bed"></span><h3 class="h4">Lưu trú</h3><div class="chips" style="justify-content: center"><a class="chip" href="PMS.dc.html">PMS: lễ tân, buồng phòng, F&amp;B, kho</a></div></div></div>
+    <div class="jr-st"><div class="jr-card"><span class="jr-n">CHẶNG 05</span><span class="ic ic-tile i-finance"></span><h3 class="h4">Đối soát &amp; kế toán</h3><div class="chips" style="justify-content: center"><a class="chip" href="PMS.dc.html">PMS Tài chính</a><a class="chip" href="Finance.dc.html">Finance (MISA)</a></div></div></div>
+  </div>
+  <div class="jr-band">
+    <span class="ic ic-tile-sm i-pms" style="background-color: #fff"></span>
+    <div style="flex: 1; min-width: 240px"><b style="font-size: 18px">Bellhop PMS – xương sống dữ liệu</b><div style="color: #b6c5d8; font-size: 15px">Phòng · giá · khách · đặt phòng · thu chi dùng chung cho cả 5 chặng</div></div>
+    <a class="btn btn-teal" href="#san-pham">Xem tổng quan nền tảng <span class="arr">→</span></a>
+  </div>
+</div>
+</section>
+
+<!-- 5 PRODUCT TABS -->
+<section class="sec" id="san-pham">
+<div class="wrap">
+  <div class="head">
+    <span class="eyebrow">Sản phẩm theo nhu cầu</span>
+    <h2 class="h2">Đúng công cụ cho từng phần việc</h2>
+    <p class="lead">Dùng riêng từng sản phẩm hoặc kết hợp – tất cả chạy trên cùng một dữ liệu. <i class="tbc">Xác nhận bán lẻ từng SP</i></p>
+  </div>
+  <div class="tabs" role="tablist" aria-label="Nhóm sản phẩm">
+    <button class="tab {{tabCls.t1}}" role="tab" aria-selected="{{tabSel.t1}}" onClick="{{tab1}}"><span class="ic i-pms"></span>Vận hành</button>
+    <button class="tab {{tabCls.t2}}" role="tab" aria-selected="{{tabSel.t2}}" onClick="{{tab2}}"><span class="ic i-calprice"></span>Bán phòng &amp; Doanh thu</button>
+    <button class="tab {{tabCls.t3}}" role="tab" aria-selected="{{tabSel.t3}}" onClick="{{tab3}}"><span class="ic i-message"></span>Chăm sóc khách hàng</button>
+    <button class="tab {{tabCls.t4}}" role="tab" aria-selected="{{tabSel.t4}}" onClick="{{tab4}}"><span class="ic i-finance"></span>Thanh toán &amp; Kế toán</button>
+  </div>
+
+  <sc-if value="{{tabOn.t1}}" hint-placeholder-val="{{ true }}">
+  <div class="split-eq" style="margin-top: 48px; align-items: start">
+    <div class="stack" style="gap: 20px">
+      <span class="label" style="color: #1f7a84">Vận hành · Bellhop PMS</span>
+      <h3 class="h2" style="font-size: 32px">Lễ tân, buồng phòng, kho và F&amp;B trên cùng một màn hình</h3>
+      <p class="lead" style="font-size: 17px">Nắm tình trạng từng phòng theo thời gian thực; nhận, đổi, trả phòng chỉ trong vài thao tác.</p>
+      <ul class="stack" style="gap: 14px">
+        <li class="row" style="gap: 14px; align-items: flex-start"><span class="ic ic-tile-sm i-key"></span><div><b style="color: #122745">Lễ tân</b> <span class="chip chip-free" style="height: 24px">Miễn phí</span><div class="small muted">Khách vãng lai, đặt phòng, đổi ngày/đổi khách, gán phòng, hủy đặt, trả phòng sớm, thêm dịch vụ.</div></div></li>
+        <li class="row" style="gap: 14px; align-items: flex-start"><span class="ic ic-tile-sm i-booking"></span><div><b style="color: #122745">Sơ đồ phòng &amp; timeline</b> <span class="chip chip-free" style="height: 24px">Miễn phí</span><div class="small muted">Phòng trống, đang ở, cần dọn – trong một cái nhìn.</div></div></li>
+        <li class="row" style="gap: 14px; align-items: flex-start"><span class="ic ic-tile-sm i-broom"></span><div><b style="color: #122745">Buồng phòng</b> <span class="chip chip-free" style="height: 24px">Miễn phí</span><div class="small muted">Giao việc và cập nhật trạng thái dọn phòng.</div></div></li>
+        <li class="row" style="gap: 14px; align-items: flex-start"><span class="ic ic-tile-sm i-fnb"></span><div><b style="color: #122745">Kho &amp; F&amp;B</b> <span class="chip chip-pro" style="height: 24px">Nâng cao</span><div class="small muted">Sơ đồ bàn, thực đơn, nguyên vật liệu; nhập, điều chuyển, kiểm kê, công nợ.</div></div></li>
+        <li class="row" style="gap: 14px; align-items: flex-start"><span class="ic ic-tile-sm i-chart"></span><div><b style="color: #122745">Báo cáo</b> <span class="chip chip-free" style="height: 24px">Thống kê miễn phí</span><div class="small muted">Doanh thu, công suất; phân tích chuyên sâu ở gói AI &amp; Phân tích.</div></div></li>
+      </ul>
+      <div class="btns"><a class="btn btn-primary" href="PMS.dc.html">Tìm hiểu Bellhop PMS <span class="arr">→</span></a><a class="btn btn-outline" href="#dang-ky">Dùng thử miễn phí</a></div>
+    </div>
+    <div style="position: relative; padding-bottom: 48px">
+      <div class="mock">
+        <div class="mock-bar"><i></i><i></i><i></i><div class="url">Timeline · Tuần 42</div></div>
+        <div style="padding: 16px">
+          <div class="tl">
+            <div class="th">Phòng</div><div class="th">T2</div><div class="th">T3</div><div class="th">T4</div><div class="th">T5</div><div class="th">T6</div><div class="th">T7</div><div class="th">CN</div>
+            <div class="rn">101</div><div><span class="bar in" style="width: 270%">Anh Minh · 3 đêm</span></div><div></div><div></div><div><span class="bar bk" style="width: 180%">Website</span></div><div></div><div></div><div></div>
+            <div class="rn">102</div><div></div><div><span class="bar ota" style="width: 180%">Agoda</span></div><div></div><div></div><div><span class="bar in" style="width: 270%">Chị Lan</span></div><div></div><div></div>
+            <div class="rn">201</div><div><span class="bar in" style="width: 450%">Gia đình Hà · 5 đêm</span></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            <div class="rn">202</div><div></div><div></div><div><span class="bar bk" style="width: 90%">Đặt trước</span></div><div></div><div><span class="bar ota" style="width: 270%">Booking.com</span></div><div></div><div></div>
+            <div class="rn">301</div><div><span class="bar ota" style="width: 180%">Traveloka</span></div><div></div><div></div><div><span class="bar in" style="width: 180%">Mr. Kim</span></div><div></div><div></div><div></div>
+          </div>
+          <div style="margin-top: 10px"><span class="illus">Dữ liệu minh họa</span></div>
+        </div>
+      </div>
+      <div class="phone" style="position: absolute; right: -12px; bottom: -8px; width: 176px">
+        <div class="phone-s" style="min-height: 260px"><div class="phone-h">Phòng 203<small>Cần dọn → Đang dọn</small></div><div class="phone-b"><div class="prow">Thay ga giường<span class="chip chip-free" style="height: 22px">Xong</span></div><div class="prow">Bổ sung minibar<span class="chip" style="height: 22px">Chờ</span></div><a class="btn btn-teal btn-sm" href="#">Báo đã dọn xong</a></div></div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{tabOn.t2}}" hint-placeholder-val="{{ false }}">
+  <div style="margin-top: 48px" class="stack">
+    <div class="stack" style="gap: 12px; max-width: 760px; margin-bottom: 32px">
+      <span class="label" style="color: #1f7a84">Bán phòng &amp; Doanh thu</span>
+      <h3 class="h2" style="font-size: 32px">Bán đúng giá trên mọi kênh, tăng đặt phòng trực tiếp</h3>
+    </div>
+    <div class="grid-auto">
+      <a class="card card-hover" href="BookingEngine.dc.html" style="padding: 0; overflow: hidden">
+        <div style="background: #eef8f9; padding: 24px; min-height: 180px; display: flex; align-items: center; justify-content: center">
+          <div style="background: #fff; border-radius: 12px; padding: 14px; width: 100%; box-shadow: 0 14px 30px -18px rgba(18,39,69,.5); display: grid; grid-template-columns: 1fr 1fr auto; gap: 8px; font-size: 11px">
+            <div style="border: 1px solid #dde4ec; border-radius: 8px; padding: 6px 8px"><span class="muted">Nhận phòng</span><br><b style="color: #122745">Th 6, 23/10</b></div>
+            <div style="border: 1px solid #dde4ec; border-radius: 8px; padding: 6px 8px"><span class="muted">Trả phòng</span><br><b style="color: #122745">CN, 25/10</b></div>
+            <span class="btn btn-primary btn-sm" style="min-height: 100%">Đặt phòng</span>
+          </div>
+        </div>
+        <div class="stack" style="gap: 10px; padding: 24px"><div class="row" style="gap: 10px"><span class="ic ic-sm i-booking"></span><h4 class="h4">Bellhop Booking Engine</h4></div><p>Nút “Đặt phòng” trên website của bạn; khách xem phòng trống, giá và đặt ngay; đặt phòng tự vào PMS, không qua OTA.</p><span class="lnk">Xem chi tiết <span class="arr">→</span></span></div>
+      </a>
+      <a class="card card-hover" href="CMS.dc.html" style="padding: 0; overflow: hidden">
+        <div style="background: #edf2f7; padding: 24px; min-height: 180px; display: flex; align-items: center">
+          <table class="ratecal"><tr><th>Hạng</th><th>T6</th><th>T7</th><th>CN</th></tr><tr><td>Standard</td><td>650k</td><td class="up">790k</td><td class="up">790k</td></tr><tr><td>Deluxe</td><td>890k</td><td class="up">1,05tr</td><td>890k</td></tr><tr><td>Family</td><td class="dn">1,1tr</td><td class="cl">Đóng</td><td>1,3tr</td></tr></table>
+        </div>
+        <div class="stack" style="gap: 10px; padding: 24px"><div class="row" style="gap: 10px"><span class="ic ic-sm i-cms"></span><h4 class="h4">Bellhop CMS</h4></div><p>Đồng bộ giá và phòng trống lên các OTA từ một nơi; định giá linh động theo nhu cầu, mùa vụ, ngày trong tuần.</p><span class="lnk">Xem chi tiết <span class="arr">→</span></span></div>
+      </a>
+      <a class="card card-hover" href="Website.dc.html" style="padding: 0; overflow: hidden">
+        <div style="background: #f4f7fa; padding: 24px 24px 0; min-height: 180px; display: flex; align-items: flex-end; gap: 10px">
+          <div style="flex: 1; height: 150px; border-radius: 10px 10px 0 0; background: linear-gradient(180deg,#376587 0 45%,#fff 45%); box-shadow: 0 10px 24px -14px rgba(18,39,69,.5)"></div>
+          <div style="flex: 1; height: 128px; border-radius: 10px 10px 0 0; background: linear-gradient(180deg,#5fb9c2 0 50%,#fff 50%); box-shadow: 0 10px 24px -14px rgba(18,39,69,.5)"></div>
+          <div style="flex: 1; height: 110px; border-radius: 10px 10px 0 0; background: linear-gradient(180deg,#122745 0 40%,#fff 40%); box-shadow: 0 10px 24px -14px rgba(18,39,69,.5)"></div>
+        </div>
+        <div class="stack" style="gap: 10px; padding: 24px"><div class="row" style="gap: 10px"><span class="ic ic-sm i-website"></span><h4 class="h4">Bellhop Website</h4></div><p>Website cho Khách sạn, Homestay &amp; Villa, Chuỗi; tích hợp sẵn Booking Engine. <i class="tbc">Số mẫu</i></p><span class="lnk">Xem chi tiết <span class="arr">→</span></span></div>
+      </a>
+    </div>
+    <div class="row wrapx" style="gap: 16px; justify-content: space-between; margin-top: 32px; padding: 20px 24px; border-radius: 16px; background: #f4f7fa">
+      <div class="pill-strip"><span class="small muted">Kết nối OTA</span><i class="tbc">Chỉ hiện kênh đã chạy</i><span class="logo-ph">Booking.com</span><span class="logo-ph">Agoda</span><span class="logo-ph">Traveloka</span><span class="logo-ph">Expedia</span></div>
+      <a class="lnk" href="#cong-cu">Ước tính khoản hoa hồng bạn có thể giữ lại <span class="arr">→</span></a>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{tabOn.t3}}" hint-placeholder-val="{{ false }}">
+  <div class="split" style="margin-top: 48px">
+    <div class="stack" style="gap: 24px">
+      <span class="label" style="color: #1f7a84">Chăm sóc khách hàng</span>
+      <h3 class="h2" style="font-size: 32px">Trả lời khách nhanh hơn, không bỏ sót tin nhắn nào</h3>
+      <a class="card card-hover" href="Message.dc.html" style="flex-direction: row; gap: 16px"><span class="ic ic-tile-sm i-message"></span><div class="stack" style="gap: 6px"><h4 class="h4">Bellhop Message</h4><p>Gom tin nhắn từ các kênh mạng xã hội về một hộp thư chung; nhiều nhân viên cùng xử lý, xem lại lịch sử trao đổi. <i class="tbc">Danh sách kênh · Zalo OA</i></p><span class="lnk">Xem chi tiết <span class="arr">→</span></span></div></a>
+      <a class="card card-hover" href="AIConcierge.dc.html" style="flex-direction: row; gap: 16px"><span class="ic ic-tile-sm i-ai"></span><div class="stack" style="gap: 6px"><h4 class="h4">Bellhop AI Concierge</h4><p>Trợ lý AI trả lời các câu hỏi thường gặp dựa trên cơ sở kiến thức của chính cơ sở bạn – giờ nhận/trả phòng, tiện ích, đường đi. <i class="tbc">Cơ chế chuyển nhân viên</i></p><span class="lnk">Xem chi tiết <span class="arr">→</span></span></div></a>
+    </div>
+    <div style="position: relative; padding: 0 0 60px 0">
+      <div class="mock">
+        <div class="inbox" style="min-height: 340px">
+          <div class="ib-list">
+            <div class="ib-it on"><span class="av">TH<i class="ch ch-zalo"></i></span><div class="t"><b>Thu Hà <small>09:12</small></b><p>Còn phòng đôi tối thứ 7 không ạ?</p></div></div>
+            <div class="ib-it"><span class="av">JK<i class="ch ch-fb"></i></span><div class="t"><b>Jun Kim <small>09:05</small></b><p>Is breakfast included?</p></div></div>
+            <div class="ib-it"><span class="av">MP<i class="ch ch-web"></i></span><div class="t"><b>Minh Phúc <small>08:41</small></b><p>Cho mình xin địa chỉ</p></div></div>
+            <div class="ib-it"><span class="av">LA<i class="ch ch-ig"></i></span><div class="t"><b>Lan Anh <small>Hôm qua</small></b><p>Có chỗ đậu ô tô không?</p></div></div>
+          </div>
+          <div class="ib-chat"><div class="ib-top"><b style="color: #122745">Thu Hà · Zalo</b><span class="chip chip-teal" style="height: 24px">Lễ tân Ngọc</span></div><div class="ib-msgs"><div class="bub bub-in">Còn phòng đôi tối thứ 7 không ạ?</div><div class="bub bub-out">Dạ còn ạ. Phòng Deluxe giường đôi giá 890.000đ/đêm, chị muốn em giữ phòng không ạ?</div></div></div>
+        </div>
+      </div>
+      <div class="chatwin" style="position: absolute; left: -32px; bottom: 0; width: 280px">
+        <div class="chatwin-h" style="padding: 10px 14px"><img src="./assets/65b75c6994e7813eb4b9d85bb4e2eb6a.png" alt=""><div style="font-size: 13px; font-weight: 700">AI Concierge<small>Minh họa</small></div></div>
+        <div class="stack" style="gap: 8px; padding: 12px; background: #f7f9fc"><div class="bub bub-out" style="font-size: 12px">Mấy giờ nhận phòng ạ?</div><div class="bub bub-ai" style="font-size: 12px">Giờ nhận phòng từ 14:00, trả phòng trước 12:00 ạ.</div></div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{tabOn.t4}}" hint-placeholder-val="{{ false }}">
+  <div class="split-eq" style="margin-top: 48px">
+    <div class="stack" style="gap: 20px">
+      <span class="label" style="color: #1f7a84">Thanh toán &amp; Kế toán</span>
+      <h3 class="h2" style="font-size: 32px">Thu tiền gọn, sổ sách khớp</h3>
+      <a class="card card-hover" href="Payment.dc.html" style="flex-direction: row; gap: 16px"><span class="ic ic-tile-sm i-payment"></span><div class="stack" style="gap: 6px"><h4 class="h4">Bellhop Payment <span class="logo-ph" style="height: 24px; min-width: 0; font-size: 11px; padding: 0 8px">Kovena</span></h4><p>Nhận thanh toán online qua Kovena – nền tảng thanh toán dành riêng cho ngành lưu trú.</p><span class="lnk">Xem chi tiết <span class="arr">→</span></span></div></a>
+      <a class="card card-hover" href="Finance.dc.html" style="flex-direction: row; gap: 16px"><span class="ic ic-tile-sm i-finance"></span><div class="stack" style="gap: 6px"><h4 class="h4">Bellhop Finance <span class="logo-ph" style="height: 24px; min-width: 0; font-size: 11px; padding: 0 8px">MISA</span></h4><p>Đồng bộ dữ liệu doanh thu, thu chi sang MISA – kế toán không phải nhập lại.</p><span class="lnk">Xem chi tiết <span class="arr">→</span></span></div></a>
+      <a class="card card-soft card-hover" href="PMS.dc.html" style="flex-direction: row; gap: 16px"><span class="ic ic-tile-sm ic-tile-w i-invoice"></span><div class="stack" style="gap: 6px"><h4 class="h4">Trong Bellhop PMS (gói Tài chính)</h4><p>Hóa đơn, hóa đơn điện tử, sổ sách, quỹ tiền mặt và tiền gửi.</p><span class="lnk">Tìm hiểu Bellhop PMS <span class="arr">→</span></span></div></a>
+    </div>
+    <div style="background: #f4f7fa; border-radius: 24px; padding: 40px 32px" class="stack">
+      <span class="label" style="margin-bottom: 20px">Dòng dữ liệu tài chính</span>
+      <div class="stack" style="gap: 0; align-items: stretch">
+        <div class="row" style="gap: 16px; background: #fff; border: 1px solid #dde4ec; border-radius: 16px; padding: 18px 20px"><span class="ic ic-tile-sm i-pms"></span><div><b style="color: #122745">Bellhop PMS</b><div class="small muted">Hóa đơn · thu chi · quỹ tại quầy</div></div></div>
+        <div style="width: 2px; height: 36px; margin-left: 44px; background: repeating-linear-gradient(180deg,#5fb9c2 0 6px,transparent 6px 11px)"></div>
+        <div class="row" style="gap: 16px; background: #122745; border-radius: 16px; padding: 18px 20px; color: #fff"><span class="ic ic-tile-sm i-flow" style="background-color: #fff"></span><div><b>Bellhop Finance</b><div class="small" style="color: #b6c5d8">Tự động đồng bộ, không nhập lại</div></div></div>
+        <div style="width: 2px; height: 36px; margin-left: 44px; background: repeating-linear-gradient(180deg,#5fb9c2 0 6px,transparent 6px 11px)"></div>
+        <div class="row" style="gap: 16px; background: #fff; border: 1px solid #dde4ec; border-radius: 16px; padding: 18px 20px"><span class="logo-ph" style="min-width: 48px; height: 48px; padding: 0 8px">MISA</span><div><b style="color: #122745">Phần mềm kế toán MISA</b><div class="small muted">Kế toán hạch toán, lập báo cáo</div></div></div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+</div>
+</section>
+
+<!-- 6 PRICING TEASER -->
+<section class="sec bg-soft" id="bang-gia">
+<div class="wrap">
+  <div class="head center">
+    <span class="eyebrow">Gói miễn phí &amp; nâng cao</span>
+    <h2 class="h2">Bắt đầu miễn phí. Nâng cấp khi khách sạn của bạn cần.</h2>
+    <p class="lead">Phần mềm lễ tân và vận hành dùng miễn phí <i class="tbc">Thời hạn · giới hạn phòng/người dùng</i>. Thêm các gói nâng cao khi mở rộng dịch vụ.</p>
+  </div>
+  <div class="split-eq" style="align-items: stretch; max-width: 1040px; margin: 0 auto; gap: 24px">
+    <div class="card card-hl" style="padding: 40px; gap: 20px">
+      <div class="card-top"><span class="chip chip-free">Miễn phí</span><span class="small muted">Bellhop PMS</span></div>
+      <div><b style="font-size: 56px; color: #122745; line-height: 1; letter-spacing: -.03em">0đ</b><span class="muted"> / mãi mãi <i class="tbc">Xác nhận</i></span></div>
+      <ul class="list-check">
+        <li>Cài đặt cơ sở: sơ đồ phòng, phòng &amp; giá, dịch vụ, thuế/phí, mẫu in, QR code, tài khoản &amp; phân quyền</li>
+        <li>Lễ tân &amp; đặt phòng · Sơ đồ phòng, timeline · Buồng phòng</li>
+        <li>Kho cơ bản · Tạo hóa đơn · Thu chi cơ bản · Thống kê</li>
+      </ul>
+      <a class="btn btn-primary btn-lg btn-block foot" href="#dang-ky" style="margin-top: auto">Dùng thử miễn phí <span class="arr">→</span></a>
+    </div>
+    <div class="card" style="padding: 40px; gap: 20px">
+      <div class="card-top"><span class="chip chip-pro">Nâng cao</span><span class="small muted">Cộng thêm theo module</span></div>
+      <div><b style="font-size: 40px; color: #122745; line-height: 1.1"><span class="ph">[giá]</span></b><span class="muted"> / tháng hoặc Liên hệ</span></div>
+      <ul class="stack" style="gap: 12px">
+        <li class="row" style="gap: 14px; align-items: flex-start; padding: 14px 16px; border-radius: 12px; background: #f4f7fa"><span class="ic ic-sm i-fnb"></span><div><b style="color: #122745">+ Vận hành nâng cao</b><div class="small muted">F&amp;B, kho chuyên sâu, email marketing</div></div></li>
+        <li class="row" style="gap: 14px; align-items: flex-start; padding: 14px 16px; border-radius: 12px; background: #f4f7fa"><span class="ic ic-sm i-invoice"></span><div><b style="color: #122745">+ Tài chính</b><div class="small muted">Hóa đơn điện tử, sổ sách, quỹ tiền mặt &amp; tiền gửi</div></div></li>
+        <li class="row" style="gap: 14px; align-items: flex-start; padding: 14px 16px; border-radius: 12px; background: #f4f7fa"><span class="ic ic-sm i-ai"></span><div><b style="color: #122745">+ AI Concierge &amp; Phân tích</b><div class="small muted">Trợ lý AI, phân tích doanh thu, báo cáo</div></div></li>
+      </ul>
+      <a class="btn btn-outline btn-lg btn-block" href="#bang-gia" style="margin-top: auto">Xem bảng giá</a>
+    </div>
+  </div>
+  <p class="center small muted" style="margin-top: 28px">Booking Engine, CMS, Website, Message, Payment, Finance – xem chi tiết tại <a class="lnk" href="#bang-gia">Bảng giá</a> · <a class="lnk" href="#bang-gia">Câu hỏi về giá</a></p>
+</div>
+</section>
+
+<!-- 7 COMPARE -->
+<section class="sec">
+<div class="wrap">
+  <div class="head">
+    <span class="eyebrow">So sánh cách làm</span>
+    <h2 class="h2">Một nền tảng thay cho nhiều công cụ rời rạc</h2>
+    <p class="lead">So sánh cách quản lý phổ biến hiện nay để chọn phương án phù hợp với nguồn lực của bạn.</p>
+  </div>
+  <div class="tbl-box">
+    <table class="cmp">
+      <thead><tr><th>Tiêu chí</th><th>Sổ tay/Excel + Zalo</th><th>Nhiều phần mềm rời</th><th class="hl"><span class="row" style="gap: 10px">Bellhop <span class="chip chip-teal" style="height: 24px">Một hệ thống</span></span></th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Quản lý phòng</th><td>Ghi tay, dễ trùng phòng</td><td>Có, nhưng tách khỏi kênh bán</td><td class="hl">Sơ đồ phòng cập nhật theo thời gian thực</td></tr>
+        <tr><th scope="row">Giá &amp; phòng trống trên OTA</th><td>Cập nhật từng trang</td><td>Cần thêm phần mềm quản lý kênh</td><td class="hl">Đồng bộ qua Bellhop CMS</td></tr>
+        <tr><th scope="row">Đặt phòng trực tiếp</th><td>Qua điện thoại, tin nhắn</td><td>Công cụ riêng, phải kết nối thêm</td><td class="hl">Booking Engine + Website chung dữ liệu</td></tr>
+        <tr><th scope="row">Tin nhắn khách</th><td>Mỗi kênh một nơi</td><td>Mỗi kênh một nơi</td><td class="hl">Một hộp thư chung</td></tr>
+        <tr><th scope="row">Kế toán</th><td>Nhập lại thủ công</td><td>Xuất/nhập file</td><td class="hl">Đồng bộ sang MISA</td></tr>
+        <tr><th scope="row">Chi phí ban đầu</th><td>Thấp nhưng tốn công</td><td>Nhiều khoản thuê bao</td><td class="hl">Bắt đầu 0đ, thêm khi cần</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="h3 center" style="font-weight: 500; max-width: 820px; margin: 48px auto 0; color: #376587">“Phần mềm không thay được con người, nhưng giúp đội ngũ bớt nhập lại để dành thời gian cho khách.”</p>
+</div>
+</section>
+
+<!-- 8 FIT -->
+<section class="sec bg-steel">
+<div class="wrap">
+  <div class="head">
+    <span class="eyebrow">Phù hợp mô hình của bạn</span>
+    <h2 class="h2">Phù hợp với khách sạn, homestay, villa và chuỗi</h2>
+  </div>
+  <div class="grid-auto">
+    <div class="card" style="padding: 0; overflow: hidden">
+      <div class="photo" style="border-radius: 0; min-height: 200px"><span>Ảnh thật: quầy lễ tân khách sạn</span></div>
+      <div class="stack" style="gap: 14px; padding: 28px; flex: 1"><div class="row" style="gap: 12px"><span class="ic ic-tile-sm i-hotel"></span><h3 class="h3">Khách sạn</h3></div><p>Nhiều ca lễ tân, nhiều hạng phòng, bán trên nhiều OTA.</p><div class="small muted">Gợi ý</div><div class="chips"><a class="chip" href="PMS.dc.html">PMS</a><a class="chip" href="CMS.dc.html">CMS</a><a class="chip" href="BookingEngine.dc.html">Booking Engine</a></div><a class="lnk foot" href="#form" style="margin-top: auto">Đặt lịch demo cho mô hình này <span class="arr">→</span></a></div>
+    </div>
+    <div class="card" style="padding: 0; overflow: hidden">
+      <div class="photo" style="border-radius: 0; min-height: 200px; background: linear-gradient(135deg,#d9efef,#bfe0e3)"><span>Ảnh thật: không gian homestay/villa</span></div>
+      <div class="stack" style="gap: 14px; padding: 28px; flex: 1"><div class="row" style="gap: 12px"><span class="ic ic-tile-sm i-house"></span><h3 class="h3">Homestay &amp; Villa</h3></div><p>Ít nhân sự, chủ tự vận hành qua điện thoại, khách hỏi nhiều qua mạng xã hội.</p><div class="small muted">Gợi ý</div><div class="chips"><a class="chip chip-free" href="PMS.dc.html">PMS miễn phí</a><a class="chip" href="Message.dc.html">Message</a><a class="chip" href="Website.dc.html">Website</a></div><a class="lnk foot" href="#form" style="margin-top: auto">Đặt lịch demo cho mô hình này <span class="arr">→</span></a></div>
+    </div>
+    <div class="card" style="padding: 0; overflow: hidden">
+      <div class="photo" style="border-radius: 0; min-height: 200px; background: linear-gradient(135deg,#dbe4ee,#c3d2e2)"><span>Ảnh thật: nhiều cơ sở trong chuỗi</span></div>
+      <div class="stack" style="gap: 14px; padding: 28px; flex: 1"><div class="row" style="gap: 12px"><span class="ic ic-tile-sm i-chain"></span><h3 class="h3">Chuỗi lưu trú</h3></div><p>Nhiều cơ sở, cần phân quyền, báo cáo tập trung, kế toán thống nhất. <i class="tbc">Đa cơ sở</i></p><div class="small muted">Gợi ý</div><div class="chips"><a class="chip chip-pro" href="PMS.dc.html">PMS nâng cao</a><a class="chip" href="CMS.dc.html">CMS</a><a class="chip" href="Finance.dc.html">Finance</a></div><a class="lnk foot" href="#form" style="margin-top: auto">Đặt lịch demo cho mô hình này <span class="arr">→</span></a></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 9 CALCULATOR -->
+<section class="sec" id="cong-cu">
+<div class="wrap">
+  <dc-import name="Calculator" marks="{{reviewMarks}}" hint-size="100%,620px"></dc-import>
+</div>
+</section>
+
+<!-- 10 STEPS -->
+<section class="sec bg-soft">
+<div class="wrap">
+  <div class="head center">
+    <span class="eyebrow">Bắt đầu nhanh</span>
+    <h2 class="h2">Bắt đầu dùng Bellhop trong 4 bước</h2>
+  </div>
+  <div class="steps">
+    <div class="step"><span class="num">01</span><div class="row" style="gap: 8px"><h3 class="h4">Đăng ký miễn phí</h3><span class="chip chip-free" style="height: 24px">Miễn phí</span></div><p>Tạo tài khoản bằng số điện thoại/email. <i class="tbc">Xác nhận</i></p></div>
+    <div class="step"><span class="num">02</span><h3 class="h4">Cài đặt cơ sở</h3><p>Thông tin liên hệ, sơ đồ phòng, hạng phòng &amp; giá, dịch vụ, mẫu in.</p></div>
+    <div class="step"><span class="num">03</span><h3 class="h4">Chuyển dữ liệu</h3><p>Đưa đặt phòng sắp tới và danh sách khách từ Excel hoặc phần mềm cũ. <i class="tbc">Hình thức hỗ trợ</i></p></div>
+    <div class="step"><span class="num">04</span><h3 class="h4">Kết nối kênh</h3><p>OTA, website, tin nhắn, thanh toán và MISA – khi bạn cần.</p></div>
+  </div>
+  <div class="row wrapx" style="gap: 20px; justify-content: space-between; margin-top: 56px; background: #fff; border: 1px solid #dde4ec; border-radius: 18px; padding: 20px 24px">
+    <div class="row" style="gap: 16px"><span class="ic ic-tile-sm i-migrate"></span><div><b style="color: #122745">Đang dùng phần mềm khác?</b><div class="small muted">Chuyển đặt phòng, danh sách khách và danh mục phòng sang Bellhop theo hướng dẫn từng bước.</div></div></div>
+    <div class="btns"><a class="lnk" href="#">Xem hướng dẫn chuyển dữ liệu <span class="arr">→</span></a><a class="btn btn-primary" href="#dang-ky">Dùng thử miễn phí</a></div>
+  </div>
+</div>
+</section>
+
+<!-- 11 TESTIMONIALS (hidden until real) -->
+<sc-if value="{{reviewMarks}}" hint-placeholder-val="{{ true }}">
+<section class="sec-sm">
+<div class="wrap">
+  <div class="tbc-block"><span class="ic ic-md i-users"></span><div class="stack" style="gap: 6px"><b>Section “Chủ cơ sở lưu trú nói gì về Bellhop” – ẨN khi lên web</b><span class="small">Chỉ hiển thị khi có ít nhất 3 phản hồi thật được khách đồng ý đăng. Thẻ gồm: trích dẫn ≤ 40 từ · họ tên · chức danh · tên cơ sở · loại hình · số phòng · sản phẩm đang dùng · ảnh/logo. Carousel 3 thẻ/khung, dải logo cơ sở grayscale bên dưới.</span></div></div>
+</div>
+</section>
+</sc-if>
+
+<!-- 12 BLOG -->
+<section class="sec">
+<div class="wrap">
+  <div class="row wrapx" style="justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 40px">
+    <div class="stack" style="gap: 16px; max-width: 680px"><span class="eyebrow">Blog &amp; tài nguyên</span><h2 class="h2">Kiến thức vận hành và bán phòng cho chủ cơ sở lưu trú</h2></div>
+    <div class="chips"><a class="chip chip-line" href="#">Vận hành</a><a class="chip chip-line" href="#">Doanh thu</a><a class="chip chip-line" href="#">Marketing</a><a class="chip chip-line" href="#">Nghiệp vụ</a></div>
+  </div>
+  <div class="grid-auto">
+    <a class="card card-hover" href="#" style="padding: 0; overflow: hidden"><div class="photo" style="border-radius: 0; aspect-ratio: 16/9; min-height: 0; background: linear-gradient(135deg,#d6eff1,#a9dde2)"><span>Ảnh bài viết 16:9</span></div><div class="stack" style="gap: 10px; padding: 24px"><span class="label" style="color: #1f7a84">Doanh thu · 6 phút đọc</span><h3 class="h4">Cách tính công suất phòng, ADR, RevPAR</h3><p>Ba chỉ số nền tảng để biết khách sạn đang bán tốt đến đâu, và nên điều chỉnh giá thế nào.</p></div></a>
+    <a class="card card-hover" href="#" style="padding: 0; overflow: hidden"><div class="photo" style="border-radius: 0; aspect-ratio: 16/9; min-height: 0"><span>Ảnh bài viết 16:9</span></div><div class="stack" style="gap: 10px; padding: 24px"><span class="label" style="color: #1f7a84">Marketing · 8 phút đọc</span><h3 class="h4">Giảm phụ thuộc hoa hồng OTA: bắt đầu từ đâu?</h3><p>Những bước đầu tiên để tăng tỷ trọng đặt phòng trực tiếp mà không bỏ kênh OTA.</p></div></a>
+    <a class="card card-hover" href="#" style="padding: 0; overflow: hidden"><div class="photo" style="border-radius: 0; aspect-ratio: 16/9; min-height: 0; background: linear-gradient(135deg,#dbe4ee,#b8cadd)"><span>Ảnh bài viết 16:9</span></div><div class="stack" style="gap: 10px; padding: 24px"><span class="label" style="color: #1f7a84">Nghiệp vụ · 5 phút đọc</span><h3 class="h4">Quy trình nhận – trả phòng cho khách sạn mini</h3><p>Checklist từng bước cho lễ tân để giao ca không thất lạc thông tin.</p></div></a>
+  </div>
+  <div class="row wrapx" style="gap: 24px; justify-content: space-between; margin-top: 32px; background: #122745; color: #fff; border-radius: 20px; padding: 28px 32px">
+    <div class="row" style="gap: 18px"><span class="ic ic-tile-sm i-checklist" style="background-color: #fff"></span><div><b style="font-size: 18px">Ebook &amp; mẫu biểu miễn phí</b><div class="small" style="color: #b6c5d8">Mẫu quy trình lễ tân, checklist buồng phòng, bảng theo dõi công suất.</div></div></div>
+    <div class="btns"><a class="btn btn-teal" href="#">Tải tài liệu</a><a class="btn btn-light" href="#">Xem tất cả bài viết</a></div>
+  </div>
+</div>
+</section>
+
+<!-- 13 FAQ -->
+<section class="sec bg-soft">
+<div class="wrap">
+  <dc-import name="Faq" items="{{faq}}" marks="{{reviewMarks}}" hint-size="100%,560px"></dc-import>
+</div>
+</section>
+
+<!-- 14 FORM -->
+<section class="sec" id="form">
+<div class="wrap">
+  <dc-import name="LeadForm" marks="{{reviewMarks}}" source="/" hint-size="100%,760px"></dc-import>
+</div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"reviewMarks":{"editor":"boolean","default":true,"section":"Bản duyệt"},"$preview":{"width":1440,"height":11200}}'>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { tab: 1 }; }
+  renderVals() {
+    const t = this.state.tab;
+    const marks = this.props.reviewMarks ?? true;
+    const on = { t1: t === 1, t2: t === 2, t3: t === 3, t4: t === 4 };
+    const cls = {}, sel = {};
+    Object.keys(on).forEach((k) => { cls[k] = on[k] ? 'on' : ''; sel[k] = on[k] ? 'true' : 'false'; });
+    return {
+      markCls: marks ? '' : 'no-marks',
+      reviewMarks: marks,
+      tabOn: on, tabCls: cls, tabSel: sel,
+      tab1: () => this.setState({ tab: 1 }),
+      tab2: () => this.setState({ tab: 2 }),
+      tab3: () => this.setState({ tab: 3 }),
+      tab4: () => this.setState({ tab: 4 }),
+      faq: [
+        { q: 'Bellhop có thật sự miễn phí không?', a: 'Có. Phần lễ tân và vận hành được dùng miễn phí [thời hạn, giới hạn số phòng/người dùng]. Các gói nâng cao và sản phẩm khác tính phí theo Bảng giá.', tbc: true },
+        { q: 'Có cần cài đặt phần mềm hay máy chủ không?', a: '[Bellhop chạy trên trình duyệt? Có ứng dụng điện thoại? – xác nhận rồi điền].', tbc: true },
+        { q: 'Bellhop kết nối được với những OTA nào?', a: 'Bellhop CMS đồng bộ giá và phòng trống với [danh sách OTA đã kết nối].', tbc: true },
+        { q: 'Tôi đang dùng phần mềm khác, có chuyển dữ liệu được không?', a: 'Được. Xem hướng dẫn chuyển dữ liệu từ phần mềm cũ [hình thức hỗ trợ].', tbc: true },
+        { q: 'Bellhop có xuất hóa đơn điện tử không?', a: 'Có, trong gói PMS Tài chính. [Nhà cung cấp HĐĐT được tích hợp]', tbc: true },
+        { q: 'Dữ liệu cơ sở và thông tin khách được bảo mật thế nào?', a: '[Nơi lưu trữ, phân quyền, sao lưu]. Xem Chính sách xử lý dữ liệu cá nhân.', tbc: true },
+        { q: 'Bellhop và Lifrooms có quan hệ thế nào?', a: '[Ví dụ: “Bellhop là nền tảng phần mềm do Lifrooms phát triển…” – xác nhận cách diễn đạt]. Xem trang Về Bellhop & Lifrooms.', tbc: true }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

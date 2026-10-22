@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Bellhop Message – Hộp thư đa kênh cho khách sạn</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./assets/81e26d43a82c22dd79010c853e0d4ffa.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:inherit}a:hover{color:#1f7a84}
+.fly{animation:bhFly .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes bhFly{from{opacity:0;transform:translateX(-24px) scale(.98)}to{opacity:1;transform:none}}
+.fadeout{position:relative}
+.fadeout::after{content:"";position:absolute;left:0;right:0;bottom:0;height:160px;background:linear-gradient(180deg,rgba(255,255,255,0),#fff);pointer-events:none}
+.chpill{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;background:#fff;border:1px solid #dde4ec;font-weight:600;font-size:14px;color:#122745}
+.chpill i{width:10px;height:10px;border-radius:50%}
+.day{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:start}
+.day-sticky{position:sticky;top:24px}
+.moment{width:100%;text-align:left;background:transparent;border:0;border-left:3px solid #dde4ec;padding:28px 0 28px 28px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,background .2s;min-height:220px;justify-content:center}
+.moment .t{font-size:48px;font-weight:800;color:#c3cfdc;letter-spacing:-.02em;line-height:1;transition:color .2s}
+.moment.on{border-left-color:#5fb9c2;background:linear-gradient(90deg,rgba(95,185,194,.08),transparent)}
+.moment.on .t{color:#122745}
+.moment p{color:#566579;font-size:16px}
+.ba{position:relative;border-radius:24px;overflow:hidden;height:440px;border:1px solid #dde4ec;background:#fff}
+.ba-l{position:absolute;inset:0;overflow:hidden;border-right:3px solid #5fb9c2;background:#edf2f7}
+.ba-l-in{position:absolute;inset:0;width:1200px;max-width:none;display:flex;align-items:center;justify-content:center}
+.appgrid{display:grid;grid-template-columns:repeat(4,64px);gap:18px}
+.appi{width:64px;height:64px;border-radius:16px;position:relative;display:grid;place-items:center;color:#fff;font-weight:800;font-size:12px}
+.appi b{position:absolute;top:-6px;right:-6px;min-width:22px;height:22px;border-radius:11px;background:#d92d20;color:#fff;font-size:11px;display:grid;place-items:center;padding:0 5px;border:2px solid #edf2f7}
+.ba input{position:absolute;left:0;right:0;bottom:16px;width:60%;margin:0 20%;accent-color:#122745}
+.ba-tag{position:absolute;top:16px;padding:6px 12px;border-radius:8px;font-size:12px;font-weight:700}
+.feats{display:flex;flex-direction:column;gap:14px;max-width:880px;margin:0 auto}
+.fb{display:flex;gap:12px;align-items:flex-end;max-width:75%}
+.fb .bb{padding:16px 20px;border-radius:20px;font-size:16px;line-height:1.5;display:flex;gap:12px;align-items:center}
+.fb.l .bb{background:#fff;border:1px solid #dde4ec;border-bottom-left-radius:6px;color:#122745}
+.fb.r{align-self:flex-end;flex-direction:row-reverse}
+.fb.r .bb{background:#122745;color:#fff;border-bottom-right-radius:6px}
+.fb .ic{width:30px;height:30px}
+.fb.r .ic{background-color:#fff;border-radius:8px}
+.fit-row{display:flex;gap:20px;align-items:center;padding:22px 0;border-bottom:1px solid #dde4ec;flex-wrap:wrap}
+.cq{display:flex;flex-direction:column;gap:10px}
+.cq-q{align-self:flex-start;max-width:75%;background:#fff;border:1px solid #dde4ec;border-radius:20px;border-bottom-left-radius:6px;padding:14px 18px;font-weight:600;color:#122745;text-align:left;font-size:16px;transition:border-color .2s}
+.cq-q:hover,.cq-q.on{border-color:#5fb9c2}
+.cq-a{align-self:flex-end;max-width:75%;background:#122745;color:#fff;border-radius:20px;border-bottom-right-radius:6px;padding:14px 18px;font-size:15.5px;animation:bhIn .4s both}
+.typing{align-self:flex-end;background:#122745;border-radius:20px;padding:16px 18px;display:flex;gap:5px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#9fe0e6;animation:bhDot 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes bhDot{0%,100%{opacity:.3;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+@media (max-width:980px){.day{grid-template-columns:1fr}.day-sticky{position:relative;top:0}.fb{max-width:100%}.moment{min-height:0}}
+</style>
+</helmet>
+<div class="bh {{markCls}}">
+<dc-import name="Header" active="message" start-open="{{ false }}" hint-size="100%,72px"></dc-import>
+<div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="Main.dc.html">Trang chủ</a>›<span>Sản phẩm</span>›<span>Chăm sóc khách hàng</span>›<b>Bellhop Message</b></nav></div>
+
+<section class="hero-bg" style="padding: 40px 0 0">
+<div class="wrap">
+  <div class="head center" style="margin-bottom: 40px; max-width: 800px">
+    <span class="eyebrow">Bellhop Message · Hộp thư đa kênh</span>
+    <h1 class="h1">Tin nhắn từ mọi kênh, quản lý <em>trong một hộp thư</em></h1>
+    <p class="lead">Bellhop Message tập hợp tin nhắn của khách từ các kênh mạng xã hội <i class="tbc">Liệt kê kênh</i> về một hộp thư chung. Đội ngũ phân công xử lý, xem lịch sử trao đổi và thông tin đặt phòng của khách ngay trong hệ thống Bellhop.</p>
+    <div class="btns" style="justify-content: center"><a class="btn btn-primary btn-lg" href="#form">Đặt lịch demo <span class="arr">→</span></a><a class="btn btn-outline btn-lg" href="#kenh">Xem kênh kết nối</a></div>
+  </div>
+  <div class="fadeout">
+    <div class="mock" style="box-shadow: 0 60px 120px -50px rgba(11,26,48,.6), 0 0 0 1px rgba(18,39,69,.08)">
+      <div class="mock-bar"><i></i><i></i><i></i><div class="url">app.bellhop.vn/hop-thu</div></div>
+      <div class="inbox" style="grid-template-columns: 320px 1fr 280px; min-height: 520px">
+        <div class="ib-list">
+          <div class="row" style="gap: 6px; padding: 12px 14px; border-bottom: 1px solid #eef2f6"><span class="chip chip-pro" style="height: 26px">Tất cả 12</span><span class="chip chip-line" style="height: 26px">Chưa xử lý 5</span><span class="chip chip-line" style="height: 26px">Của tôi</span></div>
+          <div class="ib-it on fly" style="animation-delay: .2s"><span class="av">TH<i class="ch ch-zalo"></i></span><div class="t"><b>Thu Hà <small>vừa xong</small></b><p>Còn phòng đôi tối thứ 7 không ạ?</p></div></div>
+          <div class="ib-it fly" style="animation-delay: .6s"><span class="av">MP<i class="ch ch-fb"></i></span><div class="t"><b>Minh Phúc <small>1 phút</small></b><p>Cho mình xin địa chỉ</p></div></div>
+          <div class="ib-it fly" style="animation-delay: 1s"><span class="av">LA<i class="ch ch-ig"></i></span><div class="t"><b>Lan Anh <small>3 phút</small></b><p>Khách sạn có chỗ đậu ô tô không?</p></div></div>
+          <div class="ib-it fly" style="animation-delay: 1.4s"><span class="av">JK<i class="ch ch-wa"></i></span><div class="t"><b>Jun Kim <small>8 phút</small></b><p>Is breakfast included in the price?</p></div></div>
+          <div class="ib-it fly" style="animation-delay: 1.8s"><span class="av">QB<i class="ch ch-web"></i></span><div class="t"><b>Quốc Bảo <small>15 phút</small></b><p>Mình muốn đặt 3 phòng cho đoàn công tác</p></div></div>
+        </div>
+        <div class="ib-chat">
+          <div class="ib-top"><div class="row" style="gap: 10px"><span class="av">TH<i class="ch ch-zalo"></i></span><div><b style="color: #122745">Thu Hà</b><div class="xs muted">Zalo OA · Khách quen (2 lần lưu trú)</div></div></div><div class="row" style="gap: 6px"><span class="chip chip-teal" style="height: 26px">Phụ trách: Lễ tân Ngọc</span><span class="chip" style="height: 26px; background: #fdf0d9; color: #8a4b08">Đang xử lý</span></div></div>
+          <div class="ib-msgs">
+            <div class="bub bub-in" style="animation-delay: .4s">Chào khách sạn, còn phòng đôi tối thứ 7 không ạ?</div>
+            <div class="bub bub-note" style="animation-delay: .8s">Ghi chú nội bộ · Ngọc: khách quen, ưu tiên phòng tầng cao</div>
+            <div class="bub bub-out" style="animation-delay: 1.2s">Dạ chào chị Hà, tối thứ 7 còn phòng Deluxe tầng 5 giá 890.000đ/đêm ạ. Em gửi chị đường dẫn đặt phòng nhé.</div>
+            <div class="bub bub-out" style="animation-delay: 1.6s; background: #fff; color: #122745; border: 1.5px solid #5fb9c2">Đặt phòng Deluxe · 24/10 → khachsanmau.vn/dat-phong</div>
+          </div>
+          <div style="padding: 12px 16px; border-top: 1px solid #dde4ec; background: #fff; display: flex; gap: 8px"><span class="chip chip-line">Mẫu trả lời nhanh</span><div style="flex: 1; height: 36px; border-radius: 10px; border: 1px solid #dde4ec"></div><span class="btn btn-primary btn-sm" style="min-height: 36px">Gửi</span></div>
+        </div>
+        <div style="border-left: 1px solid #dde4ec; padding: 16px; display: flex; flex-direction: column; gap: 10px; background: #fff">
+          <span class="label">Thông tin từ PMS</span>
+          <div class="prow"><span>Lần lưu trú</span><b>2</b></div>
+          <div class="prow"><span>Gần nhất</span><b>08/2026 · Deluxe</b></div>
+          <div class="prow"><span>Ghi chú</span><b>Thích tầng cao</b></div>
+          <span class="xs muted">Hồ sơ khách gắn với PMS <i class="tbc">✓</i></span>
+          <span class="illus" style="margin-top: auto">Dữ liệu minh họa</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sec-sm" id="kenh" style="padding-top: 24px">
+<div class="wrap stack" style="gap: 18px; align-items: center">
+  <p class="small muted">Kết nối với các kênh khách hàng thường sử dụng <i class="tbc">Chỉ hiển thị kênh đã chạy</i></p>
+  <div class="pill-strip" style="justify-content: center"><span class="chpill"><i style="background: #0068ff"></i>Zalo OA</span><span class="chpill"><i style="background: #7b4fe0"></i>Facebook Messenger</span><span class="chpill"><i style="background: #e1306c"></i>Instagram</span><span class="chpill"><i style="background: #25a35a"></i>WhatsApp</span><span class="chpill"><i style="background: #5fb9c2"></i>Live chat website</span></div>
+  <p class="xs muted">Danh sách kênh được cập nhật theo lộ trình sản phẩm.</p>
+</div>
+</section>
+
+<section class="sec bg-soft">
+<div class="wrap">
+  <div class="head"><span class="eyebrow">Một ngày tại quầy lễ tân</span><h2 class="h2">Một ngày làm việc với Bellhop Message</h2></div>
+  <div class="day">
+    <div class="day-sticky">
+      <div class="mock">
+        <div class="mock-bar"><i></i><i></i><i></i><div class="url">Hộp thư · {{m.time}}</div></div>
+        <div class="stack" style="gap: 12px; padding: 22px; min-height: 380px; background: #f7f9fc">
+          <div class="row" style="justify-content: space-between"><b style="color: #122745">{{m.head}}</b><span class="chip chip-teal" style="height: 26px">{{m.feature}}</span></div>
+          <sc-for list="{{m.rows}}" as="r" hint-placeholder-count="4">
+            <div class="ib-it fly" style="background: #fff; border: 1px solid #dde4ec; border-radius: 12px"><span class="av">{{r.av}}<i class="ch {{r.ch}}"></i></span><div class="t"><b>{{r.name}} <small>{{r.tag}}</small></b><p>{{r.msg}}</p></div></div>
+          </sc-for>
+          <span class="illus">Dữ liệu minh họa</span>
+        </div>
+      </div>
+    </div>
+    <div class="stack">
+      <sc-for list="{{moments}}" as="x" hint-placeholder-count="4">
+        <button class="moment {{x.cls}}" onClick="{{x.pick}}" onMouseEnter="{{x.pick}}" aria-pressed="{{x.sel}}">
+          <span class="t">{{x.time}}</span>
+          <h3 class="h3">{{x.title}}</h3>
+          <p>{{x.body}}</p>
+          <span class="chip chip-line" style="align-self: flex-start">{{x.feat}}</span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap">
+  <div class="head center"><span class="eyebrow">Trước &amp; sau</span><h2 class="h2">Thay đổi trong cách xử lý tin nhắn</h2><p class="lead">Kéo thanh trượt để so sánh.</p></div>
+  <div class="ba">
+    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: flex-end; padding: 32px 56px; background: #fff">
+      <div class="mock" style="width: min(560px,100%)"><div class="inbox" style="grid-template-columns: 1fr; min-height: 0"><div class="ib-list" style="display: flex">
+        <div class="ib-it on"><span class="av">TH<i class="ch ch-zalo"></i></span><div class="t"><b>Thu Hà <small>Ngọc</small></b><p>Còn phòng đôi tối thứ 7 không ạ?</p></div></div>
+        <div class="ib-it"><span class="av">MP<i class="ch ch-fb"></i></span><div class="t"><b>Minh Phúc <small>Tuấn</small></b><p>Cho mình xin địa chỉ</p></div></div>
+        <div class="ib-it"><span class="av">LA<i class="ch ch-ig"></i></span><div class="t"><b>Lan Anh <small>Ngọc</small></b><p>Có chỗ đậu ô tô không?</p></div></div>
+        <div class="ib-it"><span class="av">JK<i class="ch ch-wa"></i></span><div class="t"><b>Jun Kim <small>AI</small></b><p>Is breakfast included?</p></div></div>
+      </div></div></div>
+    </div>
+    <span class="ba-tag" style="right: 16px; background: #122745; color: #fff">SAU · Hộp thư Bellhop</span>
+    <div class="ba-l" style="width: {{split}}%">
+      <div class="ba-l-in" style="width: 1200px; justify-content: flex-start; padding-left: 80px">
+        <div class="appgrid">
+          <div class="appi" style="background: #0068ff">Zalo<b>14</b></div><div class="appi" style="background: #7b4fe0">Mess<b>9</b></div><div class="appi" style="background: #e1306c">IG<b>6</b></div><div class="appi" style="background: #25a35a">WA<b>3</b></div>
+          <div class="appi" style="background: #376587">Mail<b>21</b></div><div class="appi" style="background: #8796a8">SMS<b>4</b></div><div class="appi" style="background: #122745">Web<b>2</b></div><div class="appi" style="background: #5fb9c2; color: #122745">OTA<b>7</b></div>
+        </div>
+      </div>
+      <span class="ba-tag" style="left: 16px; background: #fff; color: #122745">TRƯỚC · Mỗi kênh một ứng dụng</span>
+    </div>
+    <label for="ba-r" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">So sánh trước và sau</label>
+    <input id="ba-r" type="range" min="5" max="95" value="{{split}}" onChange="{{onSplit}}">
+  </div>
+  <div class="split-eq" style="margin-top: 32px; gap: 32px; align-items: start">
+    <div class="stack" style="gap: 12px"><span class="label">Trước</span><ul class="list-dot stack" style="gap: 10px; color: #566579"><li>Mỗi kênh một ứng dụng riêng</li><li>Nhiều người cùng trả lời một khách hoặc không ai trả lời</li><li>Lịch sử trao đổi nằm trên điện thoại cá nhân</li><li>Khó biết khách đã đặt phòng hay chưa</li></ul></div>
+    <div class="stack" style="gap: 12px"><span class="label" style="color: #1f7a84">Sau</span><ul class="list-check"><li>Một hộp thư cho tất cả kênh</li><li>Mỗi hội thoại có người phụ trách</li><li>Lịch sử lưu trên hệ thống của cơ sở <i class="tbc">✓</i></li><li>Thông tin đặt phòng hiển thị ngay trong hội thoại <i class="tbc">✓</i></li></ul></div>
+  </div>
+</div>
+</section>
+
+<section class="sec bg-teal">
+<div class="wrap">
+  <div class="head center"><span class="eyebrow">Tính năng</span><h2 class="h2">Tính năng của Bellhop Message</h2><p class="lead"><i class="tbc">Danh sách đề xuất – đội SP xác nhận</i></p></div>
+  <div class="feats">
+    <div class="fb l"><div class="bb"><span class="ic i-inboxes"></span>Hộp thư hợp nhất cho các kênh đã kết nối</div></div>
+    <div class="fb r"><div class="bb"><span class="ic i-handoff"></span>Phân công hội thoại cho nhân viên</div></div>
+    <div class="fb l"><div class="bb"><span class="ic i-checklist"></span>Trạng thái hội thoại: mới · đang xử lý · đã xong</div></div>
+    <div class="fb r"><div class="bb"><span class="ic i-lock"></span>Ghi chú nội bộ trong hội thoại (khách không thấy)</div></div>
+    <div class="fb l"><div class="bb"><span class="ic i-message"></span>Mẫu câu trả lời nhanh cho câu hỏi thường gặp</div></div>
+    <div class="fb r"><div class="bb"><span class="ic i-booking"></span>Gửi đường dẫn đặt phòng (Booking Engine) trong hội thoại</div></div>
+    <div class="fb l"><div class="bb"><span class="ic i-pms"></span>Xem thông tin đặt phòng của khách từ Bellhop PMS</div></div>
+    <div class="fb r"><div class="bb"><span class="ic i-phone"></span>Dùng trên máy tính và điện thoại</div></div>
+  </div>
+</div>
+</section>
+
+<section class="sec bg-navy">
+<div class="wrap split">
+  <div class="stack" style="gap: 12px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 24px; padding: 28px">
+    <div class="bub bub-in" style="max-width: 85%">Wifi password là gì ạ?</div>
+    <div class="row" style="gap: 8px; align-self: flex-start"><span class="chip chip-teal" style="height: 24px">AI Concierge</span></div>
+    <div class="bub bub-ai" style="max-width: 85%">Mật khẩu Wi-Fi được in trên thẻ phòng ạ. Nếu cần hỗ trợ thêm, lễ tân luôn sẵn sàng.</div>
+    <div class="bub bub-in" style="max-width: 85%">Mình muốn đổi sang phòng có bồn tắm</div>
+    <div class="row" style="gap: 8px; align-self: flex-end"><span class="chip" style="height: 24px; background: rgba(255,255,255,.12); color: #fff">Chuyển cho Lễ tân Ngọc</span></div>
+    <div class="bub bub-out" style="max-width: 85%; background: #fff; color: #122745">Dạ em kiểm tra ngay, phòng 501 có bồn tắm và đang trống ạ.</div>
+  </div>
+  <div class="stack" style="gap: 20px">
+    <span class="eyebrow">Đi cùng nhau</span>
+    <h2 class="h2">Kết hợp với Bellhop AI Concierge</h2>
+    <p class="lead">AI Concierge trả lời các câu hỏi thường gặp dựa trên cơ sở kiến thức của khách sạn; những yêu cầu cần xử lý riêng được chuyển cho nhân viên trong cùng hộp thư. <i class="tbc">Cơ chế chuyển</i></p>
+    <a class="btn btn-teal" href="AIConcierge.dc.html" style="align-self: flex-start">Tìm hiểu AI Concierge <span class="arr">→</span></a>
+  </div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap-narrow" style="max-width: 960px">
+  <h2 class="h2" style="margin-bottom: 24px">Phù hợp với các cơ sở lưu trú</h2>
+  <div class="fit-row"><span class="chip chip-teal">Homestay &amp; villa</span><span class="h4" style="font-weight: 500">Do chủ tự vận hành: theo dõi mọi tin nhắn trên một ứng dụng.</span></div>
+  <div class="fit-row"><span class="chip chip-teal">Khách sạn nhiều ca trực</span><span class="h4" style="font-weight: 500">Phân công và theo dõi xử lý theo ca.</span></div>
+  <div class="fit-row"><span class="chip chip-teal">Chuỗi lưu trú</span><span class="h4" style="font-weight: 500">Quản lý tin nhắn của nhiều cơ sở. <i class="tbc">✓</i></span></div>
+  <div class="row wrapx" style="gap: 20px; justify-content: space-between; margin-top: 48px; padding: 24px 28px; border-radius: 18px; background: #f4f7fa">
+    <div><b style="color: #122745; font-size: 18px">Chi phí sử dụng Bellhop Message</b><div class="small muted"><span class="ph">[Mô hình phí: theo số kênh/số người dùng/số cơ sở]</span></div></div>
+    <a class="btn btn-outline" href="Main.dc.html#bang-gia">Xem bảng giá</a>
+  </div>
+</div>
+</section>
+
+<section class="sec bg-soft">
+<div class="wrap-narrow" style="max-width: 920px">
+  <div class="head center"><span class="eyebrow">Hỏi nhanh</span><h2 class="h2">Câu hỏi thường gặp</h2><p class="lead">Bấm vào câu hỏi để xem câu trả lời.</p></div>
+  <div class="cq">
+    <sc-for list="{{faq}}" as="q" hint-placeholder-count="5">
+      <button class="cq-q {{q.cls}}" onClick="{{q.ask}}" aria-expanded="{{q.exp}}">{{q.q}}</button>
+      <sc-if value="{{q.typing}}" hint-placeholder-val="{{ false }}"><div class="typing" aria-label="Đang soạn tin"><i></i><i></i><i></i></div></sc-if>
+      <sc-if value="{{q.shown}}" hint-placeholder-val="{{ false }}"><div class="cq-a">{{q.a}} <sc-if value="{{q.tbc}}" hint-placeholder-val="{{ false }}"><i class="tbc">Cần xác nhận</i></sc-if></div></sc-if>
+    </sc-for>
+  </div>
+</div>
+</section>
+
+<section class="sec" id="form"><div class="wrap">
+  <dc-import name="LeadForm" variant="chat" title="Đặt lịch demo Bellhop Message" desc="Đội ngũ Bellhop sẽ trình bày hộp thư đa kênh với các kênh cơ sở đang sử dụng." product="message" source="/san-pham/message" extra="{{extra}}" marks="{{marks}}" hint-size="100%,900px"></dc-import>
+</div></section>
+
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"reviewMarks":{"editor":"boolean","default":true,"section":"Bản duyệt"},"$preview":{"width":1440,"height":7600}}'>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { m: 0, split: 50, shown: [0], typing: -1 }; }
+  componentWillUnmount() { if (this._t) clearTimeout(this._t); }
+  renderVals() {
+    const marks = this.props.reviewMarks ?? true;
+    const M = [
+      { time: '08:00', title: 'Tin nhắn qua đêm', body: 'Các câu hỏi gửi ngoài giờ được tập trung trong hộp thư, đánh dấu chưa xử lý; ca sáng tiếp nhận đầy đủ mà không cần mở từng ứng dụng.', feat: 'Hộp thư hợp nhất · trạng thái hội thoại', head: '5 hội thoại chưa xử lý', feature: 'Chưa xử lý',
+        rows: [{ av: 'JK', ch: 'ch-wa', name: 'Jun Kim', tag: '23:40', msg: 'Is breakfast included?' }, { av: 'LA', ch: 'ch-ig', name: 'Lan Anh', tag: '00:15', msg: 'Có chỗ đậu ô tô không?' }, { av: 'QB', ch: 'ch-web', name: 'Quốc Bảo', tag: '06:02', msg: 'Đặt 3 phòng cho đoàn công tác' }] },
+      { time: '11:00', title: 'Nhiều yêu cầu cùng lúc', body: 'Quản lý phân công hội thoại cho từng nhân viên; mỗi hội thoại có người phụ trách rõ ràng.', feat: 'Phân công xử lý ✓', head: 'Phân công theo ca', feature: 'Đã phân công',
+        rows: [{ av: 'TH', ch: 'ch-zalo', name: 'Thu Hà', tag: '→ Ngọc', msg: 'Còn phòng đôi tối thứ 7?' }, { av: 'MP', ch: 'ch-fb', name: 'Minh Phúc', tag: '→ Tuấn', msg: 'Cho mình xin địa chỉ' }, { av: 'QB', ch: 'ch-web', name: 'Quốc Bảo', tag: '→ Sales Hùng', msg: 'Báo giá đoàn 3 phòng' }] },
+      { time: '15:00', title: 'Khách quen nhắn tin', body: 'Lịch sử trao đổi và thông tin đặt phòng trước đây hiển thị bên cạnh hội thoại, giúp phản hồi đúng nhu cầu.', feat: 'Hồ sơ khách gắn với PMS ✓', head: 'Thu Hà · khách quen', feature: 'Hồ sơ PMS',
+        rows: [{ av: 'TH', ch: 'ch-zalo', name: '2 lần lưu trú', tag: 'PMS', msg: 'Gần nhất 08/2026 · Deluxe' }, { av: 'TH', ch: 'ch-zalo', name: 'Sở thích', tag: 'Ghi chú', msg: 'Tầng cao, gối mềm' }, { av: 'TH', ch: 'ch-zalo', name: 'Tin nhắn mới', tag: '15:02', msg: 'Cuối tháng mình quay lại nhé' }] },
+      { time: '22:00', title: 'Ngoài giờ làm việc', body: 'Bellhop AI Concierge trả lời các câu hỏi thường gặp; hội thoại cần nhân viên được chuyển lại cho ca sau.', feat: 'Liên kết: AI Concierge ✓', head: 'AI đang trực', feature: 'AI Concierge',
+        rows: [{ av: 'AI', ch: 'ch-web', name: 'Đã trả lời', tag: 'AI', msg: 'Giờ nhận phòng từ 14:00' }, { av: 'AI', ch: 'ch-zalo', name: 'Đã trả lời', tag: 'AI', msg: 'Có chỗ đậu ô tô miễn phí' }, { av: 'NT', ch: 'ch-fb', name: 'Chuyển ca sáng', tag: 'Nhân viên', msg: 'Yêu cầu đổi ngày đặt phòng' }] }
+    ];
+    const i = this.state.m;
+    const F = [
+      { q: 'Bellhop Message kết nối được những kênh nào?', a: '[Danh sách kênh].', tbc: true },
+      { q: 'Nhiều nhân viên có thể cùng sử dụng không?', a: 'Có; mỗi nhân viên có tài khoản riêng và được phân công hội thoại.', tbc: true },
+      { q: 'Tin nhắn cũ trước khi kết nối có được đồng bộ không?', a: '[Xác nhận].', tbc: true },
+      { q: 'Có cần dùng Bellhop PMS không?', a: '[Xác nhận].', tbc: true },
+      { q: 'Dữ liệu hội thoại được lưu trữ ở đâu?', a: '[Mô tả]; xem Chính sách xử lý dữ liệu cá nhân.', tbc: true }
+    ];
+    const s = this.state;
+    return {
+      markCls: marks ? '' : 'no-marks', marks,
+      m: M[i],
+      moments: M.map((x, k) => ({ time: x.time, title: x.title, body: x.body, feat: x.feat, cls: k === i ? 'on' : '', sel: k === i ? 'true' : 'false', pick: () => { if (this.state.m !== k) this.setState({ m: k }); } })),
+      split: s.split,
+      onSplit: (e) => this.setState({ split: Number(e.target.value) }),
+      faq: F.map((x, k) => {
+        const shown = s.shown.indexOf(k) >= 0;
+        return { q: x.q, a: x.a, tbc: x.tbc, shown, typing: s.typing === k, cls: shown ? 'on' : '', exp: shown ? 'true' : 'false',
+          ask: () => {
+            if (shown) { this.setState({ shown: this.state.shown.filter((v) => v !== k) }); return; }
+            this.setState({ typing: k });
+            if (this._t) clearTimeout(this._t);
+            this._t = setTimeout(() => this.setState({ typing: -1, shown: this.state.shown.concat([k]) }), 600);
+          } };
+      }),
+      extra: { label: 'Kênh nhắn tin đang dùng', type: 'chips', options: ['Zalo OA', 'Messenger', 'Instagram', 'WhatsApp', 'Live chat', 'Khác'] }
+    };
+  }
+}
+</script>
+</body>
+</html>
