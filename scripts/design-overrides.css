@@ -8,10 +8,50 @@
 .brand-logo--large img{width:82px;height:82px}
 .site-header-sticky{position:sticky;top:0;z-index:90}
 .site-header-sticky .hdr{box-shadow:0 4px 16px rgba(11,26,48,.06)}
+.hdr .nav-i .cv{display:inline-block;flex:none;width:6px;height:6px;margin-left:1px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;opacity:.65;transform:translateY(-2px) rotate(45deg)}
+.hdr .nav-i.open .cv{transform:translateY(1px) rotate(-135deg)}
 .subnav{top:72px;z-index:80}
 @media(min-width:981px){.toc{top:96px}}
 .subnav a.it{transition:color .2s,border-color .2s}
 .subnav a.it.on{border-bottom-color:var(--teal);color:var(--navy)}
 .bh [id]{scroll-margin-top:144px}
+.photo--real{padding:0;background:#dfe9f1}
+.photo--real::before{display:none}
+.photo--real img{display:block;width:100%;height:200px;object-fit:cover}
+.customer-stories-section{background:#f1f6fa}
+.customer-stories-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:32px}
+.customer-stories-heading h2{margin-top:14px}
+.customer-stories-controls{display:flex;gap:9px}
+.customer-stories-controls button{width:40px;height:40px;border:1px solid #cbd9e4;border-radius:50%;background:#fff;color:#122745;font-size:27px;cursor:pointer}
+.customer-stories-controls button:hover,.customer-stories-controls button:focus-visible{background:#122745;color:#fff}
+.customer-stories-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 36px)/3);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth}
+.customer-stories-track::-webkit-scrollbar{display:none}
+.customer-story-card{position:relative;display:flex;flex-direction:column;min-height:330px;padding:30px;border:1px solid #dce6ee;border-radius:20px;background:#fff;scroll-snap-align:start}
+.customer-story-mark{height:46px;color:#5fb9c2;font:700 76px Georgia,serif;line-height:.8}
+.customer-story-card blockquote{margin:18px 0 24px;color:#122745;font-size:21px;font-weight:650;line-height:1.45}
+.customer-story-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}
+.customer-story-chips span{padding:5px 10px;border-radius:30px;background:#edf4f7;color:#376587;font-size:12px}
+.customer-story-person{display:flex;align-items:center;gap:12px;margin-top:23px;padding-top:20px;border-top:1px solid #e4ebf1}
+.customer-story-person img{width:48px;height:48px;border-radius:12px;object-fit:cover}
+.customer-story-person strong,.customer-story-person small{display:block}
+.customer-story-person small{margin-top:3px;color:#65758a}
+.customer-stories-logos{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:36px;margin-top:38px}
+.customer-stories-logos img{max-width:130px;max-height:48px;object-fit:contain;filter:grayscale(1);opacity:.7}
+.customer-stories-link{display:inline-flex;margin-top:34px}
+@media(max-width:850px){.customer-stories-track{grid-auto-columns:calc((100% - 18px)/2)}}
+@media(max-width:600px){.customer-stories-track{grid-auto-columns:100%}.customer-story-card{min-height:300px}}
+.fab a{position:relative;isolation:isolate;transition:transform .2s ease,box-shadow .2s ease}
+.fab a:hover,.fab a:focus-visible{transform:translateY(-4px) scale(1.06);box-shadow:0 18px 34px -10px rgba(11,26,48,.55)}
+.fab a::after{content:"";position:absolute;inset:-3px;border:2px solid;border-radius:50%;pointer-events:none;animation:bh-contact-ring 3s ease-out infinite}
+.fab .z::after{border-color:#0068ff}
+.fab .c::after{border-color:#5fb9c2;animation-delay:1.5s}
+.fab .c svg{animation:bh-phone-tilt 4s ease-in-out infinite}
+.mbar .contact-zalo,.mbar .contact-phone{transition:transform .2s ease,box-shadow .2s ease;animation:bh-contact-glow 4s ease-in-out infinite}
+.mbar .contact-phone{animation-delay:2s}
+.mbar .contact-zalo:hover,.mbar .contact-phone:hover{transform:translateY(-2px)}
+@keyframes bh-contact-ring{0%{transform:scale(.9);opacity:.7}60%,100%{transform:scale(1.45);opacity:0}}
+@keyframes bh-phone-tilt{0%,88%,100%{transform:rotate(0)}91%,97%{transform:rotate(-12deg)}94%{transform:rotate(12deg)}}
+@keyframes bh-contact-glow{0%,70%,100%{box-shadow:0 0 0 0 rgba(95,185,194,0)}80%{box-shadow:0 0 0 5px rgba(95,185,194,.23)}}
+@media(prefers-reduced-motion:reduce){.fab a::after,.fab .c svg,.mbar .contact-zalo,.mbar .contact-phone{animation:none}}
 @media(max-width:760px){.brand-logo--large img{width:64px;height:64px}.brand-logo--large{font-size:22px}}
 @media(max-width:980px){.toc a.on{border-bottom:2px solid #1f6b52}}

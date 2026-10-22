@@ -69,6 +69,30 @@ def main():
                 'href="#">Đăng nhập</a>',
                 'href="https://app.bellhop.biz/" target="_top" rel="noopener">Đăng nhập</a>',
             )
+            content = content.replace(
+                'href="#" style="background: #0068ff; color: #fff">Chat Zalo</a>',
+                'href="https://zalo.me/0366071468" target="_blank" rel="noopener noreferrer" style="background: #0068ff; color: #fff">Chat Zalo</a>',
+            )
+            if name == "Footer":
+                content = content.replace(
+                    '<a class="z" href="#"',
+                    '<a class="z" href="https://zalo.me/0366071468" target="_blank" rel="noopener noreferrer"',
+                ).replace(
+                    '<a class="c" href="#"',
+                    '<a class="c" href="tel:0366071468"',
+                ).replace(
+                    '<a href="#" style="background: #e8f0ff; color: #0050c8">Zalo</a>',
+                    '<a class="contact-zalo" href="https://zalo.me/0366071468" target="_blank" rel="noopener noreferrer" style="background: #e8f0ff; color: #0050c8">Zalo</a>',
+                ).replace(
+                    '<a href="#" style="background: #eef8f9; color: #122745">Gọi</a>',
+                    '<a class="contact-phone" href="tel:0366071468" style="background: #eef8f9; color: #122745">Gọi</a>',
+                ).replace(
+                    '<a href="#" aria-label="Zalo">',
+                    '<a href="https://zalo.me/0366071468" target="_blank" rel="noopener noreferrer" aria-label="Zalo">',
+                ).replace(
+                    'Hotline/Zalo: <span class="ph">[ ]</span>',
+                    'Hotline/Zalo: <a href="tel:0366071468">0366 071 468</a>',
+                )
             content = re.sub(
                 r'<span class="logo-ph"[^>]*>\s*(MISA|Kovena|KOVENA)(?:\s*<i class="tbc">Logo</i>)?\s*</span>',
                 brand_logo,
@@ -84,7 +108,9 @@ def main():
                 content = content.replace(
                     "</head>",
                     '<link rel="stylesheet" href="./design-overrides.css">'
-                    '<script src="./scroll-spy.js" defer></script></head>',
+                    '<script src="./scroll-spy.js" defer></script>'
+                    + ('<script src="./home-gallery.js" defer></script><script src="./customer-stories.js" defer></script>' if page == "Main" else '')
+                    + '</head>',
                     1,
                 )
             (OUTPUT / f"{dest_name}.dc.html").write_text(content, encoding="utf-8")
@@ -101,6 +127,9 @@ def main():
     home = ROOT / PAGES["Main"]
     shutil.copy2(ROOT / "scripts" / "design-overrides.css", OUTPUT / "design-overrides.css")
     shutil.copy2(ROOT / "scripts" / "scroll-spy.js", OUTPUT / "scroll-spy.js")
+    shutil.copy2(ROOT / "scripts" / "home-gallery.js", OUTPUT / "home-gallery.js")
+    shutil.copy2(ROOT / "scripts" / "customer-stories.js", OUTPUT / "customer-stories.js")
+    shutil.copy2(home / "customer-stories.json", OUTPUT / "customer-stories.json")
     (OUTPUT / "brand").mkdir(exist_ok=True)
     for file in (ROOT / "public" / "brand").glob("*.svg"):
         shutil.copy2(file, OUTPUT / "brand" / file.name)

@@ -23,6 +23,20 @@ a{color:inherit}a:hover{color:#1f7a84}
 .jr-card{background:#fff;border:1px solid #dde4ec;border-radius:18px;padding:22px 16px;display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;transition:border-color .2s,transform .2s}
 .jr-card:hover{border-color:#5fb9c2;transform:translateY(-3px)}
 .jr-band{background:#122745;color:#fff;border-radius:18px;padding:22px 28px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.photo--real::before{display:none}
+.photo--real img{display:block;width:100%;height:200px;object-fit:cover}
+.photo-gallery{position:relative;height:200px;min-height:200px;padding:0;overflow:hidden;background:#dfe9f1}
+.photo-gallery::before{display:none}
+.photo-gallery-slides,.photo-gallery-slides img{position:absolute;inset:0;width:100%;height:100%}
+.photo-gallery-slides img{display:block;object-fit:cover;opacity:0;transition:opacity .7s ease}
+.photo-gallery-slides img.is-active{opacity:1}
+.photo-gallery-control{position:absolute;top:50%;z-index:2;display:grid;place-items:center;width:34px;height:34px;padding:0;border:0;border-radius:50%;background:rgba(18,39,69,.72);color:#fff;font-size:25px;line-height:1;cursor:pointer;transform:translateY(-50%);transition:background .2s ease,transform .2s ease}
+.photo-gallery-control:hover,.photo-gallery-control:focus-visible{background:#122745;transform:translateY(-50%) scale(1.08)}
+.photo-gallery-control--prev{left:10px}.photo-gallery-control--next{right:10px}
+.photo-gallery-dots{position:absolute;z-index:2;bottom:10px;left:50%;display:flex;gap:7px;transform:translateX(-50%)}
+.photo-gallery-dots button{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.65);box-shadow:0 1px 4px #12274566;cursor:pointer;transition:width .3s ease,background .3s ease}
+.photo-gallery-dots button.is-active{width:22px;border-radius:8px;background:#fff}
+@media (prefers-reduced-motion:reduce){.photo-gallery-slides img,.photo-gallery-control,.photo-gallery-dots button{transition:none}}
 @media (max-width:980px){.jr{grid-template-columns:1fr}.jr-st{flex-direction:row;text-align:left}.jr-st::after{display:none}.jr-card{align-items:flex-start}}
 </style>
 </helmet>
@@ -350,15 +364,15 @@ a{color:inherit}a:hover{color:#1f7a84}
   </div>
   <div class="grid-auto">
     <div class="card" style="padding: 0; overflow: hidden">
-      <div class="photo" style="border-radius: 0; min-height: 200px"><span>Ảnh thật: quầy lễ tân khách sạn</span></div>
+      <div class="photo photo-gallery" data-gallery aria-label="Hình ảnh khách sạn"><div class="photo-gallery-slides"><img class="is-active" src="./assets/hotel-reception.png" alt="Lễ tân đón khách tại quầy khách sạn"><img src="./assets/hotel-room.png" alt="Phòng nghỉ khách sạn hiện đại" loading="lazy"><img src="./assets/hotel-lobby.png" alt="Sảnh khách sạn rộng và sáng" loading="lazy"></div><button class="photo-gallery-control photo-gallery-control--prev" type="button" data-prev aria-label="Ảnh khách sạn trước">‹</button><button class="photo-gallery-control photo-gallery-control--next" type="button" data-next aria-label="Ảnh khách sạn tiếp theo">›</button><div class="photo-gallery-dots"><button class="is-active" type="button" data-slide="0" aria-label="Xem ảnh khách sạn 1" aria-current="true"></button><button type="button" data-slide="1" aria-label="Xem ảnh khách sạn 2"></button><button type="button" data-slide="2" aria-label="Xem ảnh khách sạn 3"></button></div></div>
       <div class="stack" style="gap: 14px; padding: 28px; flex: 1"><div class="row" style="gap: 12px"><span class="ic ic-tile-sm i-hotel"></span><h3 class="h3">Khách sạn</h3></div><p>Nhiều ca lễ tân, nhiều hạng phòng, bán trên nhiều OTA.</p><div class="small muted">Gợi ý</div><div class="chips"><a class="chip" href="PMS.dc.html">PMS</a><a class="chip" href="CMS.dc.html">CMS</a><a class="chip" href="BookingEngine.dc.html">Booking Engine</a></div><a class="lnk foot" href="#form" style="margin-top: auto">Đặt lịch demo cho mô hình này <span class="arr">→</span></a></div>
     </div>
     <div class="card" style="padding: 0; overflow: hidden">
-      <div class="photo" style="border-radius: 0; min-height: 200px; background: linear-gradient(135deg,#d9efef,#bfe0e3)"><span>Ảnh thật: không gian homestay/villa</span></div>
+      <div class="photo photo-gallery" data-gallery aria-label="Hình ảnh homestay và villa"><div class="photo-gallery-slides"><img class="is-active" src="./assets/homestay-villa.png" alt="Không gian phòng khách homestay mở ra khu vườn"><img src="./assets/villa-bedroom.png" alt="Phòng ngủ villa ấm cúng" loading="lazy"><img src="./assets/villa-terrace.png" alt="Sân hiên và hồ bơi villa" loading="lazy"></div><button class="photo-gallery-control photo-gallery-control--prev" type="button" data-prev aria-label="Ảnh homestay trước">‹</button><button class="photo-gallery-control photo-gallery-control--next" type="button" data-next aria-label="Ảnh homestay tiếp theo">›</button><div class="photo-gallery-dots"><button class="is-active" type="button" data-slide="0" aria-label="Xem ảnh homestay 1" aria-current="true"></button><button type="button" data-slide="1" aria-label="Xem ảnh homestay 2"></button><button type="button" data-slide="2" aria-label="Xem ảnh homestay 3"></button></div></div>
       <div class="stack" style="gap: 14px; padding: 28px; flex: 1"><div class="row" style="gap: 12px"><span class="ic ic-tile-sm i-house"></span><h3 class="h3">Homestay &amp; Villa</h3></div><p>Ít nhân sự, chủ tự vận hành qua điện thoại, khách hỏi nhiều qua mạng xã hội.</p><div class="small muted">Gợi ý</div><div class="chips"><a class="chip chip-free" href="PMS.dc.html">PMS miễn phí</a><a class="chip" href="Message.dc.html">Message</a><a class="chip" href="Website.dc.html">Website</a></div><a class="lnk foot" href="#form" style="margin-top: auto">Đặt lịch demo cho mô hình này <span class="arr">→</span></a></div>
     </div>
     <div class="card" style="padding: 0; overflow: hidden">
-      <div class="photo" style="border-radius: 0; min-height: 200px; background: linear-gradient(135deg,#dbe4ee,#c3d2e2)"><span>Ảnh thật: nhiều cơ sở trong chuỗi</span></div>
+      <div class="photo photo-gallery" data-gallery aria-label="Hình ảnh chuỗi lưu trú"><div class="photo-gallery-slides"><img class="is-active" src="./assets/hotel-chain.png" alt="Cụm cơ sở lưu trú quanh sân vườn"><img src="./assets/hotel-chain-city.png" alt="Các cơ sở lưu trú trong thành phố" loading="lazy"><img src="./assets/hotel-chain-coast.png" alt="Các cơ sở lưu trú bên bờ biển" loading="lazy"></div><button class="photo-gallery-control photo-gallery-control--prev" type="button" data-prev aria-label="Ảnh chuỗi lưu trú trước">‹</button><button class="photo-gallery-control photo-gallery-control--next" type="button" data-next aria-label="Ảnh chuỗi lưu trú tiếp theo">›</button><div class="photo-gallery-dots"><button class="is-active" type="button" data-slide="0" aria-label="Xem ảnh chuỗi lưu trú 1" aria-current="true"></button><button type="button" data-slide="1" aria-label="Xem ảnh chuỗi lưu trú 2"></button><button type="button" data-slide="2" aria-label="Xem ảnh chuỗi lưu trú 3"></button></div></div>
       <div class="stack" style="gap: 14px; padding: 28px; flex: 1"><div class="row" style="gap: 12px"><span class="ic ic-tile-sm i-chain"></span><h3 class="h3">Chuỗi lưu trú</h3></div><p>Nhiều cơ sở, cần phân quyền, báo cáo tập trung, kế toán thống nhất. <i class="tbc">Đa cơ sở</i></p><div class="small muted">Gợi ý</div><div class="chips"><a class="chip chip-pro" href="PMS.dc.html">PMS nâng cao</a><a class="chip" href="CMS.dc.html">CMS</a><a class="chip" href="Finance.dc.html">Finance</a></div><a class="lnk foot" href="#form" style="margin-top: auto">Đặt lịch demo cho mô hình này <span class="arr">→</span></a></div>
     </div>
   </div>
@@ -392,14 +406,8 @@ a{color:inherit}a:hover{color:#1f7a84}
 </div>
 </section>
 
-<!-- 11 TESTIMONIALS (hidden until real) -->
-<sc-if value="{{reviewMarks}}" hint-placeholder-val="{{ true }}">
-<section class="sec-sm">
-<div class="wrap">
-  <div class="tbc-block"><span class="ic ic-md i-users"></span><div class="stack" style="gap: 6px"><b>Section “Chủ cơ sở lưu trú nói gì về Bellhop” – ẨN khi lên web</b><span class="small">Chỉ hiển thị khi có ít nhất 3 phản hồi thật được khách đồng ý đăng. Thẻ gồm: trích dẫn ≤ 40 từ · họ tên · chức danh · tên cơ sở · loại hình · số phòng · sản phẩm đang dùng · ảnh/logo. Carousel 3 thẻ/khung, dải logo cơ sở grayscale bên dưới.</span></div></div>
-</div>
-</section>
-</sc-if>
+<!-- 11 CUSTOMER STORIES: rendered only with three approved, complete testimonials -->
+<div id="customer-stories-slot"></div>
 
 <!-- 12 BLOG -->
 <section class="sec">

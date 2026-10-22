@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import AuthPage from './AuthPage.jsx';
+import CustomerStories from './CustomerStories.jsx';
 import './style.css';
 
 const pages = {
@@ -18,6 +19,7 @@ const loginUrl = 'https://app.bellhop.biz/';
 
 function routeFromLocation() {
   const path = window.location.pathname;
+  if (path === '/khach-hang/cau-chuyen') return path;
   return pages[path] ? path : '/';
 }
 
@@ -90,6 +92,12 @@ function App() {
       if (!anchor) return;
       const url = new URL(anchor.href, current.location.href);
       if (url.origin !== window.location.origin) return;
+      if (url.pathname === '/khach-hang/cau-chuyen') {
+        event.preventDefault();
+        window.history.pushState({}, '', url.pathname);
+        setRoute(url.pathname);
+        return;
+      }
       if (['/register', '/login'].includes(url.pathname)) {
         event.preventDefault();
         openAuth(url.pathname.slice(1));
@@ -116,6 +124,8 @@ function App() {
       scrollWhenReady();
     }
   };
+
+  if (route === '/khach-hang/cau-chuyen') return <CustomerStories />;
 
   return <><iframe
     ref={frame}
