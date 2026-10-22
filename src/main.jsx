@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
+import AuthPage from './AuthPage.jsx';
 import './style.css';
 
 const pages = {
@@ -13,13 +14,16 @@ const pages = {
   '/finance': 'Finance',
 };
 const paths = Object.fromEntries(Object.entries(pages).map(([path, name]) => [name, path]));
+const loginUrl = 'https://app.bellhop.biz/';
 
 function routeFromLocation() {
-  return pages[window.location.pathname] ? window.location.pathname : '/';
+  const path = window.location.pathname;
+  return pages[path] ? path : '/';
 }
 
 function App() {
   const [route, setRoute] = useState(routeFromLocation);
+  const [modalMode, setModalMode] = useState(() => window.location.pathname === '/register' ? 'register' : null);
   const frame = useRef(null);
   const syncing = useRef(false);
 
@@ -30,13 +34,43 @@ function App() {
       window.history[replace ? 'replaceState' : 'pushState']({}, '', target);
     }
     setRoute(path);
-    if (frame.current?.contentWindow && pages[route] === pages[path] && hash) {
-      frame.current.contentWindow.location.hash = hash;
+    if (frame.current?.contentWindow && pages[path] && pages[route] === pages[path] && hash) {
+      const current = frame.current.contentWindow;
+      const targetElement = current.document.getElementById(decodeURIComponent(hash.slice(1)));
+      if (targetElement) {
+        current.history.replaceState({}, '', hash);
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        current.location.hash = hash;
+      }
     }
   }, [route]);
 
+  const openAuth = useCallback((mode) => {
+    if (mode === 'login') {
+      window.location.assign(loginUrl);
+      return;
+    }
+    if (route !== '/') navigate('/');
+    else if (window.location.pathname === '/register') window.history.replaceState({}, '', '/');
+    setModalMode(mode);
+  }, [navigate, route]);
+
+  const closeAuth = useCallback(() => {
+    setModalMode(null);
+    if (window.location.pathname === '/register') window.history.replaceState({}, '', '/');
+  }, []);
+
+  const openDemo = useCallback(() => {
+    closeAuth();
+    navigate('/', '#form');
+  }, [closeAuth, navigate]);
+
   useEffect(() => {
-    const onPop = () => setRoute(routeFromLocation());
+    const onPop = () => {
+      setRoute(routeFromLocation());
+      setModalMode(window.location.pathname === '/register' ? 'register' : null);
+    };
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
   }, []);
@@ -56,21 +90,41 @@ function App() {
       if (!anchor) return;
       const url = new URL(anchor.href, current.location.href);
       if (url.origin !== window.location.origin) return;
+      if (['/register', '/login'].includes(url.pathname)) {
+        event.preventDefault();
+        openAuth(url.pathname.slice(1));
+        return;
+      }
       const targetName = url.pathname.split('/').pop()?.replace(/\.dc\.html$/, '');
       if (!paths[targetName]) return;
       event.preventDefault();
       navigate(paths[targetName], url.hash);
     });
-    if (window.location.hash) current.location.hash = window.location.hash;
+    if (window.location.hash) {
+      const hash = window.location.hash;
+      const id = decodeURIComponent(hash.slice(1));
+      let attempts = 0;
+      const scrollWhenReady = () => {
+        const target = doc.getElementById(id);
+        if (target) {
+          current.history.replaceState({}, '', hash);
+          target.scrollIntoView({ block: 'start' });
+        } else if (attempts++ < 20) {
+          window.setTimeout(scrollWhenReady, 100);
+        }
+      };
+      scrollWhenReady();
+    }
   };
 
-  return <iframe
+  return <><iframe
     ref={frame}
     key={pages[route]}
     title="Bellhop"
     src={`/design/${pages[route]}.dc.html${window.location.hash}`}
     onLoad={onLoad}
-  />;
+  />{modalMode && <AuthPage key={modalMode} mode={modalMode} onClose={closeAuth} onModeChange={setModalMode} onDemo={openDemo} />}</>;
 }
 
-createRoot(document.getElementById('root')).render(<App />);
+if (window.location.pathname === '/login') window.location.replace(loginUrl);
+else createRoot(document.getElementById('root')).render(<App />);

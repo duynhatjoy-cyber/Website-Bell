@@ -23,7 +23,11 @@ Open the local URL shown by Vite. `npm run build` produces `dist/`.
 | `/ai-concierge` | AI Concierge |
 | `/payment` | Bellhop Payment |
 | `/finance` | Bellhop Finance |
+| `/register` | Mở modal đăng ký trên trang chủ |
+| `/login` | Chuyển sang ứng dụng Bellhop để đăng nhập |
 
 `scripts/merge_design.py` combines the eight source folders into one shared asset/runtime directory before development or production builds. The React entry point handles routes and keeps design page links inside the application. The exported design pages use their own React-based design runtime, so they are embedded as same-origin documents to preserve layout, styling, and interactive widgets. This is a migration layer: the individual pages have not yet been rewritten as native JSX components.
 
 The supplied folders do not include separate PMS or About pages. Their links lead to relevant sections on the home page.
+
+The registration modal reuses the demo form's two-column layout and submits JSON to `POST /api/auth/register` with cookie credentials. The repository does not include a registration server; the form shows a connection error until that endpoint is provided. Sign-in links open `https://app.bellhop.biz/`.

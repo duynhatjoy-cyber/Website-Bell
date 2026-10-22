@@ -1,0 +1,17 @@
+.brand-logo{display:inline-flex;align-items:center;justify-content:center;gap:8px;vertical-align:middle;white-space:nowrap;color:#122745;font-size:13px;line-height:1.2;font-weight:800;letter-spacing:.02em}
+.brand-logo img{display:block;width:30px;height:30px;object-fit:contain}
+.brand-logo--kovena img{width:34px;height:34px}
+.brand-logo b{font:inherit}
+.h4 .brand-logo{font-size:11px;margin-left:4px}
+.h4 .brand-logo img{width:21px;height:21px}
+.brand-logo--large{gap:14px;font-size:26px}
+.brand-logo--large img{width:82px;height:82px}
+.site-header-sticky{position:sticky;top:0;z-index:90}
+.site-header-sticky .hdr{box-shadow:0 4px 16px rgba(11,26,48,.06)}
+.subnav{top:72px;z-index:80}
+@media(min-width:981px){.toc{top:96px}}
+.subnav a.it{transition:color .2s,border-color .2s}
+.subnav a.it.on{border-bottom-color:var(--teal);color:var(--navy)}
+.bh [id]{scroll-margin-top:144px}
+@media(max-width:760px){.brand-logo--large img{width:64px;height:64px}.brand-logo--large{font-size:22px}}
+@media(max-width:980px){.toc a.on{border-bottom:2px solid #1f6b52}}

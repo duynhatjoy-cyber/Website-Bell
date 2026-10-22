@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="title">
+  <title id="title">MISA</title>
+  <defs><linearGradient id="ring" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#ed2028"/><stop offset=".22" stop-color="#ff8b00"/><stop offset=".47" stop-color="#ffe500"/><stop offset=".69" stop-color="#12c926"/><stop offset=".86" stop-color="#00a9e8"/><stop offset="1" stop-color="#0965d8"/></linearGradient></defs>
+  <circle cx="24" cy="24" r="19" fill="none" stroke="url(#ring)" stroke-width="9"/>
+  <path d="M11 16c3-7 12-11 21-7" fill="none" stroke="#00a7e9" stroke-width="8" stroke-linecap="round"/>
+</svg>

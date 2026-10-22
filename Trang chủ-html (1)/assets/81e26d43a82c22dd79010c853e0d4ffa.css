@@ -58,6 +58,8 @@
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:12px;font-weight:700;font-size:16px;border:2px solid transparent;transition:background .2s,border-color .2s,color .2s,transform .2s;white-space:nowrap;cursor:pointer;line-height:1}
 .btn:hover{transform:translateY(-1px)}
 .btn-primary{background:var(--navy);color:#fff}
+.bh a.btn-primary{color:#fff}
+.bh a.btn-primary:hover{color:#fff}
 .btn-primary:hover{background:var(--steel)}
 .btn-teal{background:var(--teal);color:var(--navy)}
 .btn-teal:hover{background:#7ccad1}
