@@ -2,10 +2,12 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import AuthPage from './AuthPage.jsx';
 import CustomerStories from './CustomerStories.jsx';
+import { applyLanguage } from './translations.js';
 import './style.css';
 
 const pages = {
   '/': 'Main',
+  '/pms': 'PMS',
   '/booking-engine': 'BookingEngine',
   '/cms': 'CMS',
   '/website': 'Website',
@@ -25,6 +27,7 @@ function routeFromLocation() {
 
 function App() {
   const [route, setRoute] = useState(routeFromLocation);
+  const [language, setLanguage] = useState(() => localStorage.getItem('bellhop-language') || 'vi');
   const [modalMode, setModalMode] = useState(() => window.location.pathname === '/register' ? 'register' : null);
   const frame = useRef(null);
   const syncing = useRef(false);
@@ -77,10 +80,15 @@ function App() {
     return () => window.removeEventListener('popstate', onPop);
   }, []);
 
+  useEffect(() => {
+    applyLanguage(frame.current?.contentDocument, language);
+  }, [language]);
+
   const onLoad = () => {
     const doc = frame.current?.contentDocument;
     if (!doc) return;
     const current = frame.current.contentWindow;
+    applyLanguage(doc, language);
     const name = current.location.pathname.split('/').pop()?.replace(/\.dc\.html$/, '');
     if (paths[name] && !syncing.current && route !== paths[name]) {
       syncing.current = true;
@@ -88,6 +96,17 @@ function App() {
       syncing.current = false;
     }
     doc.addEventListener('click', (event) => {
+      const languageButton = event.target.closest?.('[data-language]');
+      if (languageButton) {
+        const nextLanguage = languageButton.getAttribute('data-language');
+        if (['vi', 'en'].includes(nextLanguage)) {
+          localStorage.setItem('bellhop-language', nextLanguage);
+          setLanguage(nextLanguage);
+        }
+        const dropdown = languageButton.closest('details.language-dropdown');
+        if (dropdown) dropdown.open = false;
+        return;
+      }
       const anchor = event.target.closest?.('a[href]');
       if (!anchor) return;
       const url = new URL(anchor.href, current.location.href);

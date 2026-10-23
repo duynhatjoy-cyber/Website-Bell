@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "public" / "design"
 PAGES = {
     "Main": "Trang chủ-html (1)",
+    "PMS": "SP – Bellhop PMS-html",
     "BookingEngine": "SP – Booking Engine-html",
     "CMS": "SP – Bellhop CMS-html",
     "Website": "SP – Bellhop Website-html",
@@ -18,6 +19,9 @@ PAGES = {
     "Payment": "SP – Bellhop Payment-html",
     "Finance": "SP – Bellhop Finance-html",
 }
+FLAG_VI = '<svg viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#da251d"/><path d="m10 2 1.35 3.8 4-.05-3.2 2.35 1.25 3.8L10 9.6l-3.4 2.3 1.25-3.8-3.2-2.35 4 .05z" fill="#ffde00"/></svg>'
+FLAG_US = '<svg viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#b22234"/><path d="M0 1.08h20v1.08H0zm0 2.16h20v1.08H0zm0 2.16h20v1.08H0zm0 2.16h20v1.08H0zm0 2.16h20v1.08H0zm0 2.16h20v1.08H0z" fill="#fff"/><rect width="8.5" height="7.56" fill="#3c3b6e"/><g fill="#fff"><circle cx="1.4" cy="1.2" r=".35"/><circle cx="3.3" cy="1.2" r=".35"/><circle cx="5.2" cy="1.2" r=".35"/><circle cx="7.1" cy="1.2" r=".35"/><circle cx="2.35" cy="2.6" r=".35"/><circle cx="4.25" cy="2.6" r=".35"/><circle cx="6.15" cy="2.6" r=".35"/><circle cx="1.4" cy="4" r=".35"/><circle cx="3.3" cy="4" r=".35"/><circle cx="5.2" cy="4" r=".35"/><circle cx="7.1" cy="4" r=".35"/><circle cx="2.35" cy="5.4" r=".35"/><circle cx="4.25" cy="5.4" r=".35"/><circle cx="6.15" cy="5.4" r=".35"/></g></svg>'
+LANGUAGE_DROPDOWN = f'<details class="language-dropdown"><summary aria-label="Choose language"><span class="current-language-flag" data-current-flag><span data-flag="vi">{FLAG_VI}</span><span data-flag="en" hidden>{FLAG_US}</span></span><span data-current-language>VI</span><span class="language-chevron" aria-hidden="true">▾</span></summary><div class="language-options"><button type="button" data-language="vi">{FLAG_VI} Tiếng Việt</button><button type="button" data-language="en">{FLAG_US} English</button></div></details>'
 
 
 def digest(path):
@@ -42,6 +46,13 @@ def main():
 
     for page, folder in PAGES.items():
         source = ROOT / folder
+        source_assets = list((source / "assets").iterdir())
+        asset_names = {}
+        for asset in source_assets:
+            destination_name = asset.name
+            if destination_name in copied and digest(asset) != digest(OUTPUT / "assets" / destination_name):
+                destination_name = f"{page}-{asset.name}"
+            asset_names[asset.name] = destination_name
         component_names = {
             file.stem.removesuffix(".dc"): f"{page}{file.stem.removesuffix('.dc')}"
             for file in source.glob("*.dc.html")
@@ -52,6 +63,9 @@ def main():
             name = file.stem.removesuffix(".dc")
             dest_name = page if name == page else component_names[name]
             content = file.read_text(encoding="utf-8")
+            for asset_name, destination_name in asset_names.items():
+                if asset_name != destination_name:
+                    content = content.replace(asset_name, destination_name)
             content = re.sub(
                 r'(<dc-import\b[^>]*\bname=")[^"]+',
                 lambda match: match.group(1) + component_names.get(
@@ -60,8 +74,7 @@ def main():
                 ),
                 content,
             )
-            # These two destinations have no supplied design page.
-            content = content.replace("PMS.dc.html", "Main.dc.html#san-pham")
+            # This destination has no supplied design page.
             content = content.replace("About.dc.html", "Main.dc.html#form")
             # Trial calls scroll to the booking form on the current page.
             content = content.replace('href="#dang-ky"', 'href="#form"')
@@ -69,6 +82,23 @@ def main():
                 'href="#">Đăng nhập</a>',
                 'href="https://app.bellhop.biz/" target="_top" rel="noopener">Đăng nhập</a>',
             )
+            if name.endswith("Header"):
+                content = content.replace(
+                    '<a class="hdr-login" href="https://app.bellhop.biz/" target="_top" rel="noopener">Đăng nhập</a>',
+                    '<a class="hdr-login" href="https://app.bellhop.biz/" target="_top" rel="noopener">Đăng nhập</a>',
+                    1,
+                )
+                content = content.replace(
+                    '<button class="burger"',
+                    LANGUAGE_DROPDOWN.replace('<details class="language-dropdown">', '<details class="language-dropdown hdr-language">') + '\n      <button class="burger"',
+                    1,
+                )
+                content = content.replace(
+                    '<a href="https://app.bellhop.biz/" target="_top" rel="noopener">Đăng nhập</a>',
+                    '<a href="https://app.bellhop.biz/" target="_top" rel="noopener">Đăng nhập</a>'
+                    + LANGUAGE_DROPDOWN.replace('<details class="language-dropdown">', '<details class="language-dropdown mobile-language">'),
+                    1,
+                )
             content = content.replace(
                 'href="#" style="background: #0068ff; color: #fff">Chat Zalo</a>',
                 'href="https://zalo.me/0366071468" target="_blank" rel="noopener noreferrer" style="background: #0068ff; color: #fff">Chat Zalo</a>',
@@ -115,14 +145,22 @@ def main():
                 )
             (OUTPUT / f"{dest_name}.dc.html").write_text(content, encoding="utf-8")
 
-        for file in (source / "assets").iterdir():
-            destination = OUTPUT / "assets" / file.name
-            if file.name in copied:
+        for file in source_assets:
+            destination_name = asset_names[file.name]
+            destination = OUTPUT / "assets" / destination_name
+            if destination_name in copied:
                 if digest(file) != digest(destination):
-                    raise ValueError(f"Asset name collision with different contents: {file.name}")
+                    raise ValueError(f"Asset name collision with different contents: {destination_name}")
             else:
-                shutil.copy2(file, destination)
-                copied[file.name] = file
+                if file.suffix in {".css", ".svg"} and any(old != new for old, new in asset_names.items()):
+                    content = file.read_text(encoding="utf-8")
+                    for old_name, new_name in asset_names.items():
+                        if old_name != new_name:
+                            content = content.replace(old_name, new_name)
+                    destination.write_text(content, encoding="utf-8")
+                else:
+                    shutil.copy2(file, destination)
+                copied[destination_name] = file
 
     home = ROOT / PAGES["Main"]
     shutil.copy2(ROOT / "scripts" / "design-overrides.css", OUTPUT / "design-overrides.css")
