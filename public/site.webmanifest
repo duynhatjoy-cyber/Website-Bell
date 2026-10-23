@@ -1,0 +1,16 @@
+{
+  "name": "Bellhop",
+  "short_name": "Bellhop",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#122745",
+  "icons": [
+    {
+      "src": "/brand/bellhop-favicon.svg?v=2",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

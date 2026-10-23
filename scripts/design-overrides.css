@@ -7,6 +7,13 @@
 .brand-logo--large{gap:14px;font-size:26px}
 .brand-logo--large img{width:82px;height:82px}
 .site-header-sticky{position:sticky;top:0;z-index:90}
+.mega-top{display:none!important}
+.bh .proof>div{align-items:center!important;justify-content:center!important;text-align:center!important}
+.bh .proof .brand-logo{align-self:center!important}
+.bh .pain-head{align-items:center;text-align:center;margin-inline:auto}
+.bh .pain-head .lead{max-width:760px;margin-inline:auto}
+.bh .head{align-items:center!important;text-align:center!important;margin-inline:auto!important}
+.bh .head .lead{margin-inline:auto!important}
 .site-header-sticky .hdr{box-shadow:0 4px 16px rgba(11,26,48,.06)}
 .language-dropdown{position:relative;flex:none;color:inherit;font:inherit}.language-dropdown summary{display:flex;align-items:center;gap:6px;min-height:38px;padding:0 9px;border-radius:9px;list-style:none;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap}.language-dropdown summary::-webkit-details-marker{display:none}.language-dropdown summary:hover,.language-dropdown[open] summary{background:#f1f6f8}.language-dropdown summary [data-current-flag]{font-size:17px;line-height:1}.language-chevron{font-size:11px;opacity:.6;transition:transform .18s}.language-dropdown[open] .language-chevron{transform:rotate(180deg)}.language-dropdown summary:focus-visible{outline:2px solid #5fb9c2;outline-offset:2px}.language-options{position:absolute;z-index:120;top:calc(100% + 8px);right:0;min-width:154px;padding:5px;border:1px solid #e0e8ee;border-radius:12px;background:#fff;box-shadow:0 12px 30px rgba(18,39,69,.16)}.language-options button{display:flex;align-items:center;gap:9px;width:100%;padding:10px;border:0;border-radius:8px;background:transparent;color:#122745;text-align:left;font:inherit;font-size:14px;cursor:pointer}.language-options button:hover,.language-options button.lang-active{background:#eef7f8;color:#1f7a84}.language-options button:focus-visible{outline:2px solid #5fb9c2;outline-offset:-2px}.hdr-dark .language-dropdown summary:hover,.hdr-dark .language-dropdown[open] summary{background:rgba(255,255,255,.12)}.mobile-language{width:100%;margin:6px 0}.mobile-language .language-options{right:auto;left:0}.bh a.btn-primary{color:#fff}.bh a.btn-primary:hover,.bh a.btn-primary:focus-visible{color:#fff;box-shadow:0 8px 20px rgba(18,39,69,.22)}
 .current-language-flag svg,.language-options button svg{display:block;width:20px;height:14px;border:1px solid rgba(18,39,69,.12);border-radius:2px;object-fit:cover}
