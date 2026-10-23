@@ -33,6 +33,7 @@ Object.assign(en, {
 });
 
 Object.assign(en, pageTranslations, additionalTranslations);
+Object.assign(en, { 'Tin tức': 'News' });
 
 const textOriginals = new WeakMap();
 const renderedText = new WeakMap();

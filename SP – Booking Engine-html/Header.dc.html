@@ -24,12 +24,8 @@
     <nav class="nav" aria-label="Điều hướng chính">
       <button class="nav-i {{cls.sp}}" aria-expanded="{{exp.sp}}" onClick="{{tSp}}" onMouseEnter="{{oSp}}">Sản phẩm <i class="cv"></i></button>
       <a class="nav-i" href="Main.dc.html#bang-gia" onMouseEnter="{{closeAll}}">Bảng giá</a>
-      <div style="position: relative">
-        <button class="nav-i {{cls.kh}}" aria-expanded="{{exp.kh}}" onClick="{{tKh}}" onMouseEnter="{{oKh}}">Khách hàng <i class="cv"></i></button>
-        <sc-if value="{{open.kh}}" hint-placeholder-val="{{ false }}"><div class="dd"><a href="#">Câu chuyện khách hàng</a><a href="#">Chuyển từ phần mềm cũ sang Bellhop</a></div></sc-if>
-      </div>
-      <div style="position: relative">
-        <button class="nav-i {{cls.tn}}" aria-expanded="{{exp.tn}}" onClick="{{tTn}}" onMouseEnter="{{oTn}}">Tài nguyên <i class="cv"></i></button>
+<div style="position: relative">
+        <button class="nav-i {{cls.tn}}" aria-expanded="{{exp.tn}}" onClick="{{tTn}}" onMouseEnter="{{oTn}}">Tin tức <i class="cv"></i></button>
         <sc-if value="{{open.tn}}" hint-placeholder-val="{{ false }}"><div class="dd"><a href="#">Blog</a><a href="Main.dc.html#cong-cu">Công cụ miễn phí</a><a href="#">Ebook &amp; mẫu biểu</a></div></sc-if>
       </div>
       <div style="position: relative">
@@ -76,8 +72,6 @@
       <sc-for list="{{flat}}" as="it" hint-placeholder-count="8"><a href="{{it.href}}">{{it.name}}</a></sc-for>
     </details>
     <a href="Main.dc.html#bang-gia">Bảng giá</a>
-    <details><summary>Khách hàng <span>+</span></summary><a href="#">Câu chuyện khách hàng</a><a href="#">Chuyển từ phần mềm cũ</a></details>
-    <details><summary>Tài nguyên <span>+</span></summary><a href="#">Blog</a><a href="#">Công cụ miễn phí</a><a href="#">Ebook &amp; mẫu biểu</a></details>
     <details><summary>Công ty <span>+</span></summary><a href="About.dc.html">Về Bellhop &amp; Lifrooms</a><a href="#">Liên hệ</a></details>
     <a class="btn btn-primary btn-block" href="#dang-ky" style="margin-top: 16px; border: 0; color: #fff; justify-content: center">Dùng thử miễn phí</a>
   </div>
