@@ -7,6 +7,7 @@
 .brand-logo--large{gap:14px;font-size:26px}
 .brand-logo--large img{width:82px;height:82px}
 .site-header-sticky{position:sticky;top:0;z-index:90}
+.hdr .logo img.header-brand{height:48px!important;width:auto!important;max-width:176px;object-fit:contain}
 .mega-top{display:none!important}
 .bh .proof>div{align-items:center!important;justify-content:center!important;text-align:center!important}
 .bh .proof .brand-logo{align-self:center!important}

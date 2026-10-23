@@ -18,8 +18,8 @@
 <header class="hdr {{hdrCls}}" onMouseLeave="{{closeAll}}">
   <div class="wrap hdr-in">
     <a class="logo" href="Main.dc.html" aria-label="Bellhop – Trang chủ">
-      <sc-if value="{{dark}}" hint-placeholder-val="{{ false }}"><img src="./assets/f876bbabe18ddbe81b5f7624640b49ec.png" alt="Bellhop"></sc-if>
-      <sc-if value="{{light}}" hint-placeholder-val="{{ true }}"><img src="./assets/f2e96c117d551a13834610c3ae49b346.png" alt="Bellhop"></sc-if>
+      <sc-if value="{{dark}}" hint-placeholder-val="{{ false }}"><img class="header-brand" src="./brand/bellhop-header-light.svg" alt="Bellhop, Smart Simple and Flexible"></sc-if>
+      <sc-if value="{{light}}" hint-placeholder-val="{{ true }}"><img class="header-brand" src="./brand/bellhop-header-dark.svg" alt="Bellhop, Smart Simple and Flexible"></sc-if>
     </a>
     <nav class="nav" aria-label="Điều hướng chính">
       <button class="nav-i {{cls.sp}}" aria-expanded="{{exp.sp}}" onClick="{{tSp}}" onMouseEnter="{{oSp}}">Sản phẩm <i class="cv"></i></button>

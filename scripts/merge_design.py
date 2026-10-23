@@ -169,7 +169,7 @@ def main():
     shutil.copy2(ROOT / "scripts" / "customer-stories.js", OUTPUT / "customer-stories.js")
     shutil.copy2(home / "customer-stories.json", OUTPUT / "customer-stories.json")
     (OUTPUT / "brand").mkdir(exist_ok=True)
-    for file in (ROOT / "public" / "brand").glob("*.svg"):
+    for file in [*(ROOT / "public" / "brand").glob("*.svg"), *(ROOT / "public" / "brand").glob("*.png")]:
         shutil.copy2(file, OUTPUT / "brand" / file.name)
     shutil.copy2(home / "support.js", OUTPUT / "support.js")
     for file in (home / "vendor").iterdir():
