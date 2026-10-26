@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="100%" height="100%">
+  <defs>
+    <filter id="shadow7" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#0b1a30" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow7)">
+    <rect x="30" y="20" width="700" height="350" rx="14" fill="#ffffff" stroke="#dde4ec" stroke-width="1.5"/>
+    
+    <!-- Header -->
+    <rect x="30" y="20" width="700" height="54" rx="14" fill="#f8fafc"/>
+    <rect x="30" y="50" width="700" height="24" fill="#f8fafc"/>
+    <line x1="30" y1="74" x2="730" y2="74" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="60" y="52" font-family="Roboto, sans-serif" font-size="15" fill="#122745" font-weight="800">Đối soát giao dịch trực tuyến qua Kovena</text>
+    <text x="560" y="52" font-family="Roboto, sans-serif" font-size="12" fill="#059669" font-weight="700">● Cổng thanh toán sẵn sàng</text>
+
+    <!-- Table Header -->
+    <rect x="50" y="90" width="660" height="36" rx="6" fill="#f1f5f9"/>
+    <text x="70" y="112" font-family="Roboto, sans-serif" font-size="11" fill="#475569" font-weight="700">Mã GD</text>
+    <text x="160" y="112" font-family="Roboto, sans-serif" font-size="11" fill="#475569" font-weight="700">Khách hàng</text>
+    <text x="280" y="112" font-family="Roboto, sans-serif" font-size="11" fill="#475569" font-weight="700">Phương thức</text>
+    <text x="410" y="112" font-family="Roboto, sans-serif" font-size="11" fill="#475569" font-weight="700">Số tiền</text>
+    <text x="530" y="112" font-family="Roboto, sans-serif" font-size="11" fill="#475569" font-weight="700">Đặt phòng</text>
+    <text x="630" y="112" font-family="Roboto, sans-serif" font-size="11" fill="#475569" font-weight="700">Trạng thái</text>
+
+    <!-- Row 1 -->
+    <rect x="50" y="136" width="660" height="42" rx="6" fill="#ffffff" stroke="#f1f5f9"/>
+    <text x="70" y="162" font-family="Roboto, sans-serif" font-size="11" fill="#64748b" font-weight="600">#KOV-8921</text>
+    <text x="160" y="162" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">Nguyễn Thu Hà</text>
+    <text x="280" y="162" font-family="Roboto, sans-serif" font-size="11" fill="#122745">VietQR / Chuyển khoản</text>
+    <text x="410" y="162" font-family="Roboto, sans-serif" font-size="13" fill="#1f7a84" font-weight="800">1.680.000đ</text>
+    <text x="530" y="162" font-family="Roboto, sans-serif" font-size="11" fill="#122745">Deluxe · 2 đêm</text>
+    <rect x="626" y="146" width="74" height="22" rx="6" fill="#ecfdf5"/>
+    <text x="636" y="161" font-family="Roboto, sans-serif" font-size="10" fill="#047857" font-weight="700">Khớp PMS</text>
+
+    <!-- Row 2 -->
+    <rect x="50" y="188" width="660" height="42" rx="6" fill="#ffffff" stroke="#f1f5f9"/>
+    <text x="70" y="214" font-family="Roboto, sans-serif" font-size="11" fill="#64748b" font-weight="600">#KOV-8920</text>
+    <text x="160" y="214" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">Trần Quốc Bảo</text>
+    <text x="280" y="214" font-family="Roboto, sans-serif" font-size="11" fill="#122745">Thẻ Visa/Mastercard</text>
+    <text x="410" y="214" font-family="Roboto, sans-serif" font-size="13" fill="#1f7a84" font-weight="800">3.200.000đ</text>
+    <text x="530" y="214" font-family="Roboto, sans-serif" font-size="11" fill="#122745">Suite · 3 đêm</text>
+    <rect x="626" y="198" width="74" height="22" rx="6" fill="#ecfdf5"/>
+    <text x="636" y="213" font-family="Roboto, sans-serif" font-size="10" fill="#047857" font-weight="700">Khớp PMS</text>
+
+    <!-- Row 3 -->
+    <rect x="50" y="240" width="660" height="42" rx="6" fill="#ffffff" stroke="#f1f5f9"/>
+    <text x="70" y="266" font-family="Roboto, sans-serif" font-size="11" fill="#64748b" font-weight="600">#KOV-8919</text>
+    <text x="160" y="266" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">Lê Hoàng Quân</text>
+    <text x="280" y="266" font-family="Roboto, sans-serif" font-size="11" fill="#122745">Thẻ ATM Nội địa</text>
+    <text x="410" y="266" font-family="Roboto, sans-serif" font-size="13" fill="#1f7a84" font-weight="800">890.000đ</text>
+    <text x="530" y="266" font-family="Roboto, sans-serif" font-size="11" fill="#122745">Standard · 1 đêm</text>
+    <rect x="626" y="250" width="74" height="22" rx="6" fill="#ecfdf5"/>
+    <text x="636" y="265" font-family="Roboto, sans-serif" font-size="10" fill="#047857" font-weight="700">Khớp PMS</text>
+  </g>
+</svg>

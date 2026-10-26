@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 480" width="100%" height="100%">
+  <defs>
+    <filter id="shadow4" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#0b1a30" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <!-- Phone 1: Chọn ngày -->
+  <g filter="url(#shadow4)" transform="translate(20, 20)">
+    <rect width="230" height="430" rx="34" fill="#0e2038" stroke="#1f2937" stroke-width="3"/>
+    <rect x="8" y="8" width="214" height="414" rx="28" fill="#ffffff"/>
+    <rect x="8" y="8" width="214" height="60" rx="28" fill="#122745"/>
+    <rect x="8" y="40" width="214" height="28" fill="#122745"/>
+    <text x="24" y="42" font-family="Roboto, sans-serif" font-size="14" fill="#ffffff" font-weight="700">1. Chọn ngày &amp; khách</text>
+    <text x="24" y="58" font-family="Roboto, sans-serif" font-size="11" fill="#a9bbd1">Khách sạn Bellhop Boutique</text>
+
+    <rect x="24" y="86" width="182" height="48" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="36" y="104" font-family="Roboto, sans-serif" font-size="10" fill="#64748b">Ngày nhận - trả phòng</text>
+    <text x="36" y="122" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">23/10 - 25/10 (2 đêm)</text>
+
+    <rect x="24" y="146" width="182" height="48" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="36" y="164" font-family="Roboto, sans-serif" font-size="10" fill="#64748b">Số lượng khách</text>
+    <text x="36" y="182" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">2 người lớn · 0 trẻ em</text>
+
+    <!-- Mini Calendar Grid -->
+    <rect x="24" y="210" width="182" height="130" rx="8" fill="#f1f5f9"/>
+    <text x="40" y="232" font-family="Roboto, sans-serif" font-size="11" fill="#122745" font-weight="700">Tháng 10 · 2026</text>
+    <rect x="74" y="246" width="70" height="24" rx="6" fill="#1f7a84"/>
+    <text x="82" y="262" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="700">23 → 25</text>
+
+    <rect x="24" y="360" width="182" height="44" rx="10" fill="#122745"/>
+    <text x="68" y="387" font-family="Roboto, sans-serif" font-size="13" fill="#ffffff" font-weight="700">Tìm phòng</text>
+  </g>
+
+  <!-- Phone 2: Chọn phòng -->
+  <g filter="url(#shadow4)" transform="translate(295, 20)">
+    <rect width="230" height="430" rx="34" fill="#0e2038" stroke="#1f2937" stroke-width="3"/>
+    <rect x="8" y="8" width="214" height="414" rx="28" fill="#ffffff"/>
+    <rect x="8" y="8" width="214" height="60" rx="28" fill="#122745"/>
+    <rect x="8" y="40" width="214" height="28" fill="#122745"/>
+    <text x="24" y="42" font-family="Roboto, sans-serif" font-size="14" fill="#ffffff" font-weight="700">2. Chọn hạng phòng</text>
+    <text x="24" y="58" font-family="Roboto, sans-serif" font-size="11" fill="#a9bbd1">23 – 25/10 · 2 khách</text>
+
+    <!-- Room 1 -->
+    <rect x="22" y="84" width="186" height="150" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+    <rect x="22" y="84" width="186" height="74" rx="10" fill="#d6eff1"/>
+    <text x="34" y="180" font-family="Roboto, sans-serif" font-size="13" fill="#122745" font-weight="700">Phòng Deluxe Đôi</text>
+    <text x="34" y="198" font-family="Roboto, sans-serif" font-size="11" fill="#64748b">25m² · Cửa sổ phố</text>
+    <text x="34" y="222" font-family="Roboto, sans-serif" font-size="13" fill="#1f7a84" font-weight="800">890.000đ<tspan font-size="10" font-weight="400" fill="#64748b">/đêm</tspan></text>
+    <rect x="142" y="206" width="56" height="24" rx="6" fill="#1f7a84"/>
+    <text x="156" y="222" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="700">Chọn</text>
+
+    <!-- Room 2 -->
+    <rect x="22" y="246" width="186" height="150" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+    <rect x="22" y="246" width="186" height="74" rx="10" fill="#e2e8f0"/>
+    <text x="34" y="342" font-family="Roboto, sans-serif" font-size="13" fill="#122745" font-weight="700">Phòng Family Suite</text>
+    <text x="34" y="360" font-family="Roboto, sans-serif" font-size="11" fill="#64748b">40m² · 2 giường lớn</text>
+    <text x="34" y="384" font-family="Roboto, sans-serif" font-size="13" fill="#1f7a84" font-weight="800">1.350.000đ</text>
+    <rect x="142" y="368" width="56" height="24" rx="6" fill="#122745"/>
+    <text x="156" y="384" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="700">Chọn</text>
+  </g>
+
+  <!-- Phone 3: Xác nhận & Thanh toán -->
+  <g filter="url(#shadow4)" transform="translate(570, 20)">
+    <rect width="230" height="430" rx="34" fill="#0e2038" stroke="#1f2937" stroke-width="3"/>
+    <rect x="8" y="8" width="214" height="414" rx="28" fill="#ffffff"/>
+    <rect x="8" y="8" width="214" height="60" rx="28" fill="#122745"/>
+    <rect x="8" y="40" width="214" height="28" fill="#122745"/>
+    <text x="24" y="42" font-family="Roboto, sans-serif" font-size="14" fill="#ffffff" font-weight="700">3. Xác nhận đặt phòng</text>
+    <text x="24" y="58" font-family="Roboto, sans-serif" font-size="11" fill="#a9bbd1">Deluxe · 2 đêm · 2 khách</text>
+
+    <rect x="24" y="86" width="182" height="44" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="36" y="103" font-family="Roboto, sans-serif" font-size="10" fill="#64748b">Họ và tên</text>
+    <text x="36" y="120" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">Nguyễn Thu Hà</text>
+
+    <rect x="24" y="140" width="182" height="44" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="36" y="157" font-family="Roboto, sans-serif" font-size="10" fill="#64748b">Số điện thoại</text>
+    <text x="36" y="174" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">0912 345 678</text>
+
+    <!-- Payment Breakdown -->
+    <rect x="24" y="196" width="182" height="96" rx="8" fill="#f1f5f9"/>
+    <text x="36" y="218" font-family="Roboto, sans-serif" font-size="11" fill="#64748b">Tiền phòng (2 đêm):</text>
+    <text x="146" y="218" font-family="Roboto, sans-serif" font-size="11" fill="#122745" font-weight="600">1.780.000đ</text>
+    <text x="36" y="240" font-family="Roboto, sans-serif" font-size="11" fill="#64748b">Giảm giá trực tiếp:</text>
+    <text x="156" y="240" font-family="Roboto, sans-serif" font-size="11" fill="#10b981" font-weight="600">-100.000đ</text>
+    <line x1="36" y1="254" x2="194" y2="254" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="36" y="276" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">Tổng thanh toán:</text>
+    <text x="136" y="276" font-family="Roboto, sans-serif" font-size="13" fill="#1f7a84" font-weight="800">1.680.000đ</text>
+
+    <rect x="24" y="304" width="182" height="34" rx="8" fill="#ecfdf5" stroke="#a7f3d0"/>
+    <text x="44" y="325" font-family="Roboto, sans-serif" font-size="11" fill="#047857" font-weight="700">✓ Giữ phòng tức thì</text>
+
+    <rect x="24" y="352" width="182" height="46" rx="10" fill="#1f7a84"/>
+    <text x="56" y="380" font-family="Roboto, sans-serif" font-size="13" fill="#ffffff" font-weight="800">Hoàn tất đặt phòng</text>
+  </g>
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="100%" height="100%">
+  <defs>
+    <filter id="shadow5" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#0b1a30" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow5)">
+    <rect x="30" y="20" width="700" height="410" rx="14" fill="#ffffff" stroke="#dde4ec" stroke-width="1.5"/>
+    <rect x="30" y="20" width="700" height="38" rx="14" fill="#f1f4f8"/>
+    <rect x="30" y="44" width="700" height="14" fill="#f1f4f8"/>
+    <circle cx="52" cy="39" r="5" fill="#ef4444"/>
+    <circle cx="68" cy="39" r="5" fill="#f59e0b"/>
+    <circle cx="84" cy="39" r="5" fill="#10b981"/>
+    <rect x="110" y="29" width="300" height="20" rx="6" fill="#ffffff" stroke="#e0e8ee" stroke-width="1"/>
+    <text x="124" y="43" font-family="Roboto, sans-serif" font-size="11" fill="#566579">app.bellhop.vn/cms/dong-bo-ota</text>
+
+    <!-- Header bar -->
+    <text x="60" y="92" font-family="Roboto, sans-serif" font-size="16" fill="#122745" font-weight="800">Đồng bộ giá &amp; phòng trống 4 kênh OTA</text>
+    <rect x="570" y="74" width="130" height="32" rx="8" fill="#1f7a84"/>
+    <text x="590" y="95" font-family="Roboto, sans-serif" font-size="12" fill="#ffffff" font-weight="700">Đồng bộ ngay</text>
+
+    <!-- 4 Channel Cards -->
+    <!-- Agoda -->
+    <rect x="60" y="126" width="144" height="100" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+    <rect x="76" y="142" width="60" height="24" rx="4" fill="#eff6ff"/>
+    <text x="86" y="158" font-family="Roboto, sans-serif" font-size="12" fill="#1d4ed8" font-weight="800">Agoda</text>
+    <circle cx="180" cy="154" r="5" fill="#10b981"/>
+    <text x="76" y="190" font-family="Roboto, sans-serif" font-size="11" fill="#64748b">Trạng thái: <tspan fill="#059669" font-weight="700">Trực tiếp</tspan></text>
+    <text x="76" y="210" font-family="Roboto, sans-serif" font-size="11" fill="#64748b">Lần cuối: <tspan fill="#122745">1 phút trước</tspan></text>
+
+    <!-- Booking.com -->
+    <rect x="218" y="126" width="144" height="100" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+    <rect x="234" y="142" width="84" height="24" rx="4" fill="#003580"/>
+    <text x="242" y="158" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="800">Booking.com</text>
+    <circle cx="338" cy="154" r="5" fill="#10b981"/>
+    <text x="234" y="190" font-family="Roboto, sans-serif" font-size="11" fill="#64748b">Trạng thái: <tspan fill="#059669" font-weight="700">Trực tiếp</tspan></text>
+    <text x="234" y="210" font-family="Roboto, sans-serif" font-size="11" fill="#64748b">Lần cuối: <tspan fill="#122745">2 phút trước</tspan></text>
+
+    <!-- Traveloka -->
+    <rect x="376" y="126" width="144" height="100" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+    <rect x="392" y="142" width="76" height="24" rx="4" fill="#0284c7"/>
+    <text x="400" y="158" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="800">Traveloka</text>
+    <circle cx="496" cy="154" r="5" fill="#10b981"/>
+    <text x="392" y="190" font-family="Roboto, sans-serif" font-size="11" fill="#64748b">Trạng thái: <tspan fill="#059669" font-weight="700">Trực tiếp</tspan></text>
+    <text x="392" y="210" font-family="Roboto, sans-serif" font-size="11" fill="#64748b">Lần cuối: <tspan fill="#122745">Vừa xong</tspan></text>
+
+    <!-- Airbnb -->
+    <rect x="534" y="126" width="144" height="100" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+    <rect x="550" y="142" width="64" height="24" rx="4" fill="#ff5a5f"/>
+    <text x="560" y="158" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="800">Airbnb</text>
+    <circle cx="654" cy="154" r="5" fill="#10b981"/>
+    <text x="550" y="190" font-family="Roboto, sans-serif" font-size="11" fill="#64748b">Trạng thái: <tspan fill="#059669" font-weight="700">Trực tiếp</tspan></text>
+    <text x="550" y="210" font-family="Roboto, sans-serif" font-size="11" fill="#64748b">Lần cuối: <tspan fill="#122745">4 phút trước</tspan></text>
+
+    <!-- Bottom Rate Table Preview -->
+    <rect x="60" y="250" width="618" height="150" rx="10" fill="#f1f5f9"/>
+    <text x="80" y="278" font-family="Roboto, sans-serif" font-size="13" fill="#122745" font-weight="700">Bảng giá phân phối tuần này</text>
+    
+    <rect x="80" y="296" width="578" height="36" rx="6" fill="#ffffff"/>
+    <text x="96" y="318" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">Phòng Deluxe (12 phòng)</text>
+    <text x="320" y="318" font-family="Roboto, sans-serif" font-size="12" fill="#1f7a84" font-weight="800">890.000đ</text>
+    <text x="440" y="318" font-family="Roboto, sans-serif" font-size="11" fill="#64748b">Cuối tuần: 1.050.000đ</text>
+    <rect x="560" y="302" width="84" height="24" rx="6" fill="#ecfdf5"/>
+    <text x="572" y="318" font-family="Roboto, sans-serif" font-size="10" fill="#047857" font-weight="700">Đã đồng bộ</text>
+
+    <rect x="80" y="342" width="578" height="36" rx="6" fill="#ffffff"/>
+    <text x="96" y="364" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">Phòng Family Suite (4 phòng)</text>
+    <text x="320" y="364" font-family="Roboto, sans-serif" font-size="12" fill="#1f7a84" font-weight="800">1.350.000đ</text>
+    <text x="440" y="364" font-family="Roboto, sans-serif" font-size="11" fill="#64748b">Cuối tuần: 1.550.000đ</text>
+    <rect x="560" y="348" width="84" height="24" rx="6" fill="#ecfdf5"/>
+    <text x="572" y="364" font-family="Roboto, sans-serif" font-size="10" fill="#047857" font-weight="700">Đã đồng bộ</text>
+  </g>
+</svg>

@@ -57,6 +57,21 @@
 .photo--real{padding:0;background:#dfe9f1}
 .photo--real::before{display:none}
 .photo--real img{display:block;width:100%;height:200px;object-fit:cover}
+
+/* ==========================================================================
+   Device Mockups (Desktop, Laptop & Mobile Phone Containers)
+   Chuẩn hóa để các section màn hình điện thoại, máy tính luôn sẵn sàng nhận <img>
+   thay thế trực tiếp từ khách hàng mà không bị vỡ layout hay tràn viền
+   ========================================================================== */
+.mock{max-width:100%!important}
+.mock img,.mock-img,.mock-screen-img{display:block!important;width:100%!important;height:auto!important;max-width:100%!important;object-fit:cover!important;border-radius:0 0 14px 14px!important}
+.phone{max-width:100%!important;box-sizing:border-box!important}
+.phone-s{position:relative!important}
+.phone-s img,.phone-img,.phone-screen-img{display:block!important;width:100%!important;height:auto!important;min-height:0!important;object-fit:cover!important;border-radius:26px!important}
+.chatwin img,.chatwin-img{display:block!important;max-width:100%!important;height:auto!important}
+.hero-visual,.mockup-visual{display:flex!important;justify-content:center!important;align-items:center!important;width:100%!important}
+.hero-mockup-img,.section-mockup-img{display:block!important;width:100%!important;max-width:760px!important;height:auto!important;object-fit:contain!important;filter:drop-shadow(0 20px 40px rgba(11,26,48,.14))}
+.device-img-holder{display:block;position:relative;width:100%;overflow:hidden}
 .customer-stories-section{background:#f1f6fa}
 .customer-stories-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:32px}
 .customer-stories-heading h2{margin-top:14px}
