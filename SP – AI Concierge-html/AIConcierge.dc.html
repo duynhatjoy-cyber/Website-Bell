@@ -30,8 +30,8 @@ a{color:inherit}a:hover{color:#5fb9c2}
 .typing i{width:7px;height:7px;border-radius:50%;background:#1f7a84;animation:bhDot 1s infinite}
 .typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
 @keyframes bhDot{0%,100%{opacity:.3}50%{opacity:1}}
-.kbsec{background:linear-gradient(180deg,#0b1a30 0,#122745 30%,#f4f7fa 30%)}
-.conv{display:grid;grid-template-columns:1fr 200px 1fr;gap:32px;align-items:center;background:#fff;border-radius:28px;padding:48px;box-shadow:0 30px 60px -40px rgba(11,26,48,.45)}
+.kbsec{background:#fff}
+.conv{display:grid;grid-template-columns:1fr 200px 1fr;gap:32px;align-items:center;background:#fff;border-radius:28px;padding:48px;border:1px solid #dde4ec;box-shadow:0 20px 50px -25px rgba(11,26,48,.12)}
 .docs{display:flex;flex-direction:column;gap:12px}
 .doc{display:flex;gap:12px;align-items:center;padding:14px 16px;border:1px solid #dde4ec;border-radius:14px;background:#fff;position:relative;font-size:14px;font-weight:600;color:#122745}
 .doc::after{content:"";position:absolute;right:-34px;top:50%;width:32px;height:2px;background:repeating-linear-gradient(90deg,#5fb9c2 0 6px,transparent 6px 10px)}
@@ -62,7 +62,6 @@ a{color:inherit}a:hover{color:#5fb9c2}
     <h1 class="h1" style="color: #fff">Trợ lý AI trả lời khách theo thông tin <em style="color: #5fb9c2">của chính khách sạn</em></h1>
     <p class="lead" style="color: #b6c5d8">Bellhop AI Concierge giải đáp các câu hỏi thường gặp về phòng, tiện ích, chính sách và chỉ đường dựa trên cơ sở kiến thức do khách sạn thiết lập; những yêu cầu cần xử lý riêng được chuyển cho nhân viên.</p>
     <div class="btns"><a class="btn btn-teal btn-lg" href="#form">Đặt lịch demo với dữ liệu của khách sạn <span class="arr">→</span></a></div>
-    <p class="small" style="color: #8fa3bb">Thử ngay: bấm một câu hỏi gợi ý trong khung trò chuyện.</p>
   </div>
   <div class="stack" style="gap: 12px">
     <div class="demo">
@@ -79,14 +78,13 @@ a{color:inherit}a:hover{color:#5fb9c2}
         <sc-for list="{{sugs}}" as="s" hint-placeholder-count="4"><button class="sug" disabled="{{s.dis}}" onClick="{{s.ask}}">{{s.q}}</button></sc-for>
       </div>
     </div>
-    <span class="xs" style="color: #8fa3bb; text-align: center">Minh họa với dữ liệu khách sạn mẫu · câu trả lời viết sẵn, không gọi AI thật</span>
   </div>
 </div>
 </section>
 
-<section class="kbsec" style="padding: 0 0 104px">
+<section class="kbsec sec" style="padding: 64px 0 104px; background: #fff">
 <div class="wrap">
-  <div class="head center" style="padding-top: 8px"><span class="eyebrow" style="color: #5fb9c2">AI học từ đâu</span><h2 class="h2" style="color: #fff">Câu trả lời dựa trên cơ sở kiến thức của khách sạn</h2><p class="lead" style="color: #b6c5d8">Khách sạn cung cấp và kiểm soát nội dung mà AI sử dụng. Khi thông tin thay đổi, chỉ cần cập nhật cơ sở kiến thức.</p></div>
+  <div class="head center" style="padding-top: 8px"><span class="eyebrow">AI học từ đâu</span><h2 class="h2">Câu trả lời dựa trên cơ sở kiến thức của khách sạn</h2><p class="lead">Khách sạn cung cấp và kiểm soát nội dung mà AI sử dụng. Khi thông tin thay đổi, chỉ cần cập nhật cơ sở kiến thức.</p></div>
   <div class="conv">
     <div class="docs">
       <span class="label">Nguồn thông tin <i class="tbc">Cách nạp dữ liệu</i></span>
@@ -132,15 +130,6 @@ a{color:inherit}a:hover{color:#5fb9c2}
 </div>
 </section>
 
-<section class="sec-sm">
-<div class="wrap">
-  <div class="row wrapx" style="gap: 24px; justify-content: space-between; padding: 24px 28px; border-radius: 18px; border: 1px solid #dde4ec">
-    <div class="row wrapx" style="gap: 24px"><b style="color: #122745">AI Concierge hoạt động trên</b><span class="row" style="gap: 8px"><span class="ic ic-sm i-website"></span>Website</span><span class="row" style="gap: 8px"><span class="ic ic-sm i-message"></span>Các kênh kết nối qua Bellhop Message</span><i class="tbc">Chỉ ghi kênh có thật</i></div>
-    <a class="lnk" href="Message.dc.html">Bellhop Message <span class="arr">→</span></a>
-  </div>
-</div>
-</section>
-
 <section class="sec">
 <div class="wrap">
   <div class="head"><span class="eyebrow">Thiết lập</span><h2 class="h2">Thiết lập AI Concierge</h2><p class="lead"><i class="tbc">Thời gian thiết lập TB · Bellhop hỗ trợ soạn KB?</i></p></div>
@@ -173,18 +162,9 @@ a{color:inherit}a:hover{color:#5fb9c2}
 </div>
 </section>
 
-<section class="sec">
-<div class="wrap">
-  <div class="head"><span class="eyebrow">FAQ</span><h2 class="h2">Câu hỏi thường gặp về AI Concierge</h2></div>
-  <div class="qa2">
-    <div><h3>AI có trả lời sai hoặc tự đưa ra thông tin không có thật không?</h3><p>AI được thiết lập để trả lời trong phạm vi cơ sở kiến thức; câu hỏi ngoài phạm vi được chuyển cho nhân viên. <i class="tbc">Cơ chế · cách diễn đạt</i></p></div>
-    <div><h3>AI hỗ trợ những ngôn ngữ nào?</h3><p><span class="ph">[Danh sách ngôn ngữ]</span> <i class="tbc">✓</i></p></div>
-    <div><h3>Có thể xem lại các cuộc trò chuyện của AI không?</h3><p><span class="ph">[Xác nhận]</span> <i class="tbc">✓</i></p></div>
-    <div><h3>AI có thể tự xác nhận hoặc hủy đặt phòng không?</h3><p><span class="ph">[Xác nhận]</span> <i class="tbc">✓</i></p></div>
-    <div><h3>Có cần dùng Bellhop Message không?</h3><p><span class="ph">[Xác nhận]</span> <i class="tbc">✓</i></p></div>
-  </div>
-</div>
-</section>
+<section class="sec bg-soft" id="faq"><div class="wrap">
+  <dc-import name="Faq" title="Câu hỏi thường gặp về Bellhop AI Concierge" items="{{faq}}" marks="{{marks}}" hint-size="100%,600px"></dc-import>
+</div></section>
 
 <section class="sec-sm" id="form" style="padding-bottom: 104px"><div class="wrap">
   <dc-import name="LeadForm" variant="deep" title="Xem AI Concierge trả lời với dữ liệu của khách sạn" desc="Đội ngũ Bellhop sẽ thiết lập bản demo với thông tin cơ sở của Quý khách." product="ai" source="/san-pham/ai-concierge" extra="{{extra}}" marks="{{marks}}" hint-size="100%,820px"></dc-import>
@@ -235,7 +215,14 @@ class Component extends DCLogic {
       typing: s.typing,
       sugs: Q.map((x, k) => ({ q: x.q, dis: busy || s.asked.indexOf(k) >= 0, ask: ask(k) })),
       reset: () => { this._clear(); this.setState({ msgs: [], typing: false, asked: [] }); },
-      extra: { label: 'Website hoặc fanpage của cơ sở (để chuẩn bị demo)', type: 'text', placeholder: 'https://' }
+      extra: { label: 'Website hoặc fanpage của cơ sở (để chuẩn bị demo)', type: 'text', placeholder: 'https://' },
+      faq: [
+        { q: 'AI có trả lời sai hoặc tự đưa ra thông tin không có thật không?', a: 'AI được thiết lập để trả lời trong phạm vi cơ sở kiến thức do khách sạn kiểm soát; các câu hỏi nằm ngoài phạm vi sẽ tự động chuyển cho nhân viên xử lý.', tbc: true },
+        { q: 'AI Concierge hỗ trợ những ngôn ngữ nào?', a: 'AI Concierge hỗ trợ đa ngôn ngữ bao gồm Tiếng Việt, Tiếng Anh và nhiều ngôn ngữ quốc tế khác theo nhu cầu của khách sạn.', tbc: true },
+        { q: 'Có thể xem lại các cuộc trò chuyện của AI không?', a: 'Có. Khách sạn có thể xem lại toàn bộ lịch sử hội thoại của AI với khách hàng bất kỳ lúc nào để đánh giá và cải thiện chất lượng hỗ trợ.', tbc: true },
+        { q: 'AI có thể tự xác nhận hoặc hủy đặt phòng không?', a: 'Các thao tác thay đổi hoặc hủy phòng được chuyển sang cho nhân viên để đảm bảo tính an toàn và kiểm soát chính xác nghiệp vụ.', tbc: true },
+        { q: 'Có cần dùng Bellhop Message không?', a: 'AI Concierge có thể hoạt động độc lập trên Live chat website, hoặc kết hợp với Bellhop Message để hỗ trợ thêm Zalo OA, Messenger và các kênh khác.', tbc: true }
+      ]
     };
   }
 }

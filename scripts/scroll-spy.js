@@ -37,6 +37,78 @@
     });
   });
 
+  // Sticky header scroll listener: adds shadow when user scrolls down
+  const syncHeaderSticky = () => {
+    const isScrolled = (window.pageYOffset || document.documentElement.scrollTop || 0) > 8;
+    document.querySelectorAll('.site-header-sticky, header.hdr, .hdr').forEach((el) => {
+      el.classList.toggle('is-scrolled', isScrolled);
+    });
+  };
+  window.addEventListener('scroll', syncHeaderSticky, { passive: true });
+  syncHeaderSticky();
+
+  // Exclusive Accordion for process steps: click any step, only that step opens, others close
+  document.addEventListener('click', (e) => {
+    const summary = e.target.closest('.process-step-item summary');
+    if (!summary) return;
+    const currentDetails = summary.closest('details.process-step-item');
+    if (!currentDetails) return;
+    const container = currentDetails.closest('.process-steps-col') || currentDetails.closest('.process-split-layout');
+    if (!container) return;
+
+    if (currentDetails.open) {
+      e.preventDefault();
+      return;
+    }
+
+    container.querySelectorAll('.process-step-item[open]').forEach((item) => {
+      if (item !== currentDetails) {
+        item.removeAttribute('open');
+      }
+    });
+
+    const photoSrc = currentDetails.getAttribute('data-photo');
+    const layout = currentDetails.closest('.process-split-layout');
+    const photoImg = layout ? layout.querySelector('.process-photo-img') : null;
+    if (photoSrc && photoImg && photoImg.getAttribute('src') !== photoSrc) {
+      photoImg.style.opacity = '0.4';
+      setTimeout(() => {
+        photoImg.src = photoSrc;
+        photoImg.style.opacity = '1';
+      }, 140);
+    }
+  });
+
+  // Website Hub interactive showcase:
+  document.addEventListener('click', (e) => {
+    const item = e.target.closest('.hub-item');
+    if (!item) return;
+    const hub = item.closest('.website-hub-layout');
+    if (!hub) return;
+
+    hub.querySelectorAll('.hub-item').forEach(it => it.classList.remove('active'));
+    item.classList.add('active');
+
+    const card = hub.querySelector('.hub-center-card');
+    if (!card) return;
+
+    const num = item.dataset.num;
+    const title = item.dataset.title;
+    const desc = item.dataset.desc;
+
+    const numEl = card.querySelector('.hub-card-num');
+    const titleEl = card.querySelector('.hub-card-title');
+    const descEl = card.querySelector('.hub-card-desc');
+
+    card.style.opacity = '0.5';
+    setTimeout(() => {
+      if (numEl) numEl.textContent = num;
+      if (titleEl) titleEl.textContent = title;
+      if (descEl) descEl.textContent = desc;
+      card.style.opacity = '1';
+    }, 120);
+  });
+
   const page = location.pathname.split('/').pop();
   if (page === 'Main.dc.html') return;
 
@@ -44,7 +116,7 @@
   let cleanup = null;
 
   function makeSubnav(root) {
-    if (root.querySelector('.subnav, .toc') || page === 'Finance.dc.html') return;
+    if (root.querySelector('.subnav, .toc') || page === 'Finance.dc.html' || page === 'CMS.dc.html' || page === 'Website.dc.html' || page === 'Message.dc.html') return;
     const hero = Array.from(root.children).find((child) => child.tagName === 'SECTION');
     if (!hero) return;
     const sections = Array.from(root.querySelectorAll('section'))
