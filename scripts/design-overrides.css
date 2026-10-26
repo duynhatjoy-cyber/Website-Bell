@@ -258,9 +258,10 @@ html,body{overflow-x:clip!important;max-width:100%;height:auto!important;min-hei
   .bh .ln-sec{padding:48px 0!important}
   .bh .pt{grid-template-columns:44px minmax(0,1fr)!important;gap:12px!important}
   .bh .pt>.st-live,.bh .pt>.st-road{grid-column:2;justify-self:start}
-  .bh .money-st b{font-size:11px!important;white-space:nowrap}
-  .bh .money-st:first-of-type{left:0!important;transform:none!important;align-items:flex-start}
-  .bh .money-st:last-of-type{left:auto!important;right:0!important;transform:none!important;align-items:flex-end}
+  .bh .money-st b{font-size:12px!important;white-space:nowrap}
+  .bh .money-st{width:80px!important}
+  .bh .money-st:first-of-type{left:8%!important;transform:translateX(-50%)!important;align-items:center!important}
+  .bh .money-st:last-of-type{left:92%!important;right:auto!important;transform:translateX(-50%)!important;align-items:center!important}
 
   /* Finance mobile fixes */
   .bh .doc{gap:28px!important}
