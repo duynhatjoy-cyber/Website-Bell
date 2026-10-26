@@ -33,7 +33,7 @@ Object.assign(en, {
 });
 
 Object.assign(en, pageTranslations, additionalTranslations);
-Object.assign(en, { 'Tin tức': 'News' });
+Object.assign(en, { 'Tin tức': 'News', 'Lướt ngang để xem thêm cột': 'Swipe horizontally to see more columns' });
 
 const textOriginals = new WeakMap();
 const renderedText = new WeakMap();

@@ -73,6 +73,17 @@
 /* Ensure icons never shrink or disappear on mobile */
 .ic,.ic-sm,.ic-md,.ic-lg,.ic-tile,.ic-tile-sm{flex-shrink:0!important;background-repeat:no-repeat;background-position:center}
 
+/* Mobile horizontal scroll indicator below wide tables (.tbl-box) */
+.tbl-scroll-hint{display:none}
+@keyframes bh-table-arrow{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+@media(max-width:860px){
+  .tbl-scroll-hint{display:flex;justify-content:center;margin-top:12px}
+  .tbl-scroll-btn{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 16px;border:1px solid #bfe3e8;border-radius:999px;background:#eef8f9;color:#122745;font:inherit;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 6px 16px -8px rgba(18,39,69,.22);transition:background .2s,border-color .2s}
+  .tbl-scroll-btn:active{background:#dcf1f4}
+  .tbl-scroll-arrow{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#122745;color:#fff;font-size:14px;line-height:1;animation:bh-table-arrow 1.4s ease-in-out infinite}
+  .tbl-scroll-btn.is-end .tbl-scroll-arrow{transform:rotate(180deg);animation:none}
+}
+
 /* Global mobile & tablet layout alignment and overflow fixes */
 html,body,.bh{overflow-x:clip;max-width:100%;box-sizing:border-box}
 .bh *,.bh *::before,.bh *::after{box-sizing:border-box}

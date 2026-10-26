@@ -148,6 +148,11 @@ def main():
                 r"\1\2",
                 content,
             )
+            content = re.sub(
+                r'(<div class="tbl-box"[^>]*>\s*<table\b[\s\S]*?</table>\s*</div>)',
+                r'\1<div class="tbl-scroll-hint"><button type="button" class="tbl-scroll-btn" aria-label="Lướt ngang để xem thêm cột"><span>Lướt ngang để xem thêm cột</span><span class="tbl-scroll-arrow" aria-hidden="true">→</span></button></div>',
+                content,
+            )
             content = (
                 content.replace(
                     '"reviewMarks":{"editor":"boolean","default":true',
@@ -181,8 +186,10 @@ def main():
                 )
                 content = content.replace(
                     "</head>",
-                    '<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3">'
-                    '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">'
+                    '<link rel="shortcut icon" href="/favicon.ico?v=4">'
+                    '<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=4">'
+                    '<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=4">'
+                    '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">'
                     '<link rel="stylesheet" href="./design-overrides.css">'
                     '<script src="./scroll-spy.js" defer></script>'
                     + ('<script src="./home-gallery.js" defer></script><script src="./customer-stories.js" defer></script>' if page == "Main" else '')

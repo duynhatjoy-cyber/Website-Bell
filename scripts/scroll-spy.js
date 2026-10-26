@@ -1,4 +1,34 @@
 (() => {
+  function initTableScrollHints() {
+    document.querySelectorAll('.tbl-scroll-hint').forEach((hint) => {
+      if (hint.dataset.bound) return;
+      const box = hint.previousElementSibling;
+      const btn = hint.querySelector('.tbl-scroll-btn');
+      if (!box || !box.classList.contains('tbl-box') || !btn) return;
+      hint.dataset.bound = '1';
+      const syncState = () => {
+        const atEnd = box.scrollLeft + box.clientWidth >= box.scrollWidth - 12;
+        btn.classList.toggle('is-end', atEnd);
+      };
+      box.addEventListener('scroll', syncState, { passive: true });
+      btn.addEventListener('click', () => {
+        const atEnd = box.scrollLeft + box.clientWidth >= box.scrollWidth - 12;
+        box.scrollTo({
+          left: atEnd ? 0 : box.scrollLeft + Math.max(220, Math.round(box.clientWidth * 0.65)),
+          behavior: 'smooth',
+        });
+      });
+      syncState();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    addEventListener('DOMContentLoaded', initTableScrollHints, { once: true });
+  } else {
+    initTableScrollHints();
+  }
+  new MutationObserver(initTableScrollHints).observe(document.documentElement, { childList: true, subtree: true });
+
   const page = location.pathname.split('/').pop();
   if (page === 'Main.dc.html') return;
 
