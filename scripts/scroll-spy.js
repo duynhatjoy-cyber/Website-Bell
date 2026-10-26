@@ -29,6 +29,14 @@
   }
   new MutationObserver(initTableScrollHints).observe(document.documentElement, { childList: true, subtree: true });
 
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('details.language-dropdown[open]').forEach((dropdown) => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.removeAttribute('open');
+      }
+    });
+  });
+
   const page = location.pathname.split('/').pop();
   if (page === 'Main.dc.html') return;
 

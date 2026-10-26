@@ -104,7 +104,10 @@ function App() {
           setLanguage(nextLanguage);
         }
         const dropdown = languageButton.closest('details.language-dropdown');
-        if (dropdown) dropdown.open = false;
+        if (dropdown) {
+          dropdown.open = false;
+          dropdown.removeAttribute('open');
+        }
         return;
       }
       const anchor = event.target.closest?.('a[href]');
