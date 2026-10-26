@@ -65,3 +65,102 @@
 @media(prefers-reduced-motion:reduce){.fab a::after,.fab .c svg,.mbar .contact-zalo,.mbar .contact-phone{animation:none}}
 @media(max-width:760px){.brand-logo--large img{width:64px;height:64px}.brand-logo--large{font-size:22px}}
 @media(max-width:980px){.toc a.on{border-bottom:2px solid #1f6b52}}
+
+/* Hide all yellow review/placeholder badges and blocks across all pages */
+.tbc,.tbc-block,.bub-note{display:none!important}
+.ph{background:transparent!important;color:inherit!important;padding:0!important;border-radius:0!important}
+
+/* Ensure icons never shrink or disappear on mobile */
+.ic,.ic-sm,.ic-md,.ic-lg,.ic-tile,.ic-tile-sm{flex-shrink:0!important;background-repeat:no-repeat;background-position:center}
+
+/* Global mobile & tablet layout alignment and overflow fixes */
+html,body,.bh{overflow-x:clip;max-width:100%;box-sizing:border-box}
+.bh *,.bh *::before,.bh *::after{box-sizing:border-box}
+
+@media(max-width:980px){
+  .bh .split,.bh .split-r,.bh .split-eq,.bh .split-48,.bh .lead-blk,.bh .calc,.bh .ftr-grid,.bh .hub,.bh .flow3,.bh .sync,.bh .day,.bh .conv,.bh .scope,.bh .stairs,.bh .qa2,.bh .qrow,.bh .proc,.bh .flow,.bh .inbox{grid-template-columns:minmax(0,1fr)!important}
+  .bh .split>*,.bh .split-r>*,.bh .split-eq>*,.bh .split-48>*,.bh .lead-blk>*,.bh .calc>*,.bh .ftr-grid>*,.bh .grid-auto>*,.bh .grid-auto-sm>*,.bh .grid-auto-xs>*,.bh .inbox>*{min-width:0;max-width:100%}
+  .bh .jr{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-flow:row!important;grid-auto-columns:auto!important;margin-right:0!important;padding:0!important;overflow-x:visible!important}
+  .bh .inbox{min-height:0!important}
+}
+
+@media(max-width:600px){
+  /* Balanced left/right page padding so content never sticks to screen edges */
+  .bh .wrap,.bh .wrap-narrow,.bh .subnav .wrap{padding-left:20px!important;padding-right:20px!important}
+  .bh .sec{padding:52px 0!important}
+  .bh .sec-sm{padding:36px 0!important}
+
+  /* Responsive typography for mobile */
+  .bh .h1{font-size:clamp(28px,7.5vw,36px)!important;line-height:1.18!important}
+  .bh .h2{font-size:clamp(22px,6vw,28px)!important;line-height:1.24!important}
+  .bh .lead{font-size:16px!important;line-height:1.6!important}
+
+  /* Mobile Header: keep logo, CTA, language switcher, and burger menu icon aligned inside screen */
+  .bh .hdr-in{height:64px!important;gap:8px!important}
+  .bh .hdr .logo img.header-brand{height:34px!important;max-width:124px!important}
+  .bh .hdr-r{gap:6px!important;flex-shrink:0}
+  .bh .hdr-r .btn{min-height:36px!important;padding:0 10px!important;font-size:13px!important;border-radius:9px!important}
+  .bh .hdr-language summary{min-height:36px!important;padding:0 6px!important;gap:4px!important;font-size:12px!important}
+  .bh .burger{display:inline-flex!important;width:38px!important;height:38px!important;flex:none!important}
+  .bh .subnav{top:64px!important}
+
+  /* Single-column grids on phones */
+  .bh .jr,.bh .mods,.bh .cycle,.bh .steps,.bh .fgrid{grid-template-columns:minmax(0,1fr)!important}
+  .bh .jr-band{padding:20px!important;text-align:center;justify-content:center}
+  .bh .jr-band>div{flex-basis:100%!important}
+  .bh .proof{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+  .bh .proof>div{padding:12px 8px!important}
+  .bh .proof b{font-size:24px!important}
+
+  /* Fix hero & section mockup containers with asymmetric inline padding or negative offsets */
+  .bh .split>div[style*="position: relative"]{padding-left:0!important;padding-right:0!important}
+  .bh .toast{left:8px!important;right:auto!important;max-width:calc(100% - 16px)!important}
+  .bh .phone[style*="position: absolute"]{right:0!important;width:154px!important}
+  .bh .chatwin[style*="position: absolute"]{position:relative!important;left:0!important;width:100%!important;margin-top:16px!important}
+
+  /* Uniform mobile card & block padding */
+  .bh .card,.bh .fbox,.bh .conv,.bh .hs-card,.bh .lead-card,.bh .calc-res,.bh .spoke,.bh .feat,.bh .ft{padding:22px 18px!important}
+  .bh .lead-card .chatwin-h{margin:-22px -18px 8px!important}
+  .bh .customer-stories-heading{flex-direction:column;align-items:flex-start;gap:14px}
+
+  /* BookingEngine mobile fixes */
+  .bh .bk-bar{grid-template-columns:1fr!important;margin:0 12px!important;transform:translateY(-20px)!important}
+  .bh .room-li{grid-template-columns:1fr auto!important}
+  .bh .room-li .room-img{grid-column:1/-1;height:96px}
+
+  /* CMS mobile fixes */
+  .bh .log div{grid-template-columns:72px minmax(0,1fr)!important}
+  .bh .log div span:last-child{grid-column:2}
+
+  /* Website mobile fixes */
+  .bh .stackm{height:280px!important}
+  .bh .sm{width:82%!important}
+
+  /* Message mobile fixes */
+  .bh .ba{height:340px!important}
+  .bh .ba>div:first-child{padding:16px!important}
+  .bh .ba-l-in{padding-left:16px!important}
+  .bh .moment{padding:20px 0 20px 18px!important}
+  .bh .moment .t{font-size:34px!important}
+
+  /* AIConcierge mobile fixes */
+  .bh .hs{padding:8px 20px 20px!important;gap:16px!important}
+  .bh .hs-card{flex:0 0 calc(100vw - 40px)!important}
+
+  /* Payment mobile fixes */
+  .bh .ln{margin-left:8px!important;padding-left:20px!important}
+  .bh .ln-dot{left:-30px!important}
+  .bh .ln-sec{padding:48px 0!important}
+  .bh .pt{grid-template-columns:44px minmax(0,1fr)!important;gap:12px!important}
+  .bh .pt>.st-live,.bh .pt>.st-road{grid-column:2;justify-self:start}
+  .bh .money-st b{font-size:11px!important;white-space:nowrap}
+  .bh .money-st:first-of-type{left:0!important;transform:none!important;align-items:flex-start}
+  .bh .money-st:last-of-type{left:auto!important;right:0!important;transform:none!important;align-items:flex-end}
+
+  /* Finance mobile fixes */
+  .bh .doc{gap:28px!important}
+  .bh .docmain{gap:52px!important}
+  .bh .fq-q{grid-template-columns:36px minmax(0,1fr) 20px!important;gap:8px!important}
+  .bh .fq-a{padding:0 0 16px 44px!important}
+  .bh .ctl td:first-child{width:40%!important;padding-right:12px!important}
+}

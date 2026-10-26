@@ -123,11 +123,55 @@ def main():
                     'Hotline/Zalo: <span class="ph">[ ]</span>',
                     'Hotline/Zalo: <a href="tel:0366071468">0366 071 468</a>',
                 )
+            if name == "Faq" or name.endswith("Faq"):
+                content = content.replace(
+                    '<a class="btn btn-sm btn-outline" href="#">Gọi <span class="ph">[hotline]</span></a>',
+                    '<a class="btn btn-sm btn-outline" href="tel:0366071468">Gọi 0366 071 468</a>',
+                )
             content = re.sub(
                 r'<span class="logo-ph"[^>]*>\s*(MISA|Kovena|KOVENA)(?:\s*<i class="tbc">Logo</i>)?\s*</span>',
                 brand_logo,
                 content,
             )
+            content = re.sub(
+                r'<p\b[^>]*>\s*<i class="tbc">[\s\S]*?</i>\s*</p>',
+                "",
+                content,
+            )
+            content = re.sub(
+                r'<i class="tbc">[\s\S]*?</i>',
+                '<i class="tbc" hidden></i>',
+                content,
+            )
+            content = re.sub(
+                r'\s+(<i class="tbc" hidden></i>)([,.;:])',
+                r"\1\2",
+                content,
+            )
+            content = (
+                content.replace(
+                    '"reviewMarks":{"editor":"boolean","default":true',
+                    '"reviewMarks":{"editor":"boolean","default":false',
+                )
+                .replace(
+                    '"marks":{"editor":"boolean","default":true',
+                    '"marks":{"editor":"boolean","default":false',
+                )
+                .replace(
+                    "this.props.reviewMarks ?? true",
+                    "this.props.reviewMarks ?? false",
+                )
+                .replace(
+                    "this.props.marks ?? true",
+                    "this.props.marks ?? false",
+                )
+            )
+            if '<meta name="viewport"' not in content:
+                content = content.replace(
+                    '<meta charset="utf-8">',
+                    '<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1.0">',
+                    1,
+                )
             if file.name == f"{page}.dc.html":
                 content = re.sub(
                     r'(<dc-import name="[^"]*Header"[^>]*></dc-import>)',
@@ -137,6 +181,8 @@ def main():
                 )
                 content = content.replace(
                     "</head>",
+                    '<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3">'
+                    '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">'
                     '<link rel="stylesheet" href="./design-overrides.css">'
                     '<script src="./scroll-spy.js" defer></script>'
                     + ('<script src="./home-gallery.js" defer></script><script src="./customer-stories.js" defer></script>' if page == "Main" else '')
