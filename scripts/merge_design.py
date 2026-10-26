@@ -139,13 +139,8 @@ def main():
                 content,
             )
             content = re.sub(
-                r'<i class="tbc">[\s\S]*?</i>',
-                '<i class="tbc" hidden></i>',
-                content,
-            )
-            content = re.sub(
-                r'\s+(<i class="tbc" hidden></i>)([,.;:])',
-                r"\1\2",
+                r'\s*<i class="tbc">[\s\S]*?</i>',
+                "",
                 content,
             )
             content = re.sub(

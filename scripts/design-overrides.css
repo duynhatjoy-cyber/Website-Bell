@@ -71,6 +71,39 @@
 .chatwin img,.chatwin-img{display:block!important;max-width:100%!important;height:auto!important}
 .hero-visual,.mockup-visual{display:flex!important;justify-content:center!important;align-items:center!important;width:100%!important}
 .hero-mockup-img,.section-mockup-img{display:block!important;width:100%!important;max-width:760px!important;height:auto!important;object-fit:contain!important;filter:drop-shadow(0 20px 40px rgba(11,26,48,.14))}
+
+/* ==========================================================================
+   Booking Engine Process Section (Image 3 layout)
+   ========================================================================== */
+.process-split-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:center;margin-top:36px}
+.process-photo-col{width:100%;display:flex;justify-content:center}
+.process-photo-img{width:100%;height:440px;max-width:520px;object-fit:cover;border-radius:20px;box-shadow:0 20px 48px -16px rgba(11,26,48,.16)}
+.process-steps-col{display:flex;flex-direction:column}
+.process-step-item{border-top:1px solid #e2ece7;transition:background .2s}
+.process-step-item:last-child{border-bottom:1px solid #e2ece7}
+.process-step-item summary{display:flex;align-items:center;justify-content:space-between;padding:16px 0;cursor:pointer;list-style:none;touch-action:manipulation;user-select:none}
+.process-step-item summary::-webkit-details-marker{display:none}
+.process-step-item .step-num{width:36px;height:36px;border-radius:50%;border:1.5px solid #1f7a84;color:#1f7a84;display:grid;place-items:center;font-weight:700;font-size:14px;flex-shrink:0;background:#fff}
+.process-step-item .step-title{flex:1;margin-left:16px;font-size:16.5px;font-weight:700;color:#122745}
+.process-step-item .step-toggle{width:26px;height:26px;border:1.5px solid #1f7a84;border-radius:5px;display:grid;place-items:center;color:#1f7a84;font-size:18px;font-weight:700;line-height:1}
+.process-step-item .step-toggle::after{content:"+"}
+.process-step-item[open] .step-toggle{background:#1f7a84;color:#fff}
+.process-step-item[open] .step-toggle::after{content:"−"}
+.process-step-item .step-content{padding:0 0 16px 52px;font-size:14.5px;line-height:1.6;color:#566579}
+@media(max-width:900px){.process-split-layout{grid-template-columns:1fr;gap:32px}.process-photo-img{height:300px;max-width:100%}}
+
+/* ==========================================================================
+   Booking Engine Features Grid 4x4 / 4-column (Image 4 layout)
+   Text 1 dòng không xuống dòng, căn lưới 4 cột
+   ========================================================================== */
+.booking-features-grid{display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:16px!important}
+.booking-features-grid .feat{display:flex!important;flex-direction:row!important;align-items:flex-start!important;gap:14px!important;padding:18px 16px!important;border:1px solid #dde4ec!important;border-radius:16px!important;background:#fff!important;min-width:0!important;box-shadow:0 4px 16px rgba(18,39,69,.04)!important;transition:transform .2s,box-shadow .2s,border-color .2s!important}
+.booking-features-grid .feat:hover{transform:translateY(-2px)!important;border-color:#5fb9c2!important;box-shadow:0 12px 28px -10px rgba(18,39,69,.12)!important}
+.booking-features-grid .feat .feat-body{flex:1!important;min-width:0!important}
+.booking-features-grid .feat h3.h4{font-size:14px!important;font-weight:700!important;color:#122745!important;margin:0 0 6px 0!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;line-height:1.3!important}
+.booking-features-grid .feat p{margin:0!important;font-size:12.5px!important;line-height:1.45!important;color:#566579!important}
+@media(max-width:1100px){.booking-features-grid{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:600px){.booking-features-grid{grid-template-columns:1fr!important}}
 .device-img-holder{display:block;position:relative;width:100%;overflow:hidden}
 .customer-stories-section{background:#f1f6fa}
 .customer-stories-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:32px}
