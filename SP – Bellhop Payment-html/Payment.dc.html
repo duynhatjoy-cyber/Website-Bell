@@ -46,7 +46,19 @@ a{color:inherit}a:hover{color:#1f7a84}
 .qrow{display:grid;grid-template-columns:5fr 7fr;gap:40px;padding:26px 0;border-bottom:1px solid #dde4ec}
 .qrow h3{font-size:17px;color:#122745;font-weight:700}
 .qrow p{color:#566579}
-@media (max-width:980px){.ln{padding-left:28px}.ln-dot{left:-38px}.qrow{grid-template-columns:1fr;gap:8px}.money-st span{display:none}.money-txt{height:30px}.money-st{width:90px}.money-line{top:53px}.money-dot{top:46px}}
+.payment-benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;align-items:start}
+.payment-benefit-card{display:flex;flex-direction:column;align-items:center;text-align:center}
+.payment-benefit-icon{width:54px;height:54px;border-radius:14px;border:1.5px solid #2563eb;background:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 4px 12px rgba(37,99,235,.06);transition:transform .2s ease,box-shadow .2s ease}
+.payment-benefit-card:hover .payment-benefit-icon{transform:translateY(-2px);box-shadow:0 6px 16px rgba(37,99,235,.12)}
+.payment-benefit-title{font-size:19px;font-weight:700;color:#122745;margin:0 0 10px;line-height:1.35;text-align:center}
+.payment-benefit-desc{font-size:14.5px;line-height:1.6;color:#566579;margin:0;text-align:center}
+.payment-feature-item{display:flex;align-items:flex-start;gap:16px;background:#fff;padding:18px 22px;border-radius:16px;border:1px solid #dde4ec;box-shadow:0 4px 14px rgba(18,39,69,.04)}
+.payment-check-badge{flex:none;width:28px;height:28px;border-radius:50%;background:#e6f7f8;color:#1f7a84;font-weight:800;display:grid;place-items:center;font-size:14px}
+.payment-feature-item p{margin:0;font-size:15px;line-height:1.55;color:#2b3a4f;font-weight:500}
+.payment-timing-split{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.payment-timing-media{display:flex;justify-content:center;align-items:center;width:100%}
+@media (max-width:980px){.ln{padding-left:28px}.ln-dot{left:-38px}.qrow{grid-template-columns:1fr;gap:8px}.money-st span{display:none}.money-txt{height:30px}.money-st{width:90px}.money-line{top:53px}.money-dot{top:46px}.payment-benefits-grid{grid-template-columns:repeat(2,1fr);gap:28px 20px}.payment-timing-split{grid-template-columns:1fr;gap:0}.payment-timing-media{display:none!important}.meth{grid-template-columns:repeat(3,1fr);gap:8px}.meth div{height:54px;border-radius:10px;font-size:12px;padding:0 4px;text-align:center;line-height:1.25}}
+@media (max-width:640px){.payment-benefits-grid{grid-template-columns:1fr;gap:24px}.payment-feature-item{padding:14px 16px}}
 </style>
 </helmet>
 <div class="bh {{markCls}}">
@@ -74,17 +86,106 @@ a{color:inherit}a:hover{color:#1f7a84}
 </div>
 </section>
 
+<section class="payment-benefits-sec" style="padding: 24px 0 64px">
+<div class="wrap">
+  <div class="payment-benefits-grid">
+    <div class="payment-benefit-card">
+      <div class="payment-benefit-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+      </div>
+      <h3 class="payment-benefit-title">Tinh giản vận hành</h3>
+      <p class="payment-benefit-desc">Tiết kiệm thời gian và giảm lỗi nhập thủ công với các khoản thanh toán và giao dịch tập trung trên một nền tảng</p>
+    </div>
+    <div class="payment-benefit-card">
+      <div class="payment-benefit-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 11V9a7 7 0 0 0-7-7H9a7 7 0 0 0-7 7v4a5 5 0 0 0 5 5h1"></path>
+          <path d="M16 16v4"></path>
+          <path d="M8 18v2"></path>
+          <path d="M12 9v4"></path>
+          <path d="M16 9h.01"></path>
+          <circle cx="16" cy="11" r="1"></circle>
+          <path d="M21 14h-1a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1"></path>
+        </svg>
+      </div>
+      <h3 class="payment-benefit-title">Giao dịch tự động</h3>
+      <p class="payment-benefit-desc">Tạo tự động hóa đặt phòng trực tuyến. Chẳng hạn như ủy quyền, đặt cọc hoặc thanh toán trước</p>
+    </div>
+    <div class="payment-benefit-card">
+      <div class="payment-benefit-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+      </div>
+      <h3 class="payment-benefit-title">Thiết bị đầu cuối</h3>
+      <p class="payment-benefit-desc">Thêm các thiết bị đầu cuối hiện đại tùy chọn, cho phép bạn xử lý tất cả các loại thanh toán bằng thẻ</p>
+    </div>
+    <div class="payment-benefit-card">
+      <div class="payment-benefit-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="14" height="12" rx="2"></rect>
+          <path d="M6 19h6"></path>
+          <path d="M9 15v4"></path>
+          <rect x="15" y="8" width="7" height="13" rx="1.5"></rect>
+          <path d="M18.5 18h.01"></path>
+        </svg>
+      </div>
+      <h3 class="payment-benefit-title">Hỗ trợ 24/7</h3>
+      <p class="payment-benefit-desc">Đội ngũ hỗ trợ tư vấn tận tâm, chuyên nghiệp, giúp tránh gian lận và giải quyết các vấn đề nhanh chóng nhất</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sec bg-soft" style="padding: 72px 0; border-top: 1px solid #eef2f6; border-bottom: 1px solid #eef2f6">
+<div class="wrap">
+  <div class="split" style="gap: 56px; align-items: center">
+    <div class="stack" style="gap: 22px">
+      <span class="eyebrow">Giải pháp thanh toán tối ưu</span>
+      <h2 class="h2" style="font-weight: 700; font-size: 38px; color: #122745; line-height: 1.25">Phương thức thanh toán mới</h2>
+      <div class="stack" style="gap: 16px">
+        <div class="payment-feature-item">
+          <span class="payment-check-badge">✓</span>
+          <p>Cung cấp 1 phương thức thanh toán mới, phù hợp với xu thế thị trường, đáp ứng thanh toán mọi lúc mọi nơi với chi phí rẻ nhất</p>
+        </div>
+        <div class="payment-feature-item">
+          <span class="payment-check-badge">✓</span>
+          <p>Cho phép khách hàng thanh toán nhanh chóng các hóa đơn khách sạn, giảm tỷ lệ thu tiền mặt, quẹt thẻ, chuyển khoản, giảm công sức của nhân viên khách sạn khi thu tiền của khách…</p>
+        </div>
+      </div>
+      <div class="btns" style="margin-top: 8px">
+        <a class="btn btn-primary btn-lg" href="#form">Dùng thử miễn phí <span class="arr">→</span></a>
+      </div>
+    </div>
+    <div class="payment-visual-col" style="position: relative; display: flex; justify-content: center; align-items: center; width: 100%">
+      <img src="./assets/payment-new-method.svg" alt="Phương thức thanh toán mới Bellhop Payment" style="width: 100%; max-width: 600px; height: auto; display: block; border-radius: 20px; box-shadow: 0 20px 48px -18px rgba(18,39,69,0.18)">
+    </div>
+  </div>
+</div>
+</section>
+
 <div class="wrap">
 <div class="ln">
 
 <section class="ln-sec">
   <span class="ln-dot f"></span>
-  <div class="stack" style="gap: 12px; max-width: 760px; margin-bottom: 32px"><span class="ln-k">01 · Điểm thanh toán</span><h2 class="h2" style="font-weight: 600">Các thời điểm nhận thanh toán</h2><p class="muted">Mỗi mục gắn nhãn theo xác nhận của đội sản phẩm. <i class="tbc">Đang hoạt động / Lộ trình</i></p></div>
-  <div style="max-width: 920px">
-    <div class="pt"><span class="ic ic-tile-sm i-link"></span><div><h3 class="h4">Đặt cọc hoặc thanh toán trước</h3><p class="small muted">Qua đường dẫn thanh toán gửi cho khách. <i class="tbc">✓</i></p></div><span class="st-live">● Đang hoạt động</span></div>
-    <div class="pt"><span class="ic ic-tile-sm i-booking"></span><div><h3 class="h4">Thanh toán khi đặt phòng trên website</h3><p class="small muted">Booking Engine chưa có thanh toán ở giai đoạn này.</p></div><span class="st-road">Lộ trình</span></div>
-    <div class="pt"><span class="ic ic-tile-sm i-counter"></span><div><h3 class="h4">Thanh toán tại quầy</h3><p class="small muted">Ghi nhận cùng hóa đơn của khách. <i class="tbc">✓</i></p></div><span class="st-live">● Đang hoạt động</span></div>
-    <div class="pt"><span class="ic ic-tile-sm i-cancel"></span><div><h3 class="h4">Thu phí hủy phòng, no-show</h3><p class="small muted">Theo chính sách của cơ sở. <i class="tbc">✓</i></p></div><span class="st-road">Lộ trình</span></div>
+  <div class="stack center" style="gap: 12px; max-width: 760px; margin: 0 auto 36px; text-align: center; align-items: center"><span class="ln-k">01 · Điểm thanh toán</span><h2 class="h2" style="font-weight: 600; text-align: center">Các thời điểm nhận thanh toán</h2><p class="muted" style="text-align: center">Mỗi mục gắn nhãn theo xác nhận của đội sản phẩm. <i class="tbc">Đang hoạt động / Lộ trình</i></p></div>
+  <div class="payment-timing-split">
+    <div class="payment-timing-list">
+      <div class="pt"><span class="ic ic-tile-sm i-link"></span><div><h3 class="h4">Đặt cọc hoặc thanh toán trước</h3><p class="small muted">Qua đường dẫn thanh toán gửi cho khách. <i class="tbc">✓</i></p></div><span class="st-live">● Đang hoạt động</span></div>
+      <div class="pt"><span class="ic ic-tile-sm i-booking"></span><div><h3 class="h4">Thanh toán khi đặt phòng trên website</h3><p class="small muted">Booking Engine chưa có thanh toán ở giai đoạn này.</p></div><span class="st-road">Lộ trình</span></div>
+      <div class="pt"><span class="ic ic-tile-sm i-counter"></span><div><h3 class="h4">Thanh toán tại quầy</h3><p class="small muted">Ghi nhận cùng hóa đơn của khách. <i class="tbc">✓</i></p></div><span class="st-live">● Đang hoạt động</span></div>
+      <div class="pt"><span class="ic ic-tile-sm i-cancel"></span><div><h3 class="h4">Thu phí hủy phòng, no-show</h3><p class="small muted">Theo chính sách của cơ sở. <i class="tbc">✓</i></p></div><span class="st-road">Lộ trình</span></div>
+    </div>
+    <div class="payment-timing-media">
+      <img src="./assets/payment-timing-mockup.svg" alt="Các thời điểm nhận thanh toán Bellhop Payment" style="width: 100%; max-width: 500px; height: auto; display: block; border-radius: 16px; box-shadow: 0 16px 36px -12px rgba(18,39,69,0.12)">
+    </div>
   </div>
 </section>
 
@@ -156,30 +257,57 @@ a{color:inherit}a:hover{color:#1f7a84}
 
 <section class="ln-sec" style="padding-top: 0">
   <span class="ln-dot" style="top: 8px"></span>
-  <div class="stack" style="gap: 12px; margin-bottom: 24px"><span class="ln-k">07 · Kích hoạt</span><h2 class="h2" style="font-weight: 600">Các bước kích hoạt</h2></div>
-  <div class="stack" style="max-width: 760px">
-    <div class="pt" style="grid-template-columns: 56px 1fr"><b style="font-size: 32px; font-weight: 300; color: #1f7a84">01</b><div><h3 class="h4">Đăng ký và cung cấp hồ sơ doanh nghiệp</h3><p class="small muted"><span class="ph">[Danh sách giấy tờ theo yêu cầu của Kovena]</span></p></div></div>
-    <div class="pt" style="grid-template-columns: 56px 1fr"><b style="font-size: 32px; font-weight: 300; color: #1f7a84">02</b><div><h3 class="h4">Thẩm định hồ sơ</h3><p class="small muted">Thời gian <span class="ph">[ ]</span></p></div></div>
-    <div class="pt" style="grid-template-columns: 56px 1fr"><b style="font-size: 32px; font-weight: 300; color: #1f7a84">03</b><div><h3 class="h4">Kết nối với tài khoản Bellhop</h3><p class="small muted">Cấu hình chính sách thu tiền.</p></div></div>
-    <div class="pt" style="grid-template-columns: 56px 1fr; border-bottom: 0"><b style="font-size: 32px; font-weight: 300; color: #1f7a84">04</b><div><h3 class="h4">Bắt đầu nhận thanh toán</h3></div></div>
+  <div class="head center" style="margin-bottom: 32px">
+    <span class="ln-k" style="color: #1f7a84">07 · Kích hoạt</span>
+    <h2 class="h2" style="font-weight: 700; text-align: center">Các bước kích hoạt</h2>
   </div>
-</section>
-
-<section class="ln-sec" style="padding-top: 0">
-  <span class="ln-dot" style="top: 8px"></span>
-  <div class="stack" style="gap: 12px; margin-bottom: 16px"><span class="ln-k">08 · Câu hỏi</span><h2 class="h2" style="font-weight: 600">Câu hỏi thường gặp về Bellhop Payment</h2></div>
-  <div>
-    <div class="qrow"><h3>Khách nước ngoài có thanh toán được không?</h3><p><span class="ph">[Xác nhận]</span> <i class="tbc">✓</i></p></div>
-    <div class="qrow"><h3>Tiền thanh toán về tài khoản nào, sau bao lâu?</h3><p><span class="ph">[Xác nhận]</span> <i class="tbc">✓</i></p></div>
-    <div class="qrow"><h3>Hoàn tiền cho khách được thực hiện như thế nào?</h3><p><span class="ph">[Xác nhận]</span> <i class="tbc">✓</i></p></div>
-    <div class="qrow"><h3>Có thể dùng Bellhop Payment mà không dùng Bellhop PMS không?</h3><p><span class="ph">[Xác nhận]</span> <i class="tbc">✓</i></p></div>
-    <div class="qrow"><h3>Khách có thanh toán được khi đặt phòng trên website không?</h3><p>Tính năng thanh toán trên Booking Engine nằm trong lộ trình phát triển. <i class="tbc">Cập nhật khi có</i></p></div>
-    <div class="qrow"><h3>Ai chịu trách nhiệm khi có tranh chấp giao dịch?</h3><p><span class="ph">[Quy định theo hợp đồng]</span> <i class="tbc">✓</i></p></div>
+  <div class="process-split-layout">
+    <div class="process-photo-col">
+      <img src="./assets/payment-process-photo.png" alt="Quy trình kích hoạt Bellhop Payment" class="process-photo-img">
+    </div>
+    <div class="process-steps-col">
+      <details class="process-step-item" name="process-payment" open>
+        <summary>
+          <span class="step-num">01</span>
+          <span class="step-title">Đăng ký và cung cấp hồ sơ doanh nghiệp</span>
+          <span class="step-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="step-content">Cung cấp hồ sơ pháp lý và thông tin doanh nghiệp theo danh sách tài liệu hướng dẫn của Kovena.</div>
+      </details>
+      <details class="process-step-item" name="process-payment">
+        <summary>
+          <span class="step-num">02</span>
+          <span class="step-title">Thẩm định hồ sơ</span>
+          <span class="step-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="step-content">Đội ngũ chuyên viên tiến hành thẩm định nhanh chóng và hoàn tất thủ tục mở cổng thanh toán.</div>
+      </details>
+      <details class="process-step-item" name="process-payment">
+        <summary>
+          <span class="step-num">03</span>
+          <span class="step-title">Kết nối với tài khoản Bellhop</span>
+          <span class="step-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="step-content">Tích hợp trực tiếp vào phần mềm Bellhop PMS, cấu hình chính sách thu tiền, đặt cọc và phương thức thanh toán.</div>
+      </details>
+      <details class="process-step-item" name="process-payment">
+        <summary>
+          <span class="step-num">04</span>
+          <span class="step-title">Bắt đầu nhận thanh toán</span>
+          <span class="step-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="step-content">Sẵn sàng nhận thanh toán online đa kênh, dòng tiền được đối soát tự động và chính xác trên hệ thống.</div>
+      </details>
+    </div>
   </div>
 </section>
 
 </div>
 </div>
+
+<section class="sec bg-soft" id="faq"><div class="wrap">
+  <dc-import name="Faq" title="Câu hỏi thường gặp về Bellhop Payment" items="{{faq}}" marks="{{marks}}" hint-size="100%,600px"></dc-import>
+</div></section>
 
 <section class="sec-sm" id="form" style="padding-bottom: 104px"><div class="wrap">
   <dc-import name="LeadForm" variant="light" title="Tư vấn triển khai thanh toán online" desc="Đội ngũ Bellhop sẽ tư vấn phương thức thanh toán, chi phí và hồ sơ cần chuẩn bị." cta="Đặt lịch tư vấn" product="payment" source="/san-pham/payment" extra="{{extra}}" marks="{{marks}}" hint-size="100%,820px"></dc-import>
@@ -194,7 +322,16 @@ class Component extends DCLogic {
     const marks = this.props.reviewMarks ?? true;
     return {
       markCls: marks ? '' : 'no-marks', marks,
-      extra: { label: 'Tỷ lệ khách quốc tế ước tính', type: 'chips', options: ['Dưới 20%', '20–50%', 'Trên 50%'] }
+      extra: { label: 'Tỷ lệ khách quốc tế ước tính', type: 'chips', options: ['Dưới 20%', '20–50%', 'Trên 50%'] },
+      faq: [
+        { q: 'Khách nước ngoài có thanh toán được không?', a: 'Có. Bellhop Payment hỗ trợ đầy đủ các loại thẻ thanh toán quốc tế phổ biến như Visa, Mastercard, JCB, Amex và cổng thanh toán toàn cầu.', tbc: true },
+        { q: 'Tiền thanh toán về tài khoản nào, sau bao lâu?', a: 'Tiền thanh toán được đối soát và chuyển trực tiếp về tài khoản ngân hàng của cơ sở lưu trú theo chu kỳ thanh toán chuẩn T+1 đến T+3 ngày làm việc.', tbc: true },
+        { q: 'Hoàn tiền cho khách được thực hiện như thế nào?', a: 'Khách sạn có thể thao tác hoàn tiền một phần hoặc toàn phần trực tiếp ngay trên giao diện quản trị Bellhop theo chính sách hủy phòng đã thiết lập.', tbc: true },
+        { q: 'Có thể dùng Bellhop Payment mà không dùng Bellhop PMS không?', a: 'Bellhop Payment được tối ưu tốt nhất khi kết nối đồng bộ với Bellhop PMS để tự động gắn giao dịch với đặt phòng, nhưng vẫn có thể cung cấp độc lập cho các đối tác có nhu cầu.', tbc: true },
+        { q: 'Khách có thanh toán được khi đặt phòng trên website không?', a: 'Có, tính năng thanh toán trực tiếp trên website đã được tích hợp sẵn qua Booking Engine và cổng thanh toán Bellhop Payment.', tbc: false },
+        { q: 'Ai chịu trách nhiệm khi có tranh chấp giao dịch?', a: 'Bellhop cùng đối tác thanh toán Kovena có đội ngũ hỗ trợ nghiệp vụ chuyên trách 24/7 để phối hợp xử lý và giải quyết nhanh chóng mọi trường hợp tra soát hoặc tranh chấp giao dịch.', tbc: true }
+      ]
+    };
     };
   }
 }

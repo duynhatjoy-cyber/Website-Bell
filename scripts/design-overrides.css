@@ -262,6 +262,8 @@ html,body{overflow-x:clip!important;max-width:100%;height:auto!important;min-hei
   .bh .money-st{width:80px!important}
   .bh .money-st:first-of-type{left:8%!important;transform:translateX(-50%)!important;align-items:center!important}
   .bh .money-st:last-of-type{left:92%!important;right:auto!important;transform:translateX(-50%)!important;align-items:center!important}
+  .bh .meth{grid-template-columns:repeat(3,1fr)!important;gap:8px!important}
+  .bh .meth div{height:54px!important;border-radius:10px!important;font-size:12px!important;padding:0 4px!important;text-align:center!important;line-height:1.25!important}
 
   /* Finance mobile fixes */
   .bh .doc{gap:28px!important}

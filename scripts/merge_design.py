@@ -18,6 +18,9 @@ PAGES = {
     "AIConcierge": "SP – AI Concierge-html",
     "Payment": "SP – Bellhop Payment-html",
     "Finance": "SP – Bellhop Finance-html",
+    "Pricing": "Trang bảng giá-html",
+    "News": "Trang tin tức-html",
+    "About": "Trang giới thiệu-html",
 }
 FLAG_VI = '<svg viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#da251d"/><path d="m10 2 1.35 3.8 4-.05-3.2 2.35 1.25 3.8L10 9.6l-3.4 2.3 1.25-3.8-3.2-2.35 4 .05z" fill="#ffde00"/></svg>'
 FLAG_US = '<svg viewBox="0 0 20 14" aria-hidden="true"><rect width="20" height="14" fill="#b22234"/><path d="M0 1.08h20v1.08H0zm0 2.16h20v1.08H0zm0 2.16h20v1.08H0zm0 2.16h20v1.08H0zm0 2.16h20v1.08H0zm0 2.16h20v1.08H0z" fill="#fff"/><rect width="8.5" height="7.56" fill="#3c3b6e"/><g fill="#fff"><circle cx="1.4" cy="1.2" r=".35"/><circle cx="3.3" cy="1.2" r=".35"/><circle cx="5.2" cy="1.2" r=".35"/><circle cx="7.1" cy="1.2" r=".35"/><circle cx="2.35" cy="2.6" r=".35"/><circle cx="4.25" cy="2.6" r=".35"/><circle cx="6.15" cy="2.6" r=".35"/><circle cx="1.4" cy="4" r=".35"/><circle cx="3.3" cy="4" r=".35"/><circle cx="5.2" cy="4" r=".35"/><circle cx="7.1" cy="4" r=".35"/><circle cx="2.35" cy="5.4" r=".35"/><circle cx="4.25" cy="5.4" r=".35"/><circle cx="6.15" cy="5.4" r=".35"/></g></svg>'
@@ -74,8 +77,6 @@ def main():
                 ),
                 content,
             )
-            # This destination has no supplied design page.
-            content = content.replace("About.dc.html", "Main.dc.html#form")
             # Trial calls scroll to the booking form on the current page.
             content = content.replace('href="#dang-ky"', 'href="#form"')
             content = content.replace(

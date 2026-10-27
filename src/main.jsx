@@ -15,6 +15,10 @@ const pages = {
   '/ai-concierge': 'AIConcierge',
   '/payment': 'Payment',
   '/finance': 'Finance',
+  '/bang-gia': 'Pricing',
+  '/tin-tuc': 'News',
+  '/ve-bellhop': 'About',
+  '/lifrooms': 'About',
 };
 const paths = Object.fromEntries(Object.entries(pages).map(([path, name]) => [name, path]));
 const loginUrl = 'https://app.bellhop.biz/';

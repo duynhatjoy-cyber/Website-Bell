@@ -21,13 +21,13 @@ a{color:inherit}a:hover{color:#1f6b52}
 .ledger th{background:#eef3f0;color:#1f4d3e;font-weight:700;text-align:left;padding:9px 12px;border:1px solid #c9d3cf;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}
 .ledger td{padding:9px 12px;border:1px solid #dfe6e2}
 .ledger td.r{text-align:right}
-.doc{display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start}
-.toc{flex:1 1 220px;max-width:260px;display:flex;flex-direction:column;gap:2px;border-left:2px solid #dfe6e2;padding-left:0}
-.toc a{padding:10px 18px;font-size:14px;font-weight:600;color:#566579;border-left:2px solid transparent;margin-left:-2px}
-.toc a:hover,.toc a.on{color:#122745;border-left-color:#1f6b52}
-.docmain{flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:96px}
-.dsec{display:flex;flex-direction:column;gap:20px;scroll-margin-top:24px}
-.dk{font-size:12px;font-weight:700;letter-spacing:.14em;color:#1f6b52;text-transform:uppercase}
+.ln{position:relative;margin-left:12px;padding-left:64px;border-left:2px solid #d1e7dd}
+.ln-sec{position:relative;padding:72px 0}
+.ln-sec:first-child{padding-top:0}
+.ln-dot{position:absolute;left:-74px;top:70px;width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid #1f6b52;box-shadow:0 0 0 6px #fff}
+.ln-sec:first-child .ln-dot{top:0}
+.ln-dot.f{background:#1f6b52}
+.ln-k{font-size:12px;font-weight:700;letter-spacing:.14em;color:#1f6b52;text-transform:uppercase}
 .map{width:100%;border-collapse:collapse;font-size:15px;min-width:720px}
 .map th{text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#1f4d3e;background:#eef3f0;padding:14px 18px;border-bottom:2px solid #1f6b52}
 .map td{padding:16px 18px;border-bottom:1px solid #dfe6e2;vertical-align:middle}
@@ -49,13 +49,7 @@ a{color:inherit}a:hover{color:#1f6b52}
 .ctl{width:100%;border-collapse:collapse;font-size:15px}
 .ctl td{padding:18px 0;border-bottom:1px solid #dfe6e2;vertical-align:top}
 .ctl td:first-child{width:34%;font-weight:700;color:#122745;padding-right:24px}
-.fq{border-top:1px solid #122745}
-.fq-i{border-bottom:1px solid #dfe6e2}
-.fq-q{width:100%;display:grid;grid-template-columns:48px 1fr 24px;gap:12px;align-items:center;padding:16px 0;border:0;background:transparent;text-align:left;font-size:15.5px;font-weight:600;color:#122745;min-height:56px}
-.fq-q .n{font-family:'Roboto Mono',monospace;color:#1f6b52;font-size:13px}
-.fq-a{padding:0 0 18px 60px;color:#566579;font-size:15px}
-@media (min-width:981px){.toc{position:sticky;top:24px}}
-@media (max-width:980px){.proc{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.flow .ar{transform:rotate(90deg);height:36px}.toc{max-width:none;flex-direction:row;flex-wrap:wrap;border-left:0}.toc a{border-left:0}}
+@media (max-width:980px){.ln{padding-left:28px}.ln-dot{left:-38px}.ln-sec{padding:48px 0}.ln-dot{top:46px}.ln-sec:first-child .ln-dot{top:0}.proc{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.flow .ar{transform:rotate(90deg);height:36px}}
 </style>
 </helmet>
 <div class="bh {{markCls}}">
@@ -82,112 +76,112 @@ a{color:inherit}a:hover{color:#1f6b52}
 </div>
 </section>
 
-<section style="padding: 96px 0">
-<div class="wrap doc">
-  <nav class="toc" aria-label="Mục lục">
-    <span class="label" style="padding: 0 18px 10px">Mục lục</span>
-    <a class="on" href="#du-lieu">Dữ liệu đồng bộ</a>
-    <a href="#cuoi-thang">Quy trình cuối tháng</a>
-    <a href="#hddt">Hóa đơn điện tử</a>
-    <a href="#kiem-soat">Kiểm soát</a>
-    <a href="#trien-khai">Triển khai</a>
-    <a href="#cau-hoi">Câu hỏi</a>
-  </nav>
-  <div class="docmain">
+<section style="padding: 80px 0 96px">
+<div class="wrap">
+<div class="ln">
 
-    <div class="dsec" id="du-lieu">
-      <span class="dk">§1 · Dữ liệu</span>
+  <section class="ln-sec" id="du-lieu">
+    <span class="ln-dot f"></span>
+    <div class="stack" style="gap: 12px; max-width: 820px; margin-bottom: 24px">
+      <span class="ln-k">01 · Dữ liệu</span>
       <h2 class="h2">Dữ liệu được đồng bộ sang MISA</h2>
       <p class="muted">Bảng dưới đây là khung đề xuất; đội sản phẩm điền theo tích hợp thực tế. <i class="tbc">Khung đề xuất</i></p>
-      <div class="tbl-box" style="border-radius: 0; border-color: #c9d3cf">
-        <table class="map">
-          <thead><tr><th>Dữ liệu trên Bellhop</th><th></th><th>Chứng từ / đối tượng trên MISA</th><th>Tần suất</th></tr></thead>
-          <tbody>
-            <tr><td>Doanh thu phòng</td><td class="ar">→</td><td><span class="ph">[chứng từ bán hàng]</span></td><td><span class="ph">[ ]</span></td></tr>
-            <tr><td>Doanh thu dịch vụ, F&amp;B</td><td class="ar">→</td><td><span class="ph">[ ]</span></td><td><span class="ph">[ ]</span></td></tr>
-            <tr><td>Phiếu thu, phiếu chi (quỹ tiền mặt)</td><td class="ar">→</td><td><span class="ph">[phiếu thu/chi]</span></td><td><span class="ph">[ ]</span></td></tr>
-            <tr><td>Thu, chi qua ngân hàng (quỹ tiền gửi)</td><td class="ar">→</td><td><span class="ph">[ ]</span></td><td><span class="ph">[ ]</span></td></tr>
-            <tr><td>Hóa đơn điện tử đã phát hành</td><td class="ar">→</td><td><span class="ph">[ ]</span></td><td><span class="ph">[ ]</span></td></tr>
-            <tr><td>Danh mục khách hàng, hàng hóa, dịch vụ</td><td class="ar">→</td><td><span class="ph">[danh mục]</span></td><td><span class="ph">[ ]</span></td></tr>
-            <tr><td>Nhập kho, công nợ nhà cung cấp</td><td class="ar">→</td><td><span class="ph">[ ]</span></td><td><span class="ph">[ ]</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="row wrapx" style="justify-content: space-between; gap: 16px"><span class="small muted">Phiên bản MISA được hỗ trợ: <span class="ph">[vd: MISA SME / MISA AMIS Kế toán]</span></span><a class="btn btn-outline btn-sm" href="#">Tải “Danh mục dữ liệu đồng bộ” (PDF)</a></div>
     </div>
+    <div class="tbl-box" style="border-radius: 0; border-color: #c9d3cf">
+      <table class="map">
+        <thead><tr><th>Dữ liệu trên Bellhop</th><th></th><th>Chứng từ / đối tượng trên MISA</th><th>Tần suất</th></tr></thead>
+        <tbody>
+          <tr><td>Doanh thu phòng</td><td class="ar">→</td><td><span class="ph">[chứng từ bán hàng]</span></td><td><span class="ph">[ ]</span></td></tr>
+          <tr><td>Doanh thu dịch vụ, F&amp;B</td><td class="ar">→</td><td><span class="ph">[ ]</span></td><td><span class="ph">[ ]</span></td></tr>
+          <tr><td>Phiếu thu, phiếu chi (quỹ tiền mặt)</td><td class="ar">→</td><td><span class="ph">[phiếu thu/chi]</span></td><td><span class="ph">[ ]</span></td></tr>
+          <tr><td>Thu, chi qua ngân hàng (quỹ tiền gửi)</td><td class="ar">→</td><td><span class="ph">[ ]</span></td><td><span class="ph">[ ]</span></td></tr>
+          <tr><td>Hóa đơn điện tử đã phát hành</td><td class="ar">→</td><td><span class="ph">[ ]</span></td><td><span class="ph">[ ]</span></td></tr>
+          <tr><td>Danh mục khách hàng, hàng hóa, dịch vụ</td><td class="ar">→</td><td><span class="ph">[danh mục]</span></td><td><span class="ph">[ ]</span></td></tr>
+          <tr><td>Nhập kho, công nợ nhà cung cấp</td><td class="ar">→</td><td><span class="ph">[ ]</span></td><td><span class="ph">[ ]</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-    <div class="dsec" id="cuoi-thang">
-      <span class="dk">§2 · Quy trình</span>
+  <section class="ln-sec" id="cuoi-thang">
+    <span class="ln-dot"></span>
+    <div class="stack" style="gap: 12px; max-width: 820px; margin-bottom: 24px">
+      <span class="ln-k">02 · Quy trình</span>
       <h2 class="h2">Quy trình chốt sổ cuối tháng</h2>
-      <div class="proc">
-        <div class="stack" style="gap: 8px"><span class="label">Không kết nối</span><ol class="old"><li>Xuất báo cáo từ phần mềm quản lý khách sạn</li><li>Nhập lại doanh thu, thu chi vào MISA</li><li>Đối chiếu từng khoản với sổ quỹ, sao kê</li><li>Tìm và điều chỉnh chênh lệch</li></ol></div>
-        <div class="stack" style="gap: 8px"><span class="label" style="color: #1f6b52">Với Bellhop Finance</span><ol class="new"><li>Dữ liệu được đồng bộ sang MISA <i class="tbc">Theo ngày / theo lệnh</i></li><li class="skip">Nhập lại doanh thu, thu chi vào MISA</li><li>Kiểm tra danh sách chứng từ đã chuyển</li><li>Đối chiếu và xử lý ngoại lệ</li></ol></div>
-      </div>
-      <p class="xs muted"><i class="tbc">Chỉ ghi số liệu thời gian tiết kiệm khi đo được, kèm nguồn</i></p>
     </div>
+    <div class="proc">
+      <div class="stack" style="gap: 8px"><span class="label">Không kết nối</span><ol class="old"><li>Xuất báo cáo từ phần mềm quản lý khách sạn</li><li>Nhập lại doanh thu, thu chi vào MISA</li><li>Đối chiếu từng khoản với sổ quỹ, sao kê</li><li>Tìm và điều chỉnh chênh lệch</li></ol></div>
+      <div class="stack" style="gap: 8px"><span class="label" style="color: #1f6b52">Với Bellhop Finance</span><ol class="new"><li>Dữ liệu được đồng bộ sang MISA <i class="tbc">Theo ngày / theo lệnh</i></li><li class="skip">Nhập lại doanh thu, thu chi vào MISA</li><li>Kiểm tra danh sách chứng từ đã chuyển</li><li>Đối chiếu và xử lý ngoại lệ</li></ol></div>
+    </div>
+    <p class="xs muted" style="margin-top: 16px"><i class="tbc">Chỉ ghi số liệu thời gian tiết kiệm khi đo được, kèm nguồn</i></p>
+  </section>
 
-    <div class="dsec" id="hddt">
-      <span class="dk">§3 · Hóa đơn điện tử</span>
+  <section class="ln-sec" id="hddt">
+    <span class="ln-dot"></span>
+    <div class="stack" style="gap: 12px; max-width: 820px; margin-bottom: 24px">
+      <span class="ln-k">03 · Hóa đơn điện tử</span>
       <h2 class="h2">Từ quầy lễ tân đến phần mềm kế toán</h2>
       <p class="lead">Hóa đơn điện tử, sổ sách và quỹ được quản lý trong gói Tài chính của Bellhop PMS; Bellhop Finance chuyển các dữ liệu này sang MISA.</p>
-      <div class="flow">
-        <div class="bx"><span class="who">Lễ tân</span><b style="color: #122745">Bellhop PMS</b><span class="small muted">Xuất hóa đơn, ghi nhận thu chi</span></div>
-        <div class="ar">→</div>
-        <div class="bx" style="background: #122745; border-color: #122745; color: #c9d6e6"><span class="who" style="color: #9fe0e6">Hệ thống</span><b style="color: #fff">Bellhop Finance</b><span class="small">Đồng bộ dữ liệu</span></div>
-        <div class="ar">→</div>
-        <div class="bx"><span class="who">Kế toán</span><b style="color: #122745">MISA</b><span class="small muted">Hạch toán, lập báo cáo</span></div>
-      </div>
+    </div>
+    <div class="flow">
+      <div class="bx"><span class="who">Lễ tân</span><b style="color: #122745">Bellhop PMS</b><span class="small muted">Xuất hóa đơn, ghi nhận thu chi</span></div>
+      <div class="ar">→</div>
+      <div class="bx" style="background: #122745; border-color: #122745; color: #c9d6e6"><span class="who" style="color: #9fe0e6">Hệ thống</span><b style="color: #fff">Bellhop Finance</b><span class="small">Đồng bộ dữ liệu</span></div>
+      <div class="ar">→</div>
+      <div class="bx"><span class="who">Kế toán</span><b style="color: #122745">MISA</b><span class="small muted">Hạch toán, lập báo cáo</span></div>
+    </div>
+    <div style="margin-top: 20px">
       <a class="lnk" href="PMS.dc.html#tai-chinh">Tìm hiểu gói Tài chính của Bellhop PMS <span class="arr">→</span></a>
     </div>
+  </section>
 
-    <div class="dsec" id="kiem-soat">
-      <span class="dk">§4 · Kiểm soát</span>
+  <section class="ln-sec" id="kiem-soat">
+    <span class="ln-dot"></span>
+    <div class="stack" style="gap: 12px; max-width: 820px; margin-bottom: 24px">
+      <span class="ln-k">04 · Kiểm soát</span>
       <h2 class="h2">Kiểm soát dữ liệu trước khi hạch toán</h2>
-      <table class="ctl">
-        <tr><td>Nhật ký đồng bộ</td><td class="muted">Thời điểm, số chứng từ, trạng thái thành công/lỗi. <i class="tbc">✓</i></td></tr>
-        <tr><td>Cảnh báo lỗi</td><td class="muted">Cảnh báo và xử lý lỗi đồng bộ. <i class="tbc">✓</i></td></tr>
-        <tr><td>Duyệt trước khi ghi sổ</td><td class="muted">Kế toán duyệt trước khi ghi sổ. <i class="tbc">✓</i></td></tr>
-        <tr><td>Phân quyền</td><td class="muted">Chỉ tài khoản được cấp mới xem dữ liệu tài chính. <i class="tbc">✓</i></td></tr>
-      </table>
-      <table class="ledger mono" style="font-size: 12px"><tr><th>Thời điểm</th><th>Số chứng từ</th><th>Trạng thái</th></tr><tr><td>23/10 23:00</td><td>42</td><td style="color: #1d6a40; font-weight: 600">Thành công</td></tr><tr><td>22/10 23:00</td><td>38 / 1 lỗi</td><td style="color: #8a4b08; font-weight: 600">Cần xử lý: thiếu mã hàng “NUOC-01”</td></tr></table>
-      <span class="illus">Dữ liệu minh họa</span>
     </div>
+    <table class="ctl">
+      <tr><td>Nhật ký đồng bộ</td><td class="muted">Thời điểm, số chứng từ, trạng thái thành công/lỗi. <i class="tbc">✓</i></td></tr>
+      <tr><td>Cảnh báo lỗi</td><td class="muted">Cảnh báo và xử lý lỗi đồng bộ. <i class="tbc">✓</i></td></tr>
+      <tr><td>Duyệt trước khi ghi sổ</td><td class="muted">Kế toán duyệt trước khi ghi sổ. <i class="tbc">✓</i></td></tr>
+      <tr><td>Phân quyền</td><td class="muted">Chỉ tài khoản được cấp mới xem dữ liệu tài chính. <i class="tbc">✓</i></td></tr>
+    </table>
+    <table class="ledger mono" style="font-size: 12px; margin-top: 20px"><tr><th>Thời điểm</th><th>Số chứng từ</th><th>Trạng thái</th></tr><tr><td>23/10 23:00</td><td>42</td><td style="color: #1d6a40; font-weight: 600">Thành công</td></tr><tr><td>22/10 23:00</td><td>38 / 1 lỗi</td><td style="color: #8a4b08; font-weight: 600">Cần xử lý: thiếu mã hàng “NUOC-01”</td></tr></table>
+    <span class="illus">Dữ liệu minh họa</span>
+  </section>
 
-    <div class="dsec" id="trien-khai">
-      <span class="dk">§5 · Triển khai</span>
+  <section class="ln-sec" id="trien-khai">
+    <span class="ln-dot"></span>
+    <div class="stack" style="gap: 12px; max-width: 820px; margin-bottom: 24px">
+      <span class="ln-k">05 · Triển khai</span>
       <h2 class="h2">Các bước kết nối</h2>
-      <div class="tbl-box" style="border-radius: 0; border-color: #c9d3cf">
-        <table class="map" style="min-width: 640px">
-          <thead><tr><th style="width: 80px">Bước</th><th>Nội dung</th><th style="width: 200px">Người thực hiện</th></tr></thead>
-          <tbody>
-            <tr><td class="mono" style="color: #1f6b52; font-weight: 600">01</td><td>Khảo sát: phiên bản MISA, hệ thống tài khoản, danh mục đang dùng.</td><td>Bellhop + Kế toán</td></tr>
-            <tr><td class="mono" style="color: #1f6b52; font-weight: 600">02</td><td>Thiết lập ánh xạ: tài khoản, danh mục khách hàng, hàng hóa, dịch vụ. <i class="tbc">✓</i></td><td>Bellhop</td></tr>
-            <tr><td class="mono" style="color: #1f6b52; font-weight: 600">03</td><td>Chạy thử với dữ liệu một kỳ và đối chiếu.</td><td>Kế toán</td></tr>
-            <tr><td class="mono" style="color: #1f6b52; font-weight: 600">04</td><td>Vận hành chính thức.</td><td>Kế toán</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="small muted">Thời gian triển khai <span class="ph">[ ]</span> · Bellhop hỗ trợ kế toán thiết lập <i class="tbc">✓</i></p>
-      <div class="row wrapx" style="gap: 16px; justify-content: space-between; padding: 20px 24px; border: 1px solid #c9d3cf; background: #f8faf9">
-        <div><b style="color: #122745">Chi phí Bellhop Finance</b><div class="small muted"><span class="ph">[Mô hình phí · có yêu cầu gói Tài chính của PMS không]</span></div></div>
-        <a class="btn btn-outline btn-sm" href="Main.dc.html#bang-gia">Xem bảng giá</a>
-      </div>
     </div>
-
-    <div class="dsec" id="cau-hoi">
-      <span class="dk">§6 · Câu hỏi</span>
-      <h2 class="h2">Câu hỏi thường gặp</h2>
-      <div class="fq">
-        <sc-for list="{{faq}}" as="f" hint-placeholder-count="6">
-          <div class="fq-i"><button class="fq-q" aria-expanded="{{f.exp}}" onClick="{{f.toggle}}"><span class="n">{{f.n}}</span><span>{{f.q}}</span><span aria-hidden="true">{{f.sign}}</span></button>
-          <sc-if value="{{f.open}}" hint-placeholder-val="{{ false }}"><div class="fq-a">{{f.a}} <i class="tbc">Cần xác nhận</i></div></sc-if></div>
-        </sc-for>
-      </div>
+    <div class="tbl-box" style="border-radius: 0; border-color: #c9d3cf">
+      <table class="map" style="min-width: 640px">
+        <thead><tr><th style="width: 80px">Bước</th><th>Nội dung</th><th style="width: 200px">Người thực hiện</th></tr></thead>
+        <tbody>
+          <tr><td class="mono" style="color: #1f6b52; font-weight: 600">01</td><td>Khảo sát: phiên bản MISA, hệ thống tài khoản, danh mục đang dùng.</td><td>Bellhop + Kế toán</td></tr>
+          <tr><td class="mono" style="color: #1f6b52; font-weight: 600">02</td><td>Thiết lập ánh xạ: tài khoản, danh mục khách hàng, hàng hóa, dịch vụ. <i class="tbc">✓</i></td><td>Bellhop</td></tr>
+          <tr><td class="mono" style="color: #1f6b52; font-weight: 600">03</td><td>Chạy thử với dữ liệu một kỳ và đối chiếu.</td><td>Kế toán</td></tr>
+          <tr><td class="mono" style="color: #1f6b52; font-weight: 600">04</td><td>Vận hành chính thức.</td><td>Kế toán</td></tr>
+        </tbody>
+      </table>
     </div>
+    <p class="small muted" style="margin: 16px 0 20px">Thời gian triển khai <span class="ph">[ ]</span> · Bellhop hỗ trợ kế toán thiết lập <i class="tbc">✓</i></p>
+    <div class="row wrapx" style="gap: 16px; justify-content: space-between; padding: 20px 24px; border: 1px solid #c9d3cf; background: #f8faf9">
+      <div><b style="color: #122745">Chi phí Bellhop Finance</b><div class="small muted"><span class="ph">[Mô hình phí · có yêu cầu gói Tài chính của PMS không]</span></div></div>
+      <a class="btn btn-outline btn-sm" href="Main.dc.html#bang-gia">Xem bảng giá</a>
+    </div>
+  </section>
 
-  </div>
+</div>
 </div>
 </section>
+
+<section class="sec bg-soft" id="faq"><div class="wrap">
+  <dc-import name="Faq" title="Câu hỏi thường gặp về Bellhop Finance" items="{{faq}}" marks="{{marks}}" hint-size="100%,600px"></dc-import>
+</div></section>
 
 <section class="sec-sm" id="form" style="padding-bottom: 104px"><div class="wrap">
   <dc-import name="LeadForm" variant="grid" title="Tư vấn kết nối Bellhop với MISA" desc="Đội ngũ Bellhop sẽ trao đổi với bộ phận kế toán về dữ liệu cần đồng bộ và phương án triển khai." cta="Đặt lịch tư vấn" product="finance" source="/san-pham/finance" extra="{{extra}}" marks="{{marks}}" hint-size="100%,820px"></dc-import>
@@ -198,22 +192,19 @@ a{color:inherit}a:hover{color:#1f6b52}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"reviewMarks":{"editor":"boolean","default":true,"section":"Bản duyệt"},"$preview":{"width":1440,"height":6800}}'>
 class Component extends DCLogic {
-  constructor(p) { super(p); this.state = { open: 0 }; }
   renderVals() {
     const marks = this.props.reviewMarks ?? true;
-    const F = [
-      ['Bellhop Finance hỗ trợ phiên bản MISA nào?', '[Danh sách phiên bản].'],
-      ['Dữ liệu được đồng bộ theo thời gian thực hay theo kỳ?', '[Thời gian thực / theo kỳ / theo lệnh].'],
-      ['Có cần thay đổi hệ thống tài khoản đang sử dụng không?', '[Xác nhận].'],
-      ['Đồng bộ lỗi thì xử lý thế nào?', '[Mô tả nhật ký, cảnh báo, xử lý lỗi].'],
-      ['Khách sạn có nhiều cơ sở thì đồng bộ ra sao?', '[Xác nhận].'],
-      ['Dùng phần mềm kế toán khác MISA có kết nối được không?', '[Hiện chỉ hỗ trợ MISA / lộ trình].']
-    ];
-    const o = this.state.open;
     return {
       markCls: marks ? '' : 'no-marks', marks,
-      faq: F.map((f, i) => ({ n: 'Q' + (i + 1), q: f[0], a: f[1], open: o === i, exp: o === i ? 'true' : 'false', sign: o === i ? '–' : '+', toggle: () => this.setState({ open: this.state.open === i ? -1 : i }) })),
-      extra: { label: 'Phiên bản MISA đang dùng · Kế toán nội bộ hay dịch vụ kế toán', type: 'text', placeholder: 'VD: MISA AMIS · kế toán nội bộ' }
+      extra: { label: 'Phiên bản MISA đang dùng · Kế toán nội bộ hay dịch vụ kế toán', type: 'text', placeholder: 'VD: MISA AMIS · kế toán nội bộ' },
+      faq: [
+        { q: 'Bellhop Finance hỗ trợ phiên bản MISA nào?', a: 'Bellhop Finance hỗ trợ kết nối trực tiếp với MISA SME và MISA AMIS Kế toán thông qua API kết nối bảo mật hoặc xuất nhập chứng từ tự động.', tbc: true },
+        { q: 'Dữ liệu được đồng bộ theo thời gian thực hay theo kỳ?', a: 'Hệ thống cho phép đồng bộ linh hoạt: tự động đồng bộ theo thời gian thực mỗi khi phát sinh giao dịch, theo ngày hoặc kế toán chủ động bấm nút đồng bộ theo từng kỳ chốt sổ.', tbc: true },
+        { q: 'Có cần thay đổi hệ thống tài khoản đang sử dụng không?', a: 'Không cần thay đổi. Kế toán chỉ cần cấu hình bảng ánh xạ (mapping) giữa các loại dịch vụ, quỹ tiền của Bellhop với hệ thống tài khoản và danh mục đối tượng sẵn có trên MISA.', tbc: true },
+        { q: 'Đồng bộ lỗi thì xử lý thế nào?', a: 'Hệ thống ghi nhận chi tiết tại Nhật ký đồng bộ, hiển thị trạng thái và nguyên nhân cụ thể (thiếu mã hàng, sai định dạng) để kế toán chỉnh sửa và bấm thử lại ngay lập tức.', tbc: true },
+        { q: 'Khách sạn có nhiều cơ sở thì đồng bộ ra sao?', a: 'Bellhop Finance hỗ trợ phân quyền và ánh xạ dữ liệu theo từng chi nhánh/cơ sở độc lập hoặc gom dữ liệu về chung một sổ kế toán tổng công ty theo mô hình quản trị của khách sạn.', tbc: true },
+        { q: 'Dùng phần mềm kế toán khác MISA có kết nối được không?', a: 'Hiện tại Bellhop Finance tối ưu sâu nhất cho hệ sinh thái MISA. Với các phần mềm kế toán khác (như Fast, Bravo, SAP...), Bellhop cung cấp tính năng xuất file chuẩn hóa Excel/XML hoặc kết nối API mở.', tbc: true }
+      ]
     };
   }
 }

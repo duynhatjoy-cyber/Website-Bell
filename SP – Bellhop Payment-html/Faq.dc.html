@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Bellhop Payment – FAQ</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./assets/81e26d43a82c22dd79010c853e0d4ffa.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div class="bh {{markCls}}" style="background: transparent">
+<div class="split-48">
+  <div class="stack" style="gap: 20px">
+    <span class="eyebrow">FAQ</span>
+    <h2 class="h2">{{title}}</h2>
+    <div class="stack" style="gap: 14px; margin-top: 12px; padding: 24px; border-radius: 18px; background: #fff; border: 1px solid #dde4ec">
+      <div class="row" style="gap: 12px"><span class="ic ic-tile-sm i-headset"></span><b style="color: #122745">Chưa thấy câu trả lời?</b></div>
+      <p class="small muted">Đội ngũ Bellhop sẵn sàng giải đáp và tư vấn qua Zalo hoặc Hotline.</p>
+      <div class="btns"><a class="btn btn-sm" href="#" style="background: #0068ff; color: #fff">Chat Zalo</a><a class="btn btn-sm btn-outline" href="#">Gọi tư vấn</a></div>
+    </div>
+  </div>
+  <div class="faq">
+    <sc-for list="{{rows}}" as="it" hint-placeholder-count="6">
+    <div class="faq-i {{it.cls}}">
+      <button class="faq-q" aria-expanded="{{it.exp}}" onClick="{{it.toggle}}"><span>{{it.q}}</span><span class="pm" aria-hidden="true"></span></button>
+      <sc-if value="{{it.open}}" hint-placeholder-val="{{ false }}">
+        <div class="faq-a">{{it.a}} <sc-if value="{{it.tbc}}" hint-placeholder-val="{{ false }}"><i class="tbc">Cần xác nhận</i></sc-if></div>
+      </sc-if>
+    </div>
+    </sc-for>
+  </div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"title":{"editor":"text","default":"Câu hỏi thường gặp"},"marks":{"editor":"boolean","default":true},"items":{"editor":null},"$preview":{"width":1440,"height":760}}'>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { open: 0 }; }
+  renderVals() {
+    const items = this.props.items || [
+      { q: 'Khách nước ngoài có thanh toán được không?', a: 'Có. Bellhop Payment hỗ trợ đầy đủ các loại thẻ thanh toán quốc tế phổ biến như Visa, Mastercard, JCB, Amex và cổng thanh toán toàn cầu.', tbc: true },
+      { q: 'Tiền thanh toán về tài khoản nào, sau bao lâu?', a: 'Tiền thanh toán được đối soát và chuyển trực tiếp về tài khoản ngân hàng của cơ sở lưu trú theo chu kỳ thanh toán chuẩn T+1 đến T+3 ngày làm việc.', tbc: true },
+      { q: 'Hoàn tiền cho khách được thực hiện như thế nào?', a: 'Khách sạn có thể thao tác hoàn tiền một phần hoặc toàn phần trực tiếp ngay trên giao diện quản trị Bellhop theo chính sách hủy phòng đã thiết lập.', tbc: true },
+      { q: 'Có thể dùng Bellhop Payment mà không dùng Bellhop PMS không?', a: 'Bellhop Payment được tối ưu tốt nhất khi kết nối đồng bộ với Bellhop PMS để tự động gắn giao dịch với đặt phòng, nhưng vẫn có thể cung cấp độc lập cho các đối tác có nhu cầu.', tbc: true },
+      { q: 'Khách có thanh toán được khi đặt phòng trên website không?', a: 'Có, tính năng thanh toán trực tiếp trên website đã được tích hợp sẵn qua Booking Engine và cổng thanh toán Bellhop Payment.', tbc: false },
+      { q: 'Ai chịu trách nhiệm khi có tranh chấp giao dịch?', a: 'Bellhop cùng đối tác thanh toán Kovena có đội ngũ hỗ trợ nghiệp vụ chuyên trách 24/7 để phối hợp xử lý và giải quyết nhanh chóng mọi trường hợp tra soát hoặc tranh chấp giao dịch.', tbc: true }
+    ];
+    const o = this.state.open;
+    const marks = this.props.marks ?? true;
+    return {
+      markCls: marks ? '' : 'no-marks',
+      title: this.props.title ?? 'Câu hỏi thường gặp',
+      rows: items.map((it, i) => ({
+        q: it.q, a: it.a, tbc: !!it.tbc,
+        open: o === i, cls: o === i ? 'open' : '', exp: o === i ? 'true' : 'false',
+        toggle: () => this.setState({ open: this.state.open === i ? -1 : i })
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

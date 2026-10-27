@@ -23,10 +23,17 @@
     </a>
     <nav class="nav" aria-label="Điều hướng chính">
       <button class="nav-i {{cls.sp}}" aria-expanded="{{exp.sp}}" onClick="{{tSp}}" onMouseEnter="{{oSp}}">Sản phẩm <i class="cv"></i></button>
-      <a class="nav-i" href="Main.dc.html#bang-gia" onMouseEnter="{{closeAll}}">Bảng giá</a>
-<div style="position: relative">
-        <button class="nav-i {{cls.tn}}" aria-expanded="{{exp.tn}}" onClick="{{tTn}}" onMouseEnter="{{oTn}}">Tin tức <i class="cv"></i></button>
-        <sc-if value="{{open.tn}}" hint-placeholder-val="{{ false }}"><div class="dd"><a href="#">Blog</a><a href="Main.dc.html#cong-cu">Công cụ miễn phí</a><a href="#">Ebook &amp; mẫu biểu</a></div></sc-if>
+      <div style="position: relative" onMouseEnter="{{oBg}}">
+        <a class="nav-i {{cls.bg}}" href="Main.dc.html#bang-gia">Bảng giá <i class="cv"></i></a>
+        <sc-if value="{{open.bg}}" hint-placeholder-val="{{ false }}">
+          <div class="dd" style="min-width: 180px">
+            <a href="Pricing.dc.html">Báo giá</a>
+          </div>
+        </sc-if>
+      </div>
+<div style="position: relative" onMouseEnter="{{oTn}}">
+        <a class="nav-i {{cls.tn}}" href="News.dc.html">Tin tức <i class="cv"></i></a>
+        <sc-if value="{{open.tn}}" hint-placeholder-val="{{ false }}"><div class="dd"><a href="News.dc.html">Blog &amp; Tin tức</a><a href="Main.dc.html#cong-cu">Công cụ miễn phí</a><a href="News.dc.html#ebook">Ebook &amp; mẫu biểu</a></div></sc-if>
       </div>
       <div style="position: relative">
         <button class="nav-i {{cls.ct}}" aria-expanded="{{exp.ct}}" onClick="{{tCt}}" onMouseEnter="{{oCt}}">Công ty <i class="cv"></i></button>
@@ -71,7 +78,15 @@
       <a href="Main.dc.html#tong-quan">Tổng quan nền tảng</a>
       <sc-for list="{{flat}}" as="it" hint-placeholder-count="8"><a href="{{it.href}}">{{it.name}}</a></sc-for>
     </details>
-    <a href="Main.dc.html#bang-gia">Bảng giá</a>
+    <details><summary>Bảng giá <span>+</span></summary>
+      <a href="Main.dc.html#bang-gia">Bảng giá</a>
+      <a href="Pricing.dc.html">Báo giá</a>
+    </details>
+        <details><summary>Tin tức <span>+</span></summary>
+      <a href="News.dc.html">Blog &amp; Tin tức</a>
+      <a href="Main.dc.html#cong-cu">Công cụ miễn phí</a>
+      <a href="News.dc.html#ebook">Ebook &amp; mẫu biểu</a>
+    </details>
     <details><summary>Công ty <span>+</span></summary><a href="About.dc.html">Về Bellhop &amp; Lifrooms</a><a href="#">Liên hệ</a></details>
     <a class="btn btn-primary btn-block" href="#dang-ky" style="margin-top: 16px; border: 0; color: #fff; justify-content: center">Dùng thử miễn phí</a>
   </div>
@@ -88,11 +103,13 @@ class Component extends DCLogic {
     const dark = (this.props.variant ?? 'light') === 'dark';
     const set = (k) => () => this.setState({ open: o === k ? null : k });
     const show = (k) => () => this.setState({ open: k });
-    const keys = ['sp', 'kh', 'tn', 'ct', 'm'];
+    const keys = ['sp', 'kh', 'tn', 'ct', 'm', 'bg'];
     const open = {}, cls = {}, exp = {};
     keys.forEach((k) => { open[k] = o === k; cls[k] = o === k ? 'open on' : ''; exp[k] = o === k ? 'true' : 'false'; });
     if (['pms','booking','cms','website','message','ai','payment','finance'].indexOf(active) >= 0 && o !== 'sp') cls.sp = 'on';
     if (active === 'about' && o !== 'ct') cls.ct = 'on';
+    if ((active === 'news' || active === 'blog') && o !== 'tn') cls.tn = 'on';
+    if (active === 'pricing' && o !== 'bg') cls.bg = 'on';
     const P = (key, name, desc, icon, href) => ({ key, name, desc, icon: 'i-' + icon, href, cls: key === active ? 'on' : '' });
     const groups = [
       { title: 'Vận hành', items: [P('pms', 'Bellhop PMS', 'Lễ tân, buồng phòng, kho & F&B, báo cáo', 'pms', 'PMS.dc.html')] },
@@ -114,8 +131,8 @@ class Component extends DCLogic {
       hdrCls: dark ? 'hdr-dark' : '',
       ctaCls: dark ? 'btn-teal' : 'btn-primary',
       open, cls, exp, groups, flat,
-      tSp: set('sp'), tKh: set('kh'), tTn: set('tn'), tCt: set('ct'), tM: set('m'),
-      oSp: show('sp'), oKh: show('kh'), oTn: show('tn'), oCt: show('ct'),
+      tSp: set('sp'), tKh: set('kh'), tTn: set('tn'), tCt: set('ct'), tM: set('m'), tBg: set('bg'),
+      oSp: show('sp'), oKh: show('kh'), oTn: show('tn'), oCt: show('ct'), oBg: show('bg'),
       closeAll: () => { if (o && o !== 'm') this.setState({ open: null }); }
     };
   }

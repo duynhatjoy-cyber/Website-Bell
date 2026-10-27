@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Bellhop – Header</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./assets/81e26d43a82c22dd79010c853e0d4ffa.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div class="bh" style="background: transparent">
+<header class="hdr {{hdrCls}}" onMouseLeave="{{closeAll}}">
+  <div class="wrap hdr-in">
+    <a class="logo" href="Main.dc.html" aria-label="Bellhop – Trang chủ">
+      <sc-if value="{{dark}}" hint-placeholder-val="{{ false }}"><img class="header-brand" src="./brand/bellhop-header-light.svg" alt="Bellhop, Smart Simple and Flexible"></sc-if>
+      <sc-if value="{{light}}" hint-placeholder-val="{{ true }}"><img class="header-brand" src="./brand/bellhop-header-dark.svg" alt="Bellhop, Smart Simple and Flexible"></sc-if>
+    </a>
+    <nav class="nav" aria-label="Điều hướng chính">
+      <button class="nav-i {{cls.sp}}" aria-expanded="{{exp.sp}}" onClick="{{tSp}}" onMouseEnter="{{oSp}}">Sản phẩm <i class="cv"></i></button>
+      <div style="position: relative" onMouseEnter="{{oBg}}">
+        <a class="nav-i {{cls.bg}}" href="Main.dc.html#bang-gia">Bảng giá <i class="cv"></i></a>
+        <sc-if value="{{open.bg}}" hint-placeholder-val="{{ false }}">
+          <div class="dd" style="min-width: 180px">
+            <a href="Pricing.dc.html">Báo giá</a>
+          </div>
+        </sc-if>
+      </div>
+<div style="position: relative" onMouseEnter="{{oTn}}">
+        <a class="nav-i {{cls.tn}}" href="News.dc.html">Tin tức <i class="cv"></i></a>
+        <sc-if value="{{open.tn}}" hint-placeholder-val="{{ false }}"><div class="dd"><a href="News.dc.html">Blog &amp; Tin tức</a><a href="Main.dc.html#cong-cu">Công cụ miễn phí</a><a href="News.dc.html#ebook">Ebook &amp; mẫu biểu</a></div></sc-if>
+      </div>
+      <div style="position: relative">
+        <button class="nav-i {{cls.ct}}" aria-expanded="{{exp.ct}}" onClick="{{tCt}}" onMouseEnter="{{oCt}}">Công ty <i class="cv"></i></button>
+        <sc-if value="{{open.ct}}" hint-placeholder-val="{{ false }}"><div class="dd"><a href="About.dc.html">Về Bellhop &amp; Lifrooms</a><a href="#">Liên hệ</a></div></sc-if>
+      </div>
+    </nav>
+    <div class="hdr-r">
+      <a class="hdr-login" href="#">Đăng nhập</a>
+      <a class="btn {{ctaCls}}" href="#dang-ky">Dùng thử</a>
+      <button class="burger" aria-label="Mở menu" aria-expanded="{{exp.m}}" onClick="{{tM}}">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </button>
+    </div>
+  </div>
+
+  <sc-if value="{{open.sp}}" hint-placeholder-val="{{ true }}">
+  <div class="mega">
+    <div class="wrap">
+      <div class="mega-top">
+        <a href="Main.dc.html#tong-quan"><span class="ic ic-tile-sm i-flow"></span><div><b>Tổng quan nền tảng Bellhop</b><span>Mọi công cụ vận hành và bán phòng trên một hệ thống</span></div></a>
+        <a class="lnk" href="Main.dc.html#tong-quan">Xem tổng quan <span class="arr">→</span></a>
+      </div>
+      <div class="mega-cols">
+        <sc-for list="{{groups}}" as="g" hint-placeholder-count="4">
+        <div class="mega-col">
+          <h4>{{g.title}}</h4>
+          <sc-for list="{{g.items}}" as="it" hint-placeholder-count="2">
+          <a class="mega-it {{it.cls}}" href="{{it.href}}"><span class="ic ic-tile-sm {{it.icon}}"></span><div><b>{{it.name}}</b><span>{{it.desc}}</span></div></a>
+          </sc-for>
+        </div>
+        </sc-for>
+      </div>
+    </div>
+    <div class="mega-foot"><div class="wrap row" style="justify-content: space-between; gap: 16px; flex-wrap: wrap"><span class="muted">Chưa biết bắt đầu từ đâu?</span><a class="lnk" href="#dang-ky">Bắt đầu miễn phí với Bellhop PMS <span class="arr">→</span></a></div></div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{open.m}}" hint-placeholder-val="{{ false }}">
+  <div class="mnav">
+    <a href="#">Đăng nhập</a>
+    <details open="open"><summary>Sản phẩm <span>+</span></summary>
+      <a href="Main.dc.html#tong-quan">Tổng quan nền tảng</a>
+      <sc-for list="{{flat}}" as="it" hint-placeholder-count="8"><a href="{{it.href}}">{{it.name}}</a></sc-for>
+    </details>
+    <details><summary>Bảng giá <span>+</span></summary>
+      <a href="Main.dc.html#bang-gia">Bảng giá</a>
+      <a href="Pricing.dc.html">Báo giá</a>
+    </details>
+        <details><summary>Tin tức <span>+</span></summary>
+      <a href="News.dc.html">Blog &amp; Tin tức</a>
+      <a href="Main.dc.html#cong-cu">Công cụ miễn phí</a>
+      <a href="News.dc.html#ebook">Ebook &amp; mẫu biểu</a>
+    </details>
+    <details><summary>Công ty <span>+</span></summary><a href="About.dc.html">Về Bellhop &amp; Lifrooms</a><a href="#">Liên hệ</a></details>
+    <a class="btn btn-primary btn-block" href="#dang-ky" style="margin-top: 16px; border: 0; color: #fff; justify-content: center">Dùng thử miễn phí</a>
+  </div>
+  </sc-if>
+</header>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"active":{"editor":"enum","options":["home","pms","booking","cms","website","message","ai","payment","finance","about"],"default":"home"},"variant":{"editor":"enum","options":["light","dark"],"default":"light"},"startOpen":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":620}}'>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { open: (p.startOpen ?? true) ? 'sp' : null }; }
+  renderVals() {
+    const o = this.state.open;
+    const active = this.props.active ?? 'home';
+    const dark = (this.props.variant ?? 'light') === 'dark';
+    const set = (k) => () => this.setState({ open: o === k ? null : k });
+    const show = (k) => () => this.setState({ open: k });
+    const keys = ['sp', 'kh', 'tn', 'ct', 'm', 'bg'];
+    const open = {}, cls = {}, exp = {};
+    keys.forEach((k) => { open[k] = o === k; cls[k] = o === k ? 'open on' : ''; exp[k] = o === k ? 'true' : 'false'; });
+    if (['pms','booking','cms','website','message','ai','payment','finance'].indexOf(active) >= 0 && o !== 'sp') cls.sp = 'on';
+    if (active === 'about' && o !== 'ct') cls.ct = 'on';
+    if ((active === 'news' || active === 'blog') && o !== 'tn') cls.tn = 'on';
+    if (active === 'pricing' && o !== 'bg') cls.bg = 'on';
+    const P = (key, name, desc, icon, href) => ({ key, name, desc, icon: 'i-' + icon, href, cls: key === active ? 'on' : '' });
+    const groups = [
+      { title: 'Vận hành', items: [P('pms', 'Bellhop PMS', 'Lễ tân, buồng phòng, kho & F&B, báo cáo', 'pms', 'PMS.dc.html')] },
+      { title: 'Bán phòng & Doanh thu', items: [
+        P('booking', 'Bellhop Booking Engine', 'Nhận đặt phòng trực tiếp trên website', 'booking', 'BookingEngine.dc.html'),
+        P('cms', 'Bellhop CMS', 'Đồng bộ kênh OTA, định giá linh động', 'cms', 'CMS.dc.html'),
+        P('website', 'Bellhop Website', 'Website cho khách sạn, homestay, villa', 'website', 'Website.dc.html')] },
+      { title: 'Chăm sóc khách hàng', items: [
+        P('message', 'Bellhop Message', 'Gom tin nhắn mọi kênh về một nơi', 'message', 'Message.dc.html'),
+        P('ai', 'Bellhop AI Concierge', 'Trợ lý AI trả lời khách', 'ai', 'AIConcierge.dc.html')] },
+      { title: 'Thanh toán & Kế toán', items: [
+        P('payment', 'Bellhop Payment', 'Thanh toán online qua Kovena', 'payment', 'Payment.dc.html'),
+        P('finance', 'Bellhop Finance', 'Đồng bộ dữ liệu sang MISA', 'finance', 'Finance.dc.html')] }
+    ];
+    const flat = [];
+    groups.forEach((g) => g.items.forEach((i) => flat.push(i)));
+    return {
+      dark, light: !dark,
+      hdrCls: dark ? 'hdr-dark' : '',
+      ctaCls: dark ? 'btn-teal' : 'btn-primary',
+      open, cls, exp, groups, flat,
+      tSp: set('sp'), tKh: set('kh'), tTn: set('tn'), tCt: set('ct'), tM: set('m'), tBg: set('bg'),
+      oSp: show('sp'), oKh: show('kh'), oTn: show('tn'), oCt: show('ct'), oBg: show('bg'),
+      closeAll: () => { if (o && o !== 'm') this.setState({ open: null }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

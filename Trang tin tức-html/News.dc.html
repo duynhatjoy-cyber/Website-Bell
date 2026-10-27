@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Tin tức & Kiến thức Quản trị Khách sạn – Lifrooms & Bellhop</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./assets/81e26d43a82c22dd79010c853e0d4ffa.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&amp;family=Roboto+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#122745;background:#fff}
+a{color:inherit;text-decoration:none}
+a:hover{color:#1f7a84}
+
+/* News Hero */
+.news-hero{padding:24px 0 44px;background:linear-gradient(180deg,#f6fafb 0%,#ffffff 100%);border-bottom:1px solid #edf2f5}
+.news-hero-head{max-width:840px;margin:0 auto 32px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
+
+/* Category Filter Tabs */
+.news-cats{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 auto}
+.news-cat-btn{border:1px solid #dce7ec;background:#fff;padding:9px 18px;border-radius:999px;font-size:14px;font-weight:700;color:#566579;cursor:pointer;transition:all .2s ease;white-space:nowrap}
+.news-cat-btn:hover{border-color:#5fb9c2;color:#122745}
+.news-cat-btn.active{background:#122745;border-color:#122745;color:#fff;box-shadow:0 4px 14px rgba(18,39,69,0.16)}
+
+/* Featured Post */
+.featured-post-wrap{margin-top:40px}
+.featured-post-card{background:#fff;border:1px solid #dde7ec;border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1.2fr 1fr;gap:36px;box-shadow:0 12px 32px rgba(18,39,69,0.06);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.featured-post-card:hover{transform:translateY(-3px);border-color:#5fb9c2;box-shadow:0 18px 44px rgba(18,39,69,0.1)}
+.featured-media{position:relative;overflow:hidden;min-height:360px}
+.featured-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+.featured-post-card:hover .featured-media img{transform:scale(1.03)}
+.featured-badge{position:absolute;top:20px;left:20px;background:#1f7a84;color:#fff;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px;border-radius:999px;box-shadow:0 4px 12px rgba(31,122,132,0.35)}
+
+.featured-body{padding:36px 36px 36px 0;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.post-meta{display:flex;align-items:center;gap:12px;font-size:13px;color:#64748b;font-weight:600}
+.post-meta .dot-sep{width:4px;height:4px;border-radius:50%;background:#94a3b8}
+.featured-title{font-size:27px;font-weight:800;color:#122745;line-height:1.35;margin:0;transition:color .2s}
+.featured-post-card:hover .featured-title{color:#1f7a84}
+.featured-desc{font-size:15px;color:#566579;line-height:1.65;margin:0}
+.post-author-row{display:flex;align-items:center;gap:12px;margin-top:10px}
+.author-avatar{width:38px;height:38px;border-radius:50%;background:#e6f6f7;color:#1f7a84;font-weight:800;display:grid;place-items:center;font-size:14px;border:1.5px solid #d0edf0}
+.author-name{font-size:13.5px;font-weight:700;color:#122745}
+.author-role{font-size:12px;color:#64748b}
+
+/* Article Grid */
+.news-grid-sec{padding:64px 0 88px}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.article-card{background:#fff;border:1px solid #dde7ec;border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.article-card:hover{transform:translateY(-4px);border-color:#5fb9c2;box-shadow:0 16px 36px rgba(18,39,69,0.08)}
+.article-thumb{position:relative;overflow:hidden;aspect-ratio:16/9;background:#eef4f6}
+.article-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+.article-card:hover .article-thumb img{transform:scale(1.04)}
+.article-cat-tag{position:absolute;top:14px;left:14px;background:#ffffff;color:#1f7a84;font-size:11.5px;font-weight:800;padding:4px 12px;border-radius:999px;box-shadow:0 2px 8px rgba(18,39,69,0.1)}
+
+.article-content{padding:24px 22px;display:flex;flex-direction:column;flex:1;gap:12px}
+.article-title{font-size:18px;font-weight:800;color:#122745;line-height:1.45;margin:0;transition:color .2s}
+.article-card:hover .article-title{color:#1f7a84}
+.article-excerpt{font-size:13.5px;color:#566579;line-height:1.6;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.article-footer{padding-top:14px;border-top:1px solid #edf2f5;display:flex;align-items:center;justify-content:space-between;margin-top:auto}
+.article-readmore{font-size:13.5px;font-weight:700;color:#1f7a84;display:inline-flex;align-items:center;gap:4px}
+.article-card:hover .article-readmore{color:#122745}
+
+/* Ebook & Free Resources Section */
+.resources-sec{background:#f8fbfb;padding:72px 0;border-top:1px solid #eef3f5;border-bottom:1px solid #eef3f5}
+.resources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
+.resource-card{background:#fff;border:1px solid #dde7ec;border-radius:20px;padding:32px 26px;display:flex;flex-direction:column;gap:14px;box-shadow:0 8px 24px rgba(18,39,69,0.03);position:relative}
+.resource-badge{display:inline-flex;align-items:center;gap:6px;background:#e6f7f8;color:#1f7a84;font-size:12px;font-weight:800;padding:4px 12px;border-radius:999px;align-self:flex-start}
+.resource-title{font-size:18.5px;font-weight:800;color:#122745;margin:0;line-height:1.35}
+.resource-desc{font-size:13.5px;color:#566579;line-height:1.55;margin:0;flex:1}
+.resource-btn{margin-top:8px}
+
+/* Newsletter Section */
+.newsletter-banner{background:linear-gradient(145deg,#122745 0%,#18365e 100%);color:#fff;border-radius:24px;padding:52px 48px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;margin:64px 0 16px;box-shadow:0 18px 44px rgba(18,39,69,0.18)}
+.newsletter-head h2{font-size:28px;font-weight:800;margin:0 0 10px;line-height:1.3}
+.newsletter-head p{font-size:14.5px;color:#b6c8de;margin:0;line-height:1.6}
+.newsletter-form{display:flex;gap:10px}
+.newsletter-input{flex:1;height:50px;border-radius:12px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.08);padding:0 18px;color:#fff;font-size:14.5px;outline:none}
+.newsletter-input::placeholder{color:#94a8c0}
+.newsletter-input:focus{border-color:#5fb9c2;background:rgba(255,255,255,0.15)}
+
+@media(max-width:1020px){
+  .featured-post-card{grid-template-columns:1fr;gap:0}
+  .featured-body{padding:28px 24px}
+  .featured-media{min-height:240px}
+  .news-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+  .resources-grid{grid-template-columns:repeat(2,1fr)}
+  .newsletter-banner{grid-template-columns:1fr;gap:24px;padding:36px 28px}
+}
+@media(max-width:640px){
+  .news-grid{grid-template-columns:1fr}
+  .resources-grid{grid-template-columns:1fr}
+  .newsletter-form{flex-direction:column}
+}
+</style>
+</helmet>
+<div class="bh {{markCls}}">
+<dc-import name="Header" active="news" start-open="{{ false }}" hint-size="100%,72px"></dc-import>
+
+<div class="wrap" style="padding-top: 20px">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="Main.dc.html">Trang chủ</a>›<b>Tin tức &amp; Blog</b></nav>
+</div>
+
+<!-- HERO HEADER -->
+<section class="news-hero">
+<div class="wrap">
+  <div class="news-hero-head">
+    <span class="eyebrow" style="color: #1f7a84">LIFROOMS &amp; BELLHOP · BLOG &amp; KIẾN THỨC CHUYÊN SÂU</span>
+    <h1 class="h1" style="font-size: 42px; line-height: 1.25">Cẩm nang Vận hành &amp; Quản trị Doanh thu Khách sạn</h1>
+    <p class="lead" style="max-width: 760px; margin: 0; font-size: 16.5px">Tổng hợp các bài viết chuyên sâu về chiến lược tối ưu giá phòng (Revenue Management), phân bổ kênh OTA, kỹ năng lễ tân và công nghệ lưu trú thực chiến từ chuyên gia Lifrooms.</p>
+  </div>
+
+  <!-- CATEGORY FILTER BUTTONS -->
+  <div class="news-cats">
+    <button type="button" class="news-cat-btn {{catAllClass}}" onClick="{{setCatAll}}">Tất cả bài viết</button>
+    <button type="button" class="news-cat-btn {{catRevClass}}" onClick="{{setCatRev}}">Quản lý Doanh thu</button>
+    <button type="button" class="news-cat-btn {{catOtaClass}}" onClick="{{setCatOta}}">Kênh bán phòng OTA</button>
+    <button type="button" class="news-cat-btn {{catOpsClass}}" onClick="{{setCatOps}}">Vận hành Lễ tân</button>
+    <button type="button" class="news-cat-btn {{catTechClass}}" onClick="{{setCatTech}}">Công nghệ &amp; AI</button>
+    <button type="button" class="news-cat-btn {{catEbookClass}}" onClick="{{setCatEbook}}">Mẫu biểu &amp; Ebook</button>
+  </div>
+
+  <!-- FEATURED HERO POST -->
+  <sc-if value="{{showFeatured}}" hint-placeholder-val="{{ true }}">
+  <div class="featured-post-wrap">
+    <article class="featured-post-card">
+      <div class="featured-media">
+        <img src="./assets/hotel-reception.png" alt="Chiến lược tối ưu ADR và RevPAR cho khách sạn">
+        <span class="featured-badge">Tiêu điểm · Quản lý Doanh thu</span>
+      </div>
+      <div class="featured-body">
+        <div class="post-meta">
+          <span>26 Tháng 10, 2026</span>
+          <span class="dot-sep"></span>
+          <span>6 phút đọc</span>
+          <span class="dot-sep"></span>
+          <span style="color: #1f7a84">Revenue Management</span>
+        </div>
+        <h2 class="featured-title">Chiến lược tối ưu ADR và RevPAR: Làm sao để khách sạn không rơi vào bẫy "Kín phòng nhưng vẫn lỗ"?</h2>
+        <p class="featured-desc">Phân tích bài toán quản trị doanh thu thực chiến cho khách sạn 2-4 sao. Cách điều chỉnh khung giá linh động theo ngày trong tuần, công suất phòng và cơ cấu kênh bán để tối đa hóa lợi nhuận ròng thay vì chỉ mải mê chạy theo công suất phòng ảo.</p>
+        <div class="post-author-row">
+          <div class="author-avatar">LR</div>
+          <div>
+            <div class="author-name">Chuyên gia Doanh thu Lifrooms</div>
+            <div class="author-role">Ban Cố vấn Tăng trưởng Khách sạn</div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+  </sc-if>
+</div>
+</section>
+
+<!-- ARTICLES GRID -->
+<section class="news-grid-sec">
+<div class="wrap">
+  <div class="news-grid">
+    <sc-for list="{{articles}}" as="item" hint-placeholder-count="6">
+      <article class="article-card">
+        <div class="article-thumb">
+          <img src="{{item.image}}" alt="{{item.title}}">
+          <span class="article-cat-tag">{{item.cat}}</span>
+        </div>
+        <div class="article-content">
+          <div class="post-meta" style="font-size: 12px">
+            <span>{{item.date}}</span>
+            <span class="dot-sep"></span>
+            <span>{{item.readTime}}</span>
+          </div>
+          <h3 class="article-title">{{item.title}}</h3>
+          <p class="article-excerpt">{{item.desc}}</p>
+          <div class="article-footer">
+            <span style="font-size: 12.5px; color: #64748b; font-weight: 500">Tác giả: {{item.author}}</span>
+            <span class="article-readmore">Đọc tiếp →</span>
+          </div>
+        </div>
+      </article>
+    </sc-for>
+  </div>
+
+  <!-- NEWSLETTER BANNER -->
+  <div class="newsletter-banner">
+    <div class="newsletter-head">
+      <h2>Nhận bản tin kiến thức khách sạn hàng tuần</h2>
+      <p>Cập nhật số liệu thị trường du lịch, bí quyết tối ưu kênh OTA và các biểu mẫu quản lý mới nhất trực tiếp vào hộp thư của bạn.</p>
+    </div>
+    <form class="newsletter-form" onSubmit="{{handleNewsletter}}">
+      <input type="email" class="newsletter-input" placeholder="Nhập địa chỉ email của bạn..." required>
+      <button type="submit" class="btn btn-teal btn-lg" style="white-space: nowrap">Đăng ký ngay</button>
+    </form>
+  </div>
+</div>
+</section>
+
+<!-- FREE RESOURCES & EBOOKS SECTION -->
+<section class="resources-sec" id="ebook">
+<div class="wrap">
+  <div class="head center">
+    <span class="eyebrow" style="color: #1f7a84">TÀI NGUYÊN MIỄN PHÍ</span>
+    <h2 class="h2" style="font-weight: 800; text-align: center">Bộ biểu mẫu &amp; Ebook thực chiến dành cho chủ khách sạn</h2>
+    <p class="lead" style="max-width: 680px; margin: 0 auto; text-align: center">Được biên soạn độc quyền bởi đội ngũ Lifrooms &amp; Bellhop để hỗ trợ các khách sạn vừa và nhỏ chuẩn hóa vận hành ngay hôm nay.</p>
+  </div>
+
+  <div class="resources-grid">
+    <div class="resource-card">
+      <span class="resource-badge">File Excel (.xlsx)</span>
+      <h3 class="resource-title">Mẫu Bảng tính Điểm hòa vốn &amp; Lợi nhuận phòng</h3>
+      <p class="resource-desc">Công cụ tự động tính toán chi phí định phí, biến phí và giá bán tối thiểu cho từng hạng phòng để đảm bảo lợi nhuận ròng.</p>
+      <a class="btn btn-outline btn-block resource-btn" href="Main.dc.html#cong-cu">Tải biểu mẫu miễn phí</a>
+    </div>
+
+    <div class="resource-card">
+      <span class="resource-badge">Ebook (.PDF)</span>
+      <h3 class="resource-title">Cẩm nang Tối ưu Kênh bán OTA từ A–Z</h3>
+      <p class="resource-desc">Tài liệu 60 trang hướng dẫn thiết lập chiến lược hiển thị, xử lý Overbooking và bí quyết đàm phán hoa hồng với Booking.com, Agoda.</p>
+      <a class="btn btn-outline btn-block resource-btn" href="Main.dc.html#cong-cu">Tải Ebook ngay</a>
+    </div>
+
+    <div class="resource-card">
+      <span class="resource-badge">Checklist (.PDF)</span>
+      <h3 class="resource-title">Quy trình Bàn giao ca &amp; Kiểm phòng chuẩn 4★</h3>
+      <p class="resource-desc">Bảng kiểm tra 15 tiêu chí buồng phòng và biên bản đối soát tiền mặt lễ tân giúp loại bỏ 100% rủi ro thất thoát doanh thu.</p>
+      <a class="btn btn-outline btn-block resource-btn" href="Main.dc.html#cong-cu">Tải Checklist thực chiến</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+
+<script type="text/x-dc" data-dc-script data-props='{"reviewMarks":{"editor":"boolean","default":true,"section":"Bản duyệt"},"$preview":{"width":1440,"height":5200}}'>
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    this.state = {
+      selectedCat: 'all'
+    };
+  }
+
+  renderVals() {
+    const marks = this.props.reviewMarks ?? true;
+    const cat = this.state.selectedCat;
+
+    const allArticles = [
+      {
+        id: 1,
+        catKey: 'ota',
+        cat: 'Kênh bán OTA',
+        title: '7 Nguyên nhân hàng đầu gây Overbooking và giải pháp đồng bộ 2 chiều tự động',
+        desc: 'Cách xử lý triệt để bài toán trùng phòng giữa Booking.com, Agoda và khách đặt tại quầy vào mùa cao điểm du lịch bằng hệ thống Channel Manager.',
+        date: '24 Tháng 10, 2026',
+        readTime: '5 phút đọc',
+        author: 'Lifrooms OTA Team',
+        image: './assets/hotel-room.png'
+      },
+      {
+        id: 2,
+        catKey: 'rev',
+        cat: 'Quản lý Doanh thu',
+        title: 'Bảng tính điểm hòa vốn (Break-even Point) cho khách sạn từ 15 đến 50 phòng',
+        desc: 'Hướng dẫn chi tiết cách xác định chi phí cố định, chi phí biến đổi trên mỗi đêm phòng để xây dựng khung giá bán an toàn và sinh lời bền vững.',
+        date: '22 Tháng 10, 2026',
+        readTime: '7 phút đọc',
+        author: 'Nguyễn Minh Tuấn (Lifrooms)',
+        image: './assets/homestay-villa.png'
+      },
+      {
+        id: 3,
+        catKey: 'ops',
+        cat: 'Vận hành Lễ tân',
+        title: 'Quy trình 8 bước bàn giao ca trực và đối soát quỹ tiền mặt lễ tân chuẩn chỉnh',
+        desc: 'Loại bỏ sai sót thất thoát tiền phòng, kiểm soát các khoản đặt cọc và tiền dịch vụ F&B minibar chính xác, minh bạch giữa các ca làm việc.',
+        date: '20 Tháng 10, 2026',
+        readTime: '4 phút đọc',
+        author: 'Bellhop Operations',
+        image: './assets/hotel-lobby.png'
+      },
+      {
+        id: 4,
+        catKey: 'tech',
+        cat: 'Công nghệ & AI',
+        title: 'Tự động hóa chăm sóc khách với AI Concierge: Tăng gấp 3 lần tỷ lệ chốt phòng',
+        desc: 'Kinh nghiệm thực chiến triển khai trợ lý AI tự động báo giá, tư vấn tiện ích và chốt đơn đặt phòng cho khách qua Zalo, Facebook Fanpage 24/7.',
+        date: '18 Tháng 10, 2026',
+        readTime: '6 phút đọc',
+        author: 'Đội ngũ Công nghệ Bellhop',
+        image: './assets/hotel-chain-city.png'
+      },
+      {
+        id: 5,
+        catKey: 'ota',
+        cat: 'Kênh bán OTA',
+        title: 'Thuật toán xếp hạng OTA 2026: Cách đưa khách sạn lên Top hiển thị tự nhiên',
+        desc: 'Bí quyết cải thiện điểm chất lượng nội dung (Content Score), tối ưu tỷ lệ chuyển đổi phòng và chiến lược phản hồi đánh giá Review từ khách du lịch.',
+        date: '15 Tháng 10, 2026',
+        readTime: '8 phút đọc',
+        author: 'Lifrooms OTA Team',
+        image: './assets/hotel-chain-coast.png'
+      },
+      {
+        id: 6,
+        catKey: 'ops',
+        cat: 'Vận hành Lễ tân',
+        title: 'Checklist 15 tiêu chí buồng phòng sạch chuẩn trước giờ đón khách Check-in',
+        desc: 'Bảng kiểm tra tiêu chuẩn buồng phòng dành riêng cho nhân viên Housekeeping giúp khách sạn đạt điểm đánh giá sạch sẽ tuyệt đối trên các nền tảng.',
+        date: '12 Tháng 10, 2026',
+        readTime: '5 phút đọc',
+        author: 'Bellhop Operations',
+        image: './assets/villa-bedroom.png'
+      },
+      {
+        id: 7,
+        catKey: 'rev',
+        cat: 'Quản lý Doanh thu',
+        title: 'Chiến lược bán phòng ngày lễ và mùa cao điểm: Đừng chốt giá quá sớm!',
+        desc: 'Cách kiểm soát nhịp đặt phòng (Booking Pace), giữ phòng có chọn lọc và điều chỉnh thang giá từng giai đoạn để đạt mức doanh thu kỷ lục.',
+        date: '10 Tháng 10, 2026',
+        readTime: '6 phút đọc',
+        author: 'Ban Cố vấn Lifrooms',
+        image: './assets/villa-terrace.png'
+      },
+      {
+        id: 8,
+        catKey: 'tech',
+        cat: 'Công nghệ & AI',
+        title: 'Đồng bộ phần mềm khách sạn với kế toán MISA: Tiết kiệm 80% thời gian chốt sổ',
+        desc: 'Quy trình kết nối tự động dữ liệu doanh thu, phiếu thu chi từ Bellhop PMS sang MISA SME và MISA AMIS Kế toán mà không cần nhập liệu tay.',
+        date: '08 Tháng 10, 2026',
+        readTime: '5 phút đọc',
+        author: 'Bellhop Finance Team',
+        image: './assets/hotel-chain.png'
+      },
+      {
+        id: 9,
+        catKey: 'ebook',
+        cat: 'Mẫu biểu & Ebook',
+        title: 'Tải bộ hợp đồng thuê phòng dài hạn và mẫu quy chế nội quy khách sạn 2026',
+        desc: 'Trọn bộ văn bản pháp lý, mẫu thỏa thuận đặt cọc khách đoàn và cam kết lưu trú được cập nhật mới nhất theo quy định của pháp luật Việt Nam.',
+        date: '05 Tháng 10, 2026',
+        readTime: '3 phút đọc',
+        author: 'Lifrooms Legal',
+        image: './assets/hotel-room.png'
+      }
+    ];
+
+    const filteredArticles = cat === 'all' 
+      ? allArticles 
+      : allArticles.filter(a => a.catKey === cat);
+
+    return {
+      markCls: marks ? '' : 'no-marks',
+      marks,
+      showFeatured: cat === 'all' || cat === 'rev',
+      articles: filteredArticles,
+      catAllClass: cat === 'all' ? 'active' : '',
+      catRevClass: cat === 'rev' ? 'active' : '',
+      catOtaClass: cat === 'ota' ? 'active' : '',
+      catOpsClass: cat === 'ops' ? 'active' : '',
+      catTechClass: cat === 'tech' ? 'active' : '',
+      catEbookClass: cat === 'ebook' ? 'active' : '',
+      setCatAll: () => this.setState({ selectedCat: 'all' }),
+      setCatRev: () => this.setState({ selectedCat: 'rev' }),
+      setCatOta: () => this.setState({ selectedCat: 'ota' }),
+      setCatOps: () => this.setState({ selectedCat: 'ops' }),
+      setCatTech: () => this.setState({ selectedCat: 'tech' }),
+      setCatEbook: () => this.setState({ selectedCat: 'ebook' }),
+      handleNewsletter: (e) => {
+        if (e && e.preventDefault) e.preventDefault();
+        alert('Cảm ơn bạn đã đăng ký nhận bản tin từ Lifrooms & Bellhop!');
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
+
