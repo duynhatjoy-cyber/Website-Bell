@@ -1,90 +1,128 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 550" width="100%" height="100%">
   <defs>
     <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
-      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#0b1a30" flood-opacity="0.18"/>
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#0b1a30" flood-opacity="0.18"/>
     </filter>
   </defs>
   <!-- Browser Window -->
   <g filter="url(#shadow)">
-    <rect x="20" y="20" width="580" height="400" rx="14" fill="#ffffff" stroke="#dde4ec" stroke-width="1.5"/>
-    <rect x="20" y="20" width="580" height="38" rx="14" fill="#f1f4f8"/>
-    <rect x="20" y="44" width="580" height="14" fill="#f1f4f8"/>
-    <circle cx="42" cy="39" r="5" fill="#ef4444"/>
-    <circle cx="58" cy="39" r="5" fill="#f59e0b"/>
-    <circle cx="74" cy="39" r="5" fill="#10b981"/>
-    <rect x="100" y="29" width="300" height="20" rx="6" fill="#ffffff" stroke="#e0e8ee" stroke-width="1"/>
-    <text x="114" y="43" font-family="Roboto, sans-serif" font-size="11" fill="#566579" font-weight="500">Timeline · Tuần 42 (19–25/10)</text>
+    <rect x="20" y="20" width="570" height="470" rx="16" fill="#ffffff" stroke="#dde4ec" stroke-width="1.5"/>
+    <rect x="20" y="20" width="570" height="42" rx="16" fill="#f1f4f8"/>
+    <rect x="20" y="48" width="570" height="14" fill="#f1f4f8"/>
+    <circle cx="44" cy="41" r="5.5" fill="#ef4444"/>
+    <circle cx="62" cy="41" r="5.5" fill="#f59e0b"/>
+    <circle cx="80" cy="41" r="5.5" fill="#10b981"/>
+    <rect x="110" y="31" width="310" height="22" rx="6" fill="#ffffff" stroke="#e0e8ee" stroke-width="1"/>
+    <text x="126" y="46" font-family="Roboto, sans-serif" font-size="11" fill="#566579" font-weight="500">Timeline · Tuần 42 (19–25/10)</text>
 
     <!-- Timeline Grid Header -->
-    <rect x="40" y="74" width="540" height="32" fill="#f8fafc" rx="6"/>
-    <text x="60" y="94" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">Phòng</text>
-    <text x="150" y="94" font-family="Roboto, sans-serif" font-size="11" fill="#566579" font-weight="600">Th 2</text>
-    <text x="210" y="94" font-family="Roboto, sans-serif" font-size="11" fill="#566579" font-weight="600">Th 3</text>
-    <text x="270" y="94" font-family="Roboto, sans-serif" font-size="11" fill="#566579" font-weight="600">Th 4</text>
-    <text x="330" y="94" font-family="Roboto, sans-serif" font-size="11" fill="#566579" font-weight="600">Th 5</text>
-    <text x="390" y="94" font-family="Roboto, sans-serif" font-size="11" fill="#566579" font-weight="600">Th 6</text>
-    <text x="450" y="94" font-family="Roboto, sans-serif" font-size="11" fill="#566579" font-weight="600">Th 7</text>
-    <text x="510" y="94" font-family="Roboto, sans-serif" font-size="11" fill="#566579" font-weight="600">CN</text>
+    <rect x="36" y="76" width="536" height="32" fill="#f8fafc" rx="6"/>
+    <text x="56" y="96" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">Phòng</text>
+    <text x="146" y="96" font-family="Roboto, sans-serif" font-size="11" fill="#566579" font-weight="600">Th 2</text>
+    <text x="204" y="96" font-family="Roboto, sans-serif" font-size="11" fill="#566579" font-weight="600">Th 3</text>
+    <text x="262" y="96" font-family="Roboto, sans-serif" font-size="11" fill="#566579" font-weight="600">Th 4</text>
+    <text x="320" y="96" font-family="Roboto, sans-serif" font-size="11" fill="#566579" font-weight="600">Th 5</text>
+    <text x="378" y="96" font-family="Roboto, sans-serif" font-size="11" fill="#566579" font-weight="600">Th 6</text>
+    <text x="436" y="96" font-family="Roboto, sans-serif" font-size="11" fill="#566579" font-weight="600">Th 7</text>
+    <text x="494" y="96" font-family="Roboto, sans-serif" font-size="11" fill="#566579" font-weight="600">CN</text>
 
     <!-- Timeline Rows -->
-    <line x1="40" y1="140" x2="580" y2="140" stroke="#f1f4f8" stroke-width="1"/>
-    <text x="60" y="132" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">101</text>
-    <rect x="140" y="116" width="160" height="26" rx="6" fill="#122745"/>
-    <text x="152" y="133" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Anh Minh · 3 đêm</text>
-    <rect x="330" y="116" width="110" height="26" rx="6" fill="#1f7a84"/>
-    <text x="342" y="133" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Website</text>
+    <!-- Row 1: 101 -->
+    <line x1="36" y1="148" x2="572" y2="148" stroke="#f1f4f8" stroke-width="1"/>
+    <text x="56" y="137" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">101</text>
+    <rect x="136" y="121" width="160" height="26" rx="6" fill="#122745"/>
+    <text x="148" y="138" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Anh Minh · 3 đêm</text>
+    <rect x="326" y="121" width="110" height="26" rx="6" fill="#1f7a84"/>
+    <text x="338" y="138" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Website</text>
 
-    <line x1="40" y1="180" x2="580" y2="180" stroke="#f1f4f8" stroke-width="1"/>
-    <text x="60" y="172" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">102</text>
-    <rect x="200" y="156" width="110" height="26" rx="6" fill="#003580"/>
-    <text x="212" y="173" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Agoda · 2 đêm</text>
-    <rect x="390" y="156" width="160" height="26" rx="6" fill="#122745"/>
-    <text x="402" y="173" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Chị Lan · 3 đêm</text>
+    <!-- Row 2: 102 -->
+    <line x1="36" y1="194" x2="572" y2="194" stroke="#f1f4f8" stroke-width="1"/>
+    <text x="56" y="183" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">102</text>
+    <rect x="194" y="167" width="110" height="26" rx="6" fill="#003580"/>
+    <text x="206" y="184" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Agoda · 2 đêm</text>
+    <rect x="384" y="167" width="160" height="26" rx="6" fill="#122745"/>
+    <text x="396" y="184" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Chị Lan · 3 đêm</text>
 
-    <line x1="40" y1="220" x2="580" y2="220" stroke="#f1f4f8" stroke-width="1"/>
-    <text x="60" y="212" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">201</text>
-    <rect x="140" y="196" width="240" height="26" rx="6" fill="#122745"/>
-    <text x="152" y="213" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Gia đình Hà · 5 đêm</text>
+    <!-- Row 3: 201 -->
+    <line x1="36" y1="240" x2="572" y2="240" stroke="#f1f4f8" stroke-width="1"/>
+    <text x="56" y="229" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">201</text>
+    <rect x="136" y="213" width="240" height="26" rx="6" fill="#122745"/>
+    <text x="148" y="230" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Gia đình Hà · 5 đêm</text>
 
-    <line x1="40" y1="260" x2="580" y2="260" stroke="#f1f4f8" stroke-width="1"/>
-    <text x="60" y="252" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">202</text>
-    <rect x="260" y="236" width="90" height="26" rx="6" fill="#5fb9c2"/>
-    <text x="272" y="253" font-family="Roboto, sans-serif" font-size="11" fill="#122745" font-weight="700">Đặt trước</text>
-    <rect x="380" y="236" width="140" height="26" rx="6" fill="#003580"/>
-    <text x="392" y="253" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Booking.com</text>
+    <!-- Row 4: 202 -->
+    <line x1="36" y1="286" x2="572" y2="286" stroke="#f1f4f8" stroke-width="1"/>
+    <text x="56" y="275" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">202</text>
+    <rect x="252" y="259" width="90" height="26" rx="6" fill="#5fb9c2"/>
+    <text x="264" y="276" font-family="Roboto, sans-serif" font-size="11" fill="#122745" font-weight="700">Đặt trước</text>
+    <rect x="372" y="259" width="140" height="26" rx="6" fill="#003580"/>
+    <text x="384" y="276" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Booking.com</text>
 
-    <line x1="40" y1="300" x2="580" y2="300" stroke="#f1f4f8" stroke-width="1"/>
-    <text x="60" y="292" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">301</text>
-    <rect x="140" y="276" width="110" height="26" rx="6" fill="#0071c2"/>
-    <text x="152" y="293" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Traveloka</text>
-    <rect x="320" y="276" width="120" height="26" rx="6" fill="#122745"/>
-    <text x="332" y="293" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Mr. Kim · 2 đêm</text>
+    <!-- Row 5: 301 -->
+    <line x1="36" y1="332" x2="572" y2="332" stroke="#f1f4f8" stroke-width="1"/>
+    <text x="56" y="321" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">301</text>
+    <rect x="136" y="305" width="110" height="26" rx="6" fill="#0071c2"/>
+    <text x="148" y="322" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Traveloka</text>
+    <rect x="316" y="305" width="120" height="26" rx="6" fill="#122745"/>
+    <text x="328" y="322" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Mr. Kim · 2 đêm</text>
+
+    <!-- Row 6: 302 -->
+    <line x1="36" y1="378" x2="572" y2="378" stroke="#f1f4f8" stroke-width="1"/>
+    <text x="56" y="367" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">302</text>
+    <rect x="194" y="351" width="180" height="26" rx="6" fill="#1f7a84"/>
+    <text x="206" y="368" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Khách đoàn · 4 đêm</text>
+
+    <!-- Row 7: 401 -->
+    <line x1="36" y1="424" x2="572" y2="424" stroke="#f1f4f8" stroke-width="1"/>
+    <text x="56" y="413" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">401</text>
+    <rect x="136" y="397" width="120" height="26" rx="6" fill="#003580"/>
+    <text x="148" y="414" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Agoda · 2 đêm</text>
+    <rect x="306" y="397" width="130" height="26" rx="6" fill="#5fb9c2"/>
+    <text x="318" y="414" font-family="Roboto, sans-serif" font-size="11" fill="#122745" font-weight="700">Đặt trực tiếp</text>
+
+    <!-- Row 8: 402 -->
+    <text x="56" y="459" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">402</text>
+    <rect x="230" y="443" width="160" height="26" rx="6" fill="#122745"/>
+    <text x="242" y="460" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="600">Phòng Deluxe · 3 đêm</text>
   </g>
 
   <!-- Mobile Phone Overlay -->
   <g filter="url(#shadow)">
-    <rect x="520" y="110" width="220" height="340" rx="32" fill="#0e2038" stroke="#1f2937" stroke-width="3"/>
-    <rect x="528" y="118" width="204" height="324" rx="26" fill="#ffffff"/>
+    <rect x="500" y="70" width="236" height="440" rx="36" fill="#0e2038" stroke="#1f2937" stroke-width="3.5"/>
+    <rect x="508" y="78" width="220" height="424" rx="28" fill="#ffffff"/>
     
     <!-- Phone Header -->
-    <rect x="528" y="118" width="204" height="60" rx="26" fill="#122745"/>
-    <rect x="528" y="148" width="204" height="30" fill="#122745"/>
-    <text x="546" y="146" font-family="Roboto, sans-serif" font-size="13" fill="#ffffff" font-weight="700">Phòng 203</text>
-    <text x="546" y="164" font-family="Roboto, sans-serif" font-size="11" fill="#a9bbd1">Cần dọn → Đang dọn</text>
+    <rect x="508" y="78" width="220" height="66" rx="28" fill="#122745"/>
+    <rect x="508" y="112" width="220" height="32" fill="#122745"/>
+    <text x="528" y="112" font-family="Roboto, sans-serif" font-size="14" fill="#ffffff" font-weight="700">Phòng 203</text>
+    <text x="528" y="132" font-family="Roboto, sans-serif" font-size="11.5" fill="#a9bbd1">Cần dọn → Đang dọn</text>
 
     <!-- Phone Tasks -->
-    <rect x="542" y="190" width="176" height="38" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
-    <text x="554" y="213" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="600">Thay ga giường</text>
-    <rect x="660" y="198" width="48" height="22" rx="6" fill="#eef8f9"/>
-    <text x="670" y="213" font-family="Roboto, sans-serif" font-size="10" fill="#1f7a84" font-weight="700">Xong</text>
+    <!-- Task 1 -->
+    <rect x="522" y="160" width="192" height="42" rx="9" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="536" y="186" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="600">Thay ga giường</text>
+    <rect x="652" y="170" width="50" height="22" rx="6" fill="#eef8f9"/>
+    <text x="663" y="185" font-family="Roboto, sans-serif" font-size="10" fill="#1f7a84" font-weight="700">Xong</text>
 
-    <rect x="542" y="238" width="176" height="38" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
-    <text x="554" y="261" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="600">Bổ sung minibar</text>
-    <rect x="660" y="246" width="48" height="22" rx="6" fill="#fef3eb"/>
-    <text x="672" y="261" font-family="Roboto, sans-serif" font-size="10" fill="#b25e09" font-weight="700">Chờ</text>
+    <!-- Task 2 -->
+    <rect x="522" y="214" width="192" height="42" rx="9" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="536" y="240" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="600">Bổ sung minibar</text>
+    <rect x="652" y="224" width="50" height="22" rx="6" fill="#fef3eb"/>
+    <text x="665" y="239" font-family="Roboto, sans-serif" font-size="10" fill="#b25e09" font-weight="700">Chờ</text>
+
+    <!-- Task 3 -->
+    <rect x="522" y="268" width="192" height="42" rx="9" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="536" y="294" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="600">Khử khuẩn &amp; set up</text>
+    <rect x="652" y="278" width="50" height="22" rx="6" fill="#eef8f9"/>
+    <text x="663" y="293" font-family="Roboto, sans-serif" font-size="10" fill="#1f7a84" font-weight="700">Xong</text>
+
+    <!-- Task 4 -->
+    <rect x="522" y="322" width="192" height="42" rx="9" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="536" y="348" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="600">Kiểm tra thiết bị</text>
+    <rect x="652" y="332" width="50" height="22" rx="6" fill="#eef8f9"/>
+    <text x="663" y="347" font-family="Roboto, sans-serif" font-size="10" fill="#1f7a84" font-weight="700">Xong</text>
 
     <!-- Done Action Button -->
-    <rect x="542" y="296" width="176" height="40" rx="10" fill="#1f7a84"/>
-    <text x="585" y="321" font-family="Roboto, sans-serif" font-size="12" fill="#ffffff" font-weight="700">Báo đã dọn xong</text>
+    <rect x="522" y="388" width="192" height="44" rx="12" fill="#1f7a84"/>
+    <text x="568" y="415" font-family="Roboto, sans-serif" font-size="13" fill="#ffffff" font-weight="700">Báo đã dọn xong</text>
   </g>
 </svg>
