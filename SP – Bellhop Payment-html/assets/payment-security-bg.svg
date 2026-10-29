@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <!-- Night Sky Gradient -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#071220"/>
+      <stop offset="50%" stop-color="#0b1a2e"/>
+      <stop offset="100%" stop-color="#12253d"/>
+    </linearGradient>
+
+    <!-- Warm Hoi An Wall Gradient -->
+    <linearGradient id="hoianWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a5c28"/>
+      <stop offset="60%" stop-color="#764d20"/>
+      <stop offset="100%" stop-color="#5a3a18"/>
+    </linearGradient>
+
+    <!-- Center Building Gradient -->
+    <linearGradient id="centerWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#18273c"/>
+      <stop offset="100%" stop-color="#101c2d"/>
+    </linearGradient>
+
+    <!-- Left Building Gradient -->
+    <linearGradient id="leftWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#142133"/>
+      <stop offset="100%" stop-color="#0c1724"/>
+    </linearGradient>
+
+    <!-- Lantern Glow Gradients -->
+    <radialGradient id="glowRed" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff4466" stop-opacity="0.85"/>
+      <stop offset="35%" stop-color="#c92a48" stop-opacity="0.45"/>
+      <stop offset="70%" stop-color="#8a1830" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#8a1830" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowAmber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffba42" stop-opacity="0.85"/>
+      <stop offset="35%" stop-color="#d97d20" stop-opacity="0.45"/>
+      <stop offset="70%" stop-color="#9e5010" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#9e5010" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowTeal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4fe3ce" stop-opacity="0.85"/>
+      <stop offset="35%" stop-color="#1ea896" stop-opacity="0.45"/>
+      <stop offset="70%" stop-color="#0e6258" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0e6258" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Base Sky -->
+  <rect width="1440" height="640" fill="url(#skyGrad)"/>
+
+  <!-- Stars / Ambient Night Particles -->
+  <g opacity="0.35">
+    <circle cx="180" cy="50" r="1.5" fill="#ffffff"/>
+    <circle cx="340" cy="35" r="1" fill="#ffffff"/>
+    <circle cx="520" cy="65" r="1.5" fill="#ffffff"/>
+    <circle cx="680" cy="25" r="1" fill="#ffffff"/>
+    <circle cx="890" cy="45" r="1.5" fill="#ffffff"/>
+    <circle cx="1120" cy="30" r="1.2" fill="#ffffff"/>
+    <circle cx="1320" cy="55" r="1" fill="#ffffff"/>
+    <circle cx="950" cy="80" r="1.2" fill="#ffffff"/>
+  </g>
+
+  <!-- ================= BACKGROUND BUILDINGS ================= -->
+
+  <!-- Left Building (Dark Townhouse) -->
+  <g id="left-building">
+    <!-- Pitched Roof -->
+    <polygon points="-20,240 210,130 440,240 440,260 -20,260" fill="#1b283a"/>
+    <polygon points="-20,245 210,138 440,245 440,250 -20,250" fill="#29394f"/>
+    <!-- Facade -->
+    <rect x="-10" y="255" width="440" height="390" fill="url(#leftWall)"/>
+    <!-- Second story windows -->
+    <rect x="70" y="295" width="80" height="120" rx="4" fill="#09131e"/>
+    <rect x="80" y="305" width="60" height="100" fill="#ffea9f" opacity="0.12"/>
+    <rect x="230" y="295" width="80" height="120" rx="4" fill="#09131e"/>
+    <rect x="240" y="305" width="60" height="100" fill="#ffea9f" opacity="0.08"/>
+  </g>
+
+  <!-- Center Building (Hotel Facade) -->
+  <g id="center-building">
+    <!-- Pitched Gable Roof -->
+    <polygon points="410,230 680,105 950,230 950,250 410,250" fill="#243347"/>
+    <polygon points="410,235 680,113 950,235 950,242 410,242" fill="#35485f"/>
+    <polygon points="675,98 685,98 685,115 675,115" fill="#182333"/>
+    <!-- Facade -->
+    <rect x="420" y="245" width="520" height="400" fill="url(#centerWall)"/>
+    <!-- Cornice / Trim -->
+    <rect x="410" y="245" width="540" height="10" fill="#2b3c52"/>
+
+    <!-- Windows Upper Floor -->
+    <rect x="470" y="285" width="90" height="130" rx="4" fill="#0a1420"/>
+    <rect x="480" y="295" width="70" height="110" fill="#ffe28a" opacity="0.15"/>
+    <line x1="515" y1="285" x2="515" y2="415" stroke="#1c2b3e" stroke-width="3"/>
+    <line x1="470" y1="345" x2="560" y2="345" stroke="#1c2b3e" stroke-width="3"/>
+
+    <rect x="790" y="285" width="90" height="130" rx="4" fill="#0a1420"/>
+    <rect x="800" y="295" width="70" height="110" fill="#ffe28a" opacity="0.15"/>
+    <line x1="835" y1="285" x2="835" y2="415" stroke="#1c2b3e" stroke-width="3"/>
+    <line x1="790" y1="345" x2="880" y2="345" stroke="#1c2b3e" stroke-width="3"/>
+
+    <!-- HOTEL Signboard -->
+    <rect x="580" y="475" width="180" height="44" rx="6" fill="#0c1724" stroke="#253a52" stroke-width="1.5"/>
+    <text x="670" y="504" font-family="'Roboto', -apple-system, sans-serif" font-size="20" font-weight="800" letter-spacing="7" fill="#6985a6" text-anchor="middle">HOTEL</text>
+  </g>
+
+  <!-- Right Building (Hoi An Ancient Ochre / Mustard House) -->
+  <g id="right-building">
+    <!-- Slanted Terracotta Roof -->
+    <polygon points="920,200 1200,85 1460,195 1460,225 920,225" fill="#382017"/>
+    <polygon points="920,206 1200,93 1460,201 1460,210 920,210" fill="#4d2c20"/>
+    <!-- Facade -->
+    <rect x="930" y="220" width="530" height="420" fill="url(#hoianWall)"/>
+    <!-- Dark base molding -->
+    <rect x="920" y="220" width="540" height="8" fill="#2d1912"/>
+
+    <!-- Left Window with Teal Shutters -->
+    <rect x="1000" y="260" width="105" height="150" rx="3" fill="#0d1f21"/>
+    <!-- Teal Shutters -->
+    <rect x="990" y="255" width="55" height="160" rx="2" fill="#1b4d50" stroke="#143c3e" stroke-width="1.5"/>
+    <line x1="995" y1="280" x2="1040" y2="280" stroke="#133638" stroke-width="2"/>
+    <line x1="995" y1="305" x2="1040" y2="305" stroke="#133638" stroke-width="2"/>
+    <line x1="995" y1="330" x2="1040" y2="330" stroke="#133638" stroke-width="2"/>
+    <line x1="995" y1="355" x2="1040" y2="355" stroke="#133638" stroke-width="2"/>
+    <line x1="995" y1="380" x2="1040" y2="380" stroke="#133638" stroke-width="2"/>
+
+    <rect x="1050" y="255" width="55" height="160" rx="2" fill="#20585c" stroke="#143c3e" stroke-width="1.5"/>
+    <line x1="1055" y1="280" x2="1100" y2="280" stroke="#164346" stroke-width="2"/>
+    <line x1="1055" y1="305" x2="1100" y2="305" stroke="#164346" stroke-width="2"/>
+    <line x1="1055" y1="330" x2="1100" y2="330" stroke="#164346" stroke-width="2"/>
+    <line x1="1055" y1="355" x2="1100" y2="355" stroke="#164346" stroke-width="2"/>
+    <line x1="1055" y1="380" x2="1100" y2="380" stroke="#164346" stroke-width="2"/>
+
+    <!-- Right Window with Teal Shutters -->
+    <rect x="1230" y="260" width="105" height="150" rx="3" fill="#0d1f21"/>
+    <!-- Teal Shutters -->
+    <rect x="1220" y="255" width="55" height="160" rx="2" fill="#1b4d50" stroke="#143c3e" stroke-width="1.5"/>
+    <line x1="1225" y1="280" x2="1270" y2="280" stroke="#133638" stroke-width="2"/>
+    <line x1="1225" y1="305" x2="1270" y2="305" stroke="#133638" stroke-width="2"/>
+    <line x1="1225" y1="330" x2="1270" y2="330" stroke="#133638" stroke-width="2"/>
+    <line x1="1225" y1="355" x2="1270" y2="355" stroke="#133638" stroke-width="2"/>
+    <line x1="1225" y1="380" x2="1270" y2="380" stroke="#133638" stroke-width="2"/>
+
+    <rect x="1280" y="255" width="55" height="160" rx="2" fill="#20585c" stroke="#143c3e" stroke-width="1.5"/>
+    <line x1="1285" y1="280" x2="1330" y2="280" stroke="#164346" stroke-width="2"/>
+    <line x1="1285" y1="305" x2="1330" y2="305" stroke="#164346" stroke-width="2"/>
+    <line x1="1285" y1="330" x2="1330" y2="330" stroke="#164346" stroke-width="2"/>
+    <line x1="1285" y1="355" x2="1330" y2="355" stroke="#164346" stroke-width="2"/>
+    <line x1="1285" y1="380" x2="1330" y2="380" stroke="#164346" stroke-width="2"/>
+  </g>
+
+  <!-- ================= OVERHEAD CATENARY WIRES & FESTIVE LANTERNS ================= -->
+  <g id="wires">
+    <path d="M -10,135 Q 260,205 520,165" fill="none" stroke="#0a131f" stroke-width="1.8"/>
+    <path d="M 490,165 Q 820,240 1150,150" fill="none" stroke="#0a131f" stroke-width="1.8"/>
+    <path d="M 1120,150 Q 1280,215 1460,170" fill="none" stroke="#0a131f" stroke-width="1.8"/>
+
+    <path d="M 200,120 Q 580,210 960,140" fill="none" stroke="#08101a" stroke-width="1.2" opacity="0.7"/>
+  </g>
+
+  <!-- Hanging Lanterns with Halos and Tassels -->
+  <g id="lanterns">
+    <!-- Lantern 1 (Center-Left: Crimson/Red) -->
+    <g transform="translate(620, 205)">
+      <circle cx="0" cy="0" r="48" fill="url(#glowRed)"/>
+      <line x1="0" y1="-28" x2="0" y2="-18" stroke="#111" stroke-width="1.5"/>
+      <rect x="-8" y="-20" width="16" height="4" rx="1.5" fill="#1f1115"/>
+      <ellipse cx="0" cy="0" rx="16" ry="24" fill="#a82340"/>
+      <ellipse cx="0" cy="0" rx="12" ry="24" fill="#cf3456"/>
+      <ellipse cx="0" cy="0" rx="5" ry="24" fill="#ea4a6d"/>
+      <rect x="-8" y="16" width="16" height="4" rx="1.5" fill="#1f1115"/>
+      <line x1="0" y1="20" x2="0" y2="34" stroke="#cf3456" stroke-width="2"/>
+    </g>
+
+    <!-- Lantern 2 (Center-Right: Amber/Orange) -->
+    <g transform="translate(860, 215)">
+      <circle cx="0" cy="0" r="54" fill="url(#glowAmber)"/>
+      <line x1="0" y1="-28" x2="0" y2="-18" stroke="#111" stroke-width="1.5"/>
+      <rect x="-8" y="-20" width="16" height="4" rx="1.5" fill="#241708"/>
+      <ellipse cx="0" cy="0" rx="18" ry="26" fill="#b86111"/>
+      <ellipse cx="0" cy="0" rx="13" ry="26" fill="#e07b1d"/>
+      <ellipse cx="0" cy="0" rx="6" ry="26" fill="#fca83a"/>
+      <rect x="-8" y="18" width="16" height="4" rx="1.5" fill="#241708"/>
+      <line x1="0" y1="22" x2="0" y2="38" stroke="#e07b1d" stroke-width="2"/>
+    </g>
+
+    <!-- Lantern 3 (Right Building: Rose/Red) -->
+    <g transform="translate(1080, 205)">
+      <circle cx="0" cy="0" r="50" fill="url(#glowRed)"/>
+      <line x1="0" y1="-28" x2="0" y2="-18" stroke="#111" stroke-width="1.5"/>
+      <rect x="-8" y="-20" width="16" height="4" rx="1.5" fill="#1f1115"/>
+      <ellipse cx="0" cy="0" rx="17" ry="25" fill="#a82340"/>
+      <ellipse cx="0" cy="0" rx="12" ry="25" fill="#cf3456"/>
+      <ellipse cx="0" cy="0" rx="5" ry="25" fill="#ea4a6d"/>
+      <rect x="-8" y="17" width="16" height="4" rx="1.5" fill="#1f1115"/>
+      <line x1="0" y1="21" x2="0" y2="36" stroke="#cf3456" stroke-width="2"/>
+    </g>
+
+    <!-- Lantern 4 (Far Right: Warm Gold) -->
+    <g transform="translate(1310, 210)">
+      <circle cx="0" cy="0" r="48" fill="url(#glowAmber)"/>
+      <line x1="0" y1="-28" x2="0" y2="-18" stroke="#111" stroke-width="1.5"/>
+      <rect x="-8" y="-20" width="16" height="4" rx="1.5" fill="#241708"/>
+      <ellipse cx="0" cy="0" rx="15" ry="22" fill="#c47a16"/>
+      <ellipse cx="0" cy="0" rx="10" ry="22" fill="#e5962b"/>
+      <ellipse cx="0" cy="0" rx="4" ry="22" fill="#f7be5e"/>
+      <rect x="-8" y="15" width="16" height="4" rx="1.5" fill="#241708"/>
+      <line x1="0" y1="19" x2="0" y2="32" stroke="#e5962b" stroke-width="2"/>
+    </g>
+
+    <!-- Lantern 5 (Left: Turquoise/Teal) -->
+    <g transform="translate(380, 195)">
+      <circle cx="0" cy="0" r="44" fill="url(#glowTeal)"/>
+      <line x1="0" y1="-26" x2="0" y2="-16" stroke="#111" stroke-width="1.5"/>
+      <rect x="-8" y="-18" width="16" height="4" rx="1.5" fill="#0c1d1a"/>
+      <ellipse cx="0" cy="0" rx="15" ry="22" fill="#16796c"/>
+      <ellipse cx="0" cy="0" rx="10" ry="22" fill="#24a896"/>
+      <ellipse cx="0" cy="0" rx="4" ry="22" fill="#5fe3cf"/>
+      <rect x="-8" y="15" width="16" height="4" rx="1.5" fill="#0c1d1a"/>
+      <line x1="0" y1="19" x2="0" y2="32" stroke="#24a896" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- Atmospheric Night Fog / Horizon Depth Gradient -->
+  <linearGradient id="horizonFog" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0a1728" stop-opacity="0"/>
+    <stop offset="50%" stop-color="#0a1728" stop-opacity="0.3"/>
+    <stop offset="100%" stop-color="#091524" stop-opacity="0.75"/>
+  </linearGradient>
+  <rect y="320" width="1440" height="320" fill="url(#horizonFog)"/>
+</svg>
+

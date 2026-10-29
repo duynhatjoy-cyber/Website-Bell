@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 280" width="100%" height="100%">
+  <defs>
+    <linearGradient id="greySky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e242d"/>
+      <stop offset="50%" stop-color="#2a323d"/>
+      <stop offset="100%" stop-color="#3d4653"/>
+    </linearGradient>
+    <linearGradient id="overlayDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(15,20,28,0)"/>
+      <stop offset="60%" stop-color="rgba(15,20,28,0.4)"/>
+      <stop offset="100%" stop-color="rgba(15,20,28,0.92)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Nền xám u ám -->
+  <rect width="520" height="280" fill="url(#greySky)"/>
+
+  <!-- Tòa nhà phía xa mờ ảo -->
+  <rect x="25" y="80" width="90" height="200" fill="#222933"/>
+  <rect x="400" y="70" width="95" height="210" fill="#202731"/>
+
+  <!-- Tòa nhà khách sạn chính ở giữa (đơn điệu, xám ngắt) -->
+  <g id="main-building" transform="translate(130, 40)">
+    <rect width="260" height="240" fill="#4a5568" rx="4"/>
+    <rect x="10" y="8" width="240" height="232" fill="#5a6678" rx="2"/>
+
+    <!-- Lưới cửa sổ đều đặn, đơn điệu không có ánh đèn ấm cúng -->
+    <g fill="#374151" opacity="0.8">
+      <!-- Hàng 1 -->
+      <rect x="25" y="24" width="35" height="30" rx="2"/>
+      <rect x="80" y="24" width="35" height="30" rx="2"/>
+      <rect x="145" y="24" width="35" height="30" rx="2"/>
+      <rect x="200" y="24" width="35" height="30" rx="2"/>
+      <!-- Hàng 2 -->
+      <rect x="25" y="70" width="35" height="30" rx="2"/>
+      <rect x="80" y="70" width="35" height="30" rx="2"/>
+      <rect x="145" y="70" width="35" height="30" rx="2"/>
+      <rect x="200" y="70" width="35" height="30" rx="2"/>
+      <!-- Hàng 3 -->
+      <rect x="25" y="116" width="35" height="30" rx="2"/>
+      <rect x="80" y="116" width="35" height="30" rx="2"/>
+      <rect x="145" y="116" width="35" height="30" rx="2"/>
+      <rect x="200" y="116" width="35" height="30" rx="2"/>
+    </g>
+
+    <!-- Mái hiên sảnh mờ tối -->
+    <rect x="70" y="195" width="120" height="10" fill="#2d3748"/>
+    <rect x="90" y="205" width="80" height="35" fill="#1f2937"/>
+  </g>
+
+  <!-- Lớp phủ tối ở dưới để làm nổi bật text -->
+  <rect width="520" height="280" fill="url(#overlayDark)"/>
+
+  <!-- Bụi cây xám đen hai bên mép sảnh -->
+  <path d="M0 280 Q30 250 60 280 Q90 245 120 280 Z" fill="#1e2630"/>
+  <path d="M400 280 Q430 250 460 280 Q490 245 520 280 Z" fill="#1e2630"/>
+
+  <!-- Text chân ảnh: Khách sạn ABC / Liên hệ đặt phòng: 09xx xxx xxx -->
+  <g transform="translate(32, 222)">
+    <text x="0" y="16" fill="#ffffff" font-family="-apple-system, Roboto, sans-serif" font-size="19" font-weight="800">Khách sạn ABC</text>
+    <text x="0" y="38" fill="#94a3b8" font-family="-apple-system, Roboto, sans-serif" font-size="13" font-weight="500">Liên hệ đặt phòng: 09xx xxx xxx</text>
+  </g>
+</svg>
+

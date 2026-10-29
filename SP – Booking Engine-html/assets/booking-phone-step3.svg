@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 520" width="100%" height="100%">
+  <defs>
+    <filter id="shadowPhones" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#0b1a30" flood-opacity="0.18"/>
+    </filter>
+    <linearGradient id="roomGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#cbebf0"/>
+      <stop offset="100%" stop-color="#9dd7de"/>
+    </linearGradient>
+    <linearGradient id="roomGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+  </defs>
+  <!-- ==================== PHONE 3: XÁC NHẬN & THANH TOÁN ==================== -->
+  <g filter="url(#shadowPhones)" transform="translate(40, 20)">
+    <!-- Phone Chassis -->
+    <rect width="270" height="480" rx="38" fill="#0e2038" stroke="#1f2937" stroke-width="3.5"/>
+    <rect x="9" y="9" width="252" height="462" rx="30" fill="#ffffff"/>
+    
+    <!-- Phone Header -->
+    <rect x="9" y="9" width="252" height="68" rx="30" fill="#122745"/>
+    <rect x="9" y="45" width="252" height="32" fill="#122745"/>
+    <text x="26" y="44" font-family="'Roboto', sans-serif" font-size="14.5" fill="#ffffff" font-weight="700">3. Xác nhận đặt phòng</text>
+    <text x="26" y="62" font-family="'Roboto', sans-serif" font-size="11.5" fill="#a9bbd1">Deluxe · 2 đêm · 2 khách</text>
+
+    <!-- Field 1: Họ và tên -->
+    <rect x="24" y="90" width="222" height="46" rx="9" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="36" y="108" font-family="'Roboto', sans-serif" font-size="10.5" fill="#64748b">Họ và tên</text>
+    <text x="36" y="126" font-family="'Roboto', sans-serif" font-size="12.5" fill="#122745" font-weight="700">Nguyễn Thu Hà</text>
+
+    <!-- Field 2: Số điện thoại -->
+    <rect x="24" y="146" width="222" height="46" rx="9" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="36" y="164" font-family="'Roboto', sans-serif" font-size="10.5" fill="#64748b">Số điện thoại</text>
+    <text x="36" y="182" font-family="'Roboto', sans-serif" font-size="12.5" fill="#122745" font-weight="700">0912 345 678</text>
+
+    <!-- Payment Breakdown Box -->
+    <rect x="24" y="202" width="222" height="106" rx="9" fill="#f1f5f9"/>
+    <text x="36" y="226" font-family="'Roboto', sans-serif" font-size="11.5" fill="#64748b">Tiền phòng (2 đêm):</text>
+    <text x="180" y="226" font-family="'Roboto', sans-serif" font-size="11.5" fill="#122745" font-weight="600">1.780.000đ</text>
+    
+    <text x="36" y="248" font-family="'Roboto', sans-serif" font-size="11.5" fill="#64748b">Giảm giá trực tiếp:</text>
+    <text x="190" y="248" font-family="'Roboto', sans-serif" font-size="11.5" fill="#10b981" font-weight="600">-100.000đ</text>
+    
+    <line x1="36" y1="262" x2="234" y2="262" stroke="#cbd5e1" stroke-width="1"/>
+    
+    <text x="36" y="286" font-family="'Roboto', sans-serif" font-size="12.5" fill="#122745" font-weight="700">Tổng thanh toán:</text>
+    <text x="168" y="286" font-family="'Roboto', sans-serif" font-size="13.5" fill="#1f7a84" font-weight="800">1.680.000đ</text>
+
+    <!-- Instant Guarantee Badge -->
+    <rect x="24" y="320" width="222" height="36" rx="9" fill="#ecfdf5" stroke="#a7f3d0"/>
+    <text x="135" y="343" font-family="'Roboto', sans-serif" font-size="11.5" fill="#047857" font-weight="700" text-anchor="middle">✓ Giữ phòng tức thì · Không cần cọc</text>
+
+    <!-- Action Button (Matching baseline) -->
+    <rect x="24" y="410" width="222" height="46" rx="12" fill="#1f7a84"/>
+    <text x="135" y="438" font-family="'Roboto', sans-serif" font-size="13.5" fill="#ffffff" font-weight="800" text-anchor="middle">Hoàn tất đặt phòng</text>
+  </g>
+</svg>

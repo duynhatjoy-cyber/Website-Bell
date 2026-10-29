@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+  <defs>
+    <filter id="heroShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#0b1a30" flood-opacity="0.14"/>
+    </filter>
+    <linearGradient id="cardBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <linearGradient id="tealBtn" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1f7a84"/>
+      <stop offset="100%" stop-color="#5fb9c2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container Box with Shadow -->
+  <g filter="url(#heroShadow)">
+    <!-- Browser/App Window Frame -->
+    <rect x="20" y="20" width="920" height="500" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+
+    <!-- App Top Bar -->
+    <rect x="20" y="20" width="920" height="54" rx="16" fill="#0f172a"/>
+    <rect x="20" y="58" width="920" height="16" fill="#0f172a"/>
+    
+    <!-- Window Controls -->
+    <circle cx="48" cy="47" r="6" fill="#ef4444"/>
+    <circle cx="68" cy="47" r="6" fill="#f59e0b"/>
+    <circle cx="88" cy="47" r="6" fill="#10b981"/>
+
+    <!-- URL / Status Pill -->
+    <rect x="120" y="34" width="300" height="26" rx="13" fill="#1e293b"/>
+    <text x="140" y="51" font-family="'Roboto', sans-serif" font-size="12" fill="#94a3b8">bellhop.io/payment/reconciliation</text>
+
+    <!-- Kovena Status Chip -->
+    <rect x="740" y="34" width="176" height="26" rx="13" fill="#134e4a"/>
+    <circle cx="754" cy="47" r="4" fill="#34d399"/>
+    <text x="766" y="51" font-family="'Roboto', sans-serif" font-size="11.5" font-weight="700" fill="#ccfbf1">Kovena Live · T+1 Sẵn sàng</text>
+
+    <!-- Subheader / Tabs -->
+    <rect x="20" y="74" width="920" height="48" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="48" y="103" font-family="'Roboto', sans-serif" font-size="15" font-weight="800" fill="#0f172a">Trung tâm thanh toán &amp; Đối soát doanh thu</text>
+    
+    <rect x="360" y="86" width="115" height="28" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="375" y="104" font-family="'Roboto', sans-serif" font-size="12" font-weight="700" fill="#1f7a84">● Tất cả kênh</text>
+
+    <rect x="485" y="86" width="115" height="28" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="500" y="104" font-family="'Roboto', sans-serif" font-size="12" font-weight="600" fill="#64748b">Tháng này ▾</text>
+
+    <rect x="795" y="86" width="120" height="28" rx="6" fill="url(#tealBtn)"/>
+    <text x="815" y="104" font-family="'Roboto', sans-serif" font-size="12" font-weight="700" fill="#ffffff">Đẩy sang MISA →</text>
+
+    <!-- 3 KPI Metric Cards -->
+    <!-- Card 1 -->
+    <g transform="translate(48, 138)">
+      <rect width="268" height="84" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="18" y="28" font-family="'Roboto', sans-serif" font-size="12" font-weight="600" fill="#64748b">DOANH THU ONLINE THÁNG NÀY</text>
+      <text x="18" y="58" font-family="'Roboto', sans-serif" font-size="22" font-weight="900" fill="#0f172a">148.650.000đ</text>
+      <text x="18" y="74" font-family="'Roboto', sans-serif" font-size="11" font-weight="700" fill="#059669">↑ +24.5% vs tháng trước</text>
+    </g>
+
+    <!-- Card 2 -->
+    <g transform="translate(346, 138)">
+      <rect width="268" height="84" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="18" y="28" font-family="'Roboto', sans-serif" font-size="12" font-weight="600" fill="#64748b">TỶ LỆ KHỚP PMS TỰ ĐỘNG</text>
+      <text x="18" y="58" font-family="'Roboto', sans-serif" font-size="22" font-weight="900" fill="#1f7a84">99.8%</text>
+      <text x="18" y="74" font-family="'Roboto', sans-serif" font-size="11" font-weight="700" fill="#0284c7">● 186/186 giao dịch thành công</text>
+    </g>
+
+    <!-- Card 3 -->
+    <g transform="translate(644, 138)">
+      <rect width="268" height="84" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <text x="18" y="28" font-family="'Roboto', sans-serif" font-size="12" font-weight="600" fill="#64748b">TIỀN VỀ TÀI KHOẢN (T+1)</text>
+      <text x="18" y="58" font-family="'Roboto', sans-serif" font-size="22" font-weight="900" fill="#059669">42.800.000đ</text>
+      <text x="18" y="74" font-family="'Roboto', sans-serif" font-size="11" font-weight="700" fill="#64748b">Quyết toán hôm nay lúc 16:00</text>
+    </g>
+
+    <!-- Data Table of Online Transactions -->
+    <g transform="translate(48, 238)">
+      <!-- Table Header -->
+      <rect width="864" height="34" rx="6" fill="#f1f5f9"/>
+      <text x="20" y="22" font-family="'Roboto', sans-serif" font-size="11" font-weight="700" fill="#475569">MÃ GIAO DỊCH</text>
+      <text x="150" y="22" font-family="'Roboto', sans-serif" font-size="11" font-weight="700" fill="#475569">KHÁCH HÀNG</text>
+      <text x="290" y="22" font-family="'Roboto', sans-serif" font-size="11" font-weight="700" fill="#475569">HẠNG PHÒNG / KÊNH</text>
+      <text x="470" y="22" font-family="'Roboto', sans-serif" font-size="11" font-weight="700" fill="#475569">PHƯƠNG THỨC</text>
+      <text x="630" y="22" font-family="'Roboto', sans-serif" font-size="11" font-weight="700" fill="#475569">SỐ TIỀN</text>
+      <text x="750" y="22" font-family="'Roboto', sans-serif" font-size="11" font-weight="700" fill="#475569">ĐỐI SOÁT PMS</text>
+
+      <!-- Row 1 -->
+      <g transform="translate(0, 42)">
+        <rect width="864" height="44" rx="6" fill="#ffffff" stroke="#f1f5f9"/>
+        <text x="20" y="27" font-family="'Roboto', sans-serif" font-size="12" font-weight="700" fill="#2563eb">#KOV-2026-981</text>
+        <text x="150" y="27" font-family="'Roboto', sans-serif" font-size="12.5" font-weight="700" fill="#0f172a">Nguyễn Thu Hà</text>
+        <text x="290" y="27" font-family="'Roboto', sans-serif" font-size="12" fill="#334155">Deluxe Ocean · Booking Engine</text>
+        <rect x="470" y="11" width="125" height="22" rx="4" fill="#ecfdf5"/>
+        <text x="478" y="26" font-family="'Roboto', sans-serif" font-size="11" font-weight="700" fill="#047857">VietQR Chuyển khoản</text>
+        <text x="630" y="27" font-family="'Roboto', sans-serif" font-size="13" font-weight="800" fill="#0f172a">1.680.000đ</text>
+        <rect x="750" y="11" width="94" height="22" rx="11" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+        <text x="762" y="26" font-family="'Roboto', sans-serif" font-size="11" font-weight="700" fill="#059669">✓ Đã khớp PMS</text>
+      </g>
+
+      <!-- Row 2 -->
+      <g transform="translate(0, 94)">
+        <rect width="864" height="44" rx="6" fill="#ffffff" stroke="#f1f5f9"/>
+        <text x="20" y="27" font-family="'Roboto', sans-serif" font-size="12" font-weight="700" fill="#2563eb">#KOV-2026-980</text>
+        <text x="150" y="27" font-family="'Roboto', sans-serif" font-size="12.5" font-weight="700" fill="#0f172a">David Miller</text>
+        <text x="290" y="27" font-family="'Roboto', sans-serif" font-size="12" fill="#334155">Suite Villa · Bellhop Website</text>
+        <rect x="470" y="11" width="125" height="22" rx="4" fill="#eff6ff"/>
+        <text x="478" y="26" font-family="'Roboto', sans-serif" font-size="11" font-weight="700" fill="#1d4ed8">Visa / Mastercard</text>
+        <text x="630" y="27" font-family="'Roboto', sans-serif" font-size="13" font-weight="800" fill="#0f172a">4.500.000đ</text>
+        <rect x="750" y="11" width="94" height="22" rx="11" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+        <text x="762" y="26" font-family="'Roboto', sans-serif" font-size="11" font-weight="700" fill="#059669">✓ Đã khớp PMS</text>
+      </g>
+
+      <!-- Row 3 -->
+      <g transform="translate(0, 146)">
+        <rect width="864" height="44" rx="6" fill="#ffffff" stroke="#f1f5f9"/>
+        <text x="20" y="27" font-family="'Roboto', sans-serif" font-size="12" font-weight="700" fill="#2563eb">#KOV-2026-979</text>
+        <text x="150" y="27" font-family="'Roboto', sans-serif" font-size="12.5" font-weight="700" fill="#0f172a">Trần Tuấn Khang</text>
+        <text x="290" y="27" font-family="'Roboto', sans-serif" font-size="12" fill="#334155">Family Room · Zalo OA Chat</text>
+        <rect x="470" y="11" width="125" height="22" rx="4" fill="#faf5ff"/>
+        <text x="478" y="26" font-family="'Roboto', sans-serif" font-size="11" font-weight="700" fill="#7e22ce">Apple Pay / Napas</text>
+        <text x="630" y="27" font-family="'Roboto', sans-serif" font-size="13" font-weight="800" fill="#0f172a">2.450.000đ</text>
+        <rect x="750" y="11" width="94" height="22" rx="11" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+        <text x="762" y="26" font-family="'Roboto', sans-serif" font-size="11" font-weight="700" fill="#059669">✓ Đã khớp PMS</text>
+      </g>
+
+      <!-- Row 4 -->
+      <g transform="translate(0, 198)">
+        <rect width="864" height="44" rx="6" fill="#ffffff" stroke="#f1f5f9"/>
+        <text x="20" y="27" font-family="'Roboto', sans-serif" font-size="12" font-weight="700" fill="#2563eb">#KOV-2026-978</text>
+        <text x="150" y="27" font-family="'Roboto', sans-serif" font-size="12.5" font-weight="700" fill="#0f172a">Lê Hoàng Yến</text>
+        <text x="290" y="27" font-family="'Roboto', sans-serif" font-size="12" fill="#334155">Superior Twin · Link đặt phòng</text>
+        <rect x="470" y="11" width="125" height="22" rx="4" fill="#ecfdf5"/>
+        <text x="478" y="26" font-family="'Roboto', sans-serif" font-size="11" font-weight="700" fill="#047857">VietQR Chuyển khoản</text>
+        <text x="630" y="27" font-family="'Roboto', sans-serif" font-size="13" font-weight="800" fill="#0f172a">980.000đ</text>
+        <rect x="750" y="11" width="94" height="22" rx="11" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+        <text x="762" y="26" font-family="'Roboto', sans-serif" font-size="11" font-weight="700" fill="#059669">✓ Đã khớp PMS</text>
+      </g>
+    </g>
+  </g>
+</svg>
+

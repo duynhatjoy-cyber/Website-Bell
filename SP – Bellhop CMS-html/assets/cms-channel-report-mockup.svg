@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="100%" height="100%">
+  <defs>
+    <filter id="dashShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#0e2338" flood-opacity="0.12"/>
+    </filter>
+    <filter id="cardShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#0b1727" flood-opacity="0.22"/>
+    </filter>
+    <filter id="pillShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#0e2338" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <!-- 1. DASHBOARD CHÍNH BÊN TRÁI -->
+  <g transform="translate(30, 25)" filter="url(#dashShadow)">
+    <!-- Thân bảng trắng -->
+    <rect width="600" height="375" rx="22" fill="#ffffff" stroke="#e6edf3" stroke-width="1.5"/>
+
+    <!-- Header Dashboard -->
+    <text x="28" y="42" fill="#0f172a" font-family="-apple-system, Roboto, sans-serif" font-size="18" font-weight="800">Báo cáo theo kênh</text>
+    <text x="28" y="60" fill="#64748b" font-family="-apple-system, Roboto, sans-serif" font-size="11.5" font-weight="500">Tháng 10/2026 · Khách sạn Mẫu</text>
+
+    <!-- Time Range Tabs -->
+    <g transform="translate(435, 26)">
+      <rect width="135" height="30" rx="15" fill="#f1f5f9"/>
+      <text x="24" y="20" fill="#64748b" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Tuần</text>
+      <!-- Active Tab Tháng -->
+      <rect x="46" y="2" width="46" height="26" rx="13" fill="#0f172a"/>
+      <text x="69" y="19" fill="#ffffff" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Tháng</text>
+      <text x="114" y="20" fill="#64748b" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Quý</text>
+    </g>
+
+    <!-- 3 Mini Stats Cards -->
+    <!-- Card 1: Tổng đặt phòng -->
+    <g transform="translate(26, 76)">
+      <rect width="170" height="74" rx="12" fill="#f8fafc" stroke="#edf2f7" stroke-width="1"/>
+      <text x="16" y="24" fill="#64748b" font-family="-apple-system, Roboto, sans-serif" font-size="11.5" font-weight="600">Tổng đặt phòng</text>
+      <text x="16" y="52" fill="#0f172a" font-family="-apple-system, Roboto, sans-serif" font-size="24" font-weight="900">312</text>
+      <rect x="68" y="38" width="94" height="18" rx="9" fill="#ecfdf5"/>
+      <text x="115" y="51" fill="#059669" font-family="-apple-system, Roboto, sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">▲ 12% so tháng 9</text>
+    </g>
+
+    <!-- Card 2: Doanh thu phòng -->
+    <g transform="translate(210, 76)">
+      <rect width="175" height="74" rx="12" fill="#f8fafc" stroke="#edf2f7" stroke-width="1"/>
+      <text x="16" y="24" fill="#64748b" font-family="-apple-system, Roboto, sans-serif" font-size="11.5" font-weight="600">Doanh thu phòng</text>
+      <text x="16" y="52" fill="#0f172a" font-family="-apple-system, Roboto, sans-serif" font-size="24" font-weight="900">486,2tr</text>
+      <rect x="115" y="38" width="48" height="18" rx="9" fill="#ecfdf5"/>
+      <text x="139" y="51" fill="#059669" font-family="-apple-system, Roboto, sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">▲ 9%</text>
+    </g>
+
+    <!-- Card 3: Hoa hồng OTA -->
+    <g transform="translate(398, 76)">
+      <rect width="176" height="74" rx="12" fill="#f8fafc" stroke="#edf2f7" stroke-width="1"/>
+      <text x="16" y="24" fill="#64748b" font-family="-apple-system, Roboto, sans-serif" font-size="11.5" font-weight="600">Hoa hồng OTA</text>
+      <text x="16" y="52" fill="#0f172a" font-family="-apple-system, Roboto, sans-serif" font-size="24" font-weight="900">59,2tr</text>
+      <rect x="96" y="38" width="70" height="18" rx="9" fill="#fef3c7"/>
+      <text x="131" y="51" fill="#d97706" font-family="-apple-system, Roboto, sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">12% d.thu</text>
+    </g>
+
+    <!-- PHẦN DƯỚI: 2 CỘT -->
+    <!-- CỘT 1: DOANH THU THEO KÊNH (Progress bars) -->
+    <g transform="translate(26, 172)">
+      <text x="0" y="14" fill="#334155" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="800" letter-spacing="0.05em">DOANH THU THEO KÊNH</text>
+
+      <!-- Booking.com -->
+      <g transform="translate(0, 28)">
+        <circle cx="4" cy="9" r="3.5" fill="#2c5270"/>
+        <text x="14" y="13" fill="#334155" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="600">Booking.com</text>
+        <rect x="85" y="1" width="135" height="15" rx="7.5" fill="#f1f5f9"/>
+        <rect x="85" y="1" width="135" height="15" rx="7.5" fill="#2c5270"/>
+        <text x="228" y="13" fill="#0f172a" font-family="-apple-system, Roboto, sans-serif" font-size="11.5" font-weight="800">182,4tr</text>
+        <text x="228" y="24" fill="#94a3b8" font-family="-apple-system, Roboto, sans-serif" font-size="9" font-weight="500">38%</text>
+      </g>
+
+      <!-- Agoda -->
+      <g transform="translate(0, 64)">
+        <circle cx="4" cy="9" r="3.5" fill="#3b698e"/>
+        <text x="14" y="13" fill="#334155" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="600">Agoda</text>
+        <rect x="85" y="1" width="135" height="15" rx="7.5" fill="#f1f5f9"/>
+        <rect x="85" y="1" width="96" height="15" rx="7.5" fill="#3b698e"/>
+        <text x="228" y="13" fill="#0f172a" font-family="-apple-system, Roboto, sans-serif" font-size="11.5" font-weight="800">128,6tr</text>
+        <text x="228" y="24" fill="#94a3b8" font-family="-apple-system, Roboto, sans-serif" font-size="9" font-weight="500">26%</text>
+      </g>
+
+      <!-- Traveloka -->
+      <g transform="translate(0, 100)">
+        <circle cx="4" cy="9" r="3.5" fill="#719bbb"/>
+        <text x="14" y="13" fill="#334155" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="600">Traveloka</text>
+        <rect x="85" y="1" width="135" height="15" rx="7.5" fill="#f1f5f9"/>
+        <rect x="85" y="1" width="50" height="15" rx="7.5" fill="#719bbb"/>
+        <text x="228" y="13" fill="#0f172a" font-family="-apple-system, Roboto, sans-serif" font-size="11.5" font-weight="800">66,8tr</text>
+        <text x="228" y="24" fill="#94a3b8" font-family="-apple-system, Roboto, sans-serif" font-size="9" font-weight="500">14%</text>
+      </g>
+
+      <!-- Website -->
+      <g transform="translate(0, 136)">
+        <circle cx="4" cy="9" r="3.5" fill="#2ba397"/>
+        <text x="14" y="13" fill="#334155" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="700">Website</text>
+        <rect x="85" y="1" width="135" height="15" rx="7.5" fill="#f1f5f9"/>
+        <rect x="85" y="1" width="80" height="15" rx="7.5" fill="#2ba397"/>
+        <text x="228" y="13" fill="#0f172a" font-family="-apple-system, Roboto, sans-serif" font-size="11.5" font-weight="800">108,4tr</text>
+        <text x="228" y="24" fill="#2ba397" font-family="-apple-system, Roboto, sans-serif" font-size="9" font-weight="700">22%</text>
+      </g>
+    </g>
+
+    <!-- CỘT 2: BẢNG CHI TIẾT -->
+    <g transform="translate(305, 172)">
+      <text x="0" y="14" fill="#334155" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="800" letter-spacing="0.05em">CHI TIẾT</text>
+      
+      <!-- Hàng Header nhỏ -->
+      <g transform="translate(0, 24)">
+        <text x="0" y="10" fill="#94a3b8" font-family="-apple-system, Roboto, sans-serif" font-size="9.5" font-weight="600">Kênh</text>
+        <text x="88" y="10" fill="#94a3b8" font-family="-apple-system, Roboto, sans-serif" font-size="9.5" font-weight="600">Đặt phòng</text>
+        <text x="140" y="10" fill="#94a3b8" font-family="-apple-system, Roboto, sans-serif" font-size="9.5" font-weight="600">Hoa hồng</text>
+        <text x="210" y="10" fill="#94a3b8" font-family="-apple-system, Roboto, sans-serif" font-size="9.5" font-weight="600">Tỷ lệ hủy</text>
+      </g>
+
+      <!-- Hàng 1: Booking.com -->
+      <g transform="translate(0, 48)">
+        <rect x="0" y="3" width="7" height="7" rx="1.5" fill="#2c5270"/>
+        <text x="14" y="10" fill="#1e293b" font-family="-apple-system, Roboto, sans-serif" font-size="10.5" font-weight="600">Booking.com</text>
+        <text x="96" y="10" fill="#334155" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="600">118</text>
+        <text x="144" y="10" fill="#334155" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="600">27,4tr</text>
+        <rect x="200" y="-1" width="40" height="16" rx="8" fill="#e0f2fe"/>
+        <text x="220" y="11" fill="#0369a1" font-family="-apple-system, Roboto, sans-serif" font-size="9" font-weight="700" text-anchor="middle">6,5%</text>
+      </g>
+
+      <!-- Hàng 2: Agoda -->
+      <g transform="translate(0, 78)">
+        <rect x="0" y="3" width="7" height="7" rx="1.5" fill="#3b698e"/>
+        <text x="14" y="10" fill="#1e293b" font-family="-apple-system, Roboto, sans-serif" font-size="10.5" font-weight="600">Agoda</text>
+        <text x="96" y="10" fill="#334155" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="600">84</text>
+        <text x="144" y="10" fill="#334155" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="600">21,0tr</text>
+        <rect x="200" y="-1" width="40" height="16" rx="8" fill="#fef3c7"/>
+        <text x="220" y="11" fill="#b45309" font-family="-apple-system, Roboto, sans-serif" font-size="9" font-weight="700" text-anchor="middle">11,2%</text>
+      </g>
+
+      <!-- Hàng 3: Traveloka -->
+      <g transform="translate(0, 108)">
+        <rect x="0" y="3" width="7" height="7" rx="1.5" fill="#719bbb"/>
+        <text x="14" y="10" fill="#1e293b" font-family="-apple-system, Roboto, sans-serif" font-size="10.5" font-weight="600">Traveloka</text>
+        <text x="96" y="10" fill="#334155" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="600">46</text>
+        <text x="144" y="10" fill="#334155" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="600">10,0tr</text>
+        <rect x="200" y="-1" width="40" height="16" rx="8" fill="#e0f2fe"/>
+        <text x="220" y="11" fill="#0369a1" font-family="-apple-system, Roboto, sans-serif" font-size="9" font-weight="700" text-anchor="middle">9,8%</text>
+      </g>
+
+      <!-- Hàng 4: Website -->
+      <g transform="translate(0, 138)">
+        <rect x="0" y="3" width="7" height="7" rx="1.5" fill="#2ba397"/>
+        <text x="14" y="10" fill="#1e293b" font-family="-apple-system, Roboto, sans-serif" font-size="10.5" font-weight="700">Website</text>
+        <text x="96" y="10" fill="#334155" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="700">64</text>
+        <text x="144" y="10" fill="#64748b" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="600">—</text>
+        <rect x="200" y="-1" width="40" height="16" rx="8" fill="#dcfce7"/>
+        <text x="220" y="11" fill="#15803d" font-family="-apple-system, Roboto, sans-serif" font-size="9" font-weight="700" text-anchor="middle">4,1%</text>
+      </g>
+    </g>
+
+    <!-- Chú thích chân bảng -->
+    <text x="28" y="358" fill="#94a3b8" font-family="-apple-system, Roboto, sans-serif" font-size="9.5" font-style="italic">Dữ liệu minh họa</text>
+  </g>
+
+  <!-- 2. CARD DONUT CHART BÊN PHẢI (NAVY THEME) -->
+  <g transform="translate(650, 40)" filter="url(#cardShadow)">
+    <rect width="200" height="340" rx="20" fill="#0f1e36"/>
+
+    <text x="100" y="36" fill="#ffffff" font-family="-apple-system, Roboto, sans-serif" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="0.08em">TỶ TRỌNG ĐẶT PHÒNG</text>
+
+    <!-- Donut Chart -->
+    <g transform="translate(100, 125)">
+      <!-- Vòng nền xám -->
+      <circle cx="0" cy="0" r="54" fill="none" stroke="#1e293b" stroke-width="16"/>
+
+      <!-- Cung 1: Booking.com (38% -> 129 / 339) -->
+      <circle cx="0" cy="0" r="54" fill="none" stroke="#1e3a5f" stroke-width="16"
+              stroke-dasharray="129 339" stroke-dashoffset="85"/>
+
+      <!-- Cung 2: Agoda (27% -> 92 / 339) -->
+      <circle cx="0" cy="0" r="54" fill="none" stroke="#2563eb" stroke-width="16"
+              stroke-dasharray="92 339" stroke-dashoffset="-44"/>
+
+      <!-- Cung 3: Traveloka (14% -> 48 / 339) -->
+      <circle cx="0" cy="0" r="54" fill="none" stroke="#60a5fa" stroke-width="16"
+              stroke-dasharray="48 339" stroke-dashoffset="-136"/>
+
+      <!-- Cung 4: Website (21% -> 71 / 339) -->
+      <circle cx="0" cy="0" r="54" fill="none" stroke="#2dd4bf" stroke-width="16"
+              stroke-dasharray="71 339" stroke-dashoffset="-184"/>
+
+      <!-- Tâm số ở giữa Donut -->
+      <text x="0" y="4" fill="#ffffff" font-family="-apple-system, Roboto, sans-serif" font-size="24" font-weight="900" text-anchor="middle">312</text>
+      <text x="0" y="20" fill="#94a3b8" font-family="-apple-system, Roboto, sans-serif" font-size="10.5" font-weight="600" text-anchor="middle">đặt phòng</text>
+    </g>
+
+    <!-- Legend chú thích 4 kênh -->
+    <g transform="translate(24, 215)">
+      <g transform="translate(0, 0)">
+        <circle cx="4" cy="5" r="4" fill="#1e3a5f"/>
+        <text x="16" y="9" fill="#e2e8f0" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="500">Booking.com</text>
+        <text x="150" y="9" fill="#ffffff" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="end">38%</text>
+      </g>
+      <g transform="translate(0, 24)">
+        <circle cx="4" cy="5" r="4" fill="#2563eb"/>
+        <text x="16" y="9" fill="#e2e8f0" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="500">Agoda</text>
+        <text x="150" y="9" fill="#ffffff" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="end">27%</text>
+      </g>
+      <g transform="translate(0, 48)">
+        <circle cx="4" cy="5" r="4" fill="#60a5fa"/>
+        <text x="16" y="9" fill="#e2e8f0" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="500">Traveloka</text>
+        <text x="150" y="9" fill="#ffffff" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="700" text-anchor="end">14%</text>
+      </g>
+      <g transform="translate(0, 72)">
+        <circle cx="4" cy="5" r="4" fill="#2dd4bf"/>
+        <text x="16" y="9" fill="#5eead4" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="700">Website</text>
+        <text x="150" y="9" fill="#5eead4" font-family="-apple-system, Roboto, sans-serif" font-size="11" font-weight="800" text-anchor="end">21%</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- 3. FLOATING NOTIFICATION PILL Ở PHÍA DƯỚI -->
+  <g transform="translate(290, 420)" filter="url(#pillShadow)">
+    <rect width="250" height="54" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect x="14" y="11" width="32" height="32" rx="10" fill="#ecfdf5"/>
+    <!-- Icon Trend Up -->
+    <path d="M22 31 L32 21 M25 21 L32 21 L32 28" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="56" y="27" fill="#0f172a" font-family="-apple-system, Roboto, sans-serif" font-size="12.5" font-weight="800">Kênh Website tăng 18%</text>
+    <text x="56" y="42" fill="#64748b" font-family="-apple-system, Roboto, sans-serif" font-size="10.5" font-weight="500">Không phát sinh hoa hồng OTA</text>
+  </g>
+</svg>
+

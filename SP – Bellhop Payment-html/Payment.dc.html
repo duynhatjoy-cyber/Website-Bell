@@ -15,24 +15,46 @@
 <style>
 body{margin:0}
 a{color:inherit}a:hover{color:#1f7a84}
-.ln{position:relative;margin-left:12px;padding-left:64px;border-left:2px solid #d6eff1}
+.ln{position:relative}
 .ln-sec{position:relative;padding:88px 0}
-.ln-dot{position:absolute;left:-74px;top:96px;width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid #5fb9c2;box-shadow:0 0 0 6px #fff}
+.ln-dot{display:none!important}
 .ln-dot.f{background:#5fb9c2}
 .ln-k{font-size:12px;font-weight:700;letter-spacing:.14em;color:#1f7a84;text-transform:uppercase}
-.money{position:relative;height:140px;margin-top:56px}
-.money-line{position:absolute;left:8%;right:8%;top:85px;height:2px;background:linear-gradient(90deg,#d6eff1,#5fb9c2 50%,#122745);z-index:1}
-.money-dot{position:absolute;top:78px;left:8%;width:16px;height:16px;border-radius:50%;background:#5fb9c2;box-shadow:0 0 0 6px rgba(95,185,194,.35);z-index:3;animation:bhRun 8s linear infinite}
-@keyframes bhRun{0%{left:8%}100%{left:calc(92% - 16px)}}
-.money-st{position:absolute;top:0;width:180px;display:flex;flex-direction:column;align-items:center;transform:translateX(-50%);text-align:center}
-.money-txt{height:62px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
-.money-st b{color:#122745;font-size:15px;line-height:1.3;white-space:nowrap;margin-bottom:4px}
-.money-st span{font-size:13px;color:#566579;line-height:1.4;display:block}
-.money-st i{width:20px;height:20px;border-radius:50%;background:#fff;border:2.5px solid #122745;display:block;margin-top:14px;position:relative;z-index:2;box-shadow:0 0 0 6px #fff}
+.pay-hero-bg{position:relative;padding:104px 0 112px;margin-top:8px;background-color:#091728;background-size:cover;background-position:center center;background-repeat:no-repeat;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center}
+/* Doi anh nen hero: thay duong dan ben duoi */
+.pay-hero-bg{background-image:url('./assets/payment-hero-bg.png')}
+.pay-hero-inner{position:relative;z-index:2;width:100%;max-width:920px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center}
+.pay-hero-ctas{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center}
+.pay-hero-partner{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:13px;color:#cbd5e1}
+.pay-hero-partner b{color:#ffffff;font-weight:800;letter-spacing:.06em}
+.pay-hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(9,23,40,.86) 0%,rgba(9,23,40,.74) 50%,rgba(9,23,40,.88) 100%)}
+@media (max-width:900px){.pay-hero-bg{padding:64px 0 72px}.pay-hero-bg .h1{font-size:34px!important}}
 .pt{display:grid;grid-template-columns:56px 1fr auto;gap:20px;align-items:center;padding:22px 0;border-bottom:1px solid #eef2f6}
 .st-live{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px;border-radius:999px;background:#122745;color:#fff;font-size:12px;font-weight:700}
 .st-road{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px;border-radius:999px;border:1.5px dashed #376587;color:#376587;font-size:12px;font-weight:700}
-.meth{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:12px}
+.meth-split{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.6fr);gap:56px;align-items:center}
+.meth-left{display:flex;flex-direction:column;gap:16px}
+.meth-eyebrow{display:inline-flex;align-items:center;gap:10px}
+.meth-eyebrow::before{content:"";width:24px;height:2px;background:#5fb9c2;display:inline-block}
+.meth-title{font-weight:800!important;line-height:1.2;margin:0}
+.meth-currency{display:flex;flex-direction:column;gap:6px;padding:20px 22px;border:1px solid #dde4ec;border-radius:16px;background:#fff;margin-top:8px;max-width:320px}
+.meth-currency b{font-size:44px;font-weight:300;color:#122745;line-height:1}
+.meth-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.mcard{position:relative;aspect-ratio:1.52/1;border-radius:14px;padding:16px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;font-size:15px;box-shadow:0 10px 24px -10px rgba(18,39,69,.35);overflow:hidden;transition:transform .2s,box-shadow .2s}
+.mcard:hover{transform:translateY(-3px);box-shadow:0 18px 32px -14px rgba(18,39,69,.5)}
+.mcard::after{content:"";position:absolute;right:-30%;top:-40%;width:90%;height:120%;border-radius:50%;background:rgba(255,255,255,.07)}
+.mcard b{position:relative;z-index:1;font-weight:700}
+.mcard-chip{position:absolute;left:16px;top:16px;width:32px;height:24px;border-radius:6px;background:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.22);z-index:2}
+.mc-visa{background:linear-gradient(135deg,#1e3a8a,#2f4fb5)}
+.mc-master{background:linear-gradient(135deg,#1f2937,#3a4352)}
+.mc-jcb{background:linear-gradient(135deg,#0f766e,#1b9488)}
+.mc-amex{background:linear-gradient(135deg,#1d4f91,#3375c4)}
+.mc-local{background:linear-gradient(135deg,#122745,#1d3a63)}
+.mc-wallet{background:linear-gradient(135deg,#176b74,#2a8f99)}
+.mc-light{background:#fff;color:#122745;border:1px solid #dde4ec;box-shadow:none}
+.mc-light::after{display:none}
+.mc-light .mcard-chip{background:#cbeff2;border:1px solid #b6e6ea}
+@media (max-width:980px){.meth-split{grid-template-columns:1fr;gap:32px}.meth-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}.meth{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:12px}
 .meth div{height:72px;border-radius:12px;background:#f4f7fa;display:grid;place-items:center;font-weight:700;color:#566579;font-size:14px}
 .txn{width:100%;border-collapse:collapse;font-size:14px}
 .txn th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#566579;text-align:left;padding:14px 16px;border-bottom:1px solid #dde4ec;font-weight:700}
@@ -57,32 +79,30 @@ a{color:inherit}a:hover{color:#1f7a84}
 .payment-feature-item p{margin:0;font-size:15px;line-height:1.55;color:#2b3a4f;font-weight:500}
 .payment-timing-split{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
 .payment-timing-media{display:flex;justify-content:center;align-items:center;width:100%}
-@media (max-width:980px){.ln{padding-left:28px}.ln-dot{left:-38px}.qrow{grid-template-columns:1fr;gap:8px}.money-st span{display:none}.money-txt{height:30px}.money-st{width:90px}.money-line{top:53px}.money-dot{top:46px}.payment-benefits-grid{grid-template-columns:repeat(2,1fr);gap:28px 20px}.payment-timing-split{grid-template-columns:1fr;gap:0}.payment-timing-media{display:none!important}.meth{grid-template-columns:repeat(3,1fr);gap:8px}.meth div{height:54px;border-radius:10px;font-size:12px;padding:0 4px;text-align:center;line-height:1.25}}
+@media (max-width:980px){.qrow{grid-template-columns:1fr;gap:8px}.money-st span{display:none}.money-txt{height:30px}.money-st{width:90px}.money-line{top:53px}.money-dot{top:46px}.payment-benefits-grid{grid-template-columns:repeat(2,1fr);gap:28px 20px}.payment-timing-split{grid-template-columns:1fr;gap:0}.payment-timing-media{display:none!important}.meth{grid-template-columns:repeat(3,1fr);gap:8px}.meth div{height:54px;border-radius:10px;font-size:12px;padding:0 4px;text-align:center;line-height:1.25}}
 @media (max-width:640px){.payment-benefits-grid{grid-template-columns:1fr;gap:24px}.payment-feature-item{padding:14px 16px}}
+.sec-security{position:relative;padding:96px 0 104px;overflow:hidden;background-color:#071220;background-image:url('./assets/payment-security-bg.svg');background-size:cover;background-position:center center;background-repeat:no-repeat}
+.sec-security-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,18,32,.78) 0%,rgba(7,18,32,.62) 50%,rgba(7,18,32,.85) 100%);pointer-events:none}
+.sec-security-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sec-security-card{background:rgba(18,34,54,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;gap:12px;box-shadow:0 16px 36px -12px rgba(9,23,40,.45);transition:transform .2s ease,border-color .2s ease}
+.sec-security-card:hover{transform:translateY(-3px);border-color:rgba(95,185,194,.35)}
+.sec-security-card h3{font-size:16.5px;font-weight:700;color:#ffffff;margin:2px 0 0;line-height:1.35}
+.sec-security-card p{font-size:14px;color:#cbd5e1;line-height:1.55;margin:0}
+@media (max-width:900px){.sec-security-cards{grid-template-columns:1fr;gap:16px}.sec-security{padding:64px 0 72px}}
 </style>
 </helmet>
 <div class="bh {{markCls}}">
 <dc-import name="Header" active="payment" start-open="{{ false }}" hint-size="100%,72px"></dc-import>
 <div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="Main.dc.html">Trang chủ</a>›<span>Sản phẩm</span>›<span>Thanh toán &amp; Kế toán</span>›<b>Bellhop Payment</b></nav></div>
 
-<section style="padding: 48px 0 40px">
-<div class="wrap">
-  <div class="stack center" style="gap: 24px; max-width: 920px; margin: 0 auto; text-align: center; align-items: center">
-    <span class="eyebrow" style="justify-content: center">Bellhop Payment · Kết nối Kovena</span>
-    <h1 class="h1" style="font-size: 56px; font-weight: 600; text-align: center">Thanh toán online cho cơ sở lưu trú, <em>đối soát ngay trên Bellhop</em></h1>
-    <p class="lead" style="max-width: 760px; margin: 0 auto; text-align: center">Bellhop Payment kết nối với Kovena, nền tảng thanh toán dành riêng cho ngành lưu trú, giúp khách sạn nhận thanh toán online và theo dõi giao dịch cùng dữ liệu đặt phòng trong hệ thống Bellhop.</p>
-    <div class="row wrapx" style="gap: 28px; justify-content: center; align-items: center">
-      <div class="btns" style="justify-content: center"><a class="btn btn-primary btn-lg" href="#form">Đặt lịch tư vấn <span class="arr">→</span></a><a class="btn btn-outline btn-lg" href="#phi">Xem phí giao dịch</a></div>
-      <span class="row" style="gap: 10px; align-items: center"><span class="small muted">Hợp tác cùng</span><span class="logo-ph">Kovena <i class="tbc">Logo</i></span></span>
-    </div>
-  </div>
-  <div class="money" aria-hidden="true" style="max-width: 1000px; margin: 56px auto 0">
-    <div class="money-line"></div><div class="money-dot"></div>
-    <div class="money-st" style="left: 8%"><div class="money-txt"><b>Khách</b><span>Đặt cọc / thanh toán</span></div><i></i></div>
-    <div class="money-st" style="left: 36%"><div class="money-txt"><b>Kovena</b><span>Xử lý giao dịch</span></div><i style="border-color: #5fb9c2"></i></div>
-    <div class="money-st" style="left: 64%"><div class="money-txt"><b>Bellhop PMS</b><span>Gắn với đặt phòng</span></div><i></i></div>
-    <div class="money-st" style="left: 92%"><div class="money-txt"><b>Finance · MISA</b><span>Vào sổ kế toán</span></div><i></i></div>
-  </div>
+<section class="pay-hero-bg">
+<div class="pay-hero-overlay"></div>
+<div class="pay-hero-inner">
+  <span class="eyebrow" style="justify-content: center; color: #5fb9c2">Bellhop Payment · Kết nối Kovena</span>
+  <h1 class="h1" style="font-size: 56px; font-weight: 600; text-align: center; color: #ffffff; margin: 0">Thanh toán online cho cơ sở lưu trú, <em style="color: #5fb9c2">đối soát ngay trên Bellhop</em></h1>
+  <p class="lead" style="max-width: 760px; margin: 0 auto; text-align: center; color: #dbe4ee">Bellhop Payment kết nối với Kovena, nền tảng thanh toán dành riêng cho ngành lưu trú, giúp khách sạn nhận thanh toán online và theo dõi giao dịch cùng dữ liệu đặt phòng trong hệ thống Bellhop.</p>
+  <div class="pay-hero-ctas"><a class="btn btn-lg" href="#form" style="background: #5fb9c2; color: #0b1a30; border: 1.5px solid #5fb9c2">Đặt lịch tư vấn <span class="arr">→</span></a><a class="btn btn-lg" href="#phi" style="color: #ffffff; border: 1.5px solid rgba(255,255,255,.7); background: rgba(255,255,255,.06)">Xem phí giao dịch</a></div>
+  <span class="pay-hero-partner">Hợp tác cùng <b>KOVENA</b></span>
 </div>
 </section>
 
@@ -174,8 +194,7 @@ a{color:inherit}a:hover{color:#1f7a84}
 <div class="ln">
 
 <section class="ln-sec">
-  <span class="ln-dot f"></span>
-  <div class="stack center" style="gap: 12px; max-width: 760px; margin: 0 auto 36px; text-align: center; align-items: center"><span class="ln-k">01 · Điểm thanh toán</span><h2 class="h2" style="font-weight: 600; text-align: center">Các thời điểm nhận thanh toán</h2><p class="muted" style="text-align: center">Mỗi mục gắn nhãn theo xác nhận của đội sản phẩm. <i class="tbc">Đang hoạt động / Lộ trình</i></p></div>
+  <div class="stack center" style="gap: 12px; max-width: 760px; margin: 0 auto 36px; text-align: center; align-items: center"><span class="eyebrow" style="justify-content: center">Điểm thanh toán</span><h2 class="h2" style="font-weight: 600; text-align: center">Các thời điểm nhận thanh toán</h2><p class="muted" style="text-align: center">Mỗi mục gắn nhãn theo xác nhận của đội sản phẩm. <i class="tbc">Đang hoạt động / Lộ trình</i></p></div>
   <div class="payment-timing-split">
     <div class="payment-timing-list">
       <div class="pt"><span class="ic ic-tile-sm i-link"></span><div><h3 class="h4">Đặt cọc hoặc thanh toán trước</h3><p class="small muted">Qua đường dẫn thanh toán gửi cho khách. <i class="tbc">✓</i></p></div><span class="st-live">● Đang hoạt động</span></div>
@@ -190,18 +209,28 @@ a{color:inherit}a:hover{color:#1f7a84}
 </section>
 
 <section class="ln-sec" style="padding-top: 0">
-  <span class="ln-dot" style="top: 8px"></span>
-  <div class="split-r" style="gap: 48px; align-items: start">
-    <div class="stack" style="gap: 20px"><span class="ln-k">02 · Phương thức</span><h2 class="h2" style="font-weight: 600">Phương thức thanh toán hỗ trợ</h2><p class="muted">Chỉ liệt kê phương thức Kovena hỗ trợ tại Việt Nam theo tài liệu chính thức. <i class="tbc">✓</i></p>
-      <div class="meth"><div>Visa</div><div>Mastercard</div><div>JCB</div><div>Amex</div><div>Thẻ nội địa</div><div>Ví điện tử</div><div>Chuyển khoản / QR</div></div>
+  <div class="meth-split">
+    <div class="meth-left">
+      <span class="eyebrow">Phương thức</span>
+      <h2 class="h2 meth-title" style="font-size: 36px; font-weight: 800; line-height: 1.25">Khách trong nước<br>và quốc tế đều<br>thanh toán được</h2>
+      <p class="muted">Chỉ liệt kê phương thức Kovena hỗ trợ tại Việt Nam theo tài liệu chính thức. <i class="tbc">✓</i></p>
+      <div class="meth-currency"><span class="small muted">Tiền tệ hỗ trợ</span><b><span class="ph" style="font-weight: 300">[x]</span></b><span class="muted small">VND, USD… <i class="tbc">✓</i></span></div>
     </div>
-    <div class="stack" style="gap: 8px; padding: 36px; border: 1px solid #dde4ec; border-radius: 20px"><span class="small muted">Tiền tệ hỗ trợ</span><b style="font-size: 72px; font-weight: 300; color: #122745; line-height: 1"><span class="ph" style="font-weight: 300">[x]</span></b><span class="muted">VND, USD… <i class="tbc">✓</i></span></div>
+    <div class="meth-cards">
+      <div class="mcard mc-visa"><span class="mcard-chip"></span><b>Visa</b></div>
+      <div class="mcard mc-master"><span class="mcard-chip"></span><b>Mastercard</b></div>
+      <div class="mcard mc-jcb"><span class="mcard-chip"></span><b>JCB</b></div>
+      <div class="mcard mc-amex"><span class="mcard-chip"></span><b>Amex</b></div>
+      <div class="mcard mc-local"><span class="mcard-chip"></span><b>Thẻ nội địa</b></div>
+      <div class="mcard mc-wallet"><span class="mcard-chip"></span><b>Ví điện tử</b></div>
+      <div class="mcard mc-light"><span class="mcard-chip"></span><b>Chuyển khoản / QR</b></div>
+      <div class="mcard mc-light"><span class="mcard-chip"></span><b>Khác</b><span class="ph" style="display: inline-block; background: #fef3c7; color: #b45309; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 4px; margin-top: 4px; width: fit-content">[ ]</span></div>
+    </div>
   </div>
 </section>
 
 <section class="ln-sec" style="padding-top: 0">
-  <span class="ln-dot" style="top: 8px"></span>
-  <div class="stack" style="gap: 12px; max-width: 760px; margin-bottom: 32px"><span class="ln-k">03 · Đối soát</span><h2 class="h2" style="font-weight: 600">Giao dịch gắn với đặt phòng và sổ sách</h2><p class="lead">Mỗi khoản thanh toán được ghi nhận cùng đặt phòng tương ứng trong Bellhop PMS <i class="tbc">✓</i>, giúp lễ tân và kế toán đối chiếu mà không cần tra cứu trên nhiều hệ thống.</p></div>
+  <div class="stack" style="gap: 12px; max-width: 760px; margin-bottom: 32px"><span class="eyebrow">Đối soát</span><h2 class="h2" style="font-weight: 600">Giao dịch gắn với đặt phòng và sổ sách</h2><p class="lead">Mỗi khoản thanh toán được ghi nhận cùng đặt phòng tương ứng trong Bellhop PMS <i class="tbc">✓</i>, giúp lễ tân và kế toán đối chiếu mà không cần tra cứu trên nhiều hệ thống.</p></div>
   <div class="mockup-visual" style="position: relative; display: flex; justify-content: center; align-items: center; width: 100%">
     <img class="section-mockup-img" src="./assets/payment-mockup.svg" alt="Đối soát giao dịch trực tuyến qua Kovena" style="width: 100%; max-width: 720px; height: auto; display: block; object-fit: contain">
   </div>
@@ -216,15 +245,35 @@ a{color:inherit}a:hover{color:#1f7a84}
 </div>
 </div>
 
-<section class="bg-navy" style="padding: 96px 0">
-<div class="wrap">
-  <div class="stack" style="gap: 12px; max-width: 760px; margin-bottom: 48px"><span class="ln-k" style="color: #5fb9c2">04 · Bảo mật</span><h2 class="h2" style="font-weight: 600">Bảo mật theo tiêu chuẩn ngành thanh toán</h2><p class="lead">Chỉ nêu chứng nhận/tiêu chuẩn mà Kovena công bố chính thức. <i class="tbc">VD: PCI DSS</i></p></div>
-  <div class="grid-auto">
-    <div class="stack" style="gap: 14px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.18)"><span class="ic ic-tile-sm i-lock" style="background-color: #fff"></span><h3 class="h4">Thông tin thẻ do Kovena xử lý</h3><p style="color: #b6c5d8">Bellhop không lưu trữ số thẻ đầy đủ. <i class="tbc">✓</i></p></div>
-    <div class="stack" style="gap: 14px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.18)"><span class="ic ic-tile-sm i-shield" style="background-color: #fff"></span><h3 class="h4">Xác thực giao dịch</h3><p style="color: #b6c5d8"><span class="ph">[3-D Secure…]</span> <i class="tbc">✓</i></p></div>
-    <div class="stack" style="gap: 14px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.18)"><span class="ic ic-tile-sm i-users" style="background-color: #fff"></span><h3 class="h4">Phân quyền truy cập</h3><p style="color: #b6c5d8">Dữ liệu thanh toán trong Bellhop chỉ hiển thị với tài khoản được cấp. <i class="tbc">✓</i></p></div>
+<section class="sec-security">
+<div class="sec-security-overlay"></div>
+<div class="wrap" style="position: relative; z-index: 2">
+  <div class="stack" style="gap: 12px; max-width: 760px; margin-bottom: 40px">
+    <span class="eyebrow" style="color: #5fb9c2">Bảo mật</span>
+    <h2 class="h2" style="font-size: 38px; font-weight: 700; color: #ffffff; line-height: 1.25; margin: 0">Bảo mật theo tiêu<br>chuẩn ngành thanh toán</h2>
+    <p class="lead" style="color: #cbd5e1; margin: 0; font-size: 15px">Chỉ nêu chứng nhận/tiêu chuẩn mà Kovena công bố chính thức. <i class="tbc">VD: PCI DSS</i></p>
   </div>
-  <div class="pill-strip" style="margin-top: 40px"><span class="logo-ph" style="background: transparent; color: #b6c5d8; border-color: rgba(255,255,255,.25)">Huy hiệu chứng nhận</span><span class="logo-ph" style="background: transparent; color: #b6c5d8; border-color: rgba(255,255,255,.25)">Huy hiệu chứng nhận</span></div>
+  <div class="sec-security-cards">
+    <div class="sec-security-card">
+      <span class="ic ic-tile-sm i-lock" style="background-color: #fff"></span>
+      <h3 class="h4">Thông tin thẻ do Kovena xử lý</h3>
+      <p>Bellhop không lưu trữ số thẻ đầy đủ. <i class="tbc">✓</i></p>
+    </div>
+    <div class="sec-security-card">
+      <span class="ic ic-tile-sm i-shield" style="background-color: #fff"></span>
+      <h3 class="h4">Xác thực giao dịch</h3>
+      <p><span class="ph">[3-D Secure…]</span> <i class="tbc">✓</i></p>
+    </div>
+    <div class="sec-security-card">
+      <span class="ic ic-tile-sm i-users" style="background-color: #fff"></span>
+      <h3 class="h4">Phân quyền truy cập</h3>
+      <p>Dữ liệu thanh toán chỉ hiển thị với tài khoản được cấp quyền. <i class="tbc">✓</i></p>
+    </div>
+  </div>
+  <div class="pill-strip" style="margin-top: 36px">
+    <span class="logo-ph" style="background: rgba(255,255,255,.04); color: #cbd5e1; border-color: rgba(255,255,255,.22); border-radius: 999px; padding: 8px 22px; font-size: 13px">Huy hiệu chứng nhận</span>
+    <span class="logo-ph" style="background: rgba(255,255,255,.04); color: #cbd5e1; border-color: rgba(255,255,255,.22); border-radius: 999px; padding: 8px 22px; font-size: 13px">Huy hiệu chứng nhận</span>
+  </div>
 </div>
 </section>
 
@@ -232,16 +281,14 @@ a{color:inherit}a:hover{color:#1f7a84}
 <div class="ln">
 
 <section class="ln-sec">
-  <span class="ln-dot"></span>
   <div class="split" style="gap: 56px">
     <div style="height: 200px; border: 1px solid #dde4ec; border-radius: 24px; display: grid; place-items: center"><span class="logo-ph" style="height: 72px; min-width: 220px; font-size: 22px">KOVENA <i class="tbc">Logo</i></span></div>
-    <div class="stack" style="gap: 14px"><span class="ln-k">05 · Đối tác</span><h2 class="h2" style="font-weight: 600">Đối tác thanh toán Kovena</h2><p class="lead">Kovena là nền tảng thanh toán dành riêng cho ngành lưu trú. <span class="ph">[Thông tin chính thức do Kovena cung cấp: thị trường hoạt động, quy mô, đối tác – có duyệt của Kovena]</span></p><a class="lnk" href="#">Website Kovena ↗</a></div>
+    <div class="stack" style="gap: 14px"><span class="eyebrow">Đối tác</span><h2 class="h2" style="font-weight: 600">Đối tác thanh toán Kovena</h2><p class="lead">Kovena là nền tảng thanh toán dành riêng cho ngành lưu trú. <span class="ph">[Thông tin chính thức do Kovena cung cấp: thị trường hoạt động, quy mô, đối tác – có duyệt của Kovena]</span></p><a class="lnk" href="#">Website Kovena ↗</a></div>
   </div>
 </section>
 
 <section class="ln-sec" id="phi" style="padding-top: 0">
-  <span class="ln-dot" style="top: 8px"></span>
-  <div class="stack" style="gap: 12px; margin-bottom: 24px"><span class="ln-k">06 · Phí</span><h2 class="h2" style="font-weight: 600">Phí giao dịch và thời gian nhận tiền</h2></div>
+  <div class="stack" style="gap: 12px; margin-bottom: 24px"><span class="eyebrow">Phí</span><h2 class="h2" style="font-weight: 600">Phí giao dịch và thời gian nhận tiền</h2></div>
   <div class="tbl-box" style="border: 0; border-radius: 0; background: transparent">
     <table class="fee" style="min-width: 640px">
       <thead><tr><th>Phương thức</th><th>Phí</th><th>Thời gian nhận tiền</th></tr></thead>
@@ -252,13 +299,12 @@ a{color:inherit}a:hover{color:#1f7a84}
       </tbody>
     </table>
   </div>
-  <div class="row wrapx" style="gap: 16px; justify-content: space-between; margin-top: 24px"><span class="muted small">Phí thiết lập <span class="ph">[ ]</span> · Đơn vị tiền nhận <span class="ph">[ ]</span> · Nếu chưa công bố: “Phí giao dịch được báo theo hợp đồng”</span><a class="lnk" href="Main.dc.html#bang-gia">Xem chi tiết tại Bảng giá <span class="arr">→</span></a></div>
+  <div class="row wrapx" style="gap: 16px; justify-content: space-between; margin-top: 24px"><span class="muted small">Phí thiết lập <span class="ph">[ ]</span> · Đơn vị tiền nhận <span class="ph">[ ]</span> · Nếu chưa công bố: “Phí giao dịch được báo theo hợp đồng”</span><a class="lnk" href="Pricing.dc.html">Xem chi tiết tại Bảng giá <span class="arr">→</span></a></div>
 </section>
 
 <section class="ln-sec" style="padding-top: 0">
-  <span class="ln-dot" style="top: 8px"></span>
   <div class="head center" style="margin-bottom: 32px">
-    <span class="ln-k" style="color: #1f7a84">07 · Kích hoạt</span>
+    <span class="eyebrow" style="justify-content: center">Kích hoạt</span>
     <h2 class="h2" style="font-weight: 700; text-align: center">Các bước kích hoạt</h2>
   </div>
   <div class="process-split-layout">
@@ -331,7 +377,6 @@ class Component extends DCLogic {
         { q: 'Khách có thanh toán được khi đặt phòng trên website không?', a: 'Có, tính năng thanh toán trực tiếp trên website đã được tích hợp sẵn qua Booking Engine và cổng thanh toán Bellhop Payment.', tbc: false },
         { q: 'Ai chịu trách nhiệm khi có tranh chấp giao dịch?', a: 'Bellhop cùng đối tác thanh toán Kovena có đội ngũ hỗ trợ nghiệp vụ chuyên trách 24/7 để phối hợp xử lý và giải quyết nhanh chóng mọi trường hợp tra soát hoặc tranh chấp giao dịch.', tbc: true }
       ]
-    };
     };
   }
 }

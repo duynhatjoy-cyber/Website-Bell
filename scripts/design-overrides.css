@@ -49,6 +49,16 @@
 .hdr-dark .mnav{background:#0e2038!important;color:#fff!important;border-top-color:rgba(255,255,255,.12)!important}
 .hdr-dark .mnav a,.hdr-dark .mnav summary{color:#fff!important;border-bottom-color:rgba(255,255,255,.12)!important}
 .hdr-dark .mnav a[href*="app.bellhop.biz"]{background:rgba(255,255,255,.12)!important;color:#fff!important}
+
+/* Mobile nav items with product icons */
+.mnav details a{display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:12px!important;padding:8px 8px 8px 12px!important;font-weight:600!important;font-size:15px!important;color:var(--navy)!important;border-bottom:1px solid #f1f5f9!important;min-height:48px!important}
+.mnav details a:last-child{border-bottom:0!important}
+.mnav details a:hover{background:#f8fafc!important;color:#1f7a84!important}
+.mnav details a .mnav-ic{width:36px!important;height:36px!important;border-radius:10px!important;background-color:#e6f7f8!important;background-size:22px!important;background-position:center center!important;background-repeat:no-repeat!important;flex:none!important;box-shadow:0 2px 6px rgba(18,39,69,.06)!important}
+.hdr-dark .mnav details a{color:#fff!important;border-bottom-color:rgba(255,255,255,.08)!important}
+.hdr-dark .mnav details a:hover{background:rgba(255,255,255,.06)!important}
+.hdr-dark .mnav details a .mnav-ic{background-color:rgba(255,255,255,.14)!important}
+
 .bh a.btn-primary{color:#fff}.bh a.btn-primary:hover,.bh a.btn-primary:focus-visible{color:#fff;box-shadow:0 8px 20px rgba(18,39,69,.22)}
 .current-language-flag svg,.language-options button svg{display:block;width:20px;height:14px;border:1px solid rgba(18,39,69,.12);border-radius:2px;object-fit:cover}
 .hdr .nav-i .cv{display:inline-block;flex:none;width:6px;height:6px;margin-left:1px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;opacity:.65;transform:translateY(-2px) rotate(45deg)}
@@ -138,19 +148,39 @@
 .customer-stories-link{display:inline-flex;margin-top:34px}
 @media(max-width:850px){.customer-stories-track{grid-auto-columns:calc((100% - 18px)/2)}}
 @media(max-width:600px){.customer-stories-track{grid-auto-columns:100%}.customer-story-card{min-height:300px}}
-.fab a{position:relative;isolation:isolate;transition:transform .2s ease,box-shadow .2s ease}
-.fab a:hover,.fab a:focus-visible{transform:translateY(-4px) scale(1.06);box-shadow:0 18px 34px -10px rgba(11,26,48,.55)}
-.fab a::after{content:"";position:absolute;inset:-3px;border:2px solid;border-radius:50%;pointer-events:none;animation:bh-contact-ring 3s ease-out infinite}
-.fab .z::after{border-color:#0068ff}
-.fab .c::after{border-color:#5fb9c2;animation-delay:1.5s}
-.fab .c svg{animation:bh-phone-tilt 4s ease-in-out infinite}
-.mbar .contact-zalo,.mbar .contact-phone{transition:transform .2s ease,box-shadow .2s ease;animation:bh-contact-glow 4s ease-in-out infinite}
-.mbar .contact-phone{animation-delay:2s}
-.mbar .contact-zalo:hover,.mbar .contact-phone:hover{transform:translateY(-2px)}
-@keyframes bh-contact-ring{0%{transform:scale(.9);opacity:.7}60%,100%{transform:scale(1.45);opacity:0}}
+/* Floating contact buttons (FAB) matching Image 2 */
+.fab{position:fixed!important;right:18px!important;bottom:24px!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:14px!important;z-index:99999!important}
+.fab-btn{position:relative!important;width:52px!important;height:52px!important;border-radius:50%!important;display:flex!important;align-items:center!important;justify-content:center!important;text-decoration:none!important;transition:transform .2s ease,box-shadow .2s ease!important;cursor:pointer!important;isolation:isolate!important}
+.fab-btn:hover,.fab-btn:focus-visible{transform:scale(1.08) translateY(-2px)!important}
+.fab-btn .fab-icon{position:relative!important;z-index:2!important;display:flex!important;align-items:center!important;justify-content:center!important}
+
+/* Translucent pulsing outer halo ring */
+.fab-halo{position:absolute!important;inset:-6px!important;border-radius:50%!important;pointer-events:none!important;animation:fab-halo-pulse 2.6s ease-out infinite!important;z-index:1!important}
+
+/* 1. Messenger Button */
+.fab-messenger{background:linear-gradient(135deg,#a855f7 0%,#ec4899 50%,#f43f5e 100%)!important;box-shadow:0 8px 20px -4px rgba(168,85,247,.45)!important}
+.fab-messenger .fab-halo{background:rgba(168,85,247,.34)!important}
+
+/* 2. Zalo Button */
+.fab-zalo{background:#0084ff!important;box-shadow:0 8px 20px -4px rgba(0,132,255,.45)!important}
+.fab-zalo .fab-halo{background:rgba(0,132,255,.34)!important;animation-delay:.8s!important}
+
+/* 3. Phone Button */
+.fab-phone{background:#0284c7!important;box-shadow:0 8px 20px -4px rgba(2,132,199,.45)!important}
+.fab-phone .fab-halo{background:rgba(2,132,199,.34)!important;animation-delay:1.6s!important}
+.fab-phone svg{animation:bh-phone-tilt 4s ease-in-out infinite!important}
+
+@keyframes fab-halo-pulse{0%{transform:scale(.92);opacity:.85}60%,100%{transform:scale(1.36);opacity:0}}
 @keyframes bh-phone-tilt{0%,88%,100%{transform:rotate(0)}91%,97%{transform:rotate(-12deg)}94%{transform:rotate(12deg)}}
-@keyframes bh-contact-glow{0%,70%,100%{box-shadow:0 0 0 0 rgba(95,185,194,0)}80%{box-shadow:0 0 0 5px rgba(95,185,194,.23)}}
-@media(prefers-reduced-motion:reduce){.fab a::after,.fab .c svg,.mbar .contact-zalo,.mbar .contact-phone{animation:none}}
+
+@media(prefers-reduced-motion:reduce){.fab-halo,.fab-phone svg{animation:none!important}}
+
+/* Ensure .fab is VISIBLE ON ALL SCREENS including mobile and matches Image 2 */
+@media(max-width:768px){
+  .fab{display:flex!important;right:14px!important;bottom:20px!important;gap:12px!important}
+  .fab-btn{width:48px!important;height:48px!important}
+  .mbar{display:none!important}
+}
 @media(max-width:760px){.brand-logo--large img{width:64px;height:64px}.brand-logo--large{font-size:22px}}
 @media(max-width:980px){.toc a.on{border-bottom:2px solid #1f6b52}}
 
@@ -210,7 +240,10 @@ html,body{overflow-x:clip!important;max-width:100%;height:auto!important;min-hei
   .bh .subnav{top:64px!important}
 
   /* Single-column grids on phones */
-  .bh .jr,.bh .mods,.bh .cycle,.bh .steps,.bh .fgrid{grid-template-columns:minmax(0,1fr)!important}
+  .bh .jr,.bh .mods,.bh .steps,.bh .fgrid{grid-template-columns:minmax(0,1fr)!important}
+  /* PMS 2x2 status cycle on mobile matching Image 3 */
+  .bh .cycle,.cycle{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+  .bh .cycle div,.cycle div{min-height:44px!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:12px 8px!important;border-radius:12px!important;font-size:13.5px!important;font-weight:700!important;text-align:center!important}
   .bh .jr-band{padding:20px!important;text-align:center;justify-content:center}
   .bh .jr-band>div{flex-basis:100%!important}
   .bh .proof{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
@@ -483,67 +516,87 @@ html,body{overflow-x:clip!important;max-width:100%;height:auto!important;min-hei
   justify-content: center !important;
 }
 
-/* Ecosystem Visual Cards (Centered content & mockup previews) */
+/* Ecosystem Visual Cards (Redesigned per Image 1: larger prominent frame, balanced layout) */
 .eco-card {
   display: flex !important;
   flex-direction: column !important;
   text-align: center !important;
-  align-items: center !important;
+  align-items: stretch !important;
   padding: 0 !important;
   overflow: hidden !important;
-  border-radius: 18px !important;
+  border-radius: 20px !important;
   background: #ffffff !important;
-  border: 1px solid #dde4ec !important;
+  border: 1px solid #dde7ec !important;
   box-shadow: 0 8px 24px -10px rgba(18, 39, 69, 0.08) !important;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+  text-decoration: none !important;
 }
 .eco-card:hover {
   transform: translateY(-4px) !important;
   border-color: #5fb9c2 !important;
-  box-shadow: 0 16px 36px -12px rgba(18, 39, 69, 0.16) !important;
+  box-shadow: 0 18px 40px -12px rgba(18, 39, 69, 0.16) !important;
 }
 .eco-card-visual {
   width: 100% !important;
-  height: 140px !important;
+  height: 220px !important;
   background: #f8fafc !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   border-bottom: 1px solid #eef2f6 !important;
-  padding: 12px !important;
+  padding: 14px !important;
   box-sizing: border-box !important;
+  overflow: hidden !important;
+  position: relative !important;
 }
 .eco-card-img {
+  width: 100% !important;
+  height: 100% !important;
   max-width: 100% !important;
   max-height: 100% !important;
   object-fit: contain !important;
   display: block !important;
+  transition: transform 0.3s ease !important;
+}
+.eco-card:hover .eco-card-img {
+  transform: scale(1.03) !important;
 }
 .eco-card-body {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   text-align: center !important;
-  padding: 20px 18px 24px 18px !important;
+  padding: 24px 22px 28px !important;
   gap: 8px !important;
   flex: 1 !important;
+  background: #ffffff !important;
   box-sizing: border-box !important;
 }
 .eco-card-body .ic {
-  margin: 0 auto 4px auto !important;
+  margin: 0 auto 6px auto !important;
 }
 .eco-card-body h3.h4 {
-  font-size: 18px !important;
+  font-size: 19px !important;
+  font-weight: 800 !important;
   color: #122745 !important;
   margin: 0 !important;
   text-align: center !important;
 }
 .eco-card-body p {
-  font-size: 13.5px !important;
+  font-size: 14px !important;
   color: #566579 !important;
-  line-height: 1.5 !important;
+  line-height: 1.55 !important;
   margin: 0 !important;
   text-align: center !important;
+}
+@media (max-width: 640px) {
+  .eco-card-visual {
+    height: 200px !important;
+    padding: 12px !important;
+  }
+  .eco-card-body {
+    padding: 20px 18px 24px !important;
+  }
 }
 
 /* Target Audience Cards (Image 5 UI/UX) */
@@ -881,3 +934,208 @@ body:has(a[href*="Message.dc.html"]) .subnav,
 
 
 
+
+
+
+/* Reorganized OTA connect strip in Main page */
+.ota-connect-strip{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:32px;padding:18px 24px;border-radius:16px;background:#f8fafc;border:1px solid #e2e8f0}
+.ota-connect-info{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.ota-connect-title{font-size:13.5px;font-weight:700;color:#122745;white-space:nowrap}
+.ota-channel-badges{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ota-badge{display:inline-flex;align-items:center;justify-content:center;padding:6px 14px;background:#ffffff;border:1px solid #dde4ec;border-radius:8px;font-size:12.5px;font-weight:700;color:#122745;box-shadow:0 1px 3px rgba(18,39,69,0.04)}
+.ota-badge--more{background:#f1f5f9;border-color:#cbd5e1;color:#566579}
+.ota-calc-btn{display:inline-flex;align-items:center;gap:8px;color:#1f7a84;font-weight:700;font-size:13.5px;text-decoration:none;padding:9px 18px;border-radius:999px;background:#e6f7f8;white-space:nowrap;transition:all .2s ease;flex-shrink:0}
+.ota-calc-btn:hover{background:#5fb9c2;color:#0c1a2e}
+@media (max-width:900px){
+  .ota-connect-strip{flex-direction:column;align-items:stretch;gap:16px;padding:16px 18px}
+  .ota-connect-info{flex-direction:column;align-items:flex-start;gap:10px;width:100%}
+  .ota-channel-badges{width:100%}
+  .ota-calc-btn{width:100%;justify-content:center;border-radius:10px;padding:11px 16px}
+}
+
+
+/* Booking Engine mobile split sections */
+.booking-mobile-sec {
+  display: none !important;
+}
+.booking-desktop-sec {
+  display: block !important;
+}
+
+@media (max-width: 768px) {
+  .booking-desktop-sec {
+    display: none !important;
+  }
+  .booking-mobile-sec {
+    display: block !important;
+    padding: 44px 0 !important;
+  }
+  .booking-mobile-sec .head {
+    margin-bottom: 24px !important;
+  }
+  .booking-mobile-sec .head .h2 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+    margin-top: 8px !important;
+    margin-bottom: 10px !important;
+  }
+  .booking-mobile-sec .head .lead {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+    max-width: 340px !important;
+    margin: 0 auto !important;
+  }
+  .booking-phone-single {
+    width: 100% !important;
+    max-width: 290px !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    filter: drop-shadow(0 14px 28px rgba(18, 39, 69, 0.12));
+  }
+}
+
+
+/* Website Structure Cards (Mẫu ảnh 2 trang Website) */
+.struct-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.struct-card {
+  background: #f0fbfb;
+  border: 1.5px solid #d4eff1;
+  border-radius: 24px;
+  padding: 32px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 4px 16px rgba(18, 39, 69, 0.03);
+}
+.struct-card:hover {
+  transform: translateY(-4px);
+  border-color: #5fb9c2;
+  box-shadow: 0 14px 32px rgba(18, 39, 69, 0.08);
+}
+.struct-card-num {
+  font-size: 44px;
+  font-weight: 800;
+  color: #1f7a84;
+  line-height: 1;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.struct-card-title {
+  font-size: 18.5px;
+  font-weight: 800;
+  color: #122745;
+  line-height: 1.35;
+  margin: 0 0 12px;
+}
+.struct-card-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #566579;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .struct-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+@media (max-width: 640px) {
+  .struct-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .struct-card {
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+  .struct-card-num {
+    font-size: 40px;
+    margin-bottom: 14px;
+  }
+  .struct-card-title {
+    font-size: 17.5px;
+  }
+}
+
+
+
+/* ==========================================================================
+   Universal Problem Cards (Desktop 3-column vertical grid, Mobile Mẫu 2 horizontal row)
+   ========================================================================== */
+.pain-card-body,
+.cms-pain-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .pain-cards,
+  .cms-pain-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+  .pain-card,
+  .cms-pain-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    padding: 18px 20px !important;
+    border-radius: 18px !important;
+    border: 1px solid #dde7ec !important;
+    background: #ffffff !important;
+    box-shadow: 0 4px 16px rgba(18, 39, 69, 0.04) !important;
+    text-align: left !important;
+    text-decoration: none !important;
+  }
+  .pain-card .ic,
+  .cms-pain-card .ic {
+    flex: none !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 12px !important;
+    background-color: var(--teal-50, #eef8f9) !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .pain-card-body,
+  .cms-pain-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    text-align: left !important;
+  }
+  .pain-card-body .h4,
+  .cms-pain-body .h4 {
+    margin: 0 !important;
+    font-size: 16.5px !important;
+    font-weight: 700 !important;
+    color: #122745 !important;
+    line-height: 1.35 !important;
+  }
+  .pain-card-body p,
+  .cms-pain-body p {
+    margin: 0 !important;
+    font-size: 13.5px !important;
+    color: #566579 !important;
+    line-height: 1.55 !important;
+  }
+  .pain-card-body .foot,
+  .cms-pain-body .foot {
+    display: none !important;
+  }
+}

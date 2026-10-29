@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="windowSea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7dd3fc"/>
+      <stop offset="40%" stop-color="#38bdf8"/>
+      <stop offset="60%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="wallSoft" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5efe6"/>
+      <stop offset="100%" stop-color="#e8ded1"/>
+    </linearGradient>
+    <linearGradient id="headboard" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8c6239"/>
+      <stop offset="100%" stop-color="#593c20"/>
+    </linearGradient>
+    <filter id="lampGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Wall Background -->
+  <rect width="400" height="480" fill="url(#wallSoft)"/>
+
+  <!-- Large Floor-to-Ceiling Window (Right) -->
+  <g transform="translate(180, 50)">
+    <!-- Window Frame -->
+    <rect x="0" y="0" width="200" height="320" rx="2" fill="url(#windowSea)"/>
+    <!-- Distant Sea Horizon -->
+    <line x1="0" y1="180" x2="200" y2="180" stroke="#bae6fd" stroke-width="1.5"/>
+    <!-- Tropical Palm Silhouette outside window -->
+    <path d="M140 220 Q160 170 190 150 Q170 175 180 200 Z" fill="#065f46" opacity="0.6"/>
+    <path d="M140 220 Q120 180 90 170 Q115 190 130 215 Z" fill="#065f46" opacity="0.6"/>
+    <!-- Window Grid / Mullions -->
+    <rect x="-3" y="-3" width="206" height="326" fill="none" stroke="#475569" stroke-width="5"/>
+    <line x1="70" y1="0" x2="70" y2="320" stroke="#475569" stroke-width="3"/>
+    <line x1="0" y1="200" x2="200" y2="200" stroke="#475569" stroke-width="3"/>
+  </g>
+
+  <!-- Hotel Bed & Headboard (Left & Center) -->
+  <g transform="translate(-30, 180)">
+    <!-- Bed Headboard -->
+    <rect x="50" y="40" width="200" height="150" rx="8" fill="url(#headboard)"/>
+    <rect x="56" y="46" width="188" height="138" rx="6" fill="#a47547" opacity="0.3"/>
+
+    <!-- Pillows -->
+    <rect x="65" y="115" width="70" height="40" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+    <rect x="145" y="115" width="70" height="40" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+    <rect x="75" y="125" width="55" height="32" rx="6" fill="#cbd5e1" opacity="0.4"/>
+
+    <!-- Mattress & Linens -->
+    <rect x="40" y="150" width="230" height="130" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <!-- Bed Duvet / Runner -->
+    <path d="M40 170 L270 170 L270 280 L40 280 Z" fill="#3b8296"/>
+    <path d="M40 170 L270 170 L270 195 L40 195 Z" fill="#205f70"/>
+  </g>
+
+  <!-- Bedside Nightstand & Lamp (Center-Right) -->
+  <g transform="translate(235, 230)">
+    <!-- Lamp Warm Glow -->
+    <circle cx="28" cy="25" r="30" fill="#fef08a" opacity="0.45" filter="url(#lampGlow)"/>
+    <circle cx="28" cy="25" r="14" fill="#ffffff" opacity="0.7"/>
+
+    <!-- Lamp Shade -->
+    <polygon points="12,38 44,38 38,12 18,12" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.5"/>
+    <!-- Lamp Stem & Base -->
+    <line x1="28" y1="38" x2="28" y2="60" stroke="#78350f" stroke-width="3"/>
+    <ellipse cx="28" cy="60" rx="14" ry="4" fill="#78350f"/>
+
+    <!-- Nightstand Table -->
+    <rect x="0" y="60" width="56" height="80" rx="3" fill="#8c6239"/>
+    <rect x="4" y="68" width="48" height="24" rx="2" fill="#a47547"/>
+    <circle cx="28" cy="80" r="2.5" fill="#fef08a"/>
+    <rect x="4" y="98" width="48" height="24" rx="2" fill="#a47547"/>
+    <circle cx="28" cy="110" r="2.5" fill="#fef08a"/>
+  </g>
+</svg>
+

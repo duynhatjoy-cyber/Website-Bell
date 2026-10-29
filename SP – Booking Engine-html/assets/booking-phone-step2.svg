@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 520" width="100%" height="100%">
+  <defs>
+    <filter id="shadowPhones" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#0b1a30" flood-opacity="0.18"/>
+    </filter>
+    <linearGradient id="roomGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#cbebf0"/>
+      <stop offset="100%" stop-color="#9dd7de"/>
+    </linearGradient>
+    <linearGradient id="roomGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+  </defs>
+  <!-- ==================== PHONE 2: CHỌN HẠNG PHÒNG ==================== -->
+  <g filter="url(#shadowPhones)" transform="translate(40, 20)">
+    <!-- Phone Chassis -->
+    <rect width="270" height="480" rx="38" fill="#0e2038" stroke="#1f2937" stroke-width="3.5"/>
+    <rect x="9" y="9" width="252" height="462" rx="30" fill="#ffffff"/>
+    
+    <!-- Phone Header -->
+    <rect x="9" y="9" width="252" height="68" rx="30" fill="#122745"/>
+    <rect x="9" y="45" width="252" height="32" fill="#122745"/>
+    <text x="26" y="44" font-family="'Roboto', sans-serif" font-size="14.5" fill="#ffffff" font-weight="700">2. Chọn hạng phòng</text>
+    <text x="26" y="62" font-family="'Roboto', sans-serif" font-size="11.5" fill="#a9bbd1">23 – 25/10 · 2 khách</text>
+
+    <!-- Room 1: Deluxe Đôi -->
+    <rect x="22" y="88" width="226" height="148" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+    <rect x="22" y="88" width="226" height="70" rx="10" fill="url(#roomGrad1)"/>
+    <!-- Room 1 preview badge -->
+    <rect x="32" y="98" width="80" height="18" rx="4" fill="rgba(18,39,69,0.7)"/>
+    <text x="72" y="111" font-family="'Roboto', sans-serif" font-size="9.5" fill="#ffffff" font-weight="600" text-anchor="middle">Ảnh hạng phòng</text>
+    
+    <text x="34" y="176" font-family="'Roboto', sans-serif" font-size="13.5" fill="#122745" font-weight="700">Phòng Deluxe Đôi</text>
+    <text x="34" y="194" font-family="'Roboto', sans-serif" font-size="11" fill="#64748b">25m² · Cửa sổ phố · Bữa sáng</text>
+    <text x="34" y="222" font-family="'Roboto', sans-serif" font-size="14" fill="#1f7a84" font-weight="800">890.000đ<tspan font-size="10.5" font-weight="400" fill="#64748b">/đêm</tspan></text>
+    <rect x="176" y="204" width="62" height="24" rx="6" fill="#1f7a84"/>
+    <text x="207" y="220" font-family="'Roboto', sans-serif" font-size="11" fill="#ffffff" font-weight="700" text-anchor="middle">Chọn</text>
+
+    <!-- Room 2: Family Suite -->
+    <rect x="22" y="248" width="226" height="148" rx="10" fill="#ffffff" stroke="#e2e8f0"/>
+    <rect x="22" y="248" width="226" height="70" rx="10" fill="url(#roomGrad2)"/>
+    <!-- Room 2 preview badge -->
+    <rect x="32" y="258" width="80" height="18" rx="4" fill="rgba(18,39,69,0.7)"/>
+    <text x="72" y="271" font-family="'Roboto', sans-serif" font-size="9.5" fill="#ffffff" font-weight="600" text-anchor="middle">Ảnh hạng phòng</text>
+
+    <text x="34" y="336" font-family="'Roboto', sans-serif" font-size="13.5" fill="#122745" font-weight="700">Phòng Family Suite</text>
+    <text x="34" y="354" font-family="'Roboto', sans-serif" font-size="11" fill="#64748b">40m² · 2 giường lớn · Ban công</text>
+    <text x="34" y="382" font-family="'Roboto', sans-serif" font-size="14" fill="#1f7a84" font-weight="800">1.350.000đ<tspan font-size="10.5" font-weight="400" fill="#64748b">/đêm</tspan></text>
+    <rect x="176" y="364" width="62" height="24" rx="6" fill="#122745"/>
+    <text x="207" y="380" font-family="'Roboto', sans-serif" font-size="11" fill="#ffffff" font-weight="700" text-anchor="middle">Chọn</text>
+
+    <!-- Action Button (Matching baseline with Phone 1 and 3) -->
+    <rect x="22" y="410" width="226" height="46" rx="12" fill="#1f7a84"/>
+    <text x="135" y="438" font-family="'Roboto', sans-serif" font-size="13.5" fill="#ffffff" font-weight="700" text-anchor="middle">Tiếp tục đặt phòng</text>
+  </g>
+</svg>

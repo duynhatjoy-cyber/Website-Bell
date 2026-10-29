@@ -23,14 +23,7 @@
     </a>
     <nav class="nav" aria-label="Điều hướng chính">
       <button class="nav-i {{cls.sp}}" aria-expanded="{{exp.sp}}" onClick="{{tSp}}" onMouseEnter="{{oSp}}">Sản phẩm <i class="cv"></i></button>
-      <div style="position: relative" onMouseEnter="{{oBg}}">
-        <a class="nav-i {{cls.bg}}" href="Main.dc.html#bang-gia">Bảng giá <i class="cv"></i></a>
-        <sc-if value="{{open.bg}}" hint-placeholder-val="{{ false }}">
-          <div class="dd" style="min-width: 180px">
-            <a href="Pricing.dc.html">Báo giá</a>
-          </div>
-        </sc-if>
-      </div>
+      <a class="nav-i {{cls.bg}}" href="Pricing.dc.html">Bảng giá</a>
 <div style="position: relative" onMouseEnter="{{oTn}}">
         <a class="nav-i {{cls.tn}}" href="News.dc.html">Tin tức <i class="cv"></i></a>
         <sc-if value="{{open.tn}}" hint-placeholder-val="{{ false }}"><div class="dd"><a href="News.dc.html">Blog &amp; Tin tức</a><a href="Main.dc.html#cong-cu">Công cụ miễn phí</a><a href="News.dc.html#ebook">Ebook &amp; mẫu biểu</a></div></sc-if>
@@ -75,13 +68,10 @@
   <div class="mnav">
     <a href="#">Đăng nhập</a>
     <details open="open"><summary>Sản phẩm <span>+</span></summary>
-      <a href="Main.dc.html#tong-quan">Tổng quan nền tảng</a>
-      <sc-for list="{{flat}}" as="it" hint-placeholder-count="8"><a href="{{it.href}}">{{it.name}}</a></sc-for>
+      <a href="Main.dc.html#tong-quan"><span class="mnav-ic ic ic-tile-sm i-flow"></span><span>Tổng quan nền tảng</span></a>
+      <sc-for list="{{flat}}" as="it" hint-placeholder-count="8"><a href="{{it.href}}"><span class="mnav-ic ic ic-tile-sm {{it.icon}}"></span><span>{{it.name}}</span></a></sc-for>
     </details>
-    <details><summary>Bảng giá <span>+</span></summary>
-      <a href="Main.dc.html#bang-gia">Bảng giá</a>
-      <a href="Pricing.dc.html">Báo giá</a>
-    </details>
+    <a href="Pricing.dc.html">Bảng giá</a>
         <details><summary>Tin tức <span>+</span></summary>
       <a href="News.dc.html">Blog &amp; Tin tức</a>
       <a href="Main.dc.html#cong-cu">Công cụ miễn phí</a>

@@ -15,6 +15,10 @@
 <style>
 body{margin:0}
 a{color:inherit}a:hover{color:#1f7a84}
+.website-hero-split{display:grid;grid-template-columns:1fr 1.35fr;gap:48px;align-items:center}
+.website-hero-mockup-wrap{position:relative;display:flex;justify-content:center;align-items:center;width:100%}
+.website-hero-mockup-img{width:100%;max-width:880px;height:auto;display:block;object-fit:contain;filter:drop-shadow(0 24px 52px rgba(11,26,48,0.15));transition:transform .3s ease}
+.website-hero-mockup-img:hover{transform:translateY(-4px) scale(1.01)}
 .stackm{position:relative;height:460px}
 .sm{position:absolute;width:72%;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 40px 70px -36px rgba(11,26,48,.55),0 0 0 1px rgba(18,39,69,.08)}
 .sm .bar{height:26px;background:#f1f4f8;display:flex;gap:5px;align-items:center;padding:0 10px}
@@ -41,35 +45,127 @@ a{color:inherit}a:hover{color:#1f7a84}
 .ft p{font-size:14px;color:#566579}
 .ft.hl{grid-column:span 2;background:#122745;border-color:#122745;color:#c9d6e6}
 .ft.hl h3{color:#fff}.ft.hl p{color:#b6c5d8}
-@media (max-width:980px){.ft.hl{grid-column:auto}.stackm{height:340px}}
+
+/* SO SÁNH WEBSITE THÔNG THƯỜNG VÀ BELLHOP WEBSITE (ẢNH 2) */
+.web-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch;margin-top:40px}
+.web-compare-card{border-radius:28px;padding:38px 36px 44px;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease}
+.web-compare-card.standard{background:#ffffff;border:1px solid #dde7ec;box-shadow:0 10px 30px rgba(18,39,69,0.05)}
+.web-compare-card.standard:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(18,39,69,0.09)}
+.web-compare-card.bellhop{background:#0d1e38;border:1px solid #1a2f4c;box-shadow:0 18px 44px rgba(13,30,56,0.35);color:#ffffff}
+.web-compare-card.bellhop:hover{transform:translateY(-3px);border-color:#5fb9c2;box-shadow:0 22px 50px rgba(13,30,56,0.45)}
+.web-compare-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.web-compare-eyebrow{font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#64748b}
+.web-compare-card.bellhop .web-compare-eyebrow{color:#38bdf8}
+.web-compare-pill{font-size:11.5px;font-weight:700;background:#2ba397;color:#ffffff;padding:5px 14px;border-radius:999px;display:inline-flex;align-items:center}
+.web-compare-img-wrap{position:relative;width:100%;aspect-ratio:16/9;border-radius:18px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.08);margin-bottom:34px}
+.web-compare-img-wrap img{width:100%;height:100%;display:block;object-fit:cover}
+.web-compare-list{display:flex;flex-direction:column;gap:26px;margin:0;padding:0;list-style:none}
+.web-compare-item{display:flex;align-items:flex-start;gap:16px}
+.web-compare-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;margin-top:2px;font-size:15px;font-weight:800}
+.web-compare-card.standard .web-compare-icon{background:#f1f5f9;color:#64748b;border:1px solid #e2e8f0}
+.web-compare-card.bellhop .web-compare-icon{background:#14b8a6;color:#ffffff;box-shadow:0 4px 10px rgba(20,184,166,0.35)}
+.web-compare-content{display:flex;flex-direction:column;gap:6px;flex:1}
+.web-compare-title{font-size:16.5px;font-weight:700;line-height:1.45;color:#122745;margin:0}
+.web-compare-card.bellhop .web-compare-title{color:#ffffff}
+.web-compare-desc{font-size:14.5px;line-height:1.65;color:#566579;margin:0}
+.web-compare-card.bellhop .web-compare-desc{color:#94a3b8}
+.web-compare-tag-amber{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;color:#b45309;background:#fef3c7;border:1px solid #fde68a;padding:3px 8px;border-radius:6px;margin-left:6px}
+.web-compare-tag-teal{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:#14b8a6;color:#ffffff;font-size:10px;font-weight:900;margin-left:6px;vertical-align:middle}
+
+/* HUB CENTER SHOWCASE CARD - ẢNH 2 */
+.website-hub-layout{display:grid;grid-template-columns:220px 1fr 220px;gap:28px;align-items:center;max-width:1200px;margin:44px auto 0}
+.hub-center-card.feature-showcase{background:#0e1d2b url('./assets/website-hub-card-bg.svg') center/cover no-repeat !important;border:1px solid #233547 !important;border-radius:28px !important;padding:36px 32px !important;text-align:left !important;display:grid !important;grid-template-columns:1.15fr 0.85fr !important;gap:24px !important;align-items:center !important;box-shadow:0 24px 56px rgba(11,26,43,0.38) !important;position:relative !important;overflow:hidden !important;min-height:350px !important}
+.showcase-content{display:flex;flex-direction:column;align-items:flex-start;z-index:2}
+.showcase-badge{display:inline-flex;align-items:center;background:#2ba397;color:#ffffff;font-size:11.5px;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:12px}
+.showcase-title{font-size:24px;font-weight:800;line-height:1.3;color:#ffffff;margin:0 0 12px;letter-spacing:-0.01em}
+.showcase-desc{font-size:13.5px;line-height:1.65;color:#e2e8f0;margin:0 0 20px}
+.showcase-btn{display:inline-flex;align-items:center;background:#2ba397;color:#ffffff;font-size:13.5px;font-weight:700;padding:10px 22px;border-radius:10px;text-decoration:none;box-shadow:0 6px 18px rgba(43,163,151,0.35);transition:all .2s}
+.showcase-btn:hover{background:#23897f;color:#ffffff;transform:translateY(-2px)}
+
+/* WIDGET ĐẶT PHÒNG BÊN PHẢI */
+.showcase-widget{display:flex;justify-content:flex-end;z-index:2}
+.booking-widget-card{background:#ffffff;border-radius:18px;padding:18px 20px 14px;box-shadow:0 18px 40px rgba(0,0,0,0.3);width:100%;max-width:250px;display:flex;flex-direction:column;box-sizing:border-box}
+.widget-head{font-size:13px;font-weight:800;color:#0f172a;margin-bottom:12px}
+.widget-field{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;margin-bottom:8px;background:#f8fafc}
+.field-dates,.field-room{color:#334155;font-weight:600}
+.field-nights,.field-price{color:#0f172a;font-weight:700}
+.widget-btn{display:block;width:100%;padding:10px 0;background:#0f1e36;color:#ffffff;border:none;border-radius:8px;font-size:12.5px;font-weight:700;text-align:center;text-decoration:none;margin-top:4px;cursor:pointer;transition:background .2s}
+.widget-btn:hover{background:#1e3a5f;color:#ffffff}
+.widget-caption{font-size:10.5px;color:#64748b;text-align:center;margin-top:8px}
+
+@media (max-width:980px){.website-hero-split{grid-template-columns:1fr !important;gap:40px !important}.ft.hl{grid-column:auto}.stackm{height:340px}.web-compare-grid{grid-template-columns:1fr;gap:32px}.web-compare-card{padding:30px 24px 36px}.website-hub-layout{grid-template-columns:1fr;gap:20px}.hub-center-card.feature-showcase{grid-template-columns:1fr !important;gap:24px !important;order:-1}.showcase-widget{justify-content:center}}
 </style>
 </helmet>
 <div class="bh {{markCls}}">
 <dc-import name="Header" active="website" start-open="{{ false }}" hint-size="100%,72px"></dc-import>
 <div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="Main.dc.html">Trang chủ</a>›<span>Sản phẩm</span>›<span>Bán phòng &amp; Doanh thu</span>›<b>Bellhop Website</b></nav></div>
 
-<section class="hero-bg" style="padding: 32px 0 96px">
-<div class="wrap split">
-  <div class="stack" style="gap: 22px">
+<section class="hero-bg website-hero-sec" style="padding: 48px 0 96px">
+<div class="wrap website-hero-split">
+  <div class="stack" style="gap: 24px">
     <span class="eyebrow">Bellhop Website · Website cho cơ sở lưu trú</span>
-    <h1 class="h1" style="font-size: 44px">Website chuyên nghiệp cho khách sạn, homestay và villa, <em>tích hợp sẵn đặt phòng trực tiếp</em></h1>
-    <p class="lead">Bellhop Website cung cấp mẫu website thiết kế riêng cho từng loại hình lưu trú, kết nối sẵn với Bellhop Booking Engine và Bellhop PMS để khách tìm hiểu và đặt phòng ngay trên website của cơ sở.</p>
+    <h1 class="h1" style="font-size: 50px; line-height: 1.18; font-weight: 800; letter-spacing: -0.015em">Website chuyên nghiệp cho khách sạn, homestay và villa, <em>tích hợp sẵn đặt phòng trực tiếp</em></h1>
+    <p class="lead" style="font-size: 18px; line-height: 1.6; color: #475569">Bellhop Website cung cấp mẫu website thiết kế riêng cho từng loại hình lưu trú, kết nối sẵn với Bellhop Booking Engine và Bellhop PMS để khách tìm hiểu và đặt phòng ngay trên website của cơ sở.</p>
     <div class="btns"><a class="btn btn-primary btn-lg" href="#mau">Xem mẫu website <span class="arr">→</span></a><a class="btn btn-outline btn-lg" href="#form">Đặt lịch tư vấn</a></div>
   </div>
-  <div class="mockup-visual" style="position: relative; display: flex; justify-content: center; align-items: center; width: 100%">
-    <img class="section-mockup-img" src="./assets/website-hero-mockup.svg" alt="Mẫu giao diện website khách sạn, homestay và villa Bellhop" style="width: 100%; max-width: 680px; height: auto; display: block; object-fit: contain">
+  <div class="website-hero-mockup-wrap">
+    <img class="website-hero-mockup-img" src="./assets/website-hero-mockup.svg" alt="Mẫu giao diện website khách sạn, homestay và villa Bellhop">
   </div>
 </div>
 </section>
 
 <section class="sec">
 <div class="wrap">
-  <div class="head"><span class="eyebrow">Vấn đề</span><h2 class="h2">Những hạn chế thường gặp ở website cơ sở lưu trú</h2></div>
-  <div class="grid-auto" style="grid-template-columns: repeat(auto-fit,minmax(min(440px,100%),1fr))">
-    <a class="card card-hover" href="#mau" style="flex-direction: row; gap: 20px"><span class="ic ic-tile i-domain"></span><div class="stack" style="gap: 8px"><h3 class="h4">Chưa có website riêng</h3><p>Thông tin cơ sở chỉ có trên OTA và mạng xã hội, khách khó tìm hiểu và đặt phòng trực tiếp.</p><span class="chip" style="align-self: flex-start">Mẫu website ↓</span></div></a>
-    <a class="card card-hover" href="#tinh-nang" style="flex-direction: row; gap: 20px"><span class="ic ic-tile i-phone"></span><div class="stack" style="gap: 8px"><h3 class="h4">Chưa tối ưu cho điện thoại</h3><p>Tải chậm, bố cục khó xem, trong khi phần lớn khách tìm phòng trên điện thoại. <i class="tbc">Cần nguồn nếu ghi tỷ lệ</i></p><span class="chip" style="align-self: flex-start">Tính năng ↓</span></div></a>
-    <a class="card card-hover" href="#tinh-nang" style="flex-direction: row; gap: 20px"><span class="ic ic-tile i-booking"></span><div class="stack" style="gap: 8px"><h3 class="h4">Website chỉ để giới thiệu</h3><p>Không có chức năng đặt phòng, khách phải chuyển sang gọi điện hoặc nhắn tin.</p><span class="chip" style="align-self: flex-start">Tính năng ↓</span></div></a>
-    <a class="card card-hover" href="#tinh-nang" style="flex-direction: row; gap: 20px"><span class="ic ic-tile i-gear"></span><div class="stack" style="gap: 8px"><h3 class="h4">Khó tự cập nhật nội dung</h3><p>Thay đổi giá, ưu đãi, hình ảnh phải phụ thuộc vào đơn vị thiết kế.</p><span class="chip" style="align-self: flex-start">Tính năng ↓</span></div></a>
+  <div class="head center"><span class="eyebrow">— VẤN ĐỀ</span><h2 class="h2">Những hạn chế thường gặp ở website cơ sở lưu trú</h2></div>
+  <div class="grid-auto pain-cards">
+    <a class="card card-hover pain-card" href="#mau">
+      <span class="ic ic-tile i-website"></span>
+      <div class="pain-card-body">
+        <h3 class="h4">Chưa có website hoặc chỉ có fanpage</h3>
+        <p>Thông tin nằm rải rác trên mạng xã hội, thiếu kênh chính thức chuyên nghiệp để giới thiệu cơ sở lưu trú.</p>
+        <div class="foot chips"><span class="chip">Mẫu website ↓</span></div>
+      </div>
+    </a>
+    <a class="card card-hover pain-card" href="#cau-truc">
+      <span class="ic ic-tile i-cancel"></span>
+      <div class="pain-card-body">
+        <h3 class="h4">Website không đặt phòng được</h3>
+        <p>Khách phải gọi điện, nhắn tin rồi chờ đợi phản hồi; nhiều trường hợp khách bỏ sang kênh OTA.</p>
+        <div class="foot chips"><span class="chip">Đặt phòng trực tiếp ↓</span></div>
+      </div>
+    </a>
+    <a class="card card-hover pain-card" href="#cau-truc">
+      <span class="ic ic-tile i-inboxes"></span>
+      <div class="pain-card-body">
+        <h3 class="h4">Khó hiển thị trên điện thoại</h3>
+        <p>Giao diện vỡ, tải chậm, chữ nhỏ khiến khách thoát trang ngay sau vài giây truy cập.</p>
+        <div class="foot chips"><span class="chip">Chuẩn di động ↓</span></div>
+      </div>
+    </a>
+    <a class="card card-hover pain-card" href="#trien-khai">
+      <span class="ic ic-tile i-tabs"></span>
+      <div class="pain-card-body">
+        <h3 class="h4">Sửa giá, ảnh phải nhờ bên thiết kế</h3>
+        <p>Mỗi lần đổi giá hay thêm ưu đãi đều mất nhiều ngày phụ thuộc bên ngoài, chậm tiến độ kinh doanh.</p>
+        <div class="foot chips"><span class="chip">Dễ quản trị ↓</span></div>
+      </div>
+    </a>
+    <a class="card card-hover pain-card" href="#ket-noi">
+      <span class="ic ic-tile i-chart"></span>
+      <div class="pain-card-body">
+        <h3 class="h4">Không đo lường được hiệu quả</h3>
+        <p>Chưa có số liệu theo dõi lượng truy cập, tỷ lệ chuyển đổi và nguồn đặt phòng từ website.</p>
+        <div class="foot chips"><span class="chip">Báo cáo hiệu quả ↓</span></div>
+      </div>
+    </a>
+    <a class="card card-hover pain-card" href="#form">
+      <span class="ic ic-tile i-chat"></span>
+      <div class="pain-card-body">
+        <h3 class="h4">Chưa rõ website đang gặp vấn đề gì?</h3>
+        <p>Bellhop sẽ khảo sát và tư vấn giải pháp tối ưu cho website cơ sở của bạn.</p>
+        <div class="foot chips"><span class="chip">Nhận tư vấn miễn phí ↓</span></div>
+      </div>
+    </a>
   </div>
 </div>
 </section>
@@ -111,82 +207,94 @@ a{color:inherit}a:hover{color:#1f7a84}
 <section class="sec" id="cau-truc">
 <div class="wrap">
   <div class="head center">
-    <span class="eyebrow" style="color: #1f7a84">Cấu trúc trang</span>
+    <span class="eyebrow" style="color: #1f7a84">CẤU TRÚC TRANG</span>
     <h2 class="h2">Đầy đủ các trang cần thiết cho website lưu trú</h2>
-    <p class="lead" style="max-width: 760px; margin: 12px auto 0; font-size: 18px; color: #122745; font-weight: 600">Tăng booking với trang web được thiết kế đẹp mắt, quản trị dễ dàng, vận hành ổn định và bảo mật cao.</p>
+    <p class="lead" style="max-width: 760px; margin: 14px auto 0; font-size: 16px; color: #566579; font-weight: 400; line-height: 1.6">Tăng booking với trang web được thiết kế đẹp mắt, quản trị dễ dàng, vận hành ổn định và bảo mật cao.</p>
   </div>
   
-  <div class="website-hub-layout">
-    <!-- Left Column: 4 items (text on left, icon on right) -->
-    <div class="hub-col hub-col-left">
-      <div class="hub-item active" data-num="01" data-title="Trang chủ chuyên nghiệp & chuẩn UX/UI" data-desc="Giao diện hiện đại, tối ưu tốc độ tải trang, hình ảnh ấn tượng và tích hợp thanh tìm kiếm, kiểm tra phòng trống trực tiếp để giữ chân khách hàng ngay từ giây đầu tiên.">
-        <span class="hub-item-label">Trang chủ</span>
-        <span class="hub-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
-      </div>
-      <div class="hub-item" data-num="02" data-title="Hạng phòng & Giá thời gian thực" data-desc="Trình bày chi tiết từng loại phòng kèm hình ảnh, tiện nghi, sức chứa và giá phòng đồng bộ tức thời với Bellhop PMS, kích thích quyết định đặt phòng nhanh chóng.">
-        <span class="hub-item-label">Phòng &amp; giá</span>
-        <span class="hub-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></span>
-      </div>
-      <div class="hub-item" data-num="03" data-title="Giới thiệu Tiện ích & Dịch vụ gia tăng" data-desc="Khuếch đại giá trị kỳ nghỉ với thông tin đầy đủ về nhà hàng, hồ bơi, spa, đưa đón sân bay và các dịch vụ trải nghiệm độc đáo giúp tăng doanh thu trên mỗi lượt khách.">
-        <span class="hub-item-label">Tiện ích</span>
-        <span class="hub-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg></span>
-      </div>
-      <div class="hub-item" data-num="04" data-title="Chính sách Ưu đãi & Gói Combo" data-desc="Trưng bày bắt mắt các combo nghỉ dưỡng, mã giảm giá, ưu đãi đặt phòng sớm nhằm kích cầu mạnh mẽ và thôi thúc khách đặt trực tiếp thay vì qua OTA.">
-        <span class="hub-item-label">Ưu đãi</span>
-        <span class="hub-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m20.59 13.41-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" x2="7.01" y1="7" y2="7"/></svg></span>
-      </div>
+  <!-- Nhóm 4 mục đầu tiên (01 - 04) đưa lên ngay dưới text mô tả -->
+  <div class="struct-grid struct-grid-top" style="margin-top: 36px">
+    <div class="struct-card">
+      <div class="struct-card-num">01</div>
+      <h3 class="struct-card-title">Trang chủ chuyên nghiệp &amp; chuẩn UX/UI</h3>
+      <p class="struct-card-desc">Giao diện hiện đại, tối ưu tốc độ tải trang, hình ảnh ấn tượng và tích hợp thanh tìm kiếm, kiểm tra phòng trống trực tiếp để giữ chân khách hàng ngay từ giây đầu tiên.</p>
     </div>
 
-    <!-- Center Card: Active showcase card -->
-    <div class="hub-center-card">
-      <div class="hub-card-num">01</div>
-      <h3 class="hub-card-title">Trang chủ chuyên nghiệp & chuẩn UX/UI</h3>
-      <p class="hub-card-desc">Giao diện hiện đại, tối ưu tốc độ tải trang, hình ảnh ấn tượng và tích hợp thanh tìm kiếm, kiểm tra phòng trống trực tiếp để giữ chân khách hàng ngay từ giây đầu tiên.</p>
-      <a href="#form" class="btn btn-primary btn-lg" style="align-self: center">Liên hệ tư vấn →</a>
+    <div class="struct-card">
+      <div class="struct-card-num">02</div>
+      <h3 class="struct-card-title">Hạng phòng &amp; Giá thời gian thực</h3>
+      <p class="struct-card-desc">Trình bày chi tiết từng loại phòng kèm hình ảnh, tiện nghi, sức chứa và giá phòng đồng bộ tức thời với Bellhop PMS, kích thích quyết định đặt phòng nhanh chóng.</p>
     </div>
 
-    <!-- Right Column: 4 items (icon on left, text on right) -->
-    <div class="hub-col hub-col-right">
-      <div class="hub-item" data-num="05" data-title="Thư viện hình ảnh sắc nét & chân thực" data-desc="Bộ sưu tập ảnh chất lượng cao được phân loại theo khuôn viên, phòng ngủ, ẩm thực và hoạt động giúp du khách dễ dàng cảm nhận trọn vẹn không gian nghỉ dưỡng.">
-        <span class="hub-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></span>
-        <span class="hub-item-label">Thư viện ảnh</span>
+    <div class="struct-card">
+      <div class="struct-card-num">03</div>
+      <h3 class="struct-card-title">Giới thiệu Tiện ích &amp; Dịch vụ gia tăng</h3>
+      <p class="struct-card-desc">Khuếch đại giá trị kỳ nghỉ với thông tin đầy đủ về nhà hàng, hồ bơi, spa, đưa đón sân bay và các dịch vụ trải nghiệm độc đáo giúp tăng doanh thu trên mỗi lượt khách.</p>
+    </div>
+
+    <div class="struct-card">
+      <div class="struct-card-num">04</div>
+      <h3 class="struct-card-title">Chính sách Ưu đãi &amp; Gói Combo</h3>
+      <p class="struct-card-desc">Trưng bày bắt mắt các combo nghỉ dưỡng, mã giảm giá, ưu đãi đặt phòng sớm nhằm kích cầu mạnh mẽ và thôi thúc khách đặt trực tiếp thay vì qua OTA.</p>
+    </div>
+  </div>
+
+  <!-- Khung nổi bật ở giữa: Tích hợp sẵn Bellhop Booking Engine -->
+  <div class="hub-center-card feature-showcase" style="margin: 36px auto; max-width: 960px">
+    <div class="showcase-content">
+      <span class="showcase-badge">Điểm khác biệt</span>
+      <h3 class="showcase-title">Tích hợp sẵn Bellhop Booking Engine</h3>
+      <p class="showcase-desc">Khách đặt phòng ngay trên website – không chuyển sang OTA, không qua tin nhắn. Đặt phòng được ghi vào sơ đồ phòng PMS.</p>
+      <a href="BookingEngine.dc.html" class="showcase-btn">Xem Booking Engine →</a>
+    </div>
+
+    <div class="showcase-widget">
+      <div class="booking-widget-card">
+        <div class="widget-head">Hillside Villa · Đặt phòng</div>
+        <div class="widget-field">
+          <span class="field-dates">23/10 – 25/10</span>
+          <span class="field-nights">2 đêm</span>
+        </div>
+        <div class="widget-field">
+          <span class="field-room">Villa 2 phòng ngủ</span>
+          <span class="field-price">6.400.000đ</span>
+        </div>
+        <a href="BookingEngine.dc.html" class="widget-btn">Xác nhận đặt phòng</a>
+        <span class="widget-caption">Minh họa</span>
       </div>
-      <div class="hub-item" data-num="06" data-title="Vị trí & Hướng dẫn di chuyển thông minh" data-desc="Tích hợp Google Maps trực quan, chỉ đường chi tiết và gợi ý các điểm tham quan, ẩm thực lân cận hỗ trợ khách lưu trú lên lịch trình hoàn hảo.">
-        <span class="hub-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-        <span class="hub-item-label">Vị trí &amp; chỉ đường</span>
-      </div>
-      <div class="hub-item" data-num="07" data-title="Tin tức & Bài viết chuẩn SEO Google" data-desc="Cấu trúc bài viết tối ưu chuẩn OnPage SEO giúp website cơ sở dễ dàng lên TOP tìm kiếm Google, mở rộng tệp khách hàng tự nhiên mà không tốn chi phí quảng cáo.">
-        <span class="hub-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
-        <span class="hub-item-label">Chuẩn SEO / Blog</span>
-      </div>
-      <div class="hub-item" data-num="08" data-title="Kênh liên hệ & Đặt phòng trực tiếp 24/7" data-desc="Kết nối đa kênh (Hotline, Zalo, Messenger) cùng công cụ Bellhop Booking Engine bảo mật cao, vận hành ổn định và tự động xác nhận đơn đặt phòng tức thì.">
-        <span class="hub-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
-        <span class="hub-item-label">Liên hệ &amp; Đặt phòng</span>
-      </div>
+    </div>
+  </div>
+
+  <!-- Nhóm 4 mục tiếp theo (05 - 08) -->
+  <div class="struct-grid struct-grid-bottom">
+    <div class="struct-card">
+      <div class="struct-card-num">05</div>
+      <h3 class="struct-card-title">Thư viện hình ảnh sắc nét &amp; chân thực</h3>
+      <p class="struct-card-desc">Bộ sưu tập ảnh chất lượng cao được phân loại theo khuôn viên, phòng ngủ, ẩm thực và hoạt động giúp du khách dễ dàng cảm nhận trọn vẹn không gian nghỉ dưỡng.</p>
+    </div>
+
+    <div class="struct-card">
+      <div class="struct-card-num">06</div>
+      <h3 class="struct-card-title">Vị trí &amp; Hướng dẫn di chuyển thông minh</h3>
+      <p class="struct-card-desc">Tích hợp Google Maps trực quan, chỉ đường chi tiết và gợi ý các điểm tham quan, ẩm thực lân cận hỗ trợ khách lưu trú lên lịch trình hoàn hảo.</p>
+    </div>
+
+    <div class="struct-card">
+      <div class="struct-card-num">07</div>
+      <h3 class="struct-card-title">Tin tức &amp; Bài viết chuẩn SEO Google</h3>
+      <p class="struct-card-desc">Cấu trúc bài viết tối ưu chuẩn OnPage SEO giúp website cơ sở dễ dàng lên TOP tìm kiếm Google, mở rộng tệp khách hàng tự nhiên mà không tốn chi phí quảng cáo.</p>
+    </div>
+
+    <div class="struct-card">
+      <div class="struct-card-num">08</div>
+      <h3 class="struct-card-title">Kênh liên hệ &amp; Đặt phòng trực tiếp 24/7</h3>
+      <p class="struct-card-desc">Kết nối đa kênh (Hotline, Zalo, Messenger) cùng công cụ Bellhop Booking Engine bảo mật cao, vận hành ổn định và tự động xác nhận đơn đặt phòng tức thì.</p>
     </div>
   </div>
 </div>
 </section>
 
-<section class="sec bg-teal" id="tinh-nang">
-<div class="wrap">
-  <div class="head center"><span class="eyebrow" style="color: #1f7a84">Tính năng</span><h2 class="h2">Tính năng của Bellhop Website</h2><p class="lead">Đầy đủ công cụ tối ưu cho cơ sở lưu trú tăng trưởng đặt phòng trực tiếp.</p></div>
-  <div class="website-features-grid">
-    <div class="ft"><span class="ic ic-tile-sm i-booking"></span><div><h3 class="h4">Tích hợp sẵn Bellhop Booking Engine</h3><p>Khách đặt phòng ngay trên website, không chuyển sang OTA, không qua tin nhắn.</p></div></div>
-    <div class="ft"><span class="ic ic-tile-sm i-calprice"></span><div><h3 class="h4">Giá cập nhật tự động</h3><p>Giá và phòng trống theo Bellhop PMS/CMS.</p></div></div>
-    <div class="ft"><span class="ic ic-tile-sm i-phone"></span><div><h3 class="h4">Tối ưu điện thoại</h3><p>Bố cục tự co giãn, tải nhanh.</p></div></div>
-    <div class="ft"><span class="ic ic-tile-sm i-gear"></span><div><h3 class="h4">Tự quản trị nội dung</h3><p>Cập nhật hình ảnh, ưu đãi, bài viết.</p></div></div>
-    <div class="ft"><span class="ic ic-tile-sm i-seo"></span><div><h3 class="h4">SEO cơ bản</h3><p>Tiêu đề, mô tả, tốc độ tải.</p></div></div>
-    <div class="ft"><span class="ic ic-tile-sm i-globe"></span><div><h3 class="h4">Đa ngôn ngữ</h3><p>Phục vụ khách trong nước và quốc tế.</p></div></div>
-    <div class="ft"><span class="ic ic-tile-sm i-domain"></span><div><h3 class="h4">Tên miền riêng</h3><p>Dùng tên miền của chính cơ sở.</p></div></div>
-    <div class="ft"><span class="ic ic-tile-sm i-message"></span><div><h3 class="h4">Nút liên hệ Message</h3><p>Zalo, Messenger… về hộp thư chung.</p></div></div>
-    <div class="ft"><span class="ic ic-tile-sm i-chart"></span><div><h3 class="h4">Đo lường truy cập</h3><p>Gắn công cụ phân tích lưu lượng.</p></div></div>
-    <div class="ft"><span class="ic ic-tile-sm i-lock"></span><div><h3 class="h4">Bảo mật cao SSL</h3><p>Mã hóa dữ liệu, an toàn giao dịch.</p></div></div>
-    <div class="ft"><span class="ic ic-tile-sm i-ai"></span><div><h3 class="h4">Tốc độ tải cao</h3><p>Tối ưu bộ nhớ đệm, tải trang tức thì.</p></div></div>
-    <div class="ft"><span class="ic ic-tile-sm i-link"></span><div><h3 class="h4">Vận hành ổn định</h3><p>Hạ tầng đám mây sẵn sàng 24/7.</p></div></div>
-  </div>
-</div>
-</section>
+
 
 <section class="sec" id="quy-trinh">
 <div class="wrap">
@@ -239,12 +347,24 @@ a{color:inherit}a:hover{color:#1f7a84}
 
 <section class="sec bg-steel" id="ket-noi">
 <div class="wrap">
-  <div class="head"><span class="eyebrow">Hệ sinh thái</span><h2 class="h2">Kết nối với các sản phẩm Bellhop</h2></div>
-  <div class="grid-auto-sm">
-    <a class="card card-hover" href="BookingEngine.dc.html"><span class="ic ic-tile-sm i-booking"></span><h3 class="h4">Booking Engine</h3><p>Chức năng đặt phòng có sẵn trên website.</p></a>
-    <a class="card card-hover" href="PMS.dc.html"><span class="ic ic-tile-sm i-pms"></span><h3 class="h4">Bellhop PMS</h3><p>Đặt phòng từ website được ghi nhận vào sơ đồ phòng.</p></a>
-    <a class="card card-hover" href="CMS.dc.html"><span class="ic ic-tile-sm i-cms"></span><h3 class="h4">Bellhop CMS</h3><p>Giá trên website thống nhất với quy tắc giá các kênh.</p></a>
-    <a class="card card-hover" href="Message.dc.html"><span class="ic ic-tile-sm i-message"></span><h3 class="h4">Bellhop Message</h3><p>Tin nhắn từ website được đưa về hộp thư chung. <i class="tbc">✓</i></p></a>
+  <div class="head center"><span class="eyebrow">HỆ SINH THÁI</span><h2 class="h2">Kết nối với các sản phẩm Bellhop</h2></div>
+  <div class="grid-auto-sm eco-grid-centered">
+    <a class="card card-hover eco-card" href="PMS.dc.html">
+      <div class="eco-card-visual"><img src="./assets/pms-hero-mockup.svg" alt="Bellhop PMS" class="eco-card-img"></div>
+      <div class="eco-card-body"><span class="ic ic-tile-sm i-pms"></span><h3 class="h4">Bellhop PMS</h3><p>Đặt phòng OTA được ghi nhận trên sơ đồ phòng; tồn phòng lấy từ dữ liệu vận hành thực tế.</p></div>
+    </a>
+    <a class="card card-hover eco-card" href="BookingEngine.dc.html">
+      <div class="eco-card-visual"><img src="./assets/booking-phones-mockup.svg" alt="Booking Engine" class="eco-card-img"></div>
+      <div class="eco-card-body"><span class="ic ic-tile-sm i-booking"></span><h3 class="h4">Booking Engine</h3><p>Kênh trực tiếp dùng chung tồn phòng và quy tắc giá với các OTA.</p></div>
+    </a>
+    <a class="card card-hover eco-card" href="CMS.dc.html">
+      <div class="eco-card-visual"><img src="./assets/cms-hero-mockup.svg" alt="Bellhop CMS" class="eco-card-img"></div>
+      <div class="eco-card-body"><span class="ic ic-tile-sm i-cms"></span><h3 class="h4">Bellhop CMS</h3><p>Giá trên website thống nhất với quy tắc giá các kênh OTA và tự động điều chỉnh linh động.</p></div>
+    </a>
+    <a class="card card-hover eco-card" href="Finance.dc.html">
+      <div class="eco-card-visual"><img src="./assets/payment-mockup.svg" alt="Bellhop Finance" class="eco-card-img"></div>
+      <div class="eco-card-body"><span class="ic ic-tile-sm i-finance"></span><h3 class="h4">Bellhop Finance</h3><p>Doanh thu theo kênh được đồng bộ sang MISA.</p></div>
+    </a>
   </div>
 </div>
 </section>

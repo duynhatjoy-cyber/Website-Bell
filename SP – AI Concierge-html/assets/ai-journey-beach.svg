@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="beachSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#56b4d3"/>
+      <stop offset="45%" stop-color="#80d0c7"/>
+      <stop offset="65%" stop-color="#b8e8ea"/>
+      <stop offset="100%" stop-color="#fdf4df"/>
+    </linearGradient>
+    <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1488a0"/>
+      <stop offset="50%" stop-color="#28a5b8"/>
+      <stop offset="100%" stop-color="#64c9cf"/>
+    </linearGradient>
+    <linearGradient id="hotelBldg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="400" height="480" fill="url(#beachSky)"/>
+
+  <!-- Sun Glow -->
+  <circle cx="120" cy="110" r="50" fill="#ffffff" opacity="0.35"/>
+  <circle cx="120" cy="110" r="28" fill="#ffffff" opacity="0.6"/>
+
+  <!-- Distant Islands -->
+  <path d="M0 240 Q60 225 120 235 T240 238 L240 250 L0 250 Z" fill="#467b8d" opacity="0.5"/>
+
+  <!-- Hotel Resort Building on Right/Middle -->
+  <g transform="translate(180, 160)">
+    <!-- Building Block -->
+    <rect x="0" y="0" width="240" height="130" fill="url(#hotelBldg)"/>
+    <rect x="-10" y="-8" width="250" height="12" fill="#e2e8f0"/>
+    
+    <!-- Window Rows -->
+    <g fill="#24647d">
+      <!-- Floor 1 -->
+      <rect x="15" y="16" width="30" height="24" rx="2"/>
+      <rect x="60" y="16" width="30" height="24" rx="2"/>
+      <rect x="105" y="16" width="30" height="24" rx="2"/>
+      <rect x="150" y="16" width="30" height="24" rx="2"/>
+      <rect x="195" y="16" width="30" height="24" rx="2"/>
+
+      <!-- Floor 2 -->
+      <rect x="15" y="52" width="30" height="24" rx="2"/>
+      <rect x="60" y="52" width="30" height="24" rx="2"/>
+      <rect x="105" y="52" width="30" height="24" rx="2"/>
+      <rect x="150" y="52" width="30" height="24" rx="2"/>
+      <rect x="195" y="52" width="30" height="24" rx="2"/>
+
+      <!-- Floor 3 -->
+      <rect x="15" y="88" width="30" height="24" rx="2"/>
+      <rect x="60" y="88" width="30" height="24" rx="2"/>
+      <rect x="105" y="88" width="30" height="24" rx="2"/>
+      <rect x="150" y="88" width="30" height="24" rx="2"/>
+      <rect x="195" y="88" width="30" height="24" rx="2"/>
+    </g>
+
+    <!-- Balcony Railings -->
+    <line x1="10" y1="42" x2="230" y2="42" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="10" y1="78" x2="230" y2="78" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="10" y1="114" x2="230" y2="114" stroke="#94a3b8" stroke-width="2"/>
+  </g>
+
+  <!-- Tropical Ocean Water -->
+  <path d="M0 250 L400 250 L400 370 L0 370 Z" fill="url(#seaGrad)"/>
+  <!-- Shore Wave Lines -->
+  <path d="M0 280 Q100 275 200 282 T400 278" fill="none" stroke="#e0f7fa" stroke-width="2" opacity="0.6"/>
+  <path d="M0 310 Q120 305 240 312 T400 308" fill="none" stroke="#e0f7fa" stroke-width="3" opacity="0.7"/>
+
+  <!-- Sand Beach Shore -->
+  <path d="M0 330 Q160 320 400 340 L400 480 L0 480 Z" fill="#e8d5b5"/>
+
+  <!-- Beach Umbrella on Left -->
+  <g transform="translate(45, 275)">
+    <!-- Pole -->
+    <line x1="40" y1="35" x2="30" y2="105" stroke="#78350f" stroke-width="3.5"/>
+    <!-- Canopy Shadow -->
+    <ellipse cx="30" cy="105" rx="35" ry="8" fill="#c7b18e"/>
+    <!-- Canopy -->
+    <path d="M-5 38 Q40 5 85 38 Z" fill="#d94e34"/>
+    <!-- White Stripes on umbrella -->
+    <path d="M12 36 Q40 6 38 36 Z" fill="#ffffff"/>
+    <path d="M52 36 Q40 6 68 36 Z" fill="#ffffff"/>
+  </g>
+</svg>
+

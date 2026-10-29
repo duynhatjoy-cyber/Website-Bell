@@ -104,13 +104,13 @@ a{color:inherit}a:hover{color:#1f7a84}
     <h2 class="h2">Khách sạn của bạn đang mất thời gian và doanh thu ở đâu?</h2>
     <p class="lead">Khó khăn thường không nằm ở việc thiếu khách, mà ở thông tin bị rải rác giữa sổ sách, Excel, OTA và điện thoại.</p>
   </div>
-  <div class="grid-auto">
-    <a class="card card-hover" href="PMS.dc.html"><span class="ic ic-tile i-notebook"></span><h3 class="h4">Sơ đồ phòng nằm trong sổ tay, Excel</h3><p>Dễ nhầm phòng, trùng phòng; ca sau không nắm được ca trước đã làm gì.</p><div class="foot chips"><span class="chip">Bellhop PMS →</span></div></a>
-    <a class="card card-hover" href="CMS.dc.html"><span class="ic ic-tile i-tabs"></span><h3 class="h4">Cập nhật giá, phòng trống từng OTA bằng tay</h3><p>Mỗi lần đổi giá phải đăng nhập nhiều trang; chậm một nhịp là bán trùng phòng hoặc bán thấp giá.</p><div class="foot chips"><span class="chip">Bellhop CMS →</span></div></a>
-    <a class="card card-hover" href="BookingEngine.dc.html"><span class="ic ic-tile i-commission"></span><h3 class="h4">Phụ thuộc OTA, mất nhiều hoa hồng</h3><p>Mỗi đặt phòng qua OTA mất 15–25% hoa hồng <i class="tbc">Cần nguồn</i>; khách vào website nhưng không đặt được trực tiếp.</p><div class="foot chips"><span class="chip">Booking Engine</span><span class="chip">Website</span></div></a>
-    <a class="card card-hover" href="Message.dc.html"><span class="ic ic-tile i-inboxes"></span><h3 class="h4">Tin nhắn khách rải khắp nơi</h3><p>Mỗi kênh một hộp thư; trả lời chậm là mất khách.</p><div class="foot chips"><span class="chip">Bellhop Message →</span></div></a>
-    <a class="card card-hover" href="AIConcierge.dc.html"><span class="ic ic-tile i-clock"></span><h3 class="h4">Câu hỏi lặp lại, kể cả ngoài giờ</h3><p>Giờ nhận phòng, đường đi, chỗ đậu xe… lễ tân trả lời hàng chục lần mỗi ngày.</p><div class="foot chips"><span class="chip">AI Concierge →</span></div></a>
-    <a class="card card-hover" href="Finance.dc.html"><span class="ic ic-tile i-receipt"></span><h3 class="h4">Cuối tháng đối soát mệt mỏi</h3><p>Thu chi, hóa đơn, công nợ không khớp; kế toán phải nhập lại dữ liệu.</p><div class="foot chips"><span class="chip">Bellhop Finance</span><span class="chip">PMS Tài chính</span></div></a>
+  <div class="grid-auto pain-cards">
+    <a class="card card-hover pain-card" href="PMS.dc.html"><span class="ic ic-tile i-notebook"></span><div class="pain-card-body"><h3 class="h4">Sơ đồ phòng nằm trong sổ tay, Excel</h3><p>Dễ nhầm phòng, trùng phòng; ca sau không nắm được ca trước đã làm gì.</p><div class="foot chips"><span class="chip">Bellhop PMS →</span></div></div></a>
+    <a class="card card-hover pain-card" href="CMS.dc.html"><span class="ic ic-tile i-tabs"></span><div class="pain-card-body"><h3 class="h4">Cập nhật giá, phòng trống từng OTA bằng tay</h3><p>Mỗi lần đổi giá phải đăng nhập nhiều trang; chậm một nhịp là bán trùng phòng hoặc bán thấp giá.</p><div class="foot chips"><span class="chip">Bellhop CMS →</span></div></div></a>
+    <a class="card card-hover pain-card" href="BookingEngine.dc.html"><span class="ic ic-tile i-commission"></span><div class="pain-card-body"><h3 class="h4">Phụ thuộc OTA, mất nhiều hoa hồng</h3><p>Mỗi đặt phòng qua OTA mất 15–25% hoa hồng <i class="tbc">Cần nguồn</i>; khách vào website nhưng không đặt được trực tiếp.</p><div class="foot chips"><span class="chip">Booking Engine</span><span class="chip">Website</span></div></div></a>
+    <a class="card card-hover pain-card" href="Message.dc.html"><span class="ic ic-tile i-inboxes"></span><div class="pain-card-body"><h3 class="h4">Tin nhắn khách rải khắp nơi</h3><p>Mỗi kênh một hộp thư; trả lời chậm là mất khách.</p><div class="foot chips"><span class="chip">Bellhop Message →</span></div></div></a>
+    <a class="card card-hover pain-card" href="AIConcierge.dc.html"><span class="ic ic-tile i-clock"></span><div class="pain-card-body"><h3 class="h4">Câu hỏi lặp lại, kể cả ngoài giờ</h3><p>Giờ nhận phòng, đường đi, chỗ đậu xe… lễ tân trả lời hàng chục lần mỗi ngày.</p><div class="foot chips"><span class="chip">AI Concierge →</span></div></div></a>
+    <a class="card card-hover pain-card" href="Finance.dc.html"><span class="ic ic-tile i-receipt"></span><div class="pain-card-body"><h3 class="h4">Cuối tháng đối soát mệt mỏi</h3><p>Thu chi, hóa đơn, công nợ không khớp; kế toán phải nhập lại dữ liệu.</p><div class="foot chips"><span class="chip">Bellhop Finance</span><span class="chip">PMS Tài chính</span></div></div></a>
   </div>
   <div class="row wrapx" style="gap: 20px; justify-content: center; margin-top: 48px">
     <p class="h4" style="font-weight: 500">Bellhop giải quyết từng việc trên trong cùng một hệ thống.</p>
@@ -278,10 +278,6 @@ a{color:inherit}a:hover{color:#1f7a84}
         <div class="stack" style="gap: 10px; padding: 24px"><div class="row" style="gap: 10px"><span class="ic ic-sm i-website"></span><h4 class="h4">Bellhop Website</h4></div><p>Website cho Khách sạn, Homestay &amp; Villa, Chuỗi; tích hợp sẵn Booking Engine. <i class="tbc">Số mẫu</i></p><span class="lnk">Xem chi tiết <span class="arr">→</span></span></div>
       </a>
     </div>
-    <div class="row wrapx" style="gap: 16px; justify-content: space-between; margin-top: 32px; padding: 20px 24px; border-radius: 16px; background: #f4f7fa">
-      <div class="pill-strip"><span class="small muted">Kết nối OTA</span><i class="tbc">Chỉ hiện kênh đã chạy</i><span class="logo-ph">Booking.com</span><span class="logo-ph">Agoda</span><span class="logo-ph">Traveloka</span><span class="logo-ph">Expedia</span></div>
-      <a class="lnk" href="#cong-cu">Ước tính khoản hoa hồng bạn có thể giữ lại <span class="arr">→</span></a>
-    </div>
   </div>
   </sc-if>
 
@@ -447,10 +443,6 @@ a{color:inherit}a:hover{color:#1f7a84}
     <a class="card card-hover" href="#" style="padding: 0; overflow: hidden"><div class="photo" style="border-radius: 0; aspect-ratio: 16/9; min-height: 0; background: linear-gradient(135deg,#d6eff1,#a9dde2)"><span>Ảnh bài viết 16:9</span></div><div class="stack" style="gap: 10px; padding: 24px"><span class="label" style="color: #1f7a84">Doanh thu · 6 phút đọc</span><h3 class="h4">Cách tính công suất phòng, ADR, RevPAR</h3><p>Ba chỉ số nền tảng để biết khách sạn đang bán tốt đến đâu, và nên điều chỉnh giá thế nào.</p></div></a>
     <a class="card card-hover" href="#" style="padding: 0; overflow: hidden"><div class="photo" style="border-radius: 0; aspect-ratio: 16/9; min-height: 0"><span>Ảnh bài viết 16:9</span></div><div class="stack" style="gap: 10px; padding: 24px"><span class="label" style="color: #1f7a84">Marketing · 8 phút đọc</span><h3 class="h4">Giảm phụ thuộc hoa hồng OTA: bắt đầu từ đâu?</h3><p>Những bước đầu tiên để tăng tỷ trọng đặt phòng trực tiếp mà không bỏ kênh OTA.</p></div></a>
     <a class="card card-hover" href="#" style="padding: 0; overflow: hidden"><div class="photo" style="border-radius: 0; aspect-ratio: 16/9; min-height: 0; background: linear-gradient(135deg,#dbe4ee,#b8cadd)"><span>Ảnh bài viết 16:9</span></div><div class="stack" style="gap: 10px; padding: 24px"><span class="label" style="color: #1f7a84">Nghiệp vụ · 5 phút đọc</span><h3 class="h4">Quy trình nhận – trả phòng cho khách sạn mini</h3><p>Checklist từng bước cho lễ tân để giao ca không thất lạc thông tin.</p></div></a>
-  </div>
-  <div class="row wrapx" style="gap: 24px; justify-content: space-between; margin-top: 32px; background: #122745; color: #fff; border-radius: 20px; padding: 28px 32px">
-    <div class="row" style="gap: 18px"><span class="ic ic-tile-sm i-checklist" style="background-color: #fff"></span><div><b style="font-size: 18px">Ebook &amp; mẫu biểu miễn phí</b><div class="small" style="color: #b6c5d8">Mẫu quy trình lễ tân, checklist buồng phòng, bảng theo dõi công suất.</div></div></div>
-    <div class="btns"><a class="btn btn-teal" href="#">Tải tài liệu</a><a class="btn btn-light" href="#">Xem tất cả bài viết</a></div>
   </div>
 </div>
 </section>

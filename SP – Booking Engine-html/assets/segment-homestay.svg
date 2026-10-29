@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 210" width="100%" height="100%">
+  <defs>
+    <linearGradient id="homestaySky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#211738"/>
+      <stop offset="55%" stop-color="#4a2e4b"/>
+      <stop offset="100%" stop-color="#8c5861"/>
+    </linearGradient>
+    <filter id="moonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="pillShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#091322" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Bầu trời đêm ấm áp -->
+  <rect width="360" height="210" fill="url(#homestaySky)"/>
+
+  <!-- Vầng trăng tròn phát sáng dịu -->
+  <g transform="translate(295, 38)" filter="url(#moonGlow)">
+    <circle cx="0" cy="0" r="13" fill="#fef08a"/>
+    <circle cx="-1" cy="-1" r="11" fill="#fffbeb"/>
+  </g>
+
+  <!-- Đồi núi / rặng cây phía xa -->
+  <path d="M0 160 Q70 120 160 145 T360 135 L360 210 L0 210 Z" fill="#1b2a26"/>
+  <path d="M0 175 Q90 150 200 168 T360 158 L360 210 L0 210 Z" fill="#243832"/>
+
+  <!-- Ngôi nhà Homestay ở giữa -->
+  <g id="main-house">
+    <!-- Thân nhà -->
+    <rect x="98" y="112" width="164" height="88" fill="#fef3c7" rx="3"/>
+
+    <!-- Mái ngói đỏ gạch dốc kiểu truyền thống -->
+    <polygon points="82,114 180,48 278,114" fill="#9a3412"/>
+    <polygon points="90,114 180,54 270,114" fill="#b45309"/>
+
+    <!-- Cửa chính -->
+    <rect x="165" y="132" width="30" height="68" fill="#78350f" rx="2"/>
+    <rect x="169" y="136" width="22" height="64" fill="#92400e" rx="1"/>
+    <circle cx="173" cy="168" r="1.8" fill="#fef08a"/>
+
+    <!-- Cửa sổ trái sáng đèn vàng -->
+    <rect x="116" y="132" width="32" height="34" fill="#fef08a" rx="2"/>
+    <line x1="132" y1="132" x2="132" y2="166" stroke="#b45309" stroke-width="2"/>
+    <line x1="116" y1="149" x2="148" y2="149" stroke="#b45309" stroke-width="2"/>
+
+    <!-- Cửa sổ phải sáng đèn vàng -->
+    <rect x="212" y="132" width="32" height="34" fill="#fef08a" rx="2"/>
+    <line x1="228" y1="132" x2="228" y2="166" stroke="#b45309" stroke-width="2"/>
+    <line x1="212" y1="149" x2="244" y2="149" stroke="#b45309" stroke-width="2"/>
+
+    <!-- Dây đèn lung linh trang trí chăng ngang trước mái nhà -->
+    <path d="M88 116 Q135 130 180 122 Q225 130 272 116" fill="none" stroke="#fed7aa" stroke-width="1.2"/>
+    <g fill="#fef08a">
+      <circle cx="102" cy="122" r="3.2"/>
+      <circle cx="122" cy="126" r="3.2"/>
+      <circle cx="142" cy="127" r="3.2"/>
+      <circle cx="162" cy="125" r="3.2"/>
+      <circle cx="180" cy="122" r="3.2"/>
+      <circle cx="198" cy="125" r="3.2"/>
+      <circle cx="218" cy="127" r="3.2"/>
+      <circle cx="238" cy="126" r="3.2"/>
+      <circle cx="258" cy="122" r="3.2"/>
+    </g>
+  </g>
+
+  <!-- Cây cối xanh xum xuê hai bên hiên -->
+  <path d="M45 210 C40 180 65 160 85 185 C95 165 110 185 105 210 Z" fill="#15803d"/>
+  <path d="M255 210 C250 175 275 160 295 180 C310 165 325 185 320 210 Z" fill="#166534"/>
+
+  <!-- Chậu cây nhỏ trước nhà -->
+  <rect x="150" y="185" width="10" height="15" fill="#c2410c" rx="1"/>
+  <circle cx="155" cy="182" r="7" fill="#22c55e"/>
+  <rect x="200" y="185" width="10" height="15" fill="#c2410c" rx="1"/>
+  <circle cx="205" cy="182" r="7" fill="#22c55e"/>
+
+  <!-- Badge góc trên bên trái: Homestay -->
+  <g transform="translate(18, 16)">
+    <rect width="68" height="22" rx="11" fill="rgba(15, 23, 42, 0.45)" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1"/>
+    <text x="34" y="15" fill="#ffffff" font-family="-apple-system, Roboto, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle">Homestay</text>
+  </g>
+
+  <!-- Floating Pill góc dưới bên phải: Link đặt phòng / Gửi khách qua tin nhắn -->
+  <g transform="translate(168, 154)" filter="url(#pillShadow)">
+    <rect width="180" height="46" rx="23" fill="#ffffff"/>
+    <!-- Icon Message / Chat -->
+    <g transform="translate(14, 13)">
+      <rect x="0" y="0" width="20" height="16" rx="4" fill="#e6f7f8" stroke="#1f7a84" stroke-width="1.5"/>
+      <path d="M4 16 L2 20 L8 16 Z" fill="#e6f7f8" stroke="#1f7a84" stroke-width="1.5" stroke-linejoin="round"/>
+      <line x1="5" y1="5" x2="15" y2="5" stroke="#1f7a84" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="5" y1="9" x2="12" y2="9" stroke="#1f7a84" stroke-width="1.2" stroke-linecap="round"/>
+    </g>
+    <text x="44" y="20" fill="#0f172a" font-family="-apple-system, Roboto, sans-serif" font-size="12" font-weight="700">Link đặt phòng</text>
+    <text x="44" y="34" fill="#64748b" font-family="-apple-system, Roboto, sans-serif" font-size="10" font-weight="500">Gửi khách qua tin nhắn</text>
+  </g>
+</svg>

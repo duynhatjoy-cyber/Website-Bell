@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="oceanSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#bae6fd"/>
+      <stop offset="60%" stop-color="#e0f2fe"/>
+      <stop offset="100%" stop-color="#fed7aa"/>
+    </linearGradient>
+    <linearGradient id="oceanWater" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <filter id="pillShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#091322" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Nền tường phòng ngủ ấm áp -->
+  <rect width="540" height="340" fill="#f5ebe1"/>
+
+  <!-- Cửa sổ kính lớn nhìn ra biển -->
+  <g id="window-view" transform="translate(180, 20)">
+    <!-- Khung kính bao quanh -->
+    <rect width="340" height="230" fill="url(#oceanSky)" rx="4"/>
+    
+    <!-- Ông mặt trời nắng vàng ngoài biển -->
+    <circle cx="300" cy="55" r="28" fill="#fef08a" opacity="0.95"/>
+    <circle cx="300" cy="55" r="34" fill="#fef08a" opacity="0.3"/>
+
+    <!-- Biển xanh ngoài khơi -->
+    <rect x="0" y="115" width="340" height="75" fill="url(#oceanWater)"/>
+    <path d="M0 135 Q85 130 170 135 T340 135" fill="none" stroke="#e0f2fe" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Bãi cát vàng mịn bên bờ biển -->
+    <path d="M0 185 Q160 170 340 190 L340 230 L0 230 Z" fill="#fde68a"/>
+
+    <!-- Khung cửa sổ đen hiện đại -->
+    <rect width="340" height="230" fill="none" stroke="#262626" stroke-width="8" rx="4"/>
+    <line x1="170" y1="0" x2="170" y2="230" stroke="#262626" stroke-width="6"/>
+
+    <!-- Tán lá cọ nhiệt đới ghé qua mép cửa -->
+    <g transform="translate(330, 210)">
+      <path d="M0 0 Q-35 -25 -55 5" fill="none" stroke="#059669" stroke-width="5" stroke-linecap="round"/>
+      <path d="M0 0 Q-25 -55 -40 -35" fill="none" stroke="#059669" stroke-width="5" stroke-linecap="round"/>
+      <path d="M0 0 Q-5 -65 15 -60" fill="none" stroke="#10b981" stroke-width="5" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Sàn gỗ phòng khách sạn -->
+  <rect x="0" y="240" width="540" height="100" fill="#c49a6c"/>
+  <line x1="0" y1="240" x2="540" y2="240" stroke="#9a7144" stroke-width="3"/>
+  <line x1="0" y1="275" x2="540" y2="275" stroke="#b08556" stroke-width="1.5" opacity="0.6"/>
+  <line x1="0" y1="310" x2="540" y2="310" stroke="#b08556" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Giường khách sạn King-size cao cấp -->
+  <g id="hotel-bed">
+    <!-- Đầu giường gỗ cao cấp -->
+    <rect x="-30" y="80" width="280" height="180" rx="8" fill="#8c5836"/>
+    <rect x="-24" y="86" width="268" height="168" rx="6" fill="#a46b43"/>
+
+    <!-- Đệm giường trắng êm ái -->
+    <rect x="-40" y="155" width="310" height="95" rx="14" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    
+    <!-- Dải khăn trải giường xanh biển (Bed runner) -->
+    <rect x="180" y="157" width="85" height="91" fill="#1e3a5f"/>
+    <rect x="180" y="157" width="8" height="91" fill="#0ea5e9"/>
+
+    <!-- Gối ngủ đôi (2 gối trắng lớn + 1 gối tựa xanh teal) -->
+    <rect x="15" y="132" width="62" height="38" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="90" y="132" width="62" height="38" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="145" y="140" width="48" height="30" rx="6" fill="#2dd4bf" stroke="#14b8a6" stroke-width="1.5"/>
+
+    <!-- Chân giường -->
+    <rect x="235" y="248" width="16" height="24" rx="2" fill="#5c381e"/>
+  </g>
+
+  <!-- Tủ đầu giường (Nightstand) & Đèn ngủ -->
+  <g id="nightstand" transform="translate(270, 185)">
+    <!-- Tủ gỗ nhỏ -->
+    <rect width="68" height="70" rx="6" fill="#8c5836"/>
+    <rect x="4" y="6" width="60" height="26" rx="3" fill="#a46b43"/>
+    <circle cx="34" cy="19" r="3" fill="#fef08a"/>
+    <rect x="4" y="36" width="60" height="28" rx="3" fill="#a46b43"/>
+    <circle cx="34" cy="50" r="3" fill="#fef08a"/>
+
+    <!-- Đèn ngủ hiện đại -->
+    <ellipse cx="34" cy="0" rx="16" ry="6" fill="#5c381e"/>
+    <path d="M26 0 L22 -40 L46 -40 L42 0 Z" fill="#d97706"/>
+    <ellipse cx="34" cy="-40" rx="18" ry="14" fill="#fef3c7" stroke="#fde68a" stroke-width="2"/>
+    <circle cx="34" cy="-40" r="10" fill="#fffbeb"/>
+  </g>
+
+  <!-- Chậu cây cảnh mini bên cạnh -->
+  <g transform="translate(480, 240)">
+    <polygon points="0,20 8,50 32,50 40,20" fill="#ea580c"/>
+    <path d="M20 20 Q5 -15 -10 -5 Q5 10 20 20" fill="#15803d"/>
+    <path d="M20 20 Q20 -25 35 -20 Q25 5 20 20" fill="#16a34a"/>
+    <path d="M20 20 Q35 -10 50 5 Q30 15 20 20" fill="#15803d"/>
+  </g>
+
+  <!-- Floating Pill thông báo đặt phòng trực tiếp -->
+  <g transform="translate(18, 255)" filter="url(#pillShadow)">
+    <rect width="265" height="58" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    
+    <!-- Icon Lịch màu xanh teal -->
+    <g transform="translate(16, 14)">
+      <rect x="0" y="2" width="24" height="24" rx="6" fill="#e6f7f8" stroke="#1f7a84" stroke-width="1.8"/>
+      <line x1="6" y1="0" x2="6" y2="5" stroke="#1f7a84" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="18" y1="0" x2="18" y2="5" stroke="#1f7a84" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="0" y1="9" x2="24" y2="9" stroke="#1f7a84" stroke-width="1.4"/>
+      <circle cx="8" cy="15" r="1.5" fill="#1f7a84"/>
+      <circle cx="16" cy="15" r="1.5" fill="#1f7a84"/>
+      <circle cx="12" cy="20" r="1.5" fill="#1f7a84"/>
+    </g>
+
+    <text x="52" y="26" fill="#0f172a" font-family="-apple-system, Roboto, sans-serif" font-size="13" font-weight="800">Đặt phòng trực tiếp mới</text>
+    <text x="52" y="44" fill="#64748b" font-family="-apple-system, Roboto, sans-serif" font-size="11.5" font-weight="500">Deluxe · 2 đêm · 1.780.000đ</text>
+  </g>
+</svg>
+

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 280" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1d36"/>
+      <stop offset="60%" stop-color="#142642"/>
+      <stop offset="100%" stop-color="#1a3152"/>
+    </linearGradient>
+    <linearGradient id="woodWall" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#b88351"/>
+      <stop offset="50%" stop-color="#d69f68"/>
+      <stop offset="100%" stop-color="#b88351"/>
+    </linearGradient>
+    <linearGradient id="counterTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="deskBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2c3e50"/>
+      <stop offset="100%" stop-color="#18222d"/>
+    </linearGradient>
+    <linearGradient id="bellGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffea9f"/>
+      <stop offset="40%" stop-color="#f5c253"/>
+      <stop offset="100%" stop-color="#c48a1d"/>
+    </linearGradient>
+    <filter id="receptionShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#07111e" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Deep Night Hotel Lobby Background -->
+  <rect width="540" height="280" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Vertical Wood Panel Accent Wall Behind Reception Desk -->
+  <g transform="translate(130, 40)">
+    <rect x="0" y="0" width="280" height="150" rx="6" fill="url(#woodWall)"/>
+    <!-- Vertical slatted wood texture -->
+    <path d="M20 0 V150 M40 0 V150 M60 0 V150 M80 0 V150 M100 0 V150 M120 0 V150 M140 0 V150 M160 0 V150 M180 0 V150 M200 0 V150 M220 0 V150 M240 0 V150 M260 0 V150" stroke="#9e6c3c" stroke-width="2" opacity="0.45"/>
+    
+    <!-- Sign Plate: RECEPTION -->
+    <rect x="55" y="14" width="170" height="34" rx="4" fill="#122745" stroke="#ecc98a" stroke-width="1.5"/>
+    <text x="140" y="32" font-family="'Roboto', 'Inter', -apple-system, sans-serif" font-size="12" font-weight="900" fill="#f8fafc" letter-spacing="3" text-anchor="middle">RECEPTION</text>
+    <text x="140" y="43" font-family="'Roboto', 'Inter', -apple-system, sans-serif" font-size="8" font-weight="600" fill="#94a3b8" letter-spacing="1.5" text-anchor="middle">WELCOME</text>
+  </g>
+
+  <!-- Reception Desk Structure -->
+  <g transform="translate(70, 165)">
+    <!-- Desk Counter Top Lip -->
+    <rect x="0" y="10" width="400" height="18" rx="4" fill="url(#counterTop)"/>
+    <!-- Desk Front Base -->
+    <rect x="15" y="28" width="370" height="87" fill="url(#deskBody)"/>
+    <!-- Front Panel Divider / Accent Line -->
+    <line x1="15" y1="42" x2="385" y2="42" stroke="#475569" stroke-width="1.5"/>
+    <line x1="200" y1="42" x2="200" y2="115" stroke="#334155" stroke-width="1"/>
+
+    <!-- Open Laptop on Desk (Left Side) -->
+    <g transform="translate(65, -38)">
+      <!-- Laptop Screen -->
+      <rect x="0" y="0" width="80" height="52" rx="3" fill="#0f172a" stroke="#cbd5e1" stroke-width="2"/>
+      <!-- Screen Inner display (Blue Glow) -->
+      <rect x="4" y="4" width="72" height="44" rx="2" fill="#e2f5f7"/>
+      <!-- Software UI wireframe on screen -->
+      <rect x="8" y="8" width="64" height="6" rx="1.5" fill="#5fb9c2"/>
+      <rect x="8" y="18" width="40" height="4" rx="1" fill="#94a3b8"/>
+      <rect x="8" y="26" width="56" height="4" rx="1" fill="#cbd5e1"/>
+      <rect x="8" y="34" width="48" height="4" rx="1" fill="#cbd5e1"/>
+      <!-- Laptop Base -->
+      <polygon points="-6,53 86,53 82,57 -2,57" fill="#94a3b8"/>
+    </g>
+
+    <!-- Golden Call Bell (Middle) -->
+    <g transform="translate(210, -18)">
+      <!-- Bell Base -->
+      <ellipse cx="25" cy="26" rx="26" ry="6" fill="#64748b"/>
+      <ellipse cx="25" cy="24" rx="24" ry="5" fill="#334155"/>
+      <!-- Dome -->
+      <path d="M7 23 C7 9 43 9 43 23 Z" fill="url(#bellGold)"/>
+      <!-- Bell Top Nodule -->
+      <rect x="23.5" y="4" width="3" height="6" fill="#ffd866"/>
+      <ellipse cx="25" cy="4" rx="5" ry="2.5" fill="#ffeaa7"/>
+      <!-- Reflection Highlight -->
+      <ellipse cx="20" cy="14" rx="5" ry="3" fill="#ffffff" opacity="0.6"/>
+    </g>
+
+    <!-- Key Card (Right Side) -->
+    <g transform="translate(305, -5)">
+      <rect x="0" y="0" width="44" height="26" rx="3" fill="#67e8f9" stroke="#ffffff" stroke-width="1.5" transform="rotate(-10)"/>
+      <rect x="3" y="16" width="38" height="5" fill="#0e7490" transform="rotate(-10)"/>
+    </g>
+  </g>
+
+  <!-- Amber/Gold Chat Bubble Overlay: → Đã chuyển cho nhân viên lễ tân -->
+  <g filter="url(#receptionShadow)" transform="translate(20, 168)">
+    <rect width="260" height="42" rx="21" fill="#fef3c7" stroke="#fde68a" stroke-width="1.5"/>
+    <path d="M30 42 L24 50 L40 42 Z" fill="#fef3c7"/>
+    <text x="24" y="26" font-family="'Roboto', 'Inter', -apple-system, sans-serif" font-size="13" font-weight="700" fill="#92400e">→ Đã chuyển cho nhân viên lễ tân</text>
+  </g>
+</svg>
+

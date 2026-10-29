@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 520" width="100%" height="100%">
+  <defs>
+    <filter id="shadowPhones" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#0b1a30" flood-opacity="0.18"/>
+    </filter>
+    <linearGradient id="roomGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#cbebf0"/>
+      <stop offset="100%" stop-color="#9dd7de"/>
+    </linearGradient>
+    <linearGradient id="roomGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+  </defs>
+  <!-- ==================== PHONE 1: CHỌN NGÀY & KHÁCH ==================== -->
+  <g filter="url(#shadowPhones)" transform="translate(40, 20)">
+    <!-- Phone Chassis -->
+    <rect width="270" height="480" rx="38" fill="#0e2038" stroke="#1f2937" stroke-width="3.5"/>
+    <rect x="9" y="9" width="252" height="462" rx="30" fill="#ffffff"/>
+    
+    <!-- Phone Header -->
+    <rect x="9" y="9" width="252" height="68" rx="30" fill="#122745"/>
+    <rect x="9" y="45" width="252" height="32" fill="#122745"/>
+    <text x="26" y="44" font-family="'Roboto', sans-serif" font-size="14.5" fill="#ffffff" font-weight="700">1. Chọn ngày &amp; khách</text>
+    <text x="26" y="62" font-family="'Roboto', sans-serif" font-size="11.5" fill="#a9bbd1">Khách sạn Bellhop Boutique</text>
+
+    <!-- Field 1: Ngày nhận - trả phòng -->
+    <rect x="24" y="90" width="222" height="50" rx="9" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="36" y="109" font-family="'Roboto', sans-serif" font-size="10.5" fill="#64748b">Ngày nhận - trả phòng</text>
+    <text x="36" y="129" font-family="'Roboto', sans-serif" font-size="13" fill="#122745" font-weight="700">23/10 – 25/10 (2 đêm)</text>
+
+    <!-- Field 2: Số lượng khách -->
+    <rect x="24" y="150" width="222" height="50" rx="9" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="36" y="169" font-family="'Roboto', sans-serif" font-size="10.5" fill="#64748b">Số lượng khách</text>
+    <text x="36" y="189" font-family="'Roboto', sans-serif" font-size="13" fill="#122745" font-weight="700">2 người lớn · 0 trẻ em</text>
+
+    <!-- Mini Calendar Card -->
+    <rect x="24" y="210" width="222" height="186" rx="10" fill="#f1f5f9"/>
+    <text x="40" y="234" font-family="'Roboto', sans-serif" font-size="12" fill="#122745" font-weight="700">Tháng 10 · 2026</text>
+    
+    <!-- Weekday headers -->
+    <g font-family="'Roboto', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">
+      <text x="44" y="254">T2</text>
+      <text x="74" y="254">T3</text>
+      <text x="104" y="254">T4</text>
+      <text x="135" y="254">T5</text>
+      <text x="166" y="254">T6</text>
+      <text x="196" y="254">T7</text>
+      <text x="226" y="254">CN</text>
+    </g>
+
+    <!-- Calendar days grid -->
+    <g font-family="'Roboto', sans-serif" font-size="11" fill="#334155" text-anchor="middle">
+      <text x="44" y="278">19</text>
+      <text x="74" y="278">20</text>
+      <text x="104" y="278">21</text>
+      <text x="135" y="278">22</text>
+      <!-- Selected 23 - 25 pill -->
+      <rect x="150" y="263" width="62" height="22" rx="6" fill="#1f7a84"/>
+      <text x="166" y="278" fill="#ffffff" font-weight="700">23</text>
+      <text x="196" y="278" fill="#ffffff" font-weight="700">25</text>
+      <text x="226" y="278">26</text>
+      
+      <text x="44" y="306">27</text>
+      <text x="74" y="306">28</text>
+      <text x="104" y="306">29</text>
+      <text x="135" y="306">30</text>
+      <text x="166" y="306">31</text>
+      <text x="196" y="306" fill="#94a3b8">1</text>
+      <text x="226" y="306" fill="#94a3b8">2</text>
+    </g>
+
+    <!-- Calendar selected range notice -->
+    <rect x="40" y="330" width="190" height="28" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="135" y="348" font-family="'Roboto', sans-serif" font-size="11" fill="#1f7a84" font-weight="600" text-anchor="middle">Đã chọn: 23/10 → 25/10 (2 đêm)</text>
+
+    <!-- Action Button -->
+    <rect x="24" y="410" width="222" height="46" rx="12" fill="#122745"/>
+    <text x="135" y="438" font-family="'Roboto', sans-serif" font-size="13.5" fill="#ffffff" font-weight="700" text-anchor="middle">Tìm phòng</text>
+  </g>
+</svg>

@@ -38,17 +38,35 @@ a{color:inherit}a:hover{color:#5fb9c2}
 .kb{width:200px;height:200px;border-radius:50%;background:#122745;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;box-shadow:0 0 0 14px #eef8f9,0 0 0 28px rgba(95,185,194,.12);position:relative}
 .kb::after{content:"";position:absolute;right:-60px;top:50%;width:46px;height:2px;background:#5fb9c2}
 .scope{display:grid;grid-template-columns:1fr 120px 1fr;gap:0;align-items:stretch}
+.scope-card{display:flex;flex-direction:column;border-radius:24px;overflow:hidden;box-shadow:0 12px 32px rgba(18,39,69,.06);background:#fff}
+.scope-visual{width:100%;height:220px;overflow:hidden;background:#0c1d36}
+.scope-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.scope-card-body{padding:32px;display:flex;flex-direction:column;gap:16px;flex:1}
 .scope-mid{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
 .scope-mid span{flex:1;width:2px;background:repeating-linear-gradient(180deg,#5fb9c2 0 8px,transparent 8px 14px)}
 .scope-mid b{writing-mode:vertical-rl;transform:rotate(180deg);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#1f7a84}
-.hs{display:flex;gap:24px;overflow-x:auto;padding:8px 24px 24px;scroll-snap-type:x mandatory;max-width:1248px;margin:0 auto}
-.hs-card{flex:0 0 min(460px,85%);scroll-snap-align:start;background:#fff;border:1px solid #dde4ec;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:14px}
+
+.journey-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:1248px;margin:0 auto}
+.journey-card{position:relative;border-radius:24px;overflow:hidden;min-height:480px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 12px 32px rgba(18,39,69,.08);border:1px solid #dde4ec;background-size:cover;background-position:center;transition:transform .25s ease,box-shadow .25s ease}
+.journey-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(18,39,69,.14)}
+.journey-card-before{background-image:url('./assets/ai-journey-beach.svg')}
+.journey-card-during{background-image:url('./assets/ai-journey-room.svg')}
+.journey-card-after{background-image:url('./assets/ai-journey-hotel.svg')}
+.journey-badge{align-self:flex-start;margin:20px 0 0 20px;background:#ffffff;color:#122745;font-size:13px;font-weight:700;padding:6px 16px;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,.08);z-index:2}
+.journey-bubbles{display:flex;flex-direction:column;gap:10px;padding:20px 24px;margin-top:auto;margin-bottom:8px;z-index:2}
+.journey-bubbles .bub-guest{align-self:flex-end;background:#122745;color:#ffffff;font-size:13px;font-weight:500;line-height:1.45;padding:10px 16px;border-radius:18px 18px 4px 18px;max-width:85%;box-shadow:0 4px 12px rgba(18,39,69,.25)}
+.journey-bubbles .bub-ai{align-self:flex-start;background:#dcf4f6;color:#122745;font-size:13px;font-weight:500;line-height:1.45;padding:10px 16px;border-radius:18px 18px 18px 4px;max-width:90%;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.journey-bubbles .bub-transfer{align-self:flex-start;background:#fef3c7;color:#92400e;border:1px solid #fde68a;font-size:13px;font-weight:700;padding:8px 16px;border-radius:20px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.journey-bottom{background:linear-gradient(to top,rgba(14,24,38,.96) 0%,rgba(14,24,38,.86) 65%,rgba(14,24,38,0) 100%);padding:36px 24px 24px;color:#ffffff;z-index:2}
+.journey-title{font-size:20px;font-weight:700;color:#ffffff;margin:0 0 8px 0}
+.journey-desc{font-size:13.5px;color:#cbd5e1;margin:0;line-height:1.5}
+
 .stairs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:start}
 .stairs>div:nth-child(2){margin-top:60px}.stairs>div:nth-child(3){margin-top:120px}
 .qa2{display:grid;grid-template-columns:1fr 1fr;gap:40px 56px}
 .qa2 h3{font-size:20px;color:#122745;margin-bottom:10px;line-height:1.35}
 .qa2 p{font-size:17px;color:#566579}
-@media (max-width:980px){.conv{grid-template-columns:1fr;padding:24px}.doc::after,.kb::after{display:none}.kb{margin:0 auto}.scope{grid-template-columns:1fr}.scope-mid{flex-direction:row;padding:16px 0}.scope-mid span{height:2px;width:auto}.scope-mid b{writing-mode:horizontal-tb;transform:none}.stairs{grid-template-columns:1fr}.stairs>div{margin-top:0!important}.qa2{grid-template-columns:1fr}}
+@media (max-width:980px){.journey-grid{grid-template-columns:1fr}.conv{grid-template-columns:1fr;padding:24px}.doc::after,.kb::after{display:none}.kb{margin:0 auto}.scope{grid-template-columns:1fr}.scope-mid{flex-direction:row;padding:16px 0}.scope-mid span{height:2px;width:auto}.scope-mid b{writing-mode:horizontal-tb;transform:none}.stairs{grid-template-columns:1fr}.stairs>div{margin-top:0!important}.qa2{grid-template-columns:1fr}}
 </style>
 </helmet>
 <div class="bh {{markCls}}">
@@ -104,29 +122,69 @@ a{color:inherit}a:hover{color:#5fb9c2}
 </div>
 </section>
 
-<section class="sec">
+<section class="sec" id="pham-vi">
 <div class="wrap">
   <div class="head center"><span class="eyebrow">Minh bạch</span><h2 class="h2">Phạm vi hỗ trợ của AI Concierge</h2></div>
   <div class="scope">
-    <div class="stack" style="gap: 16px; padding: 36px; border-radius: 24px; background: #eef8f9">
-      <div class="row" style="gap: 12px"><span class="ic ic-tile-sm ic-tile-w i-ai"></span><h3 class="h3">AI Concierge hỗ trợ</h3></div>
-      <ul class="list-check"><li>Trả lời câu hỏi thường gặp theo cơ sở kiến thức</li><li>Phản hồi ngoài giờ làm việc</li><li>Trả lời bằng nhiều ngôn ngữ <i class="tbc">✓</i></li><li>Gửi đường dẫn đặt phòng <i class="tbc">✓</i></li></ul>
+    <div class="scope-card" style="background: #eef8f9">
+      <div class="scope-visual"><img src="./assets/ai-scope-homestay.svg" alt="AI Concierge hỗ trợ khách"></div>
+      <div class="scope-card-body">
+        <div class="row" style="gap: 12px"><span class="ic ic-tile-sm ic-tile-w i-ai"></span><h3 class="h3">AI Concierge hỗ trợ</h3></div>
+        <ul class="list-check"><li>Trả lời câu hỏi thường gặp theo cơ sở kiến thức</li><li>Phản hồi ngoài giờ làm việc</li><li>Trả lời bằng nhiều ngôn ngữ <i class="tbc">✓</i></li><li>Gửi đường dẫn đặt phòng <i class="tbc">✓</i></li></ul>
+      </div>
     </div>
     <div class="scope-mid" aria-hidden="true"><span></span><b>Bàn giao cho nhân viên</b><span></span></div>
-    <div class="stack" style="gap: 16px; padding: 36px; border-radius: 24px; background: #edf2f7">
-      <div class="row" style="gap: 12px"><span class="ic ic-tile-sm ic-tile-w i-handoff"></span><h3 class="h3">Chuyển cho nhân viên</h3></div>
-      <ul class="list-check list-arrow"><li>Thay đổi, hủy đặt phòng <i class="tbc">✓</i></li><li>Khiếu nại, yêu cầu đặc biệt</li><li>Câu hỏi nằm ngoài cơ sở kiến thức</li><li>Khi khách yêu cầu gặp nhân viên <i class="tbc">✓</i></li></ul>
+    <div class="scope-card" style="background: #edf2f7">
+      <div class="scope-visual"><img src="./assets/ai-scope-reception.svg" alt="Chuyển cho nhân viên lễ tân"></div>
+      <div class="scope-card-body">
+        <div class="row" style="gap: 12px"><span class="ic ic-tile-sm ic-tile-w i-handoff"></span><h3 class="h3">Chuyển cho nhân viên</h3></div>
+        <ul class="list-check list-arrow"><li>Thay đổi, hủy đặt phòng <i class="tbc">✓</i></li><li>Khiếu nại, yêu cầu đặc biệt</li><li>Câu hỏi nằm ngoài cơ sở kiến thức</li><li>Khi khách yêu cầu gặp nhân viên <i class="tbc">✓</i></li></ul>
+      </div>
     </div>
   </div>
 </div>
 </section>
 
-<section class="sec bg-soft" style="padding-left: 0; padding-right: 0">
-<div class="wrap"><div class="head"><span class="eyebrow">Theo hành trình</span><h2 class="h2">Hỗ trợ khách trong suốt thời gian lưu trú</h2><p class="lead">Kéo ngang để xem từng giai đoạn.</p></div></div>
-<div class="hs">
-  <div class="hs-card"><div class="row" style="gap: 12px"><span class="ic ic-tile-sm i-searchpin"></span><h3 class="h3">Trước khi đến</h3></div><p class="muted">Giờ nhận phòng, đường đi, phương tiện, giấy tờ cần mang theo.</p><div class="stack" style="gap: 8px"><div class="bub bub-out">Từ sân bay đi taxi mất bao lâu?</div><div class="bub bub-out">Cần mang giấy tờ gì khi nhận phòng?</div></div></div>
-  <div class="hs-card"><div class="row" style="gap: 12px"><span class="ic ic-tile-sm i-bed"></span><h3 class="h3">Trong lưu trú</h3></div><p class="muted">Giờ ăn sáng, mật khẩu Wi-Fi <i class="tbc">✓</i>, gợi ý địa điểm ăn uống, tham quan.</p><div class="stack" style="gap: 8px"><div class="bub bub-out">Bữa sáng phục vụ đến mấy giờ?</div><div class="bub bub-out">Gần đây có quán phở nào ngon?</div><div class="bub bub-out">What's the Wi-Fi password?</div></div></div>
-  <div class="hs-card"><div class="row" style="gap: 12px"><span class="ic ic-tile-sm i-logout"></span><h3 class="h3">Sau khi trả phòng</h3></div><p class="muted">Giữ hành lý, xuất hóa đơn <i class="tbc">✓</i>, đồ để quên.</p><div class="stack" style="gap: 8px"><div class="bub bub-out">Gửi hành lý đến chiều được không?</div><div class="bub bub-out">Mình để quên sạc ở phòng 203</div></div></div>
+<section class="sec bg-soft" id="hanh-trinh">
+<div class="wrap">
+  <div class="head center"><span class="eyebrow">Theo hành trình</span><h2 class="h2">Hỗ trợ khách trong suốt thời gian lưu trú</h2></div>
+  <div class="journey-grid">
+    <div class="journey-card journey-card-before">
+      <div class="journey-badge">Trước khi đến</div>
+      <div class="journey-bubbles">
+        <div class="bub-guest">Từ sân bay đi taxi mất bao lâu?</div>
+        <div class="bub-ai">Khoảng 30–35 phút ạ. Khách sạn có xe đưa đón, anh/chị muốn đặt không?</div>
+      </div>
+      <div class="journey-bottom">
+        <h3 class="journey-title">Trước khi đến</h3>
+        <p class="journey-desc">Giờ nhận phòng, đường đi, phương tiện, giấy tờ cần mang theo.</p>
+      </div>
+    </div>
+
+    <div class="journey-card journey-card-during">
+      <div class="journey-badge">Trong lưu trú</div>
+      <div class="journey-bubbles">
+        <div class="bub-guest">What's the Wi-Fi password?</div>
+        <div class="bub-ai">The Wi-Fi is “KhachSanMau”, the password is on your key card.</div>
+      </div>
+      <div class="journey-bottom">
+        <h3 class="journey-title">Trong lưu trú</h3>
+        <p class="journey-desc">Giờ ăn sáng, mật khẩu Wi-Fi <i class="tbc">✓</i>, gợi ý địa điểm ăn uống, tham quan.</p>
+      </div>
+    </div>
+
+    <div class="journey-card journey-card-after">
+      <div class="journey-badge">Sau khi trả phòng</div>
+      <div class="journey-bubbles">
+        <div class="bub-guest">Mình để quên sạc ở phòng 203</div>
+        <div class="bub-transfer">→ Đã chuyển cho nhân viên lễ tân</div>
+      </div>
+      <div class="journey-bottom">
+        <h3 class="journey-title">Sau khi trả phòng</h3>
+        <p class="journey-desc">Giữ hành lý, xuất hóa đơn <i class="tbc">✓</i>, đồ để quên.</p>
+      </div>
+    </div>
+  </div>
 </div>
 </section>
 
@@ -157,7 +215,7 @@ a{color:inherit}a:hover{color:#5fb9c2}
 <div class="wrap">
   <div class="row wrapx" style="gap: 24px; justify-content: space-between; background: #122745; color: #fff; border-radius: 24px; padding: 36px 40px">
     <div class="stack" style="gap: 6px; max-width: 640px"><h2 class="h3" style="color: #fff; font-size: 28px">AI Concierge trong gói AI &amp; Phân tích</h2><p style="color: #b6c5d8">AI Concierge thuộc gói AI &amp; Phân tích của Bellhop PMS, cùng các tính năng phân tích doanh thu và báo cáo. <i class="tbc">Cách đóng gói</i></p></div>
-    <div class="btns"><a class="btn btn-teal" href="Main.dc.html#bang-gia">Xem gói AI &amp; Phân tích</a><a class="btn btn-light" href="PMS.dc.html">Tìm hiểu Bellhop PMS</a></div>
+    <div class="btns"><a class="btn btn-teal" href="Pricing.dc.html">Xem gói AI &amp; Phân tích</a><a class="btn btn-light" href="PMS.dc.html">Tìm hiểu Bellhop PMS</a></div>
   </div>
 </div>
 </section>
