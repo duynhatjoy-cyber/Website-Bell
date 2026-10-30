@@ -1149,32 +1149,31 @@ body:has(a[href*="Message.dc.html"]) .subnav,
 }
 .wrap.website-hero-split {
   display: grid !important;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr) !important;
-  gap: 40px !important;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1.15fr) !important;
+  gap: 56px !important;
   align-items: center !important;
-  max-width: 1440px !important;
+  max-width: 1380px !important;
   width: 100% !important;
 }
 .website-hero-mockup-wrap {
   position: relative !important;
   display: flex !important;
-  justify-content: flex-end !important;
+  justify-content: center !important;
   align-items: center !important;
   width: 100% !important;
 }
 .website-hero-mockup-img {
   width: 100% !important;
-  max-width: 960px !important;
+  max-width: 740px !important;
   height: auto !important;
   display: block !important;
   object-fit: contain !important;
-  transform: scale(1.08) !important;
-  transform-origin: center right !important;
-  filter: drop-shadow(0 28px 64px rgba(11, 26, 48, 0.18)) !important;
+  transform: none !important;
+  filter: drop-shadow(0 20px 48px rgba(11, 26, 48, 0.14)) !important;
   transition: transform 0.3s ease !important;
 }
 .website-hero-mockup-img:hover {
-  transform: scale(1.11) translateY(-4px) !important;
+  transform: translateY(-4px) !important;
 }
 @media (max-width: 1200px) {
   .wrap.website-hero-split {
@@ -1403,33 +1402,27 @@ body:has(a[href*="Message.dc.html"]) .subnav,
 }
 
 /* ==========================================================================
-   Proof Bar 2-Column Layout
+   Proof Bar Typography & Brand Text
    ========================================================================== */
-.proof.proof--two-col {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  max-width: 860px !important;
-  margin: 0 auto !important;
+.proof b.proof-brand-text {
+  font-size: 30px !important;
+  line-height: 1.15 !important;
+  font-weight: 800 !important;
+  letter-spacing: .04em !important;
+  color: #122745 !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
 }
-.proof.proof--two-col > div {
-  padding: 32px 48px !important;
-}
-@media (max-width: 680px) {
-  .proof.proof--two-col {
-    grid-template-columns: 1fr !important;
-    max-width: 440px !important;
-  }
-  .proof.proof--two-col > div {
-    padding: 24px 20px !important;
-  }
-  .proof.proof--two-col > div:nth-child(2) {
-    border-left: 0 !important;
-    border-top: 1px solid var(--line) !important;
+@media (max-width: 980px) {
+  .proof b.proof-brand-text {
+    font-size: 24px !important;
+    height: 32px !important;
   }
 }
 
 /* ==========================================================================
-   Trial Pill CTA (Replacing .jr-band)
+   Trial Pill CTA (Website Navy & Teal Theme)
    ========================================================================== */
 .trial-pill-cta-wrap {
   display: flex !important;
@@ -1442,16 +1435,17 @@ body:has(a[href*="Message.dc.html"]) .subnav,
   display: inline-flex !important;
   align-items: center !important;
   background: #ffffff !important;
-  border: 1.5px solid #f6cb68 !important;
+  border: 1.5px solid #bfe3e8 !important;
   border-radius: 999px !important;
   padding: 5px 6px 5px 24px !important;
-  box-shadow: 0 8px 24px -6px rgba(245, 158, 11, 0.18), 0 2px 8px rgba(18, 39, 69, 0.04) !important;
+  box-shadow: 0 10px 28px -6px rgba(18, 39, 69, 0.12), 0 2px 8px rgba(31, 122, 132, 0.06) !important;
   gap: 16px !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
 }
 .trial-pill-cta:hover {
   transform: translateY(-2px) !important;
-  box-shadow: 0 12px 28px -6px rgba(245, 158, 11, 0.26) !important;
+  border-color: #5fb9c2 !important;
+  box-shadow: 0 14px 32px -6px rgba(18, 39, 69, 0.18) !important;
 }
 .trial-pill-text {
   font-size: 16px !important;
@@ -1464,8 +1458,8 @@ body:has(a[href*="Message.dc.html"]) .subnav,
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  background: #f7b944 !important;
-  color: #122745 !important;
+  background: #122745 !important;
+  color: #ffffff !important;
   font-size: 15px !important;
   font-weight: 700 !important;
   padding: 10px 24px !important;
@@ -1475,8 +1469,8 @@ body:has(a[href*="Message.dc.html"]) .subnav,
   white-space: nowrap !important;
 }
 .trial-pill-btn:hover {
-  background: #f5a623 !important;
-  color: #0b1a30 !important;
+  background: #1f7a84 !important;
+  color: #ffffff !important;
 }
 @media (max-width: 540px) {
   .trial-pill-cta {
@@ -1489,5 +1483,58 @@ body:has(a[href*="Message.dc.html"]) .subnav,
   .trial-pill-btn {
     font-size: 13.5px !important;
     padding: 8px 18px !important;
+  }
+}
+
+/* ==========================================================================
+   Trial Banner Card (Style as in sample image)
+   ========================================================================== */
+.trial-banner-card {
+  gap: 16px !important;
+  justify-content: space-between !important;
+  margin-top: 56px !important;
+  padding: 20px 28px !important;
+  border-radius: 20px !important;
+  background: #ffffff !important;
+  border: 1px solid #dde4ec !important;
+  box-shadow: 0 4px 16px -4px rgba(18, 39, 69, 0.06) !important;
+  text-decoration: none !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+}
+.trial-banner-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: #5fb9c2 !important;
+  box-shadow: 0 10px 24px -6px rgba(18, 39, 69, 0.12) !important;
+}
+.trial-banner-card .lnk {
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  white-space: nowrap !important;
+}
+.trial-banner-card:hover .lnk .arr {
+  transform: translateX(4px) !important;
+}
+@media (max-width: 768px) {
+  .trial-banner-card {
+    padding: 16px 20px !important;
+    gap: 12px !important;
+  }
+}
+
+/* Channels Hub Title 1 line */
+.channels-hub-head {
+  max-width: 880px !important;
+  flex: 1 !important;
+}
+.channels-hub-title {
+  font-size: clamp(20px, 2.3vw, 27px) !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+}
+@media (max-width: 980px) {
+  .channels-hub-title {
+    white-space: normal !important;
   }
 }
