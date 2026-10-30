@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 210" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hotelSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e2c48"/>
+      <stop offset="50%" stop-color="#3b4b6e"/>
+      <stop offset="100%" stop-color="#a37a74"/>
+    </linearGradient>
+    <filter id="pillShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#091322" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Bầu trời hoàng hôn -->
+  <rect width="360" height="210" fill="url(#hotelSky)"/>
+
+  <!-- Tòa nhà phía xa bên trái -->
+  <rect x="20" y="65" width="60" height="145" fill="#182338" rx="2"/>
+  <rect x="30" y="80" width="8" height="14" fill="#2d3d5a" rx="1"/>
+  <rect x="45" y="80" width="8" height="14" fill="#2d3d5a" rx="1"/>
+  <rect x="30" y="105" width="8" height="14" fill="#2d3d5a" rx="1"/>
+  <rect x="45" y="105" width="8" height="14" fill="#2d3d5a" rx="1"/>
+  <rect x="30" y="130" width="8" height="14" fill="#2d3d5a" rx="1"/>
+  <rect x="45" y="130" width="8" height="14" fill="#2d3d5a" rx="1"/>
+
+  <!-- Tòa nhà phía xa bên phải -->
+  <rect x="275" y="55" width="65" height="155" fill="#162033" rx="2"/>
+  <rect x="290" y="70" width="8" height="14" fill="#293952" rx="1"/>
+  <rect x="310" y="70" width="8" height="14" fill="#293952" rx="1"/>
+  <rect x="290" y="95" width="8" height="14" fill="#293952" rx="1"/>
+  <rect x="310" y="95" width="8" height="14" fill="#293952" rx="1"/>
+  <rect x="290" y="120" width="8" height="14" fill="#293952" rx="1"/>
+  <rect x="310" y="120" width="8" height="14" fill="#293952" rx="1"/>
+
+  <!-- Khách sạn chính ở giữa -->
+  <g id="main-hotel">
+    <!-- Nóc tòa nhà & bảng hiệu -->
+    <rect x="105" y="38" width="150" height="172" fill="#e8d5b5" rx="4"/>
+    <rect x="145" y="28" width="70" height="12" fill="#0f1b2b" rx="2"/>
+    <rect x="155" y="32" width="50" height="4" fill="#4fd1c5" rx="2"/>
+
+    <!-- Mái hiên sảnh -->
+    <path d="M98 172 L262 172 L256 182 L104 182 Z" fill="#2ba397"/>
+    <rect x="104" y="182" width="152" height="28" fill="#d8c29d"/>
+    <rect x="150" y="184" width="60" height="26" fill="#0f1e33" rx="2"/>
+    <rect x="165" y="188" width="30" height="22" fill="#fef08a" opacity="0.85" rx="1"/>
+
+    <!-- Lưới cửa sổ (4 cột x 4 hàng) -->
+    <!-- Hàng 1 -->
+    <rect x="120" y="52" width="18" height="22" fill="#273a5a" rx="2"/>
+    <rect x="152" y="52" width="18" height="22" fill="#fffbeb" rx="2"/>
+    <rect x="188" y="52" width="18" height="22" fill="#273a5a" rx="2"/>
+    <rect x="220" y="52" width="18" height="22" fill="#273a5a" rx="2"/>
+
+    <!-- Hàng 2 -->
+    <rect x="120" y="82" width="18" height="22" fill="#fffbeb" rx="2"/>
+    <rect x="152" y="82" width="18" height="22" fill="#273a5a" rx="2"/>
+    <rect x="188" y="82" width="18" height="22" fill="#fffbeb" rx="2"/>
+    <rect x="220" y="82" width="18" height="22" fill="#273a5a" rx="2"/>
+
+    <!-- Hàng 3 -->
+    <rect x="120" y="112" width="18" height="22" fill="#273a5a" rx="2"/>
+    <rect x="152" y="112" width="18" height="22" fill="#fffbeb" rx="2"/>
+    <rect x="188" y="112" width="18" height="22" fill="#fffbeb" rx="2"/>
+    <rect x="220" y="112" width="18" height="22" fill="#273a5a" rx="2"/>
+
+    <!-- Hàng 4 -->
+    <rect x="120" y="142" width="18" height="22" fill="#fffbeb" rx="2"/>
+    <rect x="152" y="142" width="18" height="22" fill="#273a5a" rx="2"/>
+    <rect x="188" y="142" width="18" height="22" fill="#273a5a" rx="2"/>
+    <rect x="220" y="142" width="18" height="22" fill="#fffbeb" rx="2"/>
+
+    <!-- Khung chia cửa kính các phòng sáng đèn -->
+    <line x1="161" y1="52" x2="161" y2="74" stroke="#fef3c7" stroke-width="1.5"/>
+    <line x1="129" y1="82" x2="129" y2="104" stroke="#fef3c7" stroke-width="1.5"/>
+    <line x1="197" y1="82" x2="197" y2="104" stroke="#fef3c7" stroke-width="1.5"/>
+    <line x1="161" y1="112" x2="161" y2="134" stroke="#fef3c7" stroke-width="1.5"/>
+    <line x1="197" y1="112" x2="197" y2="134" stroke="#fef3c7" stroke-width="1.5"/>
+    <line x1="129" y1="142" x2="129" y2="164" stroke="#fef3c7" stroke-width="1.5"/>
+    <line x1="229" y1="142" x2="229" y2="164" stroke="#fef3c7" stroke-width="1.5"/>
+  </g>
+
+  <!-- Cây cối phía trước -->
+  <path d="M78 210 Q85 190 92 210 Q98 185 106 210" fill="#2d6a4f"/>
+  <path d="M255 210 Q262 188 270 210 Q278 185 285 210" fill="#2d6a4f"/>
+
+  <!-- Badge góc trên bên trái: Khách sạn -->
+  <g transform="translate(18, 16)">
+    <rect width="68" height="22" rx="11" fill="rgba(15, 23, 42, 0.45)" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1"/>
+    <text x="34" y="15" fill="#ffffff" font-family="-apple-system, Roboto, sans-serif" font-size="10.5" font-weight="700" text-anchor="middle">Khách sạn</text>
+  </g>
+
+  <!-- Floating Pill góc dưới bên phải: Đặt phòng ngay -->
+  <g transform="translate(202, 160)" filter="url(#pillShadow)">
+    <rect width="142" height="38" rx="19" fill="#ffffff"/>
+    <!-- Icon Calendar / Booking -->
+    <g transform="translate(14, 10)">
+      <rect x="0" y="2" width="16" height="15" rx="3" fill="#e6f7f8" stroke="#1f7a84" stroke-width="1.5"/>
+      <line x1="4" y1="0" x2="4" y2="4" stroke="#1f7a84" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="12" y1="0" x2="12" y2="4" stroke="#1f7a84" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="0" y1="7" x2="16" y2="7" stroke="#1f7a84" stroke-width="1.2"/>
+      <circle cx="5" cy="11" r="1.2" fill="#1f7a84"/>
+      <circle cx="11" cy="11" r="1.2" fill="#1f7a84"/>
+    </g>
+    <text x="40" y="24" fill="#0f172a" font-family="-apple-system, Roboto, sans-serif" font-size="12" font-weight="700">Đặt phòng ngay</text>
+  </g>
+</svg>

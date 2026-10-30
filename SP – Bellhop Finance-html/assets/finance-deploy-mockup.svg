@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 420" width="100%" height="100%">
+  <defs>
+    <linearGradient id="duskSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#192338"/>
+      <stop offset="50%" stop-color="#2d334e"/>
+      <stop offset="100%" stop-color="#6b4c5c"/>
+    </linearGradient>
+    <filter id="lightGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="540" height="420" fill="url(#duskSky)" rx="20"/>
+
+  <!-- Tường và cấu trúc Homestay / Villa ấm áp -->
+  <g transform="translate(70, 100)">
+    <!-- Mái ngói tam giác -->
+    <path d="M200 15 L380 120 L20 120 Z" fill="#8d493a"/>
+    <path d="M200 15 L20 120 L30 120 L200 25 Z" fill="#6f3326"/>
+    
+    <!-- Tường nhà -->
+    <rect x="40" y="120" width="320" height="200" fill="#e8dacb"/>
+    <rect x="40" y="300" width="320" height="20" fill="#cbb39e"/>
+
+    <!-- Dây đèn tròn vàng (Fairy string lights) uốn lượn dưới mái hiên -->
+    <path d="M30 130 Q115 160 200 135 T370 130" fill="none" stroke="#3e2723" stroke-width="2.5"/>
+    <g fill="#ffe082" filter="url(#lightGlow)">
+      <circle cx="50" cy="136" r="6"/>
+      <circle cx="85" cy="147" r="7"/>
+      <circle cx="125" cy="151" r="7.5"/>
+      <circle cx="165" cy="146" r="7"/>
+      <circle cx="205" cy="137" r="6.5"/>
+      <circle cx="245" cy="144" r="7"/>
+      <circle cx="285" cy="148" r="7.5"/>
+      <circle cx="325" cy="144" r="7"/>
+      <circle cx="355" cy="135" r="6"/>
+    </g>
+
+    <!-- Cửa vòm gỗ màu nâu ấm -->
+    <path d="M165 210 Q165 170 200 170 Q235 170 235 210 L235 320 L165 320 Z" fill="#5d4037"/>
+    <circle cx="178" cy="250" r="3" fill="#ffd54f"/>
+
+    <!-- Hai cửa sổ kính ấm áp hai bên -->
+    <!-- Cửa sổ trái -->
+    <rect x="70" y="190" width="60" height="70" rx="3" fill="#ffe082" stroke="#6d4c41" stroke-width="4"/>
+    <line x1="100" y1="190" x2="100" y2="260" stroke="#6d4c41" stroke-width="2.5"/>
+    <line x1="70" y1="225" x2="130" y2="225" stroke="#6d4c41" stroke-width="2.5"/>
+    <!-- Cửa sổ phải -->
+    <rect x="270" y="190" width="60" height="70" rx="3" fill="#ffe082" stroke="#6d4c41" stroke-width="4"/>
+    <line x1="300" y1="190" x2="300" y2="260" stroke="#6d4c41" stroke-width="2.5"/>
+    <line x1="270" y1="225" x2="330" y2="225" stroke="#6d4c41" stroke-width="2.5"/>
+  </g>
+
+  <!-- Hai khóm cây nhiệt đới hai bên hiên nhà -->
+  <path d="M20 420 Q40 320 80 340 Q110 330 90 420 Z" fill="#2d5a3c"/>
+  <path d="M40 420 Q60 300 110 320 Q120 370 100 420 Z" fill="#3d7a52"/>
+  <path d="M520 420 Q500 320 460 340 Q430 330 450 420 Z" fill="#2d5a3c"/>
+  <path d="M500 420 Q480 300 430 320 Q420 370 440 420 Z" fill="#3d7a52"/>
+</svg>

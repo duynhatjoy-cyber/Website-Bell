@@ -158,6 +158,37 @@ a:hover{color:#1f7a84}
   .hub-core{width:124px;height:124px}
   .team-title{font-size:26px}
 }
+
+.vm-icon-dark {
+  background: #0e1e38 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(14, 30, 56, 0.25) !important;
+}
+.vm-icon-blue {
+  background: #1d4ed8 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25) !important;
+}
+.vision-road-frame {
+  padding: 10px;
+  background: repeating-linear-gradient(-45deg, #e2eaf5, #e2eaf5 10px, #ffffff 10px, #ffffff 20px);
+  border-radius: 28px;
+  box-shadow: 0 16px 44px rgba(18, 39, 69, 0.08);
+  overflow: hidden;
+}
+.vision-road-inner {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+  display: flex;
+}
+.vision-road-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
 </style>
 </helmet>
 <div class="bh {{markCls}}">
@@ -294,29 +325,16 @@ a:hover{color:#1f7a84}
 </div>
 </section>
 
-<!-- 4. TẦM NHÌN VÀ SỨ MỆNH (Ảnh 4) -->
+<!-- 4. TẦM NHÌN VÀ SỨ MỆNH (ẢNH 3 -> ẢNH 4) -->
 <section class="vision-sec">
 <div class="wrap">
   <div class="vision-grid">
     <div class="vision-cards">
-      <span class="story-eyebrow">TẦM NHÌN VÀ SỨ MỆNH</span>
-      <h2 class="story-title">Điều Bellhop hướng tới</h2>
+      <h2 class="story-title" style="font-size: 32px; font-weight: 800; color: #122745; margin: 0 0 12px">Điều Lifrooms hướng tới</h2>
 
+      <!-- Card 1: Tầm nhìn -->
       <div class="vm-card">
-        <div class="vm-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-          </svg>
-        </div>
-        <div>
-          <h3>Sứ mệnh</h3>
-          <p>Giúp các cơ sở lưu trú vừa và nhỏ tại Việt Nam vận hành hiệu quả và chủ động hơn trong kinh doanh, với công cụ phù hợp nghiệp vụ và chi phí.</p>
-        </div>
-      </div>
-
-      <div class="vm-card">
-        <div class="vm-icon">
+        <div class="vm-icon vm-icon-dark">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
             <circle cx="12" cy="12" r="3"></circle>
@@ -324,18 +342,30 @@ a:hover{color:#1f7a84}
         </div>
         <div>
           <h3>Tầm nhìn</h3>
-          <p>Trở thành nền tảng quản lý được các cơ sở lưu trú Việt Nam lựa chọn đầu tiên khi bắt đầu số hóa vận hành.</p>
+          <p>Trở thành đối tác vận hành được tin tưởng bởi khách sạn vừa và nhỏ trên khắp Việt Nam, nơi chủ đầu tư có thể tập trung vào việc phát triển kinh doanh, thay vì bị cuốn vào từng việc vận hành hàng ngày.</p>
+        </div>
+      </div>
+
+      <!-- Card 2: Sứ mệnh -->
+      <div class="vm-card">
+        <div class="vm-icon vm-icon-blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="12" r="6"></circle>
+            <circle cx="12" cy="12" r="2"></circle>
+          </svg>
+        </div>
+        <div>
+          <h3>Sứ mệnh</h3>
+          <p>Giúp khách sạn 10–100 phòng tại Việt Nam vận hành như một hệ thống chuyên nghiệp, không phụ thuộc vào một người, không phụ thuộc vào may rủi thị trường.</p>
         </div>
       </div>
     </div>
 
-    <!-- Visual Card -->
-    <div class="vision-visual">
-      <div class="vision-visual-bg"></div>
-      <div class="vision-visual-content">
-        <div class="vision-stat-num">10–100</div>
-        <div class="vision-stat-label">Quy mô phòng tối ưu cho từng cơ sở</div>
-        <p class="vision-stat-desc">Đồng hành cùng hàng trăm chủ khách sạn, homestay, boutique hotel và chuỗi căn hộ dịch vụ trên khắp Việt Nam chuyển đổi số bền vững và tăng trưởng doanh thu vượt bậc.</p>
+    <!-- Visual Card (Ảnh 4) -->
+    <div class="vision-road-frame">
+      <div class="vision-road-inner">
+        <img src="./assets/about-vision-road.png" alt="Tầm nhìn và sứ mệnh Lifrooms" class="vision-road-img">
       </div>
     </div>
   </div>

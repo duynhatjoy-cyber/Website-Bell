@@ -17,16 +17,23 @@ const pages = {
   '/finance': 'Finance',
   '/bang-gia': 'Pricing',
   '/tin-tuc': 'News',
-  '/ve-bellhop': 'About',
   '/lifrooms': 'About',
+  '/ve-bellhop': 'About',
+  '/ve-Bellhop': 'About',
 };
-const paths = Object.fromEntries(Object.entries(pages).map(([path, name]) => [name, path]));
+const paths = {
+  ...Object.fromEntries(Object.entries(pages).map(([path, name]) => [name, path])),
+  About: '/ve-Bellhop',
+};
 const loginUrl = 'https://app.bellhop.biz/';
 
 function routeFromLocation() {
   const path = window.location.pathname;
   if (path === '/khach-hang/cau-chuyen') return path;
-  return pages[path] ? path : '/';
+  if (pages[path]) return path;
+  const match = Object.keys(pages).find((p) => p.toLowerCase() === path.toLowerCase());
+  if (match) return match;
+  return '/';
 }
 
 function App() {
@@ -37,13 +44,14 @@ function App() {
   const syncing = useRef(false);
 
   const navigate = useCallback((path, hash = '', replace = false) => {
-    if (!pages[path]) return;
-    const target = path + hash;
+    const canonicalPath = pages[path] ? path : Object.keys(pages).find((p) => p.toLowerCase() === path.toLowerCase());
+    if (!canonicalPath || !pages[canonicalPath]) return;
+    const target = canonicalPath + hash;
     if (window.location.pathname + window.location.hash !== target) {
       window.history[replace ? 'replaceState' : 'pushState']({}, '', target);
     }
-    setRoute(path);
-    if (frame.current?.contentWindow && pages[path] && pages[route] === pages[path] && hash) {
+    setRoute(canonicalPath);
+    if (frame.current?.contentWindow && pages[canonicalPath] && pages[route] === pages[canonicalPath] && hash) {
       const current = frame.current.contentWindow;
       const targetElement = current.document.getElementById(decodeURIComponent(hash.slice(1)));
       if (targetElement) {
@@ -130,6 +138,14 @@ function App() {
         return;
       }
       const targetName = url.pathname.split('/').pop()?.replace(/\.dc\.html$/, '');
+      const matchedPath = Object.keys(pages).find(
+        (p) => p === url.pathname || p.toLowerCase() === url.pathname.toLowerCase()
+      );
+      if (matchedPath) {
+        event.preventDefault();
+        navigate(matchedPath.toLowerCase() === '/ve-bellhop' ? '/ve-Bellhop' : matchedPath, url.hash);
+        return;
+      }
       if (!paths[targetName]) return;
       event.preventDefault();
       navigate(paths[targetName], url.hash);

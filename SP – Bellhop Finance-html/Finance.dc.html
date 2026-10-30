@@ -49,43 +49,540 @@ a{color:inherit}a:hover{color:#1f6b52}
 .ctl{width:100%;border-collapse:collapse;font-size:15px}
 .ctl td{padding:18px 0;border-bottom:1px solid #dfe6e2;vertical-align:top}
 .ctl td:first-child{width:34%;font-weight:700;color:#122745;padding-right:24px}
-@media (max-width:980px){.ln{padding-left:28px}.ln-dot{left:-38px}.ln-sec{padding:48px 0}.ln-dot{top:46px}.ln-sec:first-child .ln-dot{top:0}.proc{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.flow .ar{transform:rotate(90deg);height:36px}}
+/* SO SÁNH QUY TRÌNH CHỐT SỔ (ẢNH 1 -> UIUX ẢNH 2) */
+.finance-proc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+  margin-top: 28px;
+}
+.finance-proc-card {
+  border-radius: 24px;
+  padding: 34px 32px 38px;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.finance-proc-card.manual {
+  background: #ffffff;
+  border: 1px solid #dde7ec;
+  box-shadow: 0 10px 30px rgba(18, 39, 69, 0.05);
+}
+.finance-proc-card.manual:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(18, 39, 69, 0.08);
+}
+.finance-proc-card.automated {
+  background: #0d1e38;
+  border: 1px solid #1a2f4c;
+  box-shadow: 0 18px 44px rgba(13, 30, 56, 0.35);
+  color: #ffffff;
+}
+.finance-proc-card.automated:hover {
+  transform: translateY(-3px);
+  border-color: #5fb9c2;
+  box-shadow: 0 22px 50px rgba(13, 30, 56, 0.45);
+}
+
+.finance-proc-header {
+  margin-bottom: 26px;
+  border-bottom: 1px solid #edf2f7;
+  padding-bottom: 22px;
+}
+.finance-proc-card.automated .finance-proc-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.finance-proc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.finance-proc-badge.manual {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 4px 12px;
+  border-radius: 6px;
+  margin-bottom: 14px;
+}
+.finance-proc-eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #38bdf8;
+}
+.finance-proc-pill {
+  font-size: 11.5px;
+  font-weight: 700;
+  background: #2ba397;
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(43, 163, 151, 0.3);
+}
+
+.finance-proc-title {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #122745;
+  margin: 0 0 8px;
+}
+.finance-proc-card.automated .finance-proc-title {
+  color: #ffffff;
+}
+.finance-proc-subtitle {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #64748b;
+  margin: 0;
+}
+.finance-proc-card.automated .finance-proc-subtitle {
+  color: #94a3b8;
+}
+
+.finance-proc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.finance-proc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.finance-proc-num {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  background: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  margin-top: 2px;
+}
+.finance-proc-num.auto {
+  background: #14b8a6;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.4);
+}
+.finance-proc-num.skipped {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.4);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.finance-proc-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+.finance-proc-step-title {
+  font-size: 15.5px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #122745;
+}
+.finance-proc-card.automated .finance-proc-step-title {
+  color: #ffffff;
+}
+.finance-proc-step-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #566579;
+  margin: 0;
+}
+.finance-proc-card.automated .finance-proc-step-desc {
+  color: #94a3b8;
+}
+
+.finance-proc-step-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.badge-skipped {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.finance-proc-item.skipped .finance-proc-step-title {
+  color: rgba(255, 255, 255, 0.45);
+}
+.finance-proc-item.skipped .finance-proc-step-desc {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+@media (max-width:980px){.ln{padding-left:28px}.ln-dot{left:-38px}.ln-sec{padding:48px 0}.ln-dot{top:46px}.ln-sec:first-child .ln-dot{top:0}.proc{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.flow .ar{transform:rotate(90deg);height:36px}.finance-proc-grid{grid-template-columns:1fr;gap:24px}.finance-proc-card{padding:28px 22px 32px}}
+
+/* GỠ BỎ ĐƯỜNG NỐI DỌC .ln VÀ .ln-dot */
+.ln {
+  position: static !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  border-left: none !important;
+}
+.ln-dot {
+  display: none !important;
+}
+.finance-sec-item {
+  padding: 64px 0;
+  border-bottom: 1px solid #dde7ec;
+}
+.finance-sec-item:last-child {
+  border-bottom: none;
+}
+
+/* ẢNH 2: 3 THẺ QUY TRÌNH HÓA ĐƠN ĐIỆN TỬ (.finance-flow-grid) */
+.finance-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+  margin-top: 32px;
+}
+.finance-flow-card {
+  background: #ffffff;
+  border: 1px solid #dde7ec;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 28px rgba(18, 39, 69, 0.05);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.finance-flow-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(18, 39, 69, 0.1);
+}
+.finance-flow-visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9.5;
+  background: #0f172a;
+  overflow: hidden;
+}
+.finance-flow-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.finance-flow-pill {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #ffffff;
+  color: #122745;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+.finance-flow-body {
+  padding: 24px 22px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.finance-flow-name {
+  font-size: 19px;
+  font-weight: 800;
+  color: #122745;
+  margin: 0;
+}
+.finance-flow-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #566579;
+  margin: 0;
+}
+
+/* ẢNH 4: BỐ CỤC 2 CỘT CHO KIỂM SOÁT VÀ TRIỂN KHAI (.finance-split-layout) */
+.finance-split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 48px;
+  align-items: center;
+}
+.finance-split-visual {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 44px rgba(18, 39, 69, 0.12);
+  background: #141a29;
+}
+.finance-split-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+.finance-split-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ẢNH 4 - BLOCK 1: 4 THẺ KIỂM SOÁT (.finance-ctrl-grid) */
+.finance-ctrl-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.finance-ctrl-card {
+  background: #ffffff;
+  border: 1px solid #dde7ec;
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.finance-ctrl-card:hover {
+  transform: translateY(-2px);
+  border-color: #1f7a84;
+  box-shadow: 0 8px 24px rgba(18, 39, 69, 0.07);
+}
+.finance-ctrl-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #eef7f8;
+  color: #1f7a84;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  margin-top: 2px;
+}
+.finance-ctrl-icon {
+  width: 20px;
+  height: 20px;
+}
+.finance-ctrl-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+.finance-ctrl-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.finance-ctrl-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #122745;
+}
+.finance-ctrl-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #64748b;
+  margin: 0;
+}
+.finance-ctrl-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fef3c7;
+  color: #b45309;
+  font-size: 11px;
+  font-weight: 800;
+  border: 1px solid #fde68a;
+  margin-top: 4px;
+  align-self: flex-start;
+}
+
+/* ẢNH 4 - BLOCK 2: 2 CỘT TRIỂN KHAI (.finance-deploy-grid) */
+.finance-deploy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+.finance-deploy-col {
+  background: #ffffff;
+  border: 1px solid #dde7ec;
+  border-radius: 16px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.finance-deploy-col-title {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #122745;
+}
+.finance-deploy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.finance-deploy-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #475569;
+}
+.finance-check {
+  color: #16a34a;
+  font-weight: 800;
+  font-size: 14px;
+  flex: none;
+}
+
+/* BANNER GIÁ TRIỂN KHAI (.finance-pricing-banner) */
+.finance-pricing-banner {
+  background: #0d1e38;
+  border-radius: 12px;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 10px 28px rgba(13, 30, 56, 0.28);
+  margin-top: 24px;
+}
+.finance-pricing-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.finance-pricing-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+.finance-chip-amber {
+  display: inline-block;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+.finance-pricing-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #5fb9c2;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(95, 185, 194, 0.4);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex: none;
+}
+.finance-pricing-btn:hover {
+  background: #4baab4;
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+@media (max-width: 980px) {
+  .finance-flow-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .finance-split-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .finance-ctrl-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .finance-deploy-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .finance-pricing-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
+
 </style>
 </helmet>
 <div class="bh {{markCls}}">
 <dc-import name="Header" active="finance" start-open="{{ false }}" hint-size="100%,72px"></dc-import>
 
-<section class="paper" style="padding: 0 0 96px; border-bottom: 1px solid #dfe6e2">
+<section class="sec bg-soft finance-hero-sec" style="padding: 24px 0 80px; border-bottom: 1px solid #dde7ec">
 <div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="Main.dc.html">Trang chủ</a>›<span>Sản phẩm</span>›<span>Thanh toán &amp; Kế toán</span>›<b>Bellhop Finance</b></nav></div>
-<div class="wrap split-eq" style="margin-top: 32px">
+<div class="wrap split-eq finance-hero-split" style="margin-top: 24px; align-items: center; gap: 48px">
   <div class="stack" style="gap: 22px">
-    <span class="eyebrow" style="color: #1f6b52">Bellhop Finance · Kết nối MISA</span>
-    <h1 class="h1" style="font-size: 48px">Đồng bộ dữ liệu kinh doanh từ Bellhop sang MISA</h1>
-    <p class="lead">Bellhop Finance chuyển dữ liệu doanh thu, thu chi <i class="tbc">và hóa đơn</i> từ hệ thống Bellhop sang phần mềm kế toán MISA, giúp kế toán giảm nhập liệu thủ công và rút ngắn thời gian đối chiếu khi chốt sổ.</p>
-    <div class="row" style="gap: 10px"><span class="small muted">Kết nối với</span><span class="logo-ph">MISA <i class="tbc">Logo</i></span></div>
+    <span class="eyebrow" style="color: #1f7a84">— BELLHOP FINANCE · KẾT NỐI MISA</span>
+    <h1 class="h1" style="font-size: 46px; line-height: 1.2; font-weight: 800; letter-spacing: -0.015em; color: #122745">Số liệu khách sạn tự sang MISA, kế toán không phải nhập lại</h1>
+    <p class="lead" style="font-size: 17.5px; line-height: 1.65; color: #475569">Bellhop Finance chuyển dữ liệu doanh thu, thu chi <span class="chip-warning">và hóa đơn</span> từ hệ thống Bellhop sang phần mềm kế toán MISA, giúp giảm nhập liệu thủ công và rút ngắn thời gian đối chiếu khi chốt sổ.</p>
     <div class="btns"><a class="btn btn-primary btn-lg" href="#form">Đặt lịch tư vấn <span class="arr">→</span></a><a class="btn btn-outline btn-lg" href="#du-lieu">Xem dữ liệu được đồng bộ</a></div>
   </div>
-  <div class="stack" style="gap: 14px">
-    <div class="stack" style="gap: 6px"><span class="who">Bellhop · Doanh thu ngày 23/10</span>
-      <table class="ledger mono"><tr><th>Chứng từ</th><th>Diễn giải</th><th style="text-align: right">Số tiền</th></tr><tr><td>PT0218</td><td>Tiền phòng 101</td><td class="r">2.670.000</td></tr><tr><td>PT0219</td><td>F&amp;B bàn B4 → P201</td><td class="r">215.000</td></tr><tr><td>PC0045</td><td>Mua nước suối</td><td class="r">-480.000</td></tr></table></div>
-    <div class="row" style="gap: 10px; color: #1f6b52; font-weight: 700; font-size: 14px; padding-left: 12px"><span style="font-size: 22px">↓</span> Bellhop Finance đồng bộ</div>
-    <div class="stack" style="gap: 6px"><span class="who">MISA · Chứng từ đã nhận</span>
-      <table class="ledger mono"><tr><th>Số CT</th><th>TK Nợ / Có</th><th style="text-align: right">Số tiền</th></tr><tr><td>PT0218</td><td>1111 / 5113</td><td class="r">2.670.000</td></tr><tr><td>PT0219</td><td>1111 / 5113</td><td class="r">215.000</td></tr><tr><td>PC0045</td><td>1561 / 1111</td><td class="r">480.000</td></tr></table></div>
-    <span class="illus">Dữ liệu minh họa · tài khoản theo ánh xạ của từng cơ sở</span>
+  <div class="finance-hero-visual">
+    <img class="finance-hero-mockup-img" src="./assets/finance-hero-mockup.svg" alt="Số liệu khách sạn tự sang MISA, kế toán không phải nhập lại">
   </div>
 </div>
 </section>
 
-<section style="padding: 80px 0 96px">
+<section style="padding: 40px 0 80px">
 <div class="wrap">
-<div class="ln">
+<div class="finance-body-wrap">
 
-  <section class="ln-sec" id="du-lieu">
-    <span class="ln-dot f"></span>
-    <div class="stack" style="gap: 12px; max-width: 820px; margin-bottom: 24px">
-      <span class="ln-k">01 · Dữ liệu</span>
+  <!-- 01: DỮ LIỆU -->
+  <section class="finance-sec-item" id="du-lieu">
+    <div class="stack" style="gap: 12px; max-width: 820px; margin-bottom: 28px">
+      <span class="eyebrow" style="color: #1f7a84">— DỮ LIỆU</span>
       <h2 class="h2">Dữ liệu được đồng bộ sang MISA</h2>
-      <p class="muted">Bảng dưới đây là khung đề xuất; đội sản phẩm điền theo tích hợp thực tế. <i class="tbc">Khung đề xuất</i></p>
+      <p class="muted" style="font-size: 15px; margin: 0">Bảng dưới đây là khung đề xuất; đội sản phẩm điền theo tích hợp thực tế. <i class="tbc">Khung đề xuất</i></p>
     </div>
     <div class="tbl-box" style="border-radius: 0; border-color: #c9d3cf">
       <table class="map">
@@ -103,75 +600,275 @@ a{color:inherit}a:hover{color:#1f6b52}
     </div>
   </section>
 
-  <section class="ln-sec" id="cuoi-thang">
-    <span class="ln-dot"></span>
-    <div class="stack" style="gap: 12px; max-width: 820px; margin-bottom: 24px">
-      <span class="ln-k">02 · Quy trình</span>
+  <!-- 02: QUY TRÌNH -->
+  <section class="finance-sec-item" id="cuoi-thang">
+    <div class="stack" style="gap: 12px; max-width: 820px; margin-bottom: 32px">
+      <span class="eyebrow" style="color: #1f7a84">— QUY TRÌNH</span>
       <h2 class="h2">Quy trình chốt sổ cuối tháng</h2>
+      <p class="muted" style="font-size: 15px; margin: 0">So sánh quy trình làm việc thủ công và khi có Bellhop Finance tự động đồng bộ sang MISA.</p>
     </div>
-    <div class="proc">
-      <div class="stack" style="gap: 8px"><span class="label">Không kết nối</span><ol class="old"><li>Xuất báo cáo từ phần mềm quản lý khách sạn</li><li>Nhập lại doanh thu, thu chi vào MISA</li><li>Đối chiếu từng khoản với sổ quỹ, sao kê</li><li>Tìm và điều chỉnh chênh lệch</li></ol></div>
-      <div class="stack" style="gap: 8px"><span class="label" style="color: #1f6b52">Với Bellhop Finance</span><ol class="new"><li>Dữ liệu được đồng bộ sang MISA <i class="tbc">Theo ngày / theo lệnh</i></li><li class="skip">Nhập lại doanh thu, thu chi vào MISA</li><li>Kiểm tra danh sách chứng từ đã chuyển</li><li>Đối chiếu và xử lý ngoại lệ</li></ol></div>
+
+    <div class="finance-proc-grid">
+      <!-- Cột 1: Không kết nối (Thao tác thủ công) -->
+      <div class="finance-proc-card manual">
+        <div class="finance-proc-header">
+          <div class="finance-proc-badge manual">Quy trình cũ</div>
+          <h3 class="finance-proc-title">Không kết nối (Thao tác thủ công)</h3>
+          <p class="finance-proc-subtitle">Kế toán phải mất nhiều thời gian nhập liệu lại và rà soát thủ công</p>
+        </div>
+        <ol class="finance-proc-list">
+          <li class="finance-proc-item">
+            <span class="finance-proc-num">01</span>
+            <div class="finance-proc-content">
+              <strong class="finance-proc-step-title">Xuất báo cáo từ phần mềm khách sạn</strong>
+              <p class="finance-proc-step-desc">Cuối ngày hoặc cuối tháng phải xuất các báo cáo doanh thu phòng, dịch vụ F&amp;B ra file Excel.</p>
+            </div>
+          </li>
+          <li class="finance-proc-item">
+            <span class="finance-proc-num">02</span>
+            <div class="finance-proc-content">
+              <strong class="finance-proc-step-title">Nhập lại doanh thu, thu chi vào MISA</strong>
+              <p class="finance-proc-step-desc">Gõ lại từng phiếu thu, phiếu chi, hóa đơn vào phần mềm MISA bằng tay, tốn nhiều giờ làm việc.</p>
+            </div>
+          </li>
+          <li class="finance-proc-item">
+            <span class="finance-proc-num">03</span>
+            <div class="finance-proc-content">
+              <strong class="finance-proc-step-title">Đối chiếu từng khoản với sổ quỹ, sao kê</strong>
+              <p class="finance-proc-step-desc">So khớp từng dòng giữa sổ quỹ nội bộ lễ tân và sao kê tài khoản ngân hàng để tìm chênh lệch.</p>
+            </div>
+          </li>
+          <li class="finance-proc-item">
+            <span class="finance-proc-num">04</span>
+            <div class="finance-proc-content">
+              <strong class="finance-proc-step-title">Tìm và điều chỉnh chênh lệch số liệu</strong>
+              <p class="finance-proc-step-desc">Dễ sót hóa đơn, nhầm mã dịch vụ; mất nhiều ngày căng thẳng mỗi kỳ chốt sổ.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Cột 2: Với Bellhop Finance (Tự động hóa) -->
+      <div class="finance-proc-card automated">
+        <div class="finance-proc-header">
+          <div class="finance-proc-top">
+            <span class="finance-proc-eyebrow">Tự động hóa</span>
+            <span class="finance-proc-pill">Tiết kiệm 80% thời gian</span>
+          </div>
+          <h3 class="finance-proc-title">Với Bellhop Finance (Đồng bộ tức thì)</h3>
+          <p class="finance-proc-subtitle">Dữ liệu được hạch toán tự động sang MISA, số liệu chuẩn xác 100%</p>
+        </div>
+        <ol class="finance-proc-list">
+          <li class="finance-proc-item">
+            <span class="finance-proc-num auto">01</span>
+            <div class="finance-proc-content">
+              <strong class="finance-proc-step-title">Dữ liệu được tự động sang MISA</strong>
+              <p class="finance-proc-step-desc">Doanh thu phòng, dịch vụ, thu chi chuyển thẳng thành chứng từ MISA theo ngày hoặc theo lệnh.</p>
+            </div>
+          </li>
+          <li class="finance-proc-item skipped">
+            <span class="finance-proc-num skipped">02</span>
+            <div class="finance-proc-content">
+              <div class="finance-proc-step-title-wrap">
+                <strong class="finance-proc-step-title"><del>Nhập lại doanh thu, thu chi vào MISA</del></strong>
+                <span class="badge-skipped">Bỏ qua</span>
+              </div>
+              <p class="finance-proc-step-desc">Hoàn toàn loại bỏ khâu nhập liệu thủ công tốn thời gian và dễ nhầm lẫn.</p>
+            </div>
+          </li>
+          <li class="finance-proc-item">
+            <span class="finance-proc-num auto">03</span>
+            <div class="finance-proc-content">
+              <strong class="finance-proc-step-title">Kiểm tra danh sách chứng từ đã chuyển</strong>
+              <p class="finance-proc-step-desc">Kế toán chỉ cần mở danh sách chứng từ đã nhận để kiểm tra nhanh trạng thái khớp lệnh.</p>
+            </div>
+          </li>
+          <li class="finance-proc-item">
+            <span class="finance-proc-num auto">04</span>
+            <div class="finance-proc-content">
+              <strong class="finance-proc-step-title">Đối chiếu &amp; xử lý ngoại lệ nhẹ nhàng</strong>
+              <p class="finance-proc-step-desc">Số liệu chuẩn xác giữa 2 hệ thống, chốt sổ nhẹ nhàng chỉ trong vài chục phút.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
     </div>
-    <p class="xs muted" style="margin-top: 16px"><i class="tbc">Chỉ ghi số liệu thời gian tiết kiệm khi đo được, kèm nguồn</i></p>
+    <p class="xs muted" style="margin-top: 20px"><i class="tbc">Chỉ ghi số liệu thời gian tiết kiệm khi đo được, kèm nguồn</i></p>
   </section>
 
-  <section class="ln-sec" id="hddt">
-    <span class="ln-dot"></span>
-    <div class="stack" style="gap: 12px; max-width: 820px; margin-bottom: 24px">
-      <span class="ln-k">03 · Hóa đơn điện tử</span>
-      <h2 class="h2">Từ quầy lễ tân đến phần mềm kế toán</h2>
-      <p class="lead">Hóa đơn điện tử, sổ sách và quỹ được quản lý trong gói Tài chính của Bellhop PMS; Bellhop Finance chuyển các dữ liệu này sang MISA.</p>
+  <!-- 03: HÓA ĐƠN ĐIỆN TỬ & SỔ SÁCH (ẢNH 1 -> ẢNH 2) -->
+  <section class="finance-sec-item" id="hddt">
+    <div class="stack" style="gap: 12px; max-width: 820px; margin-bottom: 32px">
+      <span class="eyebrow" style="color: #1f7a84">— HÓA ĐƠN ĐIỆN TỬ &amp; SỔ SÁCH</span>
+      <h2 class="h2">Lễ tân, hệ thống và kế toán dùng chung một nguồn số liệu</h2>
+      <p class="lead" style="font-size: 16.5px; line-height: 1.6; color: #475569">Hóa đơn điện tử, sổ sách và quỹ được quản lý trong gói Tài chính của Bellhop PMS; Bellhop Finance chuyển các dữ liệu này sang MISA.</p>
     </div>
-    <div class="flow">
-      <div class="bx"><span class="who">Lễ tân</span><b style="color: #122745">Bellhop PMS</b><span class="small muted">Xuất hóa đơn, ghi nhận thu chi</span></div>
-      <div class="ar">→</div>
-      <div class="bx" style="background: #122745; border-color: #122745; color: #c9d6e6"><span class="who" style="color: #9fe0e6">Hệ thống</span><b style="color: #fff">Bellhop Finance</b><span class="small">Đồng bộ dữ liệu</span></div>
-      <div class="ar">→</div>
-      <div class="bx"><span class="who">Kế toán</span><b style="color: #122745">MISA</b><span class="small muted">Hạch toán, lập báo cáo</span></div>
+
+    <div class="finance-flow-grid">
+      <!-- Card 1: Bellhop PMS -->
+      <div class="finance-flow-card">
+        <div class="finance-flow-visual">
+          <img src="./assets/finance-flow-hotel.svg" alt="Bellhop PMS" class="finance-flow-img">
+          <span class="finance-flow-pill">LỄ TÂN</span>
+        </div>
+        <div class="finance-flow-body">
+          <h3 class="finance-flow-name">Bellhop PMS</h3>
+          <p class="finance-flow-desc">Xuất hóa đơn, ghi nhận thu chi ngay khi khách trả phòng.</p>
+        </div>
+      </div>
+
+      <!-- Card 2: Bellhop Finance -->
+      <div class="finance-flow-card">
+        <div class="finance-flow-visual">
+          <img src="./assets/finance-flow-sync.svg" alt="Bellhop Finance" class="finance-flow-img">
+          <span class="finance-flow-pill">TỰ ĐỘNG</span>
+        </div>
+        <div class="finance-flow-body">
+          <h3 class="finance-flow-name">Bellhop Finance</h3>
+          <p class="finance-flow-desc">Chuyển chứng từ sang MISA theo ánh xạ tài khoản của cơ sở.</p>
+        </div>
+      </div>
+
+      <!-- Card 3: MISA -->
+      <div class="finance-flow-card">
+        <div class="finance-flow-visual">
+          <img src="./assets/finance-flow-misa.svg" alt="MISA" class="finance-flow-img">
+          <span class="finance-flow-pill">KẾ TOÁN</span>
+        </div>
+        <div class="finance-flow-body">
+          <h3 class="finance-flow-name">MISA</h3>
+          <p class="finance-flow-desc">Hạch toán, lập báo cáo từ số liệu đã có sẵn.</p>
+        </div>
+      </div>
     </div>
-    <div style="margin-top: 20px">
+
+    <div style="margin-top: 28px">
       <a class="lnk" href="PMS.dc.html#tai-chinh">Tìm hiểu gói Tài chính của Bellhop PMS <span class="arr">→</span></a>
     </div>
   </section>
 
-  <section class="ln-sec" id="kiem-soat">
-    <span class="ln-dot"></span>
-    <div class="stack" style="gap: 12px; max-width: 820px; margin-bottom: 24px">
-      <span class="ln-k">04 · Kiểm soát</span>
-      <h2 class="h2">Kiểm soát dữ liệu trước khi hạch toán</h2>
+  <!-- 04: KIỂM SOÁT (ẢNH 3 -> ẢNH 4 BLOCK 1) -->
+  <section class="finance-sec-item" id="kiem-soat">
+    <div class="finance-split-layout">
+      <!-- Left Mockup Visual -->
+      <div class="finance-split-visual">
+        <img src="./assets/finance-ctrl-mockup.svg" alt="Kiểm soát dữ liệu trước khi hạch toán" class="finance-split-img">
+      </div>
+      
+      <!-- Right Content -->
+      <div class="finance-split-content">
+        <div class="stack" style="gap: 12px; margin-bottom: 24px">
+          <span class="eyebrow" style="color: #1f7a84">— KIỂM SOÁT</span>
+          <h2 class="h2">Kiểm soát dữ liệu trước khi hạch toán</h2>
+        </div>
+
+        <div class="finance-ctrl-grid">
+          <!-- Card 1 -->
+          <div class="finance-ctrl-card">
+            <div class="finance-ctrl-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="finance-ctrl-icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="finance-ctrl-text">
+              <div class="finance-ctrl-head">
+                <strong class="finance-ctrl-title">Nhật ký đồng bộ</strong>
+              </div>
+              <p class="finance-ctrl-desc">Thời điểm, số chứng từ, trạng thái.</p>
+              <span class="finance-ctrl-mark">✓</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="finance-ctrl-card">
+            <div class="finance-ctrl-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="finance-ctrl-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="finance-ctrl-text">
+              <div class="finance-ctrl-head">
+                <strong class="finance-ctrl-title">Cảnh báo lỗi</strong>
+              </div>
+              <p class="finance-ctrl-desc">Báo và hướng dẫn xử lý lỗi đồng bộ.</p>
+              <span class="finance-ctrl-mark">✓</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="finance-ctrl-card">
+            <div class="finance-ctrl-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="finance-ctrl-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div class="finance-ctrl-text">
+              <div class="finance-ctrl-head">
+                <strong class="finance-ctrl-title">Duyệt trước khi ghi sổ</strong>
+              </div>
+              <p class="finance-ctrl-desc">Kế toán duyệt trước khi hạch toán.</p>
+              <span class="finance-ctrl-mark">✓</span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="finance-ctrl-card">
+            <div class="finance-ctrl-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="finance-ctrl-icon"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div class="finance-ctrl-text">
+              <div class="finance-ctrl-head">
+                <strong class="finance-ctrl-title">Phân quyền</strong>
+              </div>
+              <p class="finance-ctrl-desc">Chỉ tài khoản được cấp mới xem dữ liệu tài chính.</p>
+              <span class="finance-ctrl-mark">✓</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <table class="ctl">
-      <tr><td>Nhật ký đồng bộ</td><td class="muted">Thời điểm, số chứng từ, trạng thái thành công/lỗi. <i class="tbc">✓</i></td></tr>
-      <tr><td>Cảnh báo lỗi</td><td class="muted">Cảnh báo và xử lý lỗi đồng bộ. <i class="tbc">✓</i></td></tr>
-      <tr><td>Duyệt trước khi ghi sổ</td><td class="muted">Kế toán duyệt trước khi ghi sổ. <i class="tbc">✓</i></td></tr>
-      <tr><td>Phân quyền</td><td class="muted">Chỉ tài khoản được cấp mới xem dữ liệu tài chính. <i class="tbc">✓</i></td></tr>
-    </table>
-    <table class="ledger mono" style="font-size: 12px; margin-top: 20px"><tr><th>Thời điểm</th><th>Số chứng từ</th><th>Trạng thái</th></tr><tr><td>23/10 23:00</td><td>42</td><td style="color: #1d6a40; font-weight: 600">Thành công</td></tr><tr><td>22/10 23:00</td><td>38 / 1 lỗi</td><td style="color: #8a4b08; font-weight: 600">Cần xử lý: thiếu mã hàng “NUOC-01”</td></tr></table>
-    <span class="illus">Dữ liệu minh họa</span>
   </section>
 
-  <section class="ln-sec" id="trien-khai">
-    <span class="ln-dot"></span>
-    <div class="stack" style="gap: 12px; max-width: 820px; margin-bottom: 24px">
-      <span class="ln-k">05 · Triển khai</span>
-      <h2 class="h2">Các bước kết nối</h2>
-    </div>
-    <div class="tbl-box" style="border-radius: 0; border-color: #c9d3cf">
-      <table class="map" style="min-width: 640px">
-        <thead><tr><th style="width: 80px">Bước</th><th>Nội dung</th><th style="width: 200px">Người thực hiện</th></tr></thead>
-        <tbody>
-          <tr><td class="mono" style="color: #1f6b52; font-weight: 600">01</td><td>Khảo sát: phiên bản MISA, hệ thống tài khoản, danh mục đang dùng.</td><td>Bellhop + Kế toán</td></tr>
-          <tr><td class="mono" style="color: #1f6b52; font-weight: 600">02</td><td>Thiết lập ánh xạ: tài khoản, danh mục khách hàng, hàng hóa, dịch vụ. <i class="tbc">✓</i></td><td>Bellhop</td></tr>
-          <tr><td class="mono" style="color: #1f6b52; font-weight: 600">03</td><td>Chạy thử với dữ liệu một kỳ và đối chiếu.</td><td>Kế toán</td></tr>
-          <tr><td class="mono" style="color: #1f6b52; font-weight: 600">04</td><td>Vận hành chính thức.</td><td>Kế toán</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="small muted" style="margin: 16px 0 20px">Thời gian triển khai <span class="ph">[ ]</span> · Bellhop hỗ trợ kế toán thiết lập <i class="tbc">✓</i></p>
-    <div class="row wrapx" style="gap: 16px; justify-content: space-between; padding: 20px 24px; border: 1px solid #c9d3cf; background: #f8faf9">
-      <div><b style="color: #122745">Chi phí Bellhop Finance</b><div class="small muted"><span class="ph">[Mô hình phí · có yêu cầu gói Tài chính của PMS không]</span></div></div>
-      <a class="btn btn-outline btn-sm" href="Pricing.dc.html">Xem bảng giá</a>
+  <!-- 05: TRIỂN KHAI (ẢNH 3 -> ẢNH 4 BLOCK 2) -->
+  <section class="finance-sec-item" id="trien-khai">
+    <div class="finance-split-layout">
+      <!-- Left Mockup Visual -->
+      <div class="finance-split-visual">
+        <img src="./assets/finance-deploy-mockup.svg" alt="Bellhop cùng kế toán thiết lập kết nối" class="finance-split-img">
+      </div>
+
+      <!-- Right Content -->
+      <div class="finance-split-content">
+        <div class="stack" style="gap: 12px; margin-bottom: 20px">
+          <span class="eyebrow" style="color: #1f7a84">— TRIỂN KHAI</span>
+          <h2 class="h2">Bellhop cùng kế toán thiết lập kết nối</h2>
+        </div>
+
+        <!-- 2 Cột trách nhiệm -->
+        <div class="finance-deploy-grid">
+          <!-- Cột Bellhop phụ trách -->
+          <div class="finance-deploy-col">
+            <strong class="finance-deploy-col-title">Bellhop phụ trách</strong>
+            <ul class="finance-deploy-list">
+              <li><span class="finance-check">✓</span> <span>Khảo sát: phiên bản MISA, hệ thống tài khoản</span></li>
+              <li><span class="finance-check">✓</span> <span>Thiết lập ánh xạ: tài khoản, danh mục <i class="tbc">✓</i></span></li>
+              <li><span class="finance-check">✓</span> <span>Hỗ trợ test và kết nối đồng bộ</span></li>
+            </ul>
+          </div>
+
+          <!-- Cột Kế toán của cơ sở -->
+          <div class="finance-deploy-col">
+            <strong class="finance-deploy-col-title">Kế toán của cơ sở</strong>
+            <ul class="finance-deploy-list">
+              <li><span class="finance-check">✓</span> <span>Cung cấp danh mục đang dùng</span></li>
+              <li><span class="finance-check">✓</span> <span>Chạy thử với dữ liệu một kỳ và đối chiếu</span></li>
+              <li><span class="finance-check">✓</span> <span>Duyệt và vận hành chính thức</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Thanh banner Chi phí Bellhop Finance (Ảnh 2) -->
+        <div class="finance-pricing-banner">
+          <div class="finance-pricing-info">
+            <div class="finance-pricing-title">Chi phí Bellhop Finance</div>
+          </div>
+          <a class="finance-pricing-btn" href="Pricing.dc.html">Xem bảng giá</a>
+        </div>
+      </div>
     </div>
   </section>
 

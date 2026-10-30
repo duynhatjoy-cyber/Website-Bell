@@ -1139,3 +1139,265 @@ body:has(a[href*="Message.dc.html"]) .subnav,
     display: none !important;
   }
 }
+
+/* ==========================================================================
+   Website Hero Banner Mockup - Fit container on Desktop
+   ========================================================================== */
+.website-hero-sec {
+  overflow: hidden;
+  padding: 48px 0 80px;
+}
+.wrap.website-hero-split {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr) !important;
+  gap: 40px !important;
+  align-items: center !important;
+  max-width: 1440px !important;
+  width: 100% !important;
+}
+.website-hero-mockup-wrap {
+  position: relative !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+.website-hero-mockup-img {
+  width: 100% !important;
+  max-width: 960px !important;
+  height: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+  transform: scale(1.08) !important;
+  transform-origin: center right !important;
+  filter: drop-shadow(0 28px 64px rgba(11, 26, 48, 0.18)) !important;
+  transition: transform 0.3s ease !important;
+}
+.website-hero-mockup-img:hover {
+  transform: scale(1.11) translateY(-4px) !important;
+}
+@media (max-width: 1200px) {
+  .wrap.website-hero-split {
+    grid-template-columns: 1fr 1.25fr !important;
+    gap: 32px !important;
+  }
+  .website-hero-mockup-img {
+    transform: scale(1.04) !important;
+    transform-origin: center center !important;
+  }
+}
+@media (max-width: 980px) {
+  .wrap.website-hero-split {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .website-hero-mockup-wrap {
+    justify-content: center !important;
+  }
+  .website-hero-mockup-img {
+    max-width: 100% !important;
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   Booking Engine Desktop Phones Mockup - Expanded Wide Layout
+   ========================================================================== */
+.booking-desktop-sec .mockup-visual {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.booking-phones-desktop-img {
+  width: 100% !important;
+  max-width: 1200px !important;
+  height: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+  filter: drop-shadow(0 20px 48px rgba(11, 26, 48, 0.14)) !important;
+}
+
+/* ==========================================================================
+   CMS Báo cáo theo kênh (#bao-cao) - 2 Cột: 1 bên Banner, 1 bên Text
+   ========================================================================== */
+.cms-report-split {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.28fr) minmax(0, 1fr) !important;
+  gap: 56px !important;
+  align-items: center !important;
+  max-width: 1248px !important;
+  width: 100% !important;
+}
+.cms-report-banner-col {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.cms-report-banner-img {
+  width: 100% !important;
+  max-width: 720px !important;
+  height: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 20px 48px rgba(11, 26, 48, 0.14)) !important;
+  transition: transform 0.3s ease !important;
+}
+.cms-report-banner-img:hover {
+  transform: translateY(-4px) !important;
+}
+.cms-report-text-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  justify-content: center !important;
+}
+@media (max-width: 980px) {
+  .cms-report-split {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .cms-report-text-col {
+    order: 1 !important;
+  }
+  .cms-report-banner-col {
+    order: 2 !important;
+  }
+}
+
+.struct-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: #e6f7f8;
+  color: #1f7a84;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(31, 122, 132, 0.12);
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+.struct-card:hover .struct-card-icon {
+  transform: scale(1.08) translateY(-2px);
+  background: #1f7a84;
+  color: #ffffff;
+}
+.struct-card-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ==========================================================================
+   Finance Hero Section (Image 3 UI/UX Layout)
+   ========================================================================== */
+.finance-hero-split {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) !important;
+  gap: 48px !important;
+  align-items: center !important;
+}
+.finance-hero-visual {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.finance-hero-mockup-img {
+  width: 100% !important;
+  max-width: 680px !important;
+  height: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 20px 48px rgba(11, 26, 48, 0.12)) !important;
+  transition: transform 0.3s ease !important;
+}
+.finance-hero-mockup-img:hover {
+  transform: translateY(-4px) !important;
+}
+.chip-warning {
+  display: inline-flex !important;
+  align-items: center !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #b45309 !important;
+  background: #fef3c7 !important;
+  border: 1px solid #fde68a !important;
+  padding: 2px 8px !important;
+  border-radius: 6px !important;
+  vertical-align: middle !important;
+}
+@media (max-width: 980px) {
+  .finance-hero-split {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+}
+
+
+/* ==========================================================================
+   Bellhop PMS Hero Banner Enlargement
+   ========================================================================== */
+.pms-hero-sec {
+  overflow: hidden;
+  padding: 40px 0 88px !important;
+}
+.wrap.pms-hero-split {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr) !important;
+  gap: 40px !important;
+  align-items: center !important;
+  max-width: 1440px !important;
+  width: 100% !important;
+}
+.pms-hero-mockup-wrap {
+  position: relative !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+.pms-hero-mockup-img {
+  width: 100% !important;
+  max-width: 960px !important;
+  height: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+  transform: scale(1.08) !important;
+  transform-origin: center right !important;
+  filter: drop-shadow(0 28px 64px rgba(11, 26, 48, 0.18)) !important;
+  transition: transform 0.3s ease !important;
+}
+.pms-hero-mockup-img:hover {
+  transform: scale(1.11) translateY(-4px) !important;
+}
+@media (max-width: 1200px) {
+  .wrap.pms-hero-split {
+    grid-template-columns: 1fr 1.25fr !important;
+    gap: 32px !important;
+  }
+  .pms-hero-mockup-img {
+    transform: scale(1.04) !important;
+    transform-origin: center center !important;
+  }
+}
+@media (max-width: 980px) {
+  .wrap.pms-hero-split {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .pms-hero-mockup-wrap {
+    justify-content: center !important;
+  }
+  .pms-hero-mockup-img {
+    max-width: 100% !important;
+    transform: none !important;
+  }
+}

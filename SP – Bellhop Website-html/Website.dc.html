@@ -15,10 +15,12 @@
 <style>
 body{margin:0}
 a{color:inherit}a:hover{color:#1f7a84}
-.website-hero-split{display:grid;grid-template-columns:1fr 1.35fr;gap:48px;align-items:center}
-.website-hero-mockup-wrap{position:relative;display:flex;justify-content:center;align-items:center;width:100%}
-.website-hero-mockup-img{width:100%;max-width:880px;height:auto;display:block;object-fit:contain;filter:drop-shadow(0 24px 52px rgba(11,26,48,0.15));transition:transform .3s ease}
-.website-hero-mockup-img:hover{transform:translateY(-4px) scale(1.01)}
+.website-hero-sec{overflow:hidden;padding:48px 0 80px}
+.wrap.website-hero-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.45fr);gap:40px;align-items:center;max-width:1440px;width:100%}
+.website-hero-mockup-wrap{position:relative;display:flex;justify-content:flex-end;align-items:center;width:100%}
+.website-hero-mockup-img{width:100%;max-width:960px;height:auto;display:block;object-fit:contain;transform:scale(1.08);transform-origin:center right;filter:drop-shadow(0 28px 64px rgba(11,26,48,0.18));transition:transform .3s ease}
+.website-hero-mockup-img:hover{transform:scale(1.11) translateY(-4px)}
+@media (max-width:1200px){.wrap.website-hero-split{grid-template-columns:1fr 1.25fr;gap:32px}.website-hero-mockup-img{transform:scale(1.04);transform-origin:center center}}
 .stackm{position:relative;height:460px}
 .sm{position:absolute;width:72%;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 40px 70px -36px rgba(11,26,48,.55),0 0 0 1px rgba(18,39,69,.08)}
 .sm .bar{height:26px;background:#f1f4f8;display:flex;gap:5px;align-items:center;padding:0 10px}
@@ -93,7 +95,7 @@ a{color:inherit}a:hover{color:#1f7a84}
 .widget-btn:hover{background:#1e3a5f;color:#ffffff}
 .widget-caption{font-size:10.5px;color:#64748b;text-align:center;margin-top:8px}
 
-@media (max-width:980px){.website-hero-split{grid-template-columns:1fr !important;gap:40px !important}.ft.hl{grid-column:auto}.stackm{height:340px}.web-compare-grid{grid-template-columns:1fr;gap:32px}.web-compare-card{padding:30px 24px 36px}.website-hub-layout{grid-template-columns:1fr;gap:20px}.hub-center-card.feature-showcase{grid-template-columns:1fr !important;gap:24px !important;order:-1}.showcase-widget{justify-content:center}}
+@media (max-width:980px){.website-hero-split{grid-template-columns:1fr !important;gap:36px !important}.website-hero-mockup-wrap{justify-content:center !important}.website-hero-mockup-img{max-width:100% !important;transform:none !important}.ft.hl{grid-column:auto}.stackm{height:340px}.web-compare-grid{grid-template-columns:1fr;gap:32px}.web-compare-card{padding:30px 24px 36px}.website-hub-layout{grid-template-columns:1fr;gap:20px}.hub-center-card.feature-showcase{grid-template-columns:1fr !important;gap:24px !important;order:-1}.showcase-widget{justify-content:center}}
 </style>
 </helmet>
 <div class="bh {{markCls}}">
@@ -114,58 +116,94 @@ a{color:inherit}a:hover{color:#1f7a84}
 </div>
 </section>
 
-<section class="sec">
+<section class="sec" id="so-sanh">
 <div class="wrap">
-  <div class="head center"><span class="eyebrow">— VẤN ĐỀ</span><h2 class="h2">Những hạn chế thường gặp ở website cơ sở lưu trú</h2></div>
-  <div class="grid-auto pain-cards">
-    <a class="card card-hover pain-card" href="#mau">
-      <span class="ic ic-tile i-website"></span>
-      <div class="pain-card-body">
-        <h3 class="h4">Chưa có website hoặc chỉ có fanpage</h3>
-        <p>Thông tin nằm rải rác trên mạng xã hội, thiếu kênh chính thức chuyên nghiệp để giới thiệu cơ sở lưu trú.</p>
-        <div class="foot chips"><span class="chip">Mẫu website ↓</span></div>
+  <div class="head center">
+    <span class="eyebrow">— VẤN ĐỀ</span>
+    <h2 class="h2">Những hạn chế thường gặp ở website cơ sở lưu trú</h2>
+  </div>
+
+  <div class="web-compare-grid">
+    <!-- CỘT 1: WEBSITE THÔNG THƯỜNG -->
+    <div class="web-compare-card standard">
+      <div class="web-compare-top">
+        <span class="web-compare-eyebrow">Website thông thường</span>
       </div>
-    </a>
-    <a class="card card-hover pain-card" href="#cau-truc">
-      <span class="ic ic-tile i-cancel"></span>
-      <div class="pain-card-body">
-        <h3 class="h4">Website không đặt phòng được</h3>
-        <p>Khách phải gọi điện, nhắn tin rồi chờ đợi phản hồi; nhiều trường hợp khách bỏ sang kênh OTA.</p>
-        <div class="foot chips"><span class="chip">Đặt phòng trực tiếp ↓</span></div>
+      <div class="web-compare-img-wrap">
+        <img src="./assets/website-pain-standard.svg" alt="Website thông thường không có đặt phòng">
       </div>
-    </a>
-    <a class="card card-hover pain-card" href="#cau-truc">
-      <span class="ic ic-tile i-inboxes"></span>
-      <div class="pain-card-body">
-        <h3 class="h4">Khó hiển thị trên điện thoại</h3>
-        <p>Giao diện vỡ, tải chậm, chữ nhỏ khiến khách thoát trang ngay sau vài giây truy cập.</p>
-        <div class="foot chips"><span class="chip">Chuẩn di động ↓</span></div>
+      <ul class="web-compare-list">
+        <li class="web-compare-item">
+          <span class="web-compare-icon">–</span>
+          <div class="web-compare-content">
+            <h3 class="web-compare-title">Chưa có website riêng hoặc chỉ có fanpage</h3>
+            <p class="web-compare-desc">Thông tin nằm rải rác trên OTA và mạng xã hội.</p>
+          </div>
+        </li>
+        <li class="web-compare-item">
+          <span class="web-compare-icon">–</span>
+          <div class="web-compare-content">
+            <h3 class="web-compare-title">Không đặt phòng được</h3>
+            <p class="web-compare-desc">Khách phải gọi điện, nhắn tin rồi chờ phản hồi.</p>
+          </div>
+        </li>
+        <li class="web-compare-item">
+          <span class="web-compare-icon">–</span>
+          <div class="web-compare-content">
+            <h3 class="web-compare-title">Khó xem trên điện thoại <span class="web-compare-tag-amber">Có nguồn vừa gửi</span></h3>
+            <p class="web-compare-desc">Tải chậm, chữ nhỏ, bố cục vỡ.</p>
+          </div>
+        </li>
+        <li class="web-compare-item">
+          <span class="web-compare-icon">–</span>
+          <div class="web-compare-content">
+            <h3 class="web-compare-title">Muốn sửa giá, ảnh phải nhờ bên thiết kế</h3>
+            <p class="web-compare-desc">Ưu đãi mới chậm lên website.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- CỘT 2: BELLHOP WEBSITE -->
+    <div class="web-compare-card bellhop">
+      <div class="web-compare-top">
+        <span class="web-compare-eyebrow">Bellhop Website</span>
+        <span class="web-compare-pill">Có đặt phòng</span>
       </div>
-    </a>
-    <a class="card card-hover pain-card" href="#trien-khai">
-      <span class="ic ic-tile i-tabs"></span>
-      <div class="pain-card-body">
-        <h3 class="h4">Sửa giá, ảnh phải nhờ bên thiết kế</h3>
-        <p>Mỗi lần đổi giá hay thêm ưu đãi đều mất nhiều ngày phụ thuộc bên ngoài, chậm tiến độ kinh doanh.</p>
-        <div class="foot chips"><span class="chip">Dễ quản trị ↓</span></div>
+      <div class="web-compare-img-wrap">
+        <img src="./assets/website-pain-bellhop.svg" alt="Bellhop Website tích hợp sẵn đặt phòng trực tiếp">
       </div>
-    </a>
-    <a class="card card-hover pain-card" href="#ket-noi">
-      <span class="ic ic-tile i-chart"></span>
-      <div class="pain-card-body">
-        <h3 class="h4">Không đo lường được hiệu quả</h3>
-        <p>Chưa có số liệu theo dõi lượng truy cập, tỷ lệ chuyển đổi và nguồn đặt phòng từ website.</p>
-        <div class="foot chips"><span class="chip">Báo cáo hiệu quả ↓</span></div>
-      </div>
-    </a>
-    <a class="card card-hover pain-card" href="#form">
-      <span class="ic ic-tile i-chat"></span>
-      <div class="pain-card-body">
-        <h3 class="h4">Chưa rõ website đang gặp vấn đề gì?</h3>
-        <p>Bellhop sẽ khảo sát và tư vấn giải pháp tối ưu cho website cơ sở của bạn.</p>
-        <div class="foot chips"><span class="chip">Nhận tư vấn miễn phí ↓</span></div>
-      </div>
-    </a>
+      <ul class="web-compare-list">
+        <li class="web-compare-item">
+          <span class="web-compare-icon">✓</span>
+          <div class="web-compare-content">
+            <h3 class="web-compare-title">Website riêng theo mẫu cho loại hình của bạn</h3>
+            <p class="web-compare-desc">Khách sạn, homestay &amp; villa, chuỗi.</p>
+          </div>
+        </li>
+        <li class="web-compare-item">
+          <span class="web-compare-icon">✓</span>
+          <div class="web-compare-content">
+            <h3 class="web-compare-title">Đặt phòng ngay trên website</h3>
+            <p class="web-compare-desc">Booking Engine tích hợp sẵn, đặt phòng vào thẳng PMS.</p>
+          </div>
+        </li>
+        <li class="web-compare-item">
+          <span class="web-compare-icon">✓</span>
+          <div class="web-compare-content">
+            <h3 class="web-compare-title">Đẹp trên điện thoại <span class="web-compare-tag-teal">✓</span></h3>
+            <p class="web-compare-desc">Bố cục tự co giãn theo màn hình. <i class="tbc">✓</i></p>
+          </div>
+        </li>
+        <li class="web-compare-item">
+          <span class="web-compare-icon">✓</span>
+          <div class="web-compare-content">
+            <h3 class="web-compare-title">Tự cập nhật ảnh, ưu đãi, bài viết <span class="web-compare-tag-teal">✓</span></h3>
+            <p class="web-compare-desc">Giá phòng lấy tự động từ PMS. <i class="tbc">✓</i></p>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 </section>
@@ -215,25 +253,33 @@ a{color:inherit}a:hover{color:#1f7a84}
   <!-- Nhóm 4 mục đầu tiên (01 - 04) đưa lên ngay dưới text mô tả -->
   <div class="struct-grid struct-grid-top" style="margin-top: 36px">
     <div class="struct-card">
-      <div class="struct-card-num">01</div>
+      <div class="struct-card-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+      </div>
       <h3 class="struct-card-title">Trang chủ chuyên nghiệp &amp; chuẩn UX/UI</h3>
       <p class="struct-card-desc">Giao diện hiện đại, tối ưu tốc độ tải trang, hình ảnh ấn tượng và tích hợp thanh tìm kiếm, kiểm tra phòng trống trực tiếp để giữ chân khách hàng ngay từ giây đầu tiên.</p>
     </div>
 
     <div class="struct-card">
-      <div class="struct-card-num">02</div>
+      <div class="struct-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"></path></svg>
+      </div>
       <h3 class="struct-card-title">Hạng phòng &amp; Giá thời gian thực</h3>
       <p class="struct-card-desc">Trình bày chi tiết từng loại phòng kèm hình ảnh, tiện nghi, sức chứa và giá phòng đồng bộ tức thời với Bellhop PMS, kích thích quyết định đặt phòng nhanh chóng.</p>
     </div>
 
     <div class="struct-card">
-      <div class="struct-card-num">03</div>
+      <div class="struct-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"></path></svg>
+      </div>
       <h3 class="struct-card-title">Giới thiệu Tiện ích &amp; Dịch vụ gia tăng</h3>
       <p class="struct-card-desc">Khuếch đại giá trị kỳ nghỉ với thông tin đầy đủ về nhà hàng, hồ bơi, spa, đưa đón sân bay và các dịch vụ trải nghiệm độc đáo giúp tăng doanh thu trên mỗi lượt khách.</p>
     </div>
 
     <div class="struct-card">
-      <div class="struct-card-num">04</div>
+      <div class="struct-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+      </div>
       <h3 class="struct-card-title">Chính sách Ưu đãi &amp; Gói Combo</h3>
       <p class="struct-card-desc">Trưng bày bắt mắt các combo nghỉ dưỡng, mã giảm giá, ưu đãi đặt phòng sớm nhằm kích cầu mạnh mẽ và thôi thúc khách đặt trực tiếp thay vì qua OTA.</p>
     </div>
@@ -268,25 +314,33 @@ a{color:inherit}a:hover{color:#1f7a84}
   <!-- Nhóm 4 mục tiếp theo (05 - 08) -->
   <div class="struct-grid struct-grid-bottom">
     <div class="struct-card">
-      <div class="struct-card-num">05</div>
+      <div class="struct-card-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+      </div>
       <h3 class="struct-card-title">Thư viện hình ảnh sắc nét &amp; chân thực</h3>
       <p class="struct-card-desc">Bộ sưu tập ảnh chất lượng cao được phân loại theo khuôn viên, phòng ngủ, ẩm thực và hoạt động giúp du khách dễ dàng cảm nhận trọn vẹn không gian nghỉ dưỡng.</p>
     </div>
 
     <div class="struct-card">
-      <div class="struct-card-num">06</div>
+      <div class="struct-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      </div>
       <h3 class="struct-card-title">Vị trí &amp; Hướng dẫn di chuyển thông minh</h3>
       <p class="struct-card-desc">Tích hợp Google Maps trực quan, chỉ đường chi tiết và gợi ý các điểm tham quan, ẩm thực lân cận hỗ trợ khách lưu trú lên lịch trình hoàn hảo.</p>
     </div>
 
     <div class="struct-card">
-      <div class="struct-card-num">07</div>
+      <div class="struct-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+      </div>
       <h3 class="struct-card-title">Tin tức &amp; Bài viết chuẩn SEO Google</h3>
       <p class="struct-card-desc">Cấu trúc bài viết tối ưu chuẩn OnPage SEO giúp website cơ sở dễ dàng lên TOP tìm kiếm Google, mở rộng tệp khách hàng tự nhiên mà không tốn chi phí quảng cáo.</p>
     </div>
 
     <div class="struct-card">
-      <div class="struct-card-num">08</div>
+      <div class="struct-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+      </div>
       <h3 class="struct-card-title">Kênh liên hệ &amp; Đặt phòng trực tiếp 24/7</h3>
       <p class="struct-card-desc">Kết nối đa kênh (Hotline, Zalo, Messenger) cùng công cụ Bellhop Booking Engine bảo mật cao, vận hành ổn định và tự động xác nhận đơn đặt phòng tức thì.</p>
     </div>

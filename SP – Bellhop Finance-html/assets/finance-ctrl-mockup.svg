@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 420" width="100%" height="100%">
+  <defs>
+    <linearGradient id="nightSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141a29"/>
+      <stop offset="60%" stop-color="#28263f"/>
+      <stop offset="100%" stop-color="#54374b"/>
+    </linearGradient>
+    <filter id="winShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Bầu trời đêm Hội An / phố đèn lồng -->
+  <rect width="540" height="420" fill="url(#nightSky)" rx="20"/>
+
+  <!-- Mái phố cổ mờ phía sau -->
+  <path d="M0 240 L80 180 L180 230 L280 170 L380 230 L480 160 L540 190 L540 420 L0 420 Z" fill="#10141f" opacity="0.85"/>
+  <path d="M0 270 L110 210 L230 260 L350 200 L460 250 L540 220 L540 420 L0 420 Z" fill="#181c2b"/>
+
+  <!-- Dây đèn lồng phố đêm -->
+  <path d="M-10 110 Q140 160 280 120 T550 130" fill="none" stroke="#684a3c" stroke-width="1.8"/>
+  <g fill="#f39c12">
+    <ellipse cx="60" cy="132" rx="9" ry="13" fill="#e67e22"/>
+    <ellipse cx="60" cy="132" rx="5" ry="9" fill="#f1c40f"/>
+    <ellipse cx="160" cy="144" rx="10" ry="14" fill="#c0392b"/>
+    <ellipse cx="160" cy="144" rx="6" ry="10" fill="#e74c3c"/>
+    <ellipse cx="260" cy="126" rx="9" ry="13" fill="#d35400"/>
+    <ellipse cx="260" cy="126" rx="5" ry="9" fill="#f39c12"/>
+    <ellipse cx="370" cy="128" rx="10" ry="14" fill="#c0392b"/>
+    <ellipse cx="370" cy="128" rx="6" ry="10" fill="#f1c40f"/>
+    <ellipse cx="470" cy="134" rx="9" ry="13" fill="#e67e22"/>
+    <ellipse cx="470" cy="134" rx="5" ry="9" fill="#f39c12"/>
+  </g>
+
+  <!-- Cửa sổ Browser macOS nổi phía trước: NHẬT KÝ ĐỒNG BỘ -->
+  <g transform="translate(35, 140)" filter="url(#winShadow)">
+    <rect width="470" height="240" rx="14" fill="#ffffff"/>
+    
+    <!-- Thanh tiêu đề -->
+    <rect width="470" height="40" rx="14" fill="#f8fafc"/>
+    <rect y="26" width="470" height="14" fill="#f8fafc"/>
+    <line x1="0" y1="40" x2="470" y2="40" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <!-- Nút cửa sổ Mac -->
+    <circle cx="22" cy="20" r="5" fill="#ef4444"/>
+    <circle cx="38" cy="20" r="5" fill="#f59e0b"/>
+    <circle cx="54" cy="20" r="5" fill="#10b981"/>
+    
+    <!-- Tiêu đề cửa sổ -->
+    <text x="235" y="25" text-anchor="middle" font-family="'Roboto', sans-serif" font-size="12" font-weight="700" fill="#475569">Nhật ký đồng bộ</text>
+
+    <!-- Bảng dữ liệu đồng bộ -->
+    <!-- Tiêu đề bảng -->
+    <rect x="18" y="52" width="434" height="28" fill="#f1f5f9" rx="4"/>
+    <text x="32" y="70" font-family="'Roboto', sans-serif" font-size="10.5" font-weight="700" fill="#64748b" letter-spacing="0.05em">THỜI ĐIỂM</text>
+    <text x="170" y="70" font-family="'Roboto', sans-serif" font-size="10.5" font-weight="700" fill="#64748b" letter-spacing="0.05em">SỐ CHỨNG TỪ</text>
+    <text x="300" y="70" font-family="'Roboto', sans-serif" font-size="10.5" font-weight="700" fill="#64748b" letter-spacing="0.05em">TRẠNG THÁI</text>
+
+    <!-- Hàng 1: Thành công -->
+    <line x1="18" y1="120" x2="452" y2="120" stroke="#f1f5f9" stroke-width="1"/>
+    <text x="32" y="105" font-family="'Roboto Mono', monospace" font-size="12" font-weight="500" fill="#1e293b">23/10 23:00</text>
+    <text x="170" y="105" font-family="'Roboto Mono', monospace" font-size="12" font-weight="600" fill="#1e293b">42</text>
+    <g transform="translate(300, 94)">
+      <circle cx="4" cy="7" r="4" fill="#16a34a"/>
+      <text x="14" y="11" font-family="'Roboto', sans-serif" font-size="11.5" font-weight="700" fill="#15803d">Thành công</text>
+    </g>
+
+    <!-- Hàng 2: Lỗi cần xử lý -->
+    <text x="32" y="148" font-family="'Roboto Mono', monospace" font-size="12" font-weight="500" fill="#1e293b">22/10 23:00</text>
+    <text x="170" y="148" font-family="'Roboto Mono', monospace" font-size="12" font-weight="600" fill="#1e293b">38 / 1 lỗi</text>
+    <g transform="translate(300, 137)">
+      <rect x="0" y="-3" width="144" height="20" rx="4" fill="#fef3c7" stroke="#fde68a" stroke-width="1"/>
+      <text x="6" y="11" font-family="'Roboto', sans-serif" font-size="10" font-weight="600" fill="#b45309">Cần xử lý: thiếu mã “NUOC-01”</text>
+    </g>
+
+    <!-- Chú thích -->
+    <circle cx="28" cy="205" r="2.5" fill="#94a3b8"/>
+    <text x="36" y="208" font-family="'Roboto', sans-serif" font-size="11" fill="#94a3b8">Dữ liệu minh họa</text>
+  </g>
+</svg>

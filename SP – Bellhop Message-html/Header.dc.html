@@ -24,10 +24,7 @@
     <nav class="nav" aria-label="Điều hướng chính">
       <button class="nav-i {{cls.sp}}" aria-expanded="{{exp.sp}}" onClick="{{tSp}}" onMouseEnter="{{oSp}}">Sản phẩm <i class="cv"></i></button>
       <a class="nav-i {{cls.bg}}" href="Pricing.dc.html">Bảng giá</a>
-<div style="position: relative" onMouseEnter="{{oTn}}">
-        <a class="nav-i {{cls.tn}}" href="News.dc.html">Tin tức <i class="cv"></i></a>
-        <sc-if value="{{open.tn}}" hint-placeholder-val="{{ false }}"><div class="dd"><a href="News.dc.html">Blog &amp; Tin tức</a><a href="Main.dc.html#cong-cu">Công cụ miễn phí</a><a href="News.dc.html#ebook">Ebook &amp; mẫu biểu</a></div></sc-if>
-      </div>
+<a class="nav-i {{cls.tn}}" href="News.dc.html">Tin tức</a>
       <div style="position: relative">
         <button class="nav-i {{cls.ct}}" aria-expanded="{{exp.ct}}" onClick="{{tCt}}" onMouseEnter="{{oCt}}">Công ty <i class="cv"></i></button>
         <sc-if value="{{open.ct}}" hint-placeholder-val="{{ false }}"><div class="dd"><a href="About.dc.html">Về Bellhop &amp; Lifrooms</a><a href="#">Liên hệ</a></div></sc-if>
@@ -72,11 +69,7 @@
       <sc-for list="{{flat}}" as="it" hint-placeholder-count="8"><a href="{{it.href}}"><span class="mnav-ic ic ic-tile-sm {{it.icon}}"></span><span>{{it.name}}</span></a></sc-for>
     </details>
     <a href="Pricing.dc.html">Bảng giá</a>
-        <details><summary>Tin tức <span>+</span></summary>
-      <a href="News.dc.html">Blog &amp; Tin tức</a>
-      <a href="Main.dc.html#cong-cu">Công cụ miễn phí</a>
-      <a href="News.dc.html#ebook">Ebook &amp; mẫu biểu</a>
-    </details>
+        <a href="News.dc.html">Tin tức</a>
     <details><summary>Công ty <span>+</span></summary><a href="About.dc.html">Về Bellhop &amp; Lifrooms</a><a href="#">Liên hệ</a></details>
     <a class="btn btn-primary btn-block" href="#dang-ky" style="margin-top: 16px; border: 0; color: #fff; justify-content: center">Dùng thử miễn phí</a>
   </div>
