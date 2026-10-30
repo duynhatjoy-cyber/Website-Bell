@@ -193,13 +193,13 @@
 
 /* Mobile horizontal scroll indicator below wide tables (.tbl-box) */
 .tbl-scroll-hint{display:none}
-@keyframes bh-table-arrow{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
 @media(max-width:860px){
-  .tbl-scroll-hint{display:flex;justify-content:center;margin-top:12px}
-  .tbl-scroll-btn{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 16px;border:1px solid #bfe3e8;border-radius:999px;background:#eef8f9;color:#122745;font:inherit;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 6px 16px -8px rgba(18,39,69,.22);transition:background .2s,border-color .2s}
-  .tbl-scroll-btn:active{background:#dcf1f4}
-  .tbl-scroll-arrow{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#122745;color:#fff;font-size:14px;line-height:1;animation:bh-table-arrow 1.4s ease-in-out infinite}
-  .tbl-scroll-btn.is-end .tbl-scroll-arrow{transform:rotate(180deg);animation:none}
+  .tbl-scroll-hint{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:14px}
+  .tbl-scroll-btn{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border:1px solid #bfe3e8;border-radius:999px;background:#eef8f9;color:#122745;font:inherit;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 4px 12px -4px rgba(18,39,69,.16);transition:all .2s ease;user-select:none}
+  .tbl-scroll-btn:hover:not(:disabled){background:#e0f2f5;border-color:#5fb9c2}
+  .tbl-scroll-btn:active:not(:disabled){background:#d4eef2;transform:scale(0.98)}
+  .tbl-scroll-btn:disabled,.tbl-scroll-btn.is-disabled{opacity:.35;cursor:not-allowed;box-shadow:none}
+  .tbl-scroll-arrow{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#122745;color:#fff;font-size:13px;line-height:1;font-weight:800}
 }
 
 /* Global mobile & tablet layout alignment and overflow fixes */
@@ -1399,5 +1399,95 @@ body:has(a[href*="Message.dc.html"]) .subnav,
   .pms-hero-mockup-img {
     max-width: 100% !important;
     transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   Proof Bar 2-Column Layout
+   ========================================================================== */
+.proof.proof--two-col {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  max-width: 860px !important;
+  margin: 0 auto !important;
+}
+.proof.proof--two-col > div {
+  padding: 32px 48px !important;
+}
+@media (max-width: 680px) {
+  .proof.proof--two-col {
+    grid-template-columns: 1fr !important;
+    max-width: 440px !important;
+  }
+  .proof.proof--two-col > div {
+    padding: 24px 20px !important;
+  }
+  .proof.proof--two-col > div:nth-child(2) {
+    border-left: 0 !important;
+    border-top: 1px solid var(--line) !important;
+  }
+}
+
+/* ==========================================================================
+   Trial Pill CTA (Replacing .jr-band)
+   ========================================================================== */
+.trial-pill-cta-wrap {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: 36px !important;
+  width: 100% !important;
+}
+.trial-pill-cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: #ffffff !important;
+  border: 1.5px solid #f6cb68 !important;
+  border-radius: 999px !important;
+  padding: 5px 6px 5px 24px !important;
+  box-shadow: 0 8px 24px -6px rgba(245, 158, 11, 0.18), 0 2px 8px rgba(18, 39, 69, 0.04) !important;
+  gap: 16px !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+.trial-pill-cta:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 28px -6px rgba(245, 158, 11, 0.26) !important;
+}
+.trial-pill-text {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #122745 !important;
+  white-space: nowrap !important;
+  letter-spacing: -0.01em !important;
+}
+.trial-pill-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #f7b944 !important;
+  color: #122745 !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  padding: 10px 24px !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  transition: background 0.2s ease, transform 0.15s ease !important;
+  white-space: nowrap !important;
+}
+.trial-pill-btn:hover {
+  background: #f5a623 !important;
+  color: #0b1a30 !important;
+}
+@media (max-width: 540px) {
+  .trial-pill-cta {
+    padding: 6px 8px 6px 18px !important;
+    gap: 10px !important;
+  }
+  .trial-pill-text {
+    font-size: 14px !important;
+  }
+  .trial-pill-btn {
+    font-size: 13.5px !important;
+    padding: 8px 18px !important;
   }
 }

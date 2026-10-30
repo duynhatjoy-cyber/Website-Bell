@@ -146,7 +146,16 @@ def main():
             )
             content = re.sub(
                 r'(<div class="tbl-box"[^>]*>\s*<table\b[\s\S]*?</table>\s*</div>)',
-                r'\1<div class="tbl-scroll-hint"><button type="button" class="tbl-scroll-btn" aria-label="Lướt ngang để xem thêm cột"><span>Lướt ngang để xem thêm cột</span><span class="tbl-scroll-arrow" aria-hidden="true">→</span></button></div>',
+                r'\1<div class="tbl-scroll-hint">'
+                r'<button type="button" class="tbl-scroll-btn tbl-scroll-btn--prev" aria-label="Xem cột trước">'
+                r'<span class="tbl-scroll-arrow" aria-hidden="true">←</span>'
+                r'<span>Cột trước</span>'
+                r'</button>'
+                r'<button type="button" class="tbl-scroll-btn tbl-scroll-btn--next" aria-label="Xem cột tiếp">'
+                r'<span>Cột tiếp</span>'
+                r'<span class="tbl-scroll-arrow" aria-hidden="true">→</span>'
+                r'</button>'
+                r'</div>',
                 content,
             )
             content = (

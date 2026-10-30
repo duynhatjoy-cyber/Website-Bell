@@ -3,21 +3,44 @@
     document.querySelectorAll('.tbl-scroll-hint').forEach((hint) => {
       if (hint.dataset.bound) return;
       const box = hint.previousElementSibling;
-      const btn = hint.querySelector('.tbl-scroll-btn');
-      if (!box || !box.classList.contains('tbl-box') || !btn) return;
+      if (!box || !box.classList.contains('tbl-box')) return;
+      const prevBtn = hint.querySelector('.tbl-scroll-btn--prev');
+      const nextBtn = hint.querySelector('.tbl-scroll-btn--next');
+      if (!prevBtn && !nextBtn) return;
       hint.dataset.bound = '1';
+
       const syncState = () => {
-        const atEnd = box.scrollLeft + box.clientWidth >= box.scrollWidth - 12;
-        btn.classList.toggle('is-end', atEnd);
+        const maxScroll = Math.max(0, box.scrollWidth - box.clientWidth);
+        const atStart = box.scrollLeft <= 6;
+        const atEnd = box.scrollLeft >= maxScroll - 8;
+        if (prevBtn) {
+          prevBtn.disabled = atStart;
+          prevBtn.classList.toggle('is-disabled', atStart);
+        }
+        if (nextBtn) {
+          nextBtn.disabled = atEnd;
+          nextBtn.classList.toggle('is-disabled', atEnd);
+        }
       };
+
       box.addEventListener('scroll', syncState, { passive: true });
-      btn.addEventListener('click', () => {
-        const atEnd = box.scrollLeft + box.clientWidth >= box.scrollWidth - 12;
-        box.scrollTo({
-          left: atEnd ? 0 : box.scrollLeft + Math.max(220, Math.round(box.clientWidth * 0.65)),
-          behavior: 'smooth',
+
+      const getStep = () => Math.max(180, Math.round(box.clientWidth * 0.65));
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          box.scrollBy({ left: -getStep(), behavior: 'smooth' });
         });
-      });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          box.scrollBy({ left: getStep(), behavior: 'smooth' });
+        });
+      }
+
       syncState();
     });
   }

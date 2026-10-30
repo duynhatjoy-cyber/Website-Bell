@@ -65,12 +65,12 @@
       <text x="14" y="11" font-family="'Roboto', sans-serif" font-size="11.5" font-weight="700" fill="#15803d">Thành công</text>
     </g>
 
-    <!-- Hàng 2: Lỗi cần xử lý -->
+    <!-- Hàng 2: Nhật ký đồng bộ thành công -->
     <text x="32" y="148" font-family="'Roboto Mono', monospace" font-size="12" font-weight="500" fill="#1e293b">22/10 23:00</text>
-    <text x="170" y="148" font-family="'Roboto Mono', monospace" font-size="12" font-weight="600" fill="#1e293b">38 / 1 lỗi</text>
+    <text x="170" y="148" font-family="'Roboto Mono', monospace" font-size="12" font-weight="600" fill="#1e293b">38</text>
     <g transform="translate(300, 137)">
-      <rect x="0" y="-3" width="144" height="20" rx="4" fill="#fef3c7" stroke="#fde68a" stroke-width="1"/>
-      <text x="6" y="11" font-family="'Roboto', sans-serif" font-size="10" font-weight="600" fill="#b45309">Cần xử lý: thiếu mã “NUOC-01”</text>
+      <circle cx="4" cy="7" r="4" fill="#16a34a"/>
+      <text x="14" y="11" font-family="'Roboto', sans-serif" font-size="11.5" font-weight="700" fill="#15803d">Thành công</text>
     </g>
 
     <!-- Chú thích -->
