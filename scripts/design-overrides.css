@@ -1538,3 +1538,13 @@ body:has(a[href*="Message.dc.html"]) .subnav,
     white-space: normal !important;
   }
 }
+
+/* Website Templates Heading 1 line */
+.web-templates-heading {
+  white-space: nowrap !important;
+}
+@media (max-width: 880px) {
+  .web-templates-heading {
+    white-space: normal !important;
+  }
+}
