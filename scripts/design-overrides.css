@@ -14,7 +14,7 @@
 .site-header-sticky.is-scrolled .hdr,header.hdr.is-scrolled,.hdr.is-scrolled{box-shadow:0 6px 24px -4px rgba(18,39,69,.12)!important}
 .hdr .logo img.header-brand{height:48px!important;width:auto!important;max-width:176px;object-fit:contain}
 .mega-top{display:none!important}
-.bh .proof>div{align-items:center!important;justify-content:center!important;text-align:center!important}
+.bh .proof>div{align-items:center!important;justify-content:flex-start!important;text-align:center!important;padding:28px 18px!important}
 .bh .proof .brand-logo{align-self:center!important}
 .bh .pain-head{align-items:center;text-align:center;margin-inline:auto}
 .bh .pain-head .lead{max-width:760px;margin-inline:auto}
@@ -88,7 +88,59 @@
 
 /* ==========================================================================
    Process Section - 2-Column Layout, Accordion & Animated Connecting Line
+   Header Left-Alignment (Căn text trái cho các trang có các bước kích hoạt/triển khai)
    ========================================================================== */
+.bh .head.head-left,
+.bh .head:has(+ .process-split-layout),
+.bh .sec:has(.process-split-layout) .head,
+.bh .ln-sec:has(.process-split-layout) .head,
+.bh section:has(.process-split-layout) .head {
+  align-items: flex-start !important;
+  text-align: left !important;
+  margin-inline: 0 !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  max-width: 100% !important;
+}
+
+.bh .head.head-left .eyebrow,
+.bh .head:has(+ .process-split-layout) .eyebrow,
+.bh .sec:has(.process-split-layout) .head .eyebrow,
+.bh .ln-sec:has(.process-split-layout) .head .eyebrow,
+.bh section:has(.process-split-layout) .head .eyebrow {
+  justify-content: flex-start !important;
+  text-align: left !important;
+  align-self: flex-start !important;
+}
+
+.bh .head.head-left .eyebrow::before,
+.bh .head:has(+ .process-split-layout) .eyebrow::before,
+.bh .sec:has(.process-split-layout) .head .eyebrow::before,
+.bh .ln-sec:has(.process-split-layout) .head .eyebrow::before,
+.bh section:has(.process-split-layout) .head .eyebrow::before {
+  display: inline-block !important;
+}
+
+.bh .head.head-left .h2,
+.bh .head:has(+ .process-split-layout) .h2,
+.bh .sec:has(.process-split-layout) .head .h2,
+.bh .ln-sec:has(.process-split-layout) .head .h2,
+.bh section:has(.process-split-layout) .head .h2 {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+.bh .head.head-left .lead,
+.bh .head:has(+ .process-split-layout) .lead,
+.bh .sec:has(.process-split-layout) .head .lead,
+.bh .ln-sec:has(.process-split-layout) .head .lead,
+.bh section:has(.process-split-layout) .head .lead {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
 .process-split-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:center;margin-top:36px}
 .process-photo-col{width:100%;display:flex;justify-content:center}
 .process-photo-img{width:100%;height:440px;max-width:520px;object-fit:cover;border-radius:20px;box-shadow:0 20px 48px -16px rgba(11,26,48,.16);transition:opacity .25s ease,transform .25s ease}
@@ -1149,27 +1201,27 @@ body:has(a[href*="Message.dc.html"]) .subnav,
 }
 .wrap.website-hero-split {
   display: grid !important;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) !important;
-  gap: 40px !important;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.35fr) !important;
+  gap: 48px !important;
   align-items: center !important;
-  max-width: 1248px !important;
+  max-width: 1360px !important;
   width: 100% !important;
 }
 .website-hero-mockup-wrap {
   position: relative !important;
   display: flex !important;
-  justify-content: center !important;
+  justify-content: flex-end !important;
   align-items: center !important;
   width: 100% !important;
 }
 .website-hero-mockup-img {
   width: 100% !important;
-  max-width: 640px !important;
+  max-width: 780px !important;
   height: auto !important;
   display: block !important;
   object-fit: contain !important;
   transform: none !important;
-  filter: drop-shadow(0 20px 48px rgba(11, 26, 48, 0.14)) !important;
+  filter: drop-shadow(0 24px 60px rgba(11, 26, 48, 0.16)) !important;
   transition: transform 0.3s ease !important;
 }
 .website-hero-mockup-img:hover {
@@ -1177,10 +1229,12 @@ body:has(a[href*="Message.dc.html"]) .subnav,
 }
 @media (max-width: 1200px) {
   .wrap.website-hero-split {
-    grid-template-columns: 1fr 1.15fr !important;
+    grid-template-columns: 1fr 1.25fr !important;
     gap: 32px !important;
+    max-width: 100% !important;
   }
   .website-hero-mockup-img {
+    max-width: 700px !important;
     transform: none !important;
   }
 }
@@ -1399,22 +1453,69 @@ body:has(a[href*="Message.dc.html"]) .subnav,
 }
 
 /* ==========================================================================
-   Proof Bar Typography & Brand Text
+   Proof Bar Typography & Icons Alignment (Căn chỉnh bằng phẳng ngang hàng)
    ========================================================================== */
-.proof b.proof-brand-text {
-  font-size: 30px !important;
-  line-height: 1.15 !important;
-  font-weight: 800 !important;
-  letter-spacing: .04em !important;
-  color: #122745 !important;
-  height: 40px !important;
+.proof > div {
+  padding: 28px 18px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: center !important;
+}
+.proof b {
+  height: 44px !important;
   display: flex !important;
   align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  font-size: 36px !important;
+  line-height: 1 !important;
+}
+.proof-icon-wrap {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 44px !important;
+  margin: 0 !important;
+}
+.proof-icon-tile {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 12px !important;
+  background-color: var(--teal-50) !important;
+  background-size: 28px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+}
+.proof span {
+  margin-top: 6px !important;
+  font-size: 15px !important;
+  line-height: 1.4 !important;
+  color: var(--muted) !important;
+  text-align: center !important;
 }
 @media (max-width: 980px) {
-  .proof b.proof-brand-text {
-    font-size: 24px !important;
-    height: 32px !important;
+  .proof > div {
+    padding: 20px 12px !important;
+  }
+  .proof b {
+    height: 36px !important;
+    font-size: 26px !important;
+  }
+  .proof-icon-wrap {
+    height: 36px !important;
+  }
+  .proof-icon-tile {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 10px !important;
+    background-size: 22px !important;
+  }
+  .proof span {
+    font-size: 13px !important;
   }
 }
 
@@ -1544,4 +1645,155 @@ body:has(a[href*="Message.dc.html"]) .subnav,
   .web-templates-heading {
     white-space: normal !important;
   }
+}
+
+/* ==========================================================================
+   Booking Engine Pricing Banner UI/UX (Theo mẫu Ảnh 2)
+   ========================================================================== */
+.pricing-banner-card {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  background: #0b1a2d !important;
+  box-shadow: 0 16px 40px rgba(11, 26, 45, 0.16) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+.pricing-banner-content {
+  padding: 32px 36px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  color: #ffffff !important;
+}
+.pricing-banner-eyebrow {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  color: #38bdf8 !important;
+  text-transform: uppercase !important;
+  margin-bottom: 12px !important;
+  display: inline-block !important;
+}
+.pricing-banner-title {
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  line-height: 1.24 !important;
+  color: #ffffff !important;
+  margin: 0 0 14px !important;
+  letter-spacing: -0.01em !important;
+}
+.pricing-banner-chips {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 8px !important;
+  margin-bottom: 22px !important;
+}
+.pricing-chip {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #e2e8f0 !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  padding: 5px 12px !important;
+  border-radius: 999px !important;
+  white-space: nowrap !important;
+}
+.pricing-banner-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  margin-top: auto !important;
+}
+.pricing-btn-link {
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px !important;
+  transition: color 0.2s !important;
+}
+.pricing-btn-link:hover {
+  color: #38bdf8 !important;
+}
+.pricing-btn-demo {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 8px 22px !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 1.5px solid #ffffff !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  transition: all 0.2s !important;
+}
+.pricing-btn-demo:hover {
+  background: #ffffff !important;
+  color: #0b1a2d !important;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2) !important;
+}
+.pricing-banner-visual {
+  position: relative !important;
+  background: #f5ebe1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  min-height: unset !important;
+  aspect-ratio: 540 / 340 !important;
+}
+.pricing-banner-visual img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  display: block !important;
+}
+@media (max-width: 980px) {
+  .pricing-banner-card {
+    grid-template-columns: 1fr !important;
+  }
+  .pricing-banner-chips {
+    flex-wrap: wrap !important;
+  }
+  .pricing-banner-content {
+    padding: 28px 24px !important;
+  }
+}
+
+/* ==========================================================================
+   Icon Chat / Message cho Tab / Card số 6
+   ========================================================================== */
+.i-chat {
+  background-image: url(../assets/3ba9d2f81b10502afcbe9b471fb0cdb9.svg) !important;
+}
+
+/* ==========================================================================
+   Brand Pill Icon Badge (Thay thế logo Kovena và MISA)
+   ========================================================================== */
+.brand-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 3px 10px !important;
+  border-radius: 999px !important;
+  background: var(--teal-50) !important;
+  border: 1px solid rgba(31, 122, 132, 0.22) !important;
+  color: #122745 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  vertical-align: middle !important;
+  margin-left: 8px !important;
+}
+.brand-pill .ic {
+  width: 14px !important;
+  height: 14px !important;
+  display: inline-block !important;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }

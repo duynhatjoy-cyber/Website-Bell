@@ -1,66 +1,159 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="100%" height="100%">
   <defs>
-    <filter id="shadow6" x="-10%" y="-10%" width="130%" height="130%">
-      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#0b1a30" flood-opacity="0.18"/>
+    <!-- Depth drop shadows for realistic 3D cascading layers -->
+    <filter id="shadowBack" x="-15%" y="-15%" width="135%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#0b1b30" flood-opacity="0.16"/>
     </filter>
+    <filter id="shadowMid" x="-15%" y="-15%" width="135%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#0b1b30" flood-opacity="0.22"/>
+    </filter>
+    <filter id="shadowFront" x="-15%" y="-15%" width="140%" height="145%">
+      <feDropShadow dx="0" dy="28" stdDeviation="28" flood-color="#071324" flood-opacity="0.26"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#071324" flood-opacity="0.12"/>
+    </filter>
+
+    <clipPath id="cardClip1">
+      <rect width="560" height="360" rx="18"/>
+    </clipPath>
+    <clipPath id="cardClip2">
+      <rect width="560" height="360" rx="18"/>
+    </clipPath>
+    <clipPath id="cardClip3">
+      <rect width="560" height="370" rx="18"/>
+    </clipPath>
   </defs>
-  <!-- Card 1 (Back Left) -->
-  <g filter="url(#shadow6)" transform="translate(40, 60)">
-    <rect width="280" height="360" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
-    <rect width="280" height="28" rx="14" fill="#e2e8f0"/>
-    <circle cx="20" cy="14" r="4" fill="#94a3b8"/>
-    <circle cx="32" cy="14" r="4" fill="#94a3b8"/>
-    <rect y="28" width="280" height="160" fill="#1e293b"/>
-    <text x="30" y="100" font-family="Roboto, sans-serif" font-size="18" fill="#ffffff" font-weight="800">Boutique Hotel</text>
-    <text x="30" y="122" font-family="Roboto, sans-serif" font-size="11" fill="#94a3b8">Sang trọng · Hiện đại · Tối giản</text>
-    <rect x="30" y="140" width="90" height="26" rx="6" fill="#5fb9c2"/>
-    <text x="44" y="157" font-family="Roboto, sans-serif" font-size="10" fill="#122745" font-weight="800">Đặt phòng</text>
+
+  <!-- ================= CARD 1: BACK (Slate Blue - Khách sạn - Mẫu A) ================= -->
+  <g filter="url(#shadowBack)" transform="translate(30, 20)">
+    <g clip-path="url(#cardClip1)">
+      <!-- Card Body Background -->
+      <rect width="560" height="360" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+
+      <!-- Header: Slate Blue (#3a607f) -->
+      <rect width="560" height="155" fill="#3a607f"/>
+
+      <!-- Browser Top Pill with 3 dots -->
+      <rect x="28" y="22" width="50" height="22" rx="6" fill="#ffffff" fill-opacity="0.95"/>
+      <circle cx="40" cy="33" r="2.5" fill="#94a3b8"/>
+      <circle cx="53" cy="33" r="2.5" fill="#94a3b8"/>
+      <circle cx="66" cy="33" r="2.5" fill="#94a3b8"/>
+
+      <!-- Title & Badge completely within visible stripe (0 - 155px) -->
+      <text x="28" y="96" font-family="'Roboto', system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#ffffff" letter-spacing="-0.01em">Khách sạn</text>
+      <rect x="28" y="110" width="76" height="24" rx="6" fill="#ffffff" fill-opacity="0.22"/>
+      <text x="38" y="127" font-family="'Roboto', system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Mẫu A</text>
+
+      <!-- Body Content Placeholders within visible stripe -->
+      <g transform="translate(28, 180)">
+        <rect width="118" height="68" rx="8" fill="#eef2f6"/>
+        <rect x="10" y="38" width="50" height="8" rx="4" fill="#94a3b8"/>
+        <rect x="10" y="52" width="70" height="6" rx="3" fill="#cbd5e1"/>
+
+        <rect y="84" width="118" height="32" rx="7" fill="none" stroke="#cbd5e1" stroke-width="1.6"/>
+        <text x="59" y="105" text-anchor="middle" font-family="'Roboto', system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="600" fill="#64748b">Xem phòng</text>
+      </g>
+    </g>
+    <!-- Border overlay for crisp corners -->
+    <rect width="560" height="360" rx="18" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
   </g>
 
-  <!-- Card 2 (Back Right) -->
-  <g filter="url(#shadow6)" transform="translate(440, 60)">
-    <rect width="280" height="360" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
-    <rect width="280" height="28" rx="14" fill="#e2e8f0"/>
-    <circle cx="20" cy="14" r="4" fill="#94a3b8"/>
-    <circle cx="32" cy="14" r="4" fill="#94a3b8"/>
-    <rect y="28" width="280" height="160" fill="#0f766e"/>
-    <text x="30" y="100" font-family="Roboto, sans-serif" font-size="18" fill="#ffffff" font-weight="800">Resort &amp; Villa</text>
-    <text x="30" y="122" font-family="Roboto, sans-serif" font-size="11" fill="#a7f3d0">Thiên nhiên · Nghỉ dưỡng · Trải nghiệm</text>
-    <rect x="30" y="140" width="90" height="26" rx="6" fill="#ffffff"/>
-    <text x="44" y="157" font-family="Roboto, sans-serif" font-size="10" fill="#0f766e" font-weight="800">Khám phá</text>
+  <!-- ================= CARD 2: MIDDLE (Teal - Homestay - Mẫu B) ================= -->
+  <g filter="url(#shadowMid)" transform="translate(185, 85)">
+    <g clip-path="url(#cardClip2)">
+      <!-- Card Body Background -->
+      <rect width="560" height="360" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+
+      <!-- Header: Teal (#2ba397) -->
+      <rect width="560" height="155" fill="#2ba397"/>
+
+      <!-- Browser Top Pill with 3 dots -->
+      <rect x="28" y="22" width="50" height="22" rx="6" fill="#ffffff" fill-opacity="0.95"/>
+      <circle cx="40" cy="33" r="2.5" fill="#94a3b8"/>
+      <circle cx="53" cy="33" r="2.5" fill="#94a3b8"/>
+      <circle cx="66" cy="33" r="2.5" fill="#94a3b8"/>
+
+      <!-- Title & Badge completely within visible stripe (0 - 165px) -->
+      <text x="28" y="96" font-family="'Roboto', system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#ffffff" letter-spacing="-0.01em">Homestay</text>
+      <rect x="28" y="110" width="76" height="24" rx="6" fill="#ffffff" fill-opacity="0.22"/>
+      <text x="38" y="127" font-family="'Roboto', system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Mẫu B</text>
+
+      <!-- Body Content Placeholders within visible stripe -->
+      <g transform="translate(28, 180)">
+        <rect width="128" height="68" rx="8" fill="#eef2f6"/>
+        <rect x="10" y="38" width="56" height="8" rx="4" fill="#94a3b8"/>
+        <rect x="10" y="52" width="80" height="6" rx="3" fill="#cbd5e1"/>
+
+        <rect y="84" width="128" height="32" rx="7" fill="none" stroke="#cbd5e1" stroke-width="1.6"/>
+        <text x="64" y="105" text-anchor="middle" font-family="'Roboto', system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="600" fill="#64748b">Nguyên căn</text>
+      </g>
+    </g>
+    <!-- Border overlay for crisp corners -->
+    <rect width="560" height="360" rx="18" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
   </g>
 
-  <!-- Card 3 (Center Front) -->
-  <g filter="url(#shadow6)" transform="translate(200, 20)">
-    <rect width="360" height="420" rx="16" fill="#ffffff" stroke="#122745" stroke-width="2"/>
-    <rect width="360" height="34" rx="16" fill="#122745"/>
-    <circle cx="22" cy="17" r="5" fill="#ef4444"/>
-    <circle cx="38" cy="17" r="5" fill="#f59e0b"/>
-    <circle cx="54" cy="17" r="5" fill="#10b981"/>
-    <rect x="80" y="7" width="200" height="20" rx="6" fill="#ffffff" fill-opacity="0.15"/>
-    <text x="96" y="21" font-family="Roboto, sans-serif" font-size="10" fill="#ffffff">homestay-dalat.bellhop.vn</text>
+  <!-- ================= CARD 3: FRONT (Deep Navy - Chuỗi - Mẫu C) ================= -->
+  <g filter="url(#shadowFront)" transform="translate(350, 150)">
+    <g clip-path="url(#cardClip3)">
+      <!-- Card Body Background -->
+      <rect width="560" height="370" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
 
-    <!-- Hero image block -->
-    <rect y="34" width="360" height="190" fill="#376587"/>
-    <text x="36" y="110" font-family="Roboto, sans-serif" font-size="22" fill="#ffffff" font-weight="900">Mây Homestay Đà Lạt</text>
-    <text x="36" y="136" font-family="Roboto, sans-serif" font-size="13" fill="#e0f2fe">Chốn dừng chân ấm cúng giữa ngàn thông</text>
-    
-    <!-- Direct Booking Bar on Template -->
-    <rect x="30" y="180" width="300" height="48" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
-    <text x="48" y="209" font-family="Roboto, sans-serif" font-size="12" fill="#122745" font-weight="700">23/10 – 25/10 · 2 Khách</text>
-    <rect x="220" y="188" width="100" height="32" rx="6" fill="#1f7a84"/>
-    <text x="236" y="208" font-family="Roboto, sans-serif" font-size="11" fill="#ffffff" font-weight="800">Đặt phòng</text>
+      <!-- Header: Deep Bellhop Navy (#0d1e38) -->
+      <rect width="560" height="155" fill="#0d1e38"/>
 
-    <!-- Feature section on template -->
-    <text x="36" y="260" font-family="Roboto, sans-serif" font-size="14" fill="#122745" font-weight="800">Hạng phòng nổi bật</text>
-    <rect x="30" y="278" width="140" height="110" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
-    <rect x="30" y="278" width="140" height="60" rx="8" fill="#5fb9c2"/>
-    <text x="42" y="356" font-family="Roboto, sans-serif" font-size="11" fill="#122745" font-weight="700">Phòng View Thung Lũng</text>
-    <text x="42" y="374" font-family="Roboto, sans-serif" font-size="12" fill="#1f7a84" font-weight="800">650.000đ</text>
+      <!-- Browser Top Pill with 3 dots -->
+      <rect x="28" y="22" width="50" height="22" rx="6" fill="#ffffff" fill-opacity="0.95"/>
+      <circle cx="40" cy="33" r="2.5" fill="#94a3b8"/>
+      <circle cx="53" cy="33" r="2.5" fill="#94a3b8"/>
+      <circle cx="66" cy="33" r="2.5" fill="#94a3b8"/>
 
-    <rect x="190" y="278" width="140" height="110" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
-    <rect x="190" y="278" width="140" height="60" rx="8" fill="#122745"/>
-    <text x="202" y="356" font-family="Roboto, sans-serif" font-size="11" fill="#122745" font-weight="700">Phòng Áp Mái Gỗ</text>
-    <text x="202" y="374" font-family="Roboto, sans-serif" font-size="12" fill="#1f7a84" font-weight="800">850.000đ</text>
+      <!-- Direct Booking Badge on top right -->
+      <rect x="376" y="20" width="156" height="26" rx="13" fill="#2ba397"/>
+      <circle cx="392" cy="33" r="3.5" fill="#ffffff"/>
+      <text x="404" y="38" font-family="'Roboto', system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#ffffff">Đặt phòng trực tiếp</text>
+
+      <!-- Title & Tagline -->
+      <text x="28" y="94" font-family="'Roboto', system-ui, -apple-system, sans-serif" font-size="25" font-weight="800" fill="#ffffff" letter-spacing="-0.01em">Chuỗi lưu trú - Mẫu C</text>
+      <text x="28" y="122" font-family="'Roboto', system-ui, -apple-system, sans-serif" font-size="13.5" font-weight="500" fill="#94a3b8">Giao diện đa chi nhánh, đồng bộ tồn phòng &amp; giá tức thì</text>
+
+      <!-- Body Content: 3 Room Cards -->
+      <g transform="translate(24, 175)">
+        <!-- Room 1 -->
+        <g transform="translate(0, 0)">
+          <rect width="158" height="100" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <rect width="158" height="52" rx="8" fill="#e2e8f0"/>
+          <rect x="8" y="62" width="100" height="8" rx="4" fill="#0f172a"/>
+          <rect x="8" y="76" width="60" height="7" rx="3.5" fill="#14b8a6"/>
+        </g>
+        <!-- Room 2 -->
+        <g transform="translate(176, 0)">
+          <rect width="158" height="100" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <rect width="158" height="52" rx="8" fill="#dbeafe"/>
+          <rect x="8" y="62" width="110" height="8" rx="4" fill="#0f172a"/>
+          <rect x="8" y="76" width="64" height="7" rx="3.5" fill="#14b8a6"/>
+        </g>
+        <!-- Room 3 -->
+        <g transform="translate(352, 0)">
+          <rect width="160" height="100" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <rect width="160" height="52" rx="8" fill="#ccfbf1"/>
+          <rect x="8" y="62" width="105" height="8" rx="4" fill="#0f172a"/>
+          <rect x="8" y="76" width="62" height="7" rx="3.5" fill="#14b8a6"/>
+        </g>
+      </g>
+
+      <!-- Bottom Search Bar -->
+      <g transform="translate(24, 296)">
+        <rect width="512" height="50" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+        <!-- Search icon -->
+        <circle cx="28" cy="25" r="5.5" fill="none" stroke="#64748b" stroke-width="1.8"/>
+        <line x1="32" y1="29" x2="39" y2="36" stroke="#64748b" stroke-width="1.8" stroke-linecap="round"/>
+        <text x="48" y="30" font-family="'Roboto', system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="#64748b">Tìm theo điểm đến, ngày nhận phòng…</text>
+
+        <!-- Search button -->
+        <rect x="408" y="7" width="96" height="36" rx="7" fill="#0d1e38"/>
+        <text x="456" y="29" text-anchor="middle" font-family="'Roboto', system-ui, -apple-system, sans-serif" font-size="12.5" font-weight="700" fill="#ffffff">Tìm phòng</text>
+      </g>
+    </g>
+    <!-- Crisp outline -->
+    <rect width="560" height="370" rx="18" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
   </g>
 </svg>

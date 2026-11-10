@@ -102,32 +102,47 @@ def main():
                 )
             content = content.replace(
                 'href="#" style="background: #0068ff; color: #fff">Chat Zalo</a>',
-                'href="https://zalo.me/0366071468" target="_blank" rel="noopener noreferrer" style="background: #0068ff; color: #fff">Chat Zalo</a>',
+                'href="https://zalo.me/0972096499" target="_blank" rel="noopener noreferrer" style="background: #0068ff; color: #fff">Chat Zalo</a>',
             )
             if name == "Footer":
                 content = content.replace(
                     '<a class="z" href="#"',
-                    '<a class="z" href="https://zalo.me/0366071468" target="_blank" rel="noopener noreferrer"',
+                    '<a class="z" href="https://zalo.me/0972096499" target="_blank" rel="noopener noreferrer"',
                 ).replace(
                     '<a class="c" href="#"',
-                    '<a class="c" href="tel:0366071468"',
+                    '<a class="c" href="tel:0972096499"',
                 ).replace(
                     '<a href="#" style="background: #e8f0ff; color: #0050c8">Zalo</a>',
-                    '<a class="contact-zalo" href="https://zalo.me/0366071468" target="_blank" rel="noopener noreferrer" style="background: #e8f0ff; color: #0050c8">Zalo</a>',
+                    '<a class="contact-zalo" href="https://zalo.me/0972096499" target="_blank" rel="noopener noreferrer" style="background: #e8f0ff; color: #0050c8">Zalo</a>',
                 ).replace(
                     '<a href="#" style="background: #eef8f9; color: #122745">Gọi</a>',
-                    '<a class="contact-phone" href="tel:0366071468" style="background: #eef8f9; color: #122745">Gọi</a>',
+                    '<a class="contact-phone" href="tel:0972096499" style="background: #eef8f9; color: #122745">Gọi</a>',
                 ).replace(
                     '<a href="#" aria-label="Zalo">',
-                    '<a href="https://zalo.me/0366071468" target="_blank" rel="noopener noreferrer" aria-label="Zalo">',
+                    '<a href="https://zalo.me/0972096499" target="_blank" rel="noopener noreferrer" aria-label="Zalo">',
                 ).replace(
                     'Hotline/Zalo: <span class="ph">[ ]</span>',
+                    'Hotline/Zalo: <a href="tel:0972096499">0972 096 499</a>',
+                ).replace(
                     'Hotline/Zalo: <a href="tel:0366071468">0366 071 468</a>',
+                    'Hotline/Zalo: <a href="tel:0972096499">0972 096 499</a>',
+                ).replace(
+                    '0366071468',
+                    '0972096499',
+                ).replace(
+                    '0366 071 468',
+                    '0972 096 499',
                 )
             if name == "Faq" or name.endswith("Faq"):
                 content = content.replace(
                     '<a class="btn btn-sm btn-outline" href="#">Gọi <span class="ph">[hotline]</span></a>',
-                    '<a class="btn btn-sm btn-outline" href="tel:0366071468">Gọi 0366 071 468</a>',
+                    '<a class="btn btn-sm btn-outline" href="tel:0972096499">Gọi 0972 096 499</a>',
+                ).replace(
+                    '0366071468',
+                    '0972096499',
+                ).replace(
+                    '0366 071 468',
+                    '0972 096 499',
                 )
             content = re.sub(
                 r'<span class="logo-ph"[^>]*>\s*(MISA|Kovena|KOVENA)(?:\s*<i class="tbc">Logo</i>)?\s*</span>',

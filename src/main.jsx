@@ -5,8 +5,37 @@ import CustomerStories from './CustomerStories.jsx';
 import { applyLanguage } from './translations.js';
 import './style.css';
 
+const paths = {
+  Main: '/',
+  PMS: '/san-pham/bellhop-pms',
+  BookingEngine: '/san-pham/bellhop-booking-engine',
+  CMS: '/san-pham/bellhop-cms',
+  Website: '/san-pham/bellhop-website',
+  Message: '/san-pham/bellhop-message',
+  AIConcierge: '/san-pham/bellhop-ai-concierge',
+  Payment: '/san-pham/bellhop-payment',
+  Finance: '/san-pham/bellhop-finance',
+  Pricing: '/bang-gia',
+  News: '/tin-tuc',
+  About: '/ve-Bellhop',
+};
+
 const pages = {
   '/': 'Main',
+  '/san-pham/bellhop-pms': 'PMS',
+  '/san-pham/bellhop-booking-engine': 'BookingEngine',
+  '/san-pham/bellhop-cms': 'CMS',
+  '/san-pham/bellhop-website': 'Website',
+  '/san-pham/bellhop-message': 'Message',
+  '/san-pham/bellhop-ai-concierge': 'AIConcierge',
+  '/san-pham/bellhop-payment': 'Payment',
+  '/san-pham/bellhop-finance': 'Finance',
+  '/bang-gia': 'Pricing',
+  '/tin-tuc': 'News',
+  '/lifrooms': 'About',
+  '/ve-bellhop': 'About',
+  '/ve-Bellhop': 'About',
+  // Backward compatibility aliases
   '/pms': 'PMS',
   '/booking-engine': 'BookingEngine',
   '/cms': 'CMS',
@@ -15,24 +44,23 @@ const pages = {
   '/ai-concierge': 'AIConcierge',
   '/payment': 'Payment',
   '/finance': 'Finance',
-  '/bang-gia': 'Pricing',
-  '/tin-tuc': 'News',
-  '/lifrooms': 'About',
-  '/ve-bellhop': 'About',
-  '/ve-Bellhop': 'About',
-};
-const paths = {
-  ...Object.fromEntries(Object.entries(pages).map(([path, name]) => [name, path])),
-  About: '/ve-Bellhop',
+  '/san-pham/pms': 'PMS',
+  '/san-pham/booking-engine': 'BookingEngine',
+  '/san-pham/cms': 'CMS',
+  '/san-pham/website': 'Website',
+  '/san-pham/message': 'Message',
+  '/san-pham/ai-concierge': 'AIConcierge',
+  '/san-pham/payment': 'Payment',
+  '/san-pham/finance': 'Finance',
 };
 const loginUrl = 'https://app.bellhop.biz/';
 
 function routeFromLocation() {
   const path = window.location.pathname;
   if (path === '/khach-hang/cau-chuyen') return path;
-  if (pages[path]) return path;
+  if (pages[path]) return paths[pages[path]] || path;
   const match = Object.keys(pages).find((p) => p.toLowerCase() === path.toLowerCase());
-  if (match) return match;
+  if (match) return paths[pages[match]] || match;
   return '/';
 }
 
@@ -43,9 +71,18 @@ function App() {
   const frame = useRef(null);
   const syncing = useRef(false);
 
+  useEffect(() => {
+    const canonical = paths[pages[route]];
+    if (canonical && window.location.pathname !== canonical && window.location.pathname !== '/khach-hang/cau-chuyen' && window.location.pathname !== '/register') {
+      window.history.replaceState({}, '', canonical + window.location.hash);
+    }
+  }, [route]);
+
   const navigate = useCallback((path, hash = '', replace = false) => {
-    const canonicalPath = pages[path] ? path : Object.keys(pages).find((p) => p.toLowerCase() === path.toLowerCase());
-    if (!canonicalPath || !pages[canonicalPath]) return;
+    const rawPath = pages[path] ? path : Object.keys(pages).find((p) => p.toLowerCase() === path.toLowerCase());
+    if (!rawPath || !pages[rawPath]) return;
+    const component = pages[rawPath];
+    const canonicalPath = paths[component] || rawPath;
     const target = canonicalPath + hash;
     if (window.location.pathname + window.location.hash !== target) {
       window.history[replace ? 'replaceState' : 'pushState']({}, '', target);
@@ -143,7 +180,8 @@ function App() {
       );
       if (matchedPath) {
         event.preventDefault();
-        navigate(matchedPath.toLowerCase() === '/ve-bellhop' ? '/ve-Bellhop' : matchedPath, url.hash);
+        const component = pages[matchedPath];
+        navigate(paths[component] || matchedPath, url.hash);
         return;
       }
       if (!paths[targetName]) return;
