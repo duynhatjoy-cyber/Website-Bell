@@ -18,8 +18,33 @@
 .bh .proof .brand-logo{align-self:center!important}
 .bh .pain-head{align-items:center;text-align:center;margin-inline:auto}
 .bh .pain-head .lead{max-width:760px;margin-inline:auto}
-.bh .head{align-items:center!important;text-align:center!important;margin-inline:auto!important}
-.bh .head .lead{margin-inline:auto!important}
+/* Section Headings Left-Aligned (Căn sát lề cho tất cả các tiêu đề) */
+.bh .head {
+  align-items: flex-start !important;
+  text-align: left !important;
+  margin-inline: 0 !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+.bh .head .lead {
+  margin-inline: 0 !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  text-align: left !important;
+}
+.bh .head .eyebrow {
+  justify-content: flex-start !important;
+  text-align: left !important;
+  align-self: flex-start !important;
+}
+.bh .head .eyebrow::before {
+  display: inline-block !important;
+}
+.bh .head .h2 {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
 .site-header-sticky .hdr{box-shadow:0 4px 16px rgba(11,26,48,.06)}
 .language-dropdown{position:relative!important;flex:none;color:inherit;font:inherit;overflow:visible!important}
 .language-dropdown summary{display:flex!important;align-items:center!important;gap:6px!important;min-height:38px!important;padding:0 9px!important;border-radius:9px!important;list-style:none!important;font-size:13px!important;font-weight:700!important;cursor:pointer!important;white-space:nowrap!important;touch-action:manipulation!important;-webkit-tap-highlight-color:transparent!important;user-select:none!important}
@@ -1660,10 +1685,10 @@ body:has(a[href*="Message.dc.html"]) .subnav,
   border: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 .pricing-banner-content {
-  padding: 32px 36px !important;
+  padding: 36px 40px !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
   color: #ffffff !important;
 }
 .pricing-banner-eyebrow {
@@ -1687,7 +1712,7 @@ body:has(a[href*="Message.dc.html"]) .subnav,
   display: flex !important;
   flex-wrap: nowrap !important;
   gap: 8px !important;
-  margin-bottom: 22px !important;
+  margin-bottom: 24px !important;
 }
 .pricing-chip {
   font-size: 11px !important;
@@ -1703,7 +1728,7 @@ body:has(a[href*="Message.dc.html"]) .subnav,
   display: flex !important;
   align-items: center !important;
   gap: 18px !important;
-  margin-top: auto !important;
+  margin-top: 0 !important;
 }
 .pricing-btn-link {
   color: #ffffff !important;
